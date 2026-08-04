@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TIŠINA — Čepići za spavanje | 2+1 GRATIS</title>
+<style>
+/* TIŠINA LP — sr-Latn-RS. Hand-built, self-contained. */
+:root{
+  --ink:#0f0f0f; --mut:#6b6b6b; --line:#e6e3dd;
+  --teal:#123c3f; --teal2:#1c5257; --tealsoft:#eef4f3;
+  --sand:#c98f5a; --sandsoft:#f6ead9;
+  --dark:#262626; --ok:#2fa84f; --bad:#d9576a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased;
+  padding-bottom:104px}
+img{max-width:100%;display:block}
+.wrap{max-width:600px;margin:0 auto;padding:0 16px}
+h1,h2,h3{margin:0;line-height:1.15}
+
+/* 1. announcement bar */
+.annbar{background:linear-gradient(90deg,var(--teal),var(--teal2) 55%,var(--sand));
+  color:#fff;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.03em;
+  padding:9px 34px;position:relative;text-transform:uppercase}
+.annbar .ar{position:absolute;top:50%;transform:translateY(-50%);opacity:.85;font-size:15px}
+.annbar .ar.l{left:12px}.annbar .ar.r{right:12px}
+
+/* 2. header */
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;
+  border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:50}
+header .ico{font-size:19px;color:var(--ink);text-decoration:none}
+.logo{display:flex;align-items:center;gap:7px;font-weight:700;font-size:21px;letter-spacing:.04em}
+.logo .m{color:var(--sand);font-size:19px}
+
+/* 3. badges */
+.tags{display:flex;gap:8px;padding:12px 16px 0}
+.tag{font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:20px;letter-spacing:.02em}
+.tag.grey{background:#6f6f6f;color:#fff}
+.tag.dark{background:#111;color:#fff}
+
+/* 4. gallery */
+.gal{position:relative;background:var(--sandsoft);margin-top:10px}
+.gal .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.gal .slides::-webkit-scrollbar{display:none}
+.gal .slides img{min-width:100%;scroll-snap-align:center;aspect-ratio:1/1;object-fit:cover}
+.gal .zoom{position:absolute;right:14px;bottom:14px;width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;font-size:19px;cursor:pointer;display:grid;place-items:center}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none;background:#fff}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{width:62px;height:62px;object-fit:cover;border-radius:9px;flex:none;
+  border:2px solid transparent;cursor:pointer}
+.thumbs img.on{border-color:var(--teal)}
+
+/* 5. title + rating */
+.ph1{font-size:31px;font-weight:700;letter-spacing:-.02em;margin:14px 0 8px}
+.rate{display:flex;align-items:center;gap:9px;font-size:14px;margin-bottom:14px}
+.rate .st{color:var(--sand);font-size:17px;letter-spacing:1px}
+.rate a{color:var(--mut);text-decoration:underline}
+
+/* 6. bullets */
+.blts{list-style:none;margin:0 0 18px;padding:0}
+.blts li{display:flex;gap:11px;padding:6px 0;font-size:14.5px;align-items:flex-start}
+.blts .c{width:19px;height:19px;flex:none;border-radius:50%;background:var(--teal);color:#fff;
+  display:grid;place-items:center;font-size:10px;font-weight:900;margin-top:2px}
+
+/* 7. color row */
+.colorrow{font-size:14px;margin-bottom:8px}
+.colorrow b{font-weight:700}
+.swatches{display:flex;gap:9px;margin-bottom:18px}
+.sw{width:52px;height:52px;border-radius:10px;border:2px solid var(--line);cursor:pointer;
+  display:grid;place-items:center;background:var(--sandsoft)}
+.sw.on{border-color:var(--teal)}
+.sw i{width:26px;height:26px;border-radius:50%;display:block}
+
+/* 8. bundle options */
+.opt{position:relative;border:1.5px solid var(--line);border-radius:14px;padding:16px;
+  margin-bottom:12px;cursor:pointer;background:#fafafa}
+.opt.on{border-color:var(--teal);background:#fff;box-shadow:0 0 0 1.5px var(--teal)}
+.opt .row{display:flex;align-items:flex-start;gap:12px}
+.opt .nm{font-size:17px;font-weight:700}
+.opt .pr{margin-left:auto;text-align:right;white-space:nowrap}
+.opt .pr b{font-size:16px}
+.opt .pr s{color:var(--mut);font-weight:400;margin-right:5px}
+.opt .pr span{display:block;font-size:12px;color:var(--mut)}
+.opt .bdg{position:absolute;top:-11px;right:14px;font-size:10.5px;font-weight:800;
+  text-transform:uppercase;color:#fff;background:linear-gradient(90deg,var(--teal),var(--sand));
+  padding:4px 11px;border-radius:6px;letter-spacing:.03em}
+.opt .save{display:inline-block;background:var(--tealsoft);color:var(--teal);font-size:11.5px;
+  font-weight:800;padding:3px 9px;border-radius:20px;margin-top:8px}
+.opt .strip{margin:14px -16px -16px;background:var(--dark);color:#fff;border-radius:0 0 12px 12px;
+  padding:11px 16px;display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600}
+.opt .strip .amt{margin-left:auto;font-weight:700}
+
+/* 9. stock + ATC */
+.stock{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ok);
+  font-weight:600;margin:14px 0 10px}
+.atc{display:block;width:100%;border:0;border-radius:60px;background:var(--dark);color:#fff;
+  font-size:16px;font-weight:700;letter-spacing:.02em;padding:19px 20px;cursor:pointer;
+  text-align:center;text-transform:uppercase}
+.atc:active{filter:brightness(1.15)}
+.gtee{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13.5px;
+  padding:13px 0 6px;color:#333}
+
+/* 10. description */
+.desc{font-size:15px;margin:16px 0 22px}
+.desc b{display:block;margin-bottom:6px}
+
+/* 11. accordions */
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{padding:16px 28px 16px 0;font-weight:600;font-size:15px;cursor:pointer;
+  list-style:none;position:relative;display:flex;align-items:center;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"⌄";position:absolute;right:4px;top:13px;font-size:18px;color:var(--mut)}
+details[open] summary::after{content:"⌃"}
+details .bd{padding:0 0 16px;font-size:14px;color:#3a3a3a}
+details .bd p{margin:0 0 8px}
+
+/* 12. add-on */
+.addon{background:#f7f7f5;border-radius:14px;padding:16px;margin:20px 0}
+.addon h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.addon .sub{font-size:13.5px;color:var(--mut);margin-bottom:12px}
+.addon .card{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:11px}
+.addon .card img{width:46px;height:46px;object-fit:cover;border-radius:8px;flex:none}
+.addon .card .t{font-size:14px;font-weight:600}
+.addon .card .p{font-size:13px}
+.addon .card .p s{color:var(--mut)}
+.addon .card .off{background:var(--sandsoft);color:var(--sand);font-size:11px;font-weight:800;
+  padding:2px 8px;border-radius:12px;margin-left:6px}
+.addon .card button{margin-left:auto;border:0;background:var(--dark);color:#fff;font-size:12px;
+  font-weight:700;padding:9px 16px;border-radius:20px;cursor:pointer}
+
+/* 13. video row */
+.vh{font-size:17px;font-weight:700;margin:22px 0 10px}
+.vrow{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
+.vrow::-webkit-scrollbar{display:none}
+.vid{position:relative;flex:none;width:47%;aspect-ratio:9/16;border-radius:14px;
+  overflow:hidden;background:#000}
+.vid img{width:100%;height:100%;object-fit:cover;opacity:.95}
+.vid .play{position:absolute;inset:0;display:grid;place-items:center;font-size:34px;color:#fff;
+  text-shadow:0 2px 10px rgba(0,0,0,.45)}
+.vbar{height:3px;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--sand) 60%,#ddd 60%)}
+
+/* 14. trust marquee */
+.marq{display:flex;gap:26px;overflow-x:auto;scrollbar-width:none;padding:16px 0;
+  font-size:14px;font-weight:600;color:var(--teal);white-space:nowrap}
+.marq::-webkit-scrollbar{display:none}
+.marq span{display:flex;align-items:center;gap:7px}
+
+/* 15. big feature block */
+.feat{border-radius:16px;overflow:hidden;border:1px solid var(--line);margin:22px 0}
+.feat img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.feat .b{padding:20px 16px}
+.feat h2{font-size:25px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.feat p{font-size:14.5px;color:#3a3a3a;margin:0 0 16px}
+.feat .it{display:flex;gap:12px;margin:14px 0;align-items:flex-start}
+.feat .it .ic{width:30px;flex:none;font-size:20px;color:var(--teal)}
+.feat .it b{display:block;font-size:15px}
+.feat .it span{font-size:13.5px;color:var(--mut)}
+
+/* 16. fact cards */
+.facts{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
+.facts::-webkit-scrollbar{display:none}
+.fcard{flex:none;width:78%;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.fcard img{aspect-ratio:4/3;object-fit:cover}
+.fcard .b{padding:14px}
+.fcard h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.fcard .stat{background:#f6f6f4;border-radius:10px;padding:11px;display:flex;gap:11px;align-items:center}
+.fcard .stat b{font-size:20px;color:var(--teal);flex:none}
+.fcard .stat span{font-size:13px;color:#3a3a3a}
+
+/* 17. comparison */
+.cmp{margin:28px 0}
+.cmp h2{text-align:center;font-size:25px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px}
+.cmp h2 em{font-style:normal;color:var(--teal)}
+.cmp .lead{text-align:center;font-size:14px;color:var(--mut);margin:0 0 18px}
+.ctab{display:grid;grid-template-columns:1.15fr .95fr .95fr;font-size:12.5px;align-items:stretch}
+.ctab .hd{padding:12px 6px;text-align:center;font-weight:700}
+.ctab .hd.us{background:linear-gradient(180deg,var(--teal),var(--teal2));color:#fff;border-radius:12px 12px 0 0}
+.ctab .lb{padding:12px 8px;color:#333;display:flex;align-items:center}
+.ctab .cl{display:grid;place-items:center;padding:12px 4px}
+.ctab .cl.us{background:linear-gradient(180deg,var(--teal),var(--teal2))}
+.ctab .cl.us:last-child{border-radius:0 0 12px 12px}
+.ctab .y{color:#fff;font-weight:900}
+.ctab .yo{color:var(--sand);font-weight:900}
+.ctab .x{color:#c9c9c9;font-weight:900}
+.ctab .rowbg{background:#fafafa}
+
+/* 18. press */
+.press{text-align:center;padding:22px 0}
+.press .lb{font-size:11.5px;letter-spacing:.14em;color:var(--mut);margin-bottom:14px}
+.press .row{display:flex;justify-content:space-around;gap:14px;filter:grayscale(1);opacity:.6;
+  font-weight:700;font-size:13px;flex-wrap:wrap}
+
+/* 19. reviews */
+.rev{padding:8px 0 26px}
+.rev h2{text-align:center;font-size:25px;font-weight:700;letter-spacing:-.02em;margin-bottom:16px}
+.rrow{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
+.rrow::-webkit-scrollbar{display:none}
+.rcard{flex:none;width:84%;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.rcard img{aspect-ratio:1/1;object-fit:cover}
+.rcard .b{padding:14px}
+.rcard .who{font-size:13px;font-weight:700;display:flex;gap:6px;align-items:center;margin-bottom:4px}
+.rcard .vf{color:var(--ok);font-size:11.5px;font-weight:700}
+.rcard .st{color:var(--sand);font-size:14px;letter-spacing:1px}
+.rcard h4{font-size:15px;margin:6px 0 4px}
+.rcard p{margin:0;font-size:13.5px;color:#3a3a3a}
+
+/* 20. FAQ */
+.faq{background:var(--tealsoft);border-radius:16px;padding:6px 16px;margin:10px 0 26px}
+.faq h2{text-align:center;font-size:25px;font-weight:700;padding:18px 0 2px}
+.faq .sub{text-align:center;font-size:14px;color:var(--mut);margin-bottom:8px}
+.faq details{border-top:1px solid #d3e3e1}
+.faq details:first-of-type{border-top:0}
+.faq details:last-of-type{border-bottom:0}
+
+/* 21. rating summary */
+.sum{text-align:center;padding:14px 0 26px}
+.sum .big{display:flex;align-items:center;justify-content:center;gap:10px;font-size:22px;font-weight:700}
+.sum .big .st{color:var(--sand);font-size:20px;letter-spacing:2px}
+.sum .cnt{font-size:13px;color:var(--mut);margin-top:2px}
+.bars{max-width:320px;margin:14px auto 0}
+.bar{display:flex;align-items:center;gap:8px;font-size:12px;margin:5px 0}
+.bar .t{width:34px;text-align:right;color:var(--mut)}
+.bar .track{flex:1;height:7px;background:#e9e9e6;border-radius:5px;overflow:hidden}
+.bar .fill{height:100%;background:var(--teal)}
+.bar .n{width:32px;text-align:left;color:var(--mut)}
+.rec{margin-top:14px;font-size:19px;font-weight:700}
+.rec span{display:block;font-size:13px;font-weight:400;color:var(--mut)}
+
+/* 22. sticky ATC */
+.satc{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;
+  border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.08);
+  padding:9px 16px calc(11px + env(safe-area-inset-bottom))}
+.satc .in{max-width:600px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.satc img{width:42px;height:42px;object-fit:cover;border-radius:9px;flex:none;background:var(--sandsoft)}
+.satc .t{min-width:0}
+.satc .t b{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.satc .t span{font-size:12px;color:var(--mut)}
+.satc .atc{margin-left:auto;width:auto;flex:none;padding:14px 20px;font-size:13.5px}
+
+footer{background:#111;color:#9c9c9c;padding:26px 0;font-size:13px;text-align:center}
+footer a{color:#ddd;margin:0 7px}
+footer .disc{margin-top:14px;font-size:11px;line-height:1.55;text-align:left;color:#7d7d7d}
+
+@media(min-width:768px){
+  .gal,.thumbs{max-width:560px;margin-left:auto;margin-right:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- 1. announcement -->
+<div class="annbar"><span class="ar l">‹</span>PONUDA OGRANIČENOG TRAJANJA: KUPI 2, TREĆI GRATIS<span class="ar r">›</span></div>
+
+<!-- 2. header -->
+<header>
+  <span class="ico">☰</span>
+  <span class="logo"><span class="m">☾</span>TIŠINA</span>
+  <a class="ico" href="#ponuda" aria-label="Korpa">🛒</a>
+</header>
+
+<!-- 3. badges -->
+<div class="tags"><span class="tag grey">Probaj 30 noći</span><span class="tag dark">NOVO</span></div>
+
+<!-- 4. gallery -->
+<section class="gal">
+  <div class="slides" id="slides">
+    <img src="assets/hero.jpg" alt="TIŠINA čepići za spavanje">
+    <img src="assets/box.jpg" alt="TIŠINA pakovanje">
+    <img src="assets/benefits.jpg" alt="Zašto baš TIŠINA">
+    <img src="assets/lifestyle.jpg" alt="San na boku bez buke">
+    <img src="assets/sizes.jpg" alt="Četiri veličine nastavaka">
+    <img src="assets/howto.jpg" alt="Kako se stavljaju">
+  </div>
+  <button class="zoom" onclick="document.getElementById('slides').scrollBy({left:document.getElementById('slides').clientWidth,behavior:'smooth'})" aria-label="Sledeća">＋</button>
+</section>
+<div class="thumbs" id="thumbs"></div>
+
+<div class="wrap">
+  <!-- 5. title + rating (PLACEHOLDER numbers) -->
+  <h1 class="ph1">TIŠINA čepići za spavanje</h1>
+  <div class="rate"><span class="st">★★★★★</span><a href="#recenzije">300+ recenzija</a></div>
+
+  <!-- 6. bullets -->
+  <ul class="blts">
+    <li><span class="c">✓</span><span>Prigušuju hrkanje, saobraćaj i noćne zvuke</span></li>
+    <li><span class="c">✓</span><span>Meki hipoalergenski silikon, udobni celu noć</span></li>
+    <li><span class="c">✓</span><span>Ne štrče iz uha — spavaj i na boku</span></li>
+  </ul>
+
+  <!-- 7. color -->
+  <div class="colorrow">Boja: <b id="colorname">Ponoćna zelena</b></div>
+  <div class="swatches" id="swatches"></div>
+
+  <!-- 8. bundles -->
+  <div id="ponuda"></div>
+  <div id="opts"></div>
+
+  <!-- 9. stock + ATC -->
+  <div class="stock"><span>●</span> Na stanju — spremno za slanje</div>
+  <button class="atc" id="atc" onclick="kupi()">DODAJ U KORPU — 9.498 RSD</button>
+  <div class="gtee">🛡️ 30 dana garancije povraćaja novca</div>
+
+  <!-- 10. description -->
+  <div class="desc">
+    <b>Priguši buku i spavaj bolje nego ikad — uz TIŠINA čepiće.</b>
+    Napravljeni su baš za spavanje. Bez hrkanja koje te budi. Bez tvrde plastike. Bez buđenja u tri ujutru jer te uho zaboli ili je čepić ispao. Samo mirna, tiha noć — od trenutka kad spustiš glavu na jastuk do zvuka budilnika.
+  </div>
+
+  <!-- 11. accordions -->
+  <details open>
+    <summary>🔍 Detalji i veličine</summary>
+    <div class="bd"><p>U setu: par TIŠINA čepića + četiri veličine silikonskih nastavaka (XS, S, M, L) i kutijica za nošenje.</p><p>Materijal: meki hipoalergenski silikon, bez tvrde plastike. Telo čepića je nisko i ne štrči iz uha.</p></div>
+  </details>
+  <details>
+    <summary>📦 Isporuka i povraćaj</summary>
+    <div class="bd"><p>Isporuka 2–4 radna dana na celoj teritoriji Srbije. Plaćanje pouzećem — gotovinom ili karticom kod kurira.</p><p>Besplatna dostava uz paket 2+1 gratis. Neotvoren proizvod možeš da vratiš u roku od 30 dana uz pun povraćaj novca.</p></div>
+  </details>
+  <details>
+    <summary>💳 Načini plaćanja</summary>
+    <div class="bd"><p>Plaćaš pouzećem kada ti kurir donese paket — gotovinom ili karticom. Ne plaćaš ništa unapred i nema pretplate.</p></div>
+  </details>
+
+  <!-- 12. add-on -->
+  <div class="addon">
+    <h3>Uz TIŠINA ide odlično</h3>
+    <div class="sub">Dodaj uz svoju porudžbinu po posebnoj ceni.</div>
+    <div class="card">
+      <img src="assets/gift.jpg" alt="Kutijica za čišćenje">
+      <div>
+        <div class="t">Kutijica za čišćenje</div>
+        <div class="p"><s>1.090 RSD</s> <b>GRATIS</b><span class="off">uz 2+1</span></div>
+      </div>
+      <button onclick="pickOpt(1)">DODAJ</button>
+    </div>
+  </div>
+
+  <!-- 13. videos (VIDEO PLACEHOLDERS) -->
+  <div class="vh">Vole ih oni koji najviše vole san.</div>
+  <div class="vrow">
+    <div class="vid"><img src="assets/vid1.jpg" alt="Video 1 — PLACEHOLDER"><div class="play">▶</div></div>
+    <div class="vid"><img src="assets/vid2.jpg" alt="Video 2 — PLACEHOLDER"><div class="play">▶</div></div>
+    <div class="vid"><img src="assets/vid3.jpg" alt="Video 3 — PLACEHOLDER"><div class="play">▶</div></div>
+    <div class="vid"><img src="assets/vid4.jpg" alt="Video 4 — PLACEHOLDER"><div class="play">▶</div></div>
+  </div>
+  <div class="vbar"></div>
+
+  <!-- 14. trust marquee -->
+  <div class="marq">
+    <span>🚚 Isporuka 2–4 dana</span><span>🛡️ 30 dana garancije</span><span>💵 Plaćanje pouzećem</span><span>♻️ Perivi i višekratni</span>
+  </div>
+
+  <!-- 15. feature block -->
+  <div class="feat">
+    <img src="assets/lifestyle.jpg" alt="San na boku bez buke">
+    <div class="b">
+      <h2>Najtiše noći do sada.</h2>
+      <p>Nisko telo čepića stoji uz samo uho, pa jastuk ne pritiska ništa u ušni kanal. Prigušuje buku oko tebe — ali glasan budilnik ćeš i dalje čuti. Meki silikonski nastavak drži celu noć, bez obzira da li spavaš na boku, leđima ili stomaku.</p>
+      <div class="it"><span class="ic">🌙</span><div><b>Udobno celu noć.</b><span>Meki silikon bez pritiska, prijatan i posle nekoliko sati na boku.</span></div></div>
+      <div class="it"><span class="ic">🔇</span><div><b>Prigušuje buku.</b><span>Hrkanje, saobraćaj i noćni zvuci postaju tiša pozadina.</span></div></div>
+      <div class="it"><span class="ic">💧</span><div><b>Higijenski i lako se peru.</b><span>Perivi i brzo se suše — spremni za svaku sledeću noć.</span></div></div>
+    </div>
+  </div>
+
+  <!-- 16. fact cards (source shows invented survey %; we show product facts) -->
+  <div class="facts">
+    <div class="fcard"><img src="assets/lifestyle.jpg" alt="">
+      <div class="b"><h3>Partner koji hrče</h3>
+        <div class="stat"><b>4</b><span>veličine nastavaka u setu — nađi onu koja ti savršeno leži</span></div></div>
+    </div>
+    <div class="fcard"><img src="assets/sizes.jpg" alt="">
+      <div class="b"><h3>Lagan san</h3>
+        <div class="stat"><b>0</b><span>tvrde plastike — samo meki hipoalergenski silikon</span></div></div>
+    </div>
+  </div>
+
+  <!-- 17. comparison -->
+  <section class="cmp">
+    <h2>Zašto je TIŠINA <em>pravi izbor</em></h2>
+    <p class="lead">Čepići koji prigušuju buku i ostaju udobni celu noć.</p>
+    <div class="ctab">
+      <div class="hd"></div><div class="hd us">☾ TIŠINA</div><div class="hd">Penasti</div>
+      <div class="lb rowbg">Udobni na boku</div><div class="cl us"><span class="y">✓</span></div><div class="cl rowbg"><span class="x">✕</span></div>
+      <div class="lb">Peru se i koriste ponovo</div><div class="cl us"><span class="y">✓</span></div><div class="cl"><span class="x">✕</span></div>
+      <div class="lb rowbg">Budilnik se i dalje čuje</div><div class="cl us"><span class="y">✓</span></div><div class="cl rowbg"><span class="yo">✓</span></div>
+      <div class="lb">Četiri veličine u setu</div><div class="cl us"><span class="y">✓</span></div><div class="cl"><span class="x">✕</span></div>
+      <div class="lb rowbg">Bez tvrde plastike</div><div class="cl us"><span class="y">✓</span></div><div class="cl rowbg"><span class="yo">✓</span></div>
+      <div class="lb">Stane u džep i kofer</div><div class="cl us"><span class="y">✓</span></div><div class="cl"><span class="x">✕</span></div>
+    </div>
+  </section>
+
+  <!-- 18. press (PLACEHOLDER) -->
+  <div class="press">
+    <div class="lb">PIŠU O NAMA</div>
+    <div class="row"><span>LIFESTYLE PORTALI</span><span>MAGAZINI O SNU</span><span>WELLNESS BLOGOVI</span></div>
+  </div>
+
+  <!-- 19. reviews (PLACEHOLDER — replace with real verified reviews) -->
+  <section class="rev" id="recenzije">
+    <h2>Šta kaže naša zajednica</h2>
+    <div class="rrow">
+      <div class="rcard"><img src="assets/box.jpg" alt="">
+        <div class="b"><div class="who">Milica S. <span class="vf">✓ Recenzija kupca</span></div>
+          <div class="st">★★★★★</div><h4>Prvi koji mi ne ispadnu</h4>
+          <p>Spavam isključivo na boku i svi dosadašnji su mi ispadali do dva ujutru. Ovi ostaju gde treba celu noć.</p></div>
+      </div>
+      <div class="rcard"><img src="assets/lifestyle.jpg" alt="">
+        <div class="b"><div class="who">Jovana T. <span class="vf">✓ Recenzija kupca</span></div>
+          <div class="st">★★★★★</div><h4>Partner i dalje hrče</h4>
+          <p>Ali ja ga više ne čujem. Prvi put posle godina da ne razmišljam da li ću spavati u dnevnoj sobi.</p></div>
+      </div>
+      <div class="rcard"><img src="assets/sizes.jpg" alt="">
+        <div class="b"><div class="who">Nemanja K. <span class="vf">✓ Recenzija kupca</span></div>
+          <div class="st">★★★★★</div><h4>Uzeo sam paket 2+1</h4>
+          <p>Jedan set stoji kraj kreveta, jedan u koferu, jedan na poslu za smene. Ispalo jeftinije nego da kupujem posebno.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 20. FAQ -->
+  <section class="faq">
+    <h2>Pitanja?</h2>
+    <div class="sub">Imamo odgovore</div>
+    <details><summary>Mogu li da ih nosim svake noći?</summary><div class="bd"><p>Da. Operi ih mlakom vodom i blagim sapunom, ostavi da se osuše i spremni su za sledeću noć.</p></div></details>
+    <details><summary>Mogu li da spavam na boku?</summary><div class="bd"><p>Da — to je i bila poenta dizajna. Telo čepića je nisko i ne štrči, pa jastuk ne pritiska čepić u ušni kanal.</p></div></details>
+    <details><summary>Da li odgovaraju svakom uhu?</summary><div class="bd"><p>U setu su četiri veličine nastavaka (XS, S, M, L), pa većina ljudi nađe svoju. Ako ti nijedna ne leži, imaš 30 dana za povraćaj neotvorenog proizvoda.</p></div></details>
+    <details><summary>Da li ću čuti budilnik?</summary><div class="bd"><p>Čepići prigušuju zvuk, ne isključuju ga — glasan budilnik pored kreveta ćeš čuti. Ako spavaš veoma čvrsto, drži ga na noćnom ormariću.</p></div></details>
+    <details><summary>Gde isporučujete?</summary><div class="bd"><p>Na celu teritoriju Srbije, 2–4 radna dana, uz plaćanje pouzećem.</p></div></details>
+    <details><summary>Koliko dugo traju?</summary><div class="bd"><p>Uz redovno pranje i čuvanje u kutijici, jedan set traje mesecima. Zato se paket 2+1 i najviše isplati.</p></div></details>
+  </section>
+
+  <!-- 21. rating summary (PLACEHOLDER) -->
+  <div class="sum">
+    <div class="big"><span>4,9</span><span class="st">★★★★★</span></div>
+    <div class="cnt">na osnovu 300+ recenzija</div>
+    <div class="bars">
+      <div class="bar"><span class="t">5 ★</span><span class="track"><span class="fill" style="width:96%"></span></span><span class="n">288</span></div>
+      <div class="bar"><span class="t">4 ★</span><span class="track"><span class="fill" style="width:4%"></span></span><span class="n">9</span></div>
+      <div class="bar"><span class="t">3 ★</span><span class="track"><span class="fill" style="width:2%"></span></span><span class="n">4</span></div>
+      <div class="bar"><span class="t">2 ★</span><span class="track"><span class="fill" style="width:0%"></span></span><span class="n">0</span></div>
+      <div class="bar"><span class="t">1 ★</span><span class="track"><span class="fill" style="width:0%"></span></span><span class="n">0</span></div>
+    </div>
+    <div class="rec">99%<span>bi preporučilo ovaj proizvod</span></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>·<a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>·<a href="https://rs.unikatko.eu/policies/shipping-policy">Dostava</a>·<a href="https://rs.unikatko.eu/policies/refund-policy">Povraćaj novca</a>·<a href="https://rs.unikatko.eu/policies/terms-of-service">Uslovi korišćenja</a>
+    <div style="margin-top:10px">© 2026 Unikatko d.o.o.</div>
+    <div class="disc">
+      ‡ Garancija povraćaja novca važi 30 dana od datuma prijema pošiljke i odnosi se na neotvoren proizvod.<br>
+      * TIŠINA su čepići za udobnost pri spavanju. Nisu medicinsko sredstvo niti sredstvo za zaštitu sluha na radnom mestu i ne služe za lečenje, dijagnostikovanje niti sprečavanje bilo koje bolesti. Stepen prigušenja zvuka zavisi od veličine nastavka i oblika ušnog kanala. Držati van domašaja dece.
+    </div>
+  </div>
+</footer>
+
+<!-- 22. sticky ATC (source has one) -->
+<div class="satc" id="satc">
+  <div class="in">
+    <img src="assets/hero.jpg" alt="">
+    <div class="t"><b>TIŠINA čepići</b><span id="satc-sub">3 seta (2+1 gratis)</span></div>
+    <button class="atc" id="atc2" onclick="kupi()">9.498 RSD</button>
+  </div>
+</div>
+
+<script>
+const OPTS = [
+  { title:"1 set",  sub:"1 set čepića",       total:4599, was:9199,  per:"4.599 RSD po setu", badge:null,
+    save:null, strip:null, variantId:"57238176235785", ship:true },
+  { title:"Kupi 2, treći GRATIS", sub:"3 seta", total:9498, was:27597, per:"3.166 RSD po setu",
+    badge:"NAJPOPULARNIJE", save:"UŠTEDA 31%", strip:{txt:"+ Kutijica za čišćenje GRATIS", amt:"1.090 RSD"},
+    variantId:"57238176268553", ship:false },
+];
+const COLORS = [
+  { name:"Ponoćna zelena", hex:"#123c3f" },
+  { name:"Peščana",        hex:"#c98f5a" },
+  { name:"Ugljena",        hex:"#3a3a3a" },
+];
+const BASE = "https://rs.unikatko.eu";
+const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
+let sel = 1;   // source preselects the Buy-2-Get-1 bundle
+let col = 0;
+
+function renderOpts(){
+  document.getElementById('opts').innerHTML = OPTS.map((o,i)=>`
+    <div class="opt ${i===sel?'on':''}" onclick="pickOpt(${i})">
+      ${o.badge?`<span class="bdg">${o.badge}</span>`:''}
+      <div class="row">
+        <div>
+          <div class="nm">${o.title}</div>
+          ${o.save?`<span class="save">${o.save}</span>`:''}
+        </div>
+        <div class="pr"><b>${o.was>o.total?`<s>${fmt(o.was)}</s>`:''}${fmt(o.total)}</b><span>${o.per}</span></div>
+      </div>
+      ${o.strip?`<div class="strip"><span>🧴</span>${o.strip.txt}<span class="amt">${o.strip.amt}</span></div>`:''}
+    </div>`).join('');
+  const o = OPTS[sel];
+  const label = 'DODAJ U KORPU — ' + fmt(o.total) + (o.ship ? ' + dostava' : '');
+  document.getElementById('atc').textContent = label;
+  const a2=document.getElementById('atc2'); if(a2) a2.textContent = fmt(o.total);
+  const ss=document.getElementById('satc-sub'); if(ss) ss.textContent = o.sub;
+}
+function pickOpt(i){ sel=i; renderOpts(); }
+function renderColors(){
+  document.getElementById('swatches').innerHTML = COLORS.map((c,i)=>
+    `<div class="sw ${i===col?'on':''}" onclick="pickColor(${i})" title="${c.name}"><i style="background:${c.hex}"></i></div>`).join('');
+  document.getElementById('colorname').textContent = COLORS[col].name;
+}
+function pickColor(i){ col=i; renderColors(); }
+function kupi(){ location.href = BASE + '/cart/' + OPTS[sel].variantId + ':1'; }
+
+/* gallery */
+const slides = document.getElementById('slides');
+function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'}); }
+(function(){
+  const imgs=[...slides.querySelectorAll('img')];
+  document.getElementById('thumbs').innerHTML = imgs
+    .map((im,i)=>`<img src="${im.getAttribute('src')}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="">`).join('');
+  slides.addEventListener('scroll',()=>{
+    const i=Math.round(slides.scrollLeft/slides.clientWidth);
+    [...document.querySelectorAll('.thumbs img')].forEach((t,k)=>t.classList.toggle('on',k===i));
+  });
+})();
+
+/* sticky ATC hides while the on-page ATC is visible (owner rule).
+   Plain rect check + interval — scroll events are unreliable in some webviews. */
+(function(){
+  const bar=document.getElementById('satc'), main=document.getElementById('atc');
+  if(!bar||!main) return;
+  function sync(){
+    const r=main.getBoundingClientRect();
+    bar.style.display = (r.top < window.innerHeight && r.bottom > 0) ? 'none' : '';
+  }
+  addEventListener('scroll', sync, {passive:true});
+  addEventListener('resize', sync);
+  setInterval(sync, 200);
+  sync();
+})();
+
+renderColors(); renderOpts();
+</script>
+</body>
+</html>
