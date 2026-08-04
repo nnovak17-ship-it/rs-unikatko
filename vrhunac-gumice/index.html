@@ -97,6 +97,16 @@ h1,h2,h3{margin:0}
   font-weight:700;font-size:15px;
 }
 
+/* ---------- colour selector (rendered only when page.json has `colors`) ---------- */
+.colorwrap{margin-top:20px}
+.colorwrap .lb{font-size:14px;margin-bottom:8px}
+.colorwrap .lb b{font-weight:800}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}
+.sw{width:54px;height:54px;border-radius:12px;border:2px solid var(--line);background:#fff;
+  cursor:pointer;display:grid;place-items:center;padding:0}
+.sw.on{border-color:var(--ink)}
+.sw i{width:28px;height:28px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.12)}
+
 /* ---------- tier grid ---------- */
 .tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
 .tier{
@@ -358,6 +368,12 @@ footer .disc{margin-top:12px;font-size:11px;line-height:1.5;text-align:left}
     <span>Poruči <b>danas</b> i pokloni su ti zagarantovani</span>
   </div>
 
+  <!-- ============ COLOUR (only when configured) ============ -->
+  <div class="colorwrap" id="colorwrap" style="display:none">
+    <div class="lb">Boja: <b id="colorname"></b></div>
+    <div class="swatches" id="swatches"></div>
+  </div>
+
   <!-- ============ TIER LADDER ============ -->
   <div class="tiers" id="tiers"></div>
 
@@ -527,6 +543,7 @@ const CFG = {
   "defaultTier": 0,
   "freeShippingQty": 3,
   "checkoutBase": "https://rs.unikatko.eu",
+  "colors": [],
   "tiers": [
     {
       "qty": 1,
@@ -596,6 +613,36 @@ const fmt = n => new Intl.NumberFormat(CFG.numberLocale).format(n) + ' ' + CFG.c
 let selected = (CFG.tiers[CFG.defaultTier] && !CFG.tiers[CFG.defaultTier].oos)
   ? CFG.defaultTier
   : CFG.tiers.findIndex(t => !t.oos);
+let colorIdx = 0;   // index into CFG.colors (empty array = product has no colours)
+
+/* Resolve the Shopify variant for the current (tier, colour) pair. Pages with
+   colours carry a variantsByColor map; colourless pages keep a flat variantId. */
+function currentVariantId(){
+  const t = CFG.tiers[selected];
+  if (CFG.colors && CFG.colors.length && t.variantsByColor) {
+    return t.variantsByColor[CFG.colors[colorIdx].name] || t.variantId;
+  }
+  return t.variantId;
+}
+
+/* ---- colours ---- */
+function renderColors(){
+  if (!CFG.colors || !CFG.colors.length) return;
+  document.getElementById('colorwrap').style.display = '';
+  document.getElementById('swatches').innerHTML = CFG.colors.map((c,i)=>
+    `<button class="sw ${i===colorIdx?'on':''}" onclick="pickColor(${i})" title="${c.name}" aria-label="${c.name}"><i style="background:${c.hex}"></i></button>`
+  ).join('');
+  document.getElementById('colorname').textContent = CFG.colors[colorIdx].name;
+  // first gallery slide + its thumb follow the chosen colour
+  const c = CFG.colors[colorIdx];
+  if (c.img) {
+    const first = slides.querySelector('img');
+    if (first) first.src = c.img;
+    const t0 = document.querySelector('.thumbs img');
+    if (t0) t0.src = c.img;
+  }
+}
+function pickColor(i){ colorIdx = i; renderColors(); }
 
 /* ---- tiers ---- */
 function renderTiers(){
@@ -647,8 +694,9 @@ function renderTotal(){
 /* ---- checkout: Shopify cart permalink per tier variant ---- */
 function goCheckout(){
   const t = CFG.tiers[selected];
-  if(CFG.checkoutBase && t.variantId){
-    location.href = CFG.checkoutBase.replace(/\/+$/,'') + '/cart/' + t.variantId + ':' + (t.cartQty || 1);
+  const vid = currentVariantId();
+  if(CFG.checkoutBase && vid){
+    location.href = CFG.checkoutBase.replace(/\/+$/,'') + '/cart/' + vid + ':' + (t.cartQty || 1);
     return;
   }
   alert(CFG.labels.notConnected + '\n\n' + t.name);
@@ -696,7 +744,7 @@ function tick(){
   sync();
 })();
 
-renderTiers(); renderGifts(); renderTotal(); buildThumbs(); tick(); setInterval(tick,1000);
+renderTiers(); renderGifts(); renderTotal(); buildThumbs(); renderColors(); tick(); setInterval(tick,1000);
 </script>
 </body>
 </html>

@@ -71,7 +71,7 @@ header .ico{font-size:19px;color:var(--ink);text-decoration:none}
 .colorrow b{font-weight:700}
 .swatches{display:flex;gap:9px;margin-bottom:18px}
 .sw{width:52px;height:52px;border-radius:10px;border:2px solid var(--line);cursor:pointer;
-  display:grid;place-items:center;background:var(--sandsoft)}
+  display:grid;place-items:center;background:#fff;padding:0}
 .sw.on{border-color:var(--teal)}
 .sw i{width:26px;height:26px;border-radius:50%;display:block}
 
@@ -270,7 +270,7 @@ footer .disc{margin-top:14px;font-size:11px;line-height:1.55;text-align:left;col
 <!-- 4. gallery -->
 <section class="gal">
   <div class="slides" id="slides">
-    <img src="assets/hero.jpg" alt="TIŠINA čepići za spavanje">
+    <img src="assets/color-zelena.jpg" alt="TIŠINA čepići za spavanje — Ponoćna zelena">
     <img src="assets/box.jpg" alt="TIŠINA pakovanje">
     <img src="assets/benefits.jpg" alt="Zašto baš TIŠINA">
     <img src="assets/lifestyle.jpg" alt="San na boku bez buke">
@@ -293,6 +293,10 @@ footer .disc{margin-top:14px;font-size:11px;line-height:1.55;text-align:left;col
     <li><span class="c">✓</span><span>Ne štrče iz uva — spavaj i na boku</span></li>
   </ul>
 
+
+  <!-- 7. colour -->
+  <div class="colorrow">Boja: <b id="colorname"></b></div>
+  <div class="swatches" id="swatches"></div>
 
   <!-- 8. bundles -->
   <div id="ponuda"></div>
@@ -454,7 +458,7 @@ footer .disc{margin-top:14px;font-size:11px;line-height:1.55;text-align:left;col
 <!-- 22. sticky ATC (source has one) -->
 <div class="satc" id="satc">
   <div class="in">
-    <img src="assets/hero.jpg" alt="">
+    <img src="assets/color-zelena.jpg" alt="">
     <div class="t"><b>TIŠINA čepići</b><span id="satc-sub">3 seta (2+1 gratis)</span></div>
     <button class="atc" id="atc2" onclick="kupi()">9.498 RSD</button>
   </div>
@@ -463,15 +467,18 @@ footer .disc{margin-top:14px;font-size:11px;line-height:1.55;text-align:left;col
 <script>
 const OPTS = [
   { title:"1 set",  sub:"1 set čepića",       total:4599, was:9199,  per:"4.599 RSD po setu", badge:null,
-    save:null, strip:null, variantId:"57238176235785", ship:true },
+    save:null, strip:null, ship:true,
+    byColor:{"Ponoćna zelena":"57238176235785","Peščana":"57238695772425","Ugljeno siva":"57238695805193","Prašnjava ruža":"57238695837961"} },
   { title:"Kupi 2, treći GRATIS", sub:"3 seta", total:9498, was:13797, per:"3.166 RSD po setu",
     badge:"NAJPOPULARNIJE", save:"UŠTEDA 31%", strip:{txt:"+ Kutijica za čišćenje GRATIS", amt:"1.090 RSD"},
-    variantId:"57238176268553", ship:false },
+    ship:false,
+    byColor:{"Ponoćna zelena":"57238176268553","Peščana":"57238695870729","Ugljeno siva":"57238695903497","Prašnjava ruža":"57238695936265"} },
 ];
 const COLORS = [
-  { name:"Ponoćna zelena", hex:"#123c3f" },
-  { name:"Peščana",        hex:"#c98f5a" },
-  { name:"Ugljena",        hex:"#3a3a3a" },
+  { name:"Ponoćna zelena", hex:"#123c3f", img:"assets/color-zelena.jpg" },
+  { name:"Peščana",        hex:"#d9c3a5", img:"assets/color-pescana.jpg" },
+  { name:"Ugljeno siva",   hex:"#2f3033", img:"assets/color-siva.jpg" },
+  { name:"Prašnjava ruža", hex:"#c9a09c", img:"assets/color-ruza.jpg" },
 ];
 const BASE = "https://rs.unikatko.eu";
 const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
@@ -498,13 +505,17 @@ function renderOpts(){
   const ss=document.getElementById('satc-sub'); if(ss) ss.textContent = o.sub;
 }
 function pickOpt(i){ sel=i; renderOpts(); }
+function variantId(){ return OPTS[sel].byColor[COLORS[col].name]; }
+function kupi(){ location.href = BASE + '/cart/' + variantId() + ':1'; }
 function renderColors(){
   document.getElementById('swatches').innerHTML = COLORS.map((c,i)=>
-    `<div class="sw ${i===col?'on':''}" onclick="pickColor(${i})" title="${c.name}"><i style="background:${c.hex}"></i></div>`).join('');
+    `<button class="sw ${i===col?'on':''}" onclick="pickColor(${i})" title="${c.name}" aria-label="${c.name}"><i style="background:${c.hex}"></i></button>`).join('');
   document.getElementById('colorname').textContent = COLORS[col].name;
+  const first = slides.querySelector('img'); if(first) first.src = COLORS[col].img;
+  const t0 = document.querySelector('.thumbs img'); if(t0) t0.src = COLORS[col].img;
+  const s0 = document.querySelector('.satc img'); if(s0) s0.src = COLORS[col].img;
 }
 function pickColor(i){ col=i; renderColors(); }
-function kupi(){ location.href = BASE + '/cart/' + OPTS[sel].variantId + ':1'; }
 
 /* gallery */
 const slides = document.getElementById('slides');
@@ -534,7 +545,7 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
   sync();
 })();
 
-renderOpts();
+renderColors(); renderOpts();
 </script>
 </body>
 </html>
