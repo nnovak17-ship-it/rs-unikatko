@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Magnetni prsten podesiv — staje na svaki prst | SMIRAJ</title>
+<meta name="description" content="Podesivi magnetni prsten od nerđajućeg čelika, bez nikla. Jedna veličina za svaki prst, 4 boje. Plaćanje pouzećem, isporuka 2–4 dana.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#121212; --mut:#6b6b6b; --line:#e6e3de;
+  --cta:#111; --ctaD:#000; --copper:#b07a4e; --wash:#faf7f2;
+  --pink:#fff5f5; --pinkT:#c62828; --green:#00b67a;
+}
+html{-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.55;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+.wrap{max-width:600px;margin:0 auto;padding:0 16px}
+
+/* 1 — announcement marquee */
+.mq{background:#000;color:#fff;overflow:hidden;white-space:nowrap;padding:11px 0;
+  font-size:13px;font-weight:800;letter-spacing:.02em}
+.mq .tk{display:inline-block;padding-left:100%;animation:mq 22s linear infinite}
+.mq .tk span{padding:0 34px}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){.mq .tk{animation:none;padding-left:16px}}
+
+/* 2 — sticky header */
+.hdr{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
+.hdr .in{max-width:600px;margin:0 auto;padding:13px 16px;display:flex;align-items:center;gap:12px}
+.hdr .logo{flex:1;text-align:center;font-size:22px;font-weight:900;letter-spacing:.06em}
+.hdr .ic{width:22px;height:22px;flex:none;opacity:.85}
+
+/* 3 — gallery */
+.gal{background:var(--wash)}
+.gal .stage{position:relative;aspect-ratio:1/1;overflow:hidden}
+.gal .stage img{width:100%;height:100%;object-fit:cover}
+.gal .nav{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;
+  border:0;border-radius:50%;background:rgba(0,0,0,.42);color:#fff;font-size:19px;
+  line-height:38px;text-align:center;cursor:pointer;padding:0}
+.gal .nav.p{left:10px}.gal .nav.n{right:10px}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 16px 12px;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{width:62px;height:62px;flex:none;object-fit:cover;border:2px solid transparent;
+  border-radius:4px;cursor:pointer;background:#fff}
+.thumbs img.on{border-color:var(--ink)}
+
+/* 4 — pink offer banner */
+.pbn{background:var(--pink);color:var(--pinkT);text-align:center;font-weight:800;
+  padding:11px 14px;border-radius:8px;margin:16px 0 14px;font-size:15px;line-height:1.45}
+
+h1{font-size:31px;line-height:1.15;font-weight:900;letter-spacing:-.01em;margin-bottom:11px}
+
+/* 6 — rating */
+.rate{display:flex;align-items:center;gap:9px;margin-bottom:18px;flex-wrap:wrap}
+.rate .st{display:flex;gap:2px}
+.rate .st i{width:19px;height:19px;background:var(--green);display:block;border-radius:2px;
+  position:relative}
+.rate .st i::after{content:"★";position:absolute;inset:0;color:#fff;font-size:13px;
+  line-height:19px;text-align:center;font-style:normal}
+.rate .st i.h{background:linear-gradient(90deg,var(--green) 50%,#dcdcdc 50%)}
+.rate .lb{font-size:14px;color:#3d3d3d}
+
+/* 7 — benefit lines */
+.blines{display:grid;gap:11px;margin-bottom:20px}
+.bline{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.5}
+.bline .ic{font-size:19px;line-height:1.3;flex:none;width:24px;text-align:center}
+
+/* 8 — cream dashed banner */
+.wbn{background:var(--wash);border:1px dashed var(--copper);border-radius:10px;
+  padding:14px 15px;margin-bottom:18px;text-align:center}
+.wbn>b{display:block;font-size:15px;font-weight:900;letter-spacing:.03em;margin-bottom:5px}
+.wbn p{font-size:14px;color:#4a4a4a;line-height:1.5}
+
+/* 9 — offer card */
+.oc{border:2px solid var(--ink);border-radius:12px;padding:14px;margin-bottom:16px}
+.oc .step{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--mut);
+  margin:4px 0 9px}
+.pk{display:flex;align-items:center;gap:11px;border:2px solid var(--line);border-radius:10px;
+  padding:12px 12px;margin-bottom:9px;cursor:pointer;background:#fff;position:relative;
+  text-align:left;width:100%;font:inherit;color:inherit}
+.pk:last-of-type{margin-bottom:0}
+.pk.on{border-color:var(--ink);background:#fcfbf9}
+.pk .rd{width:19px;height:19px;flex:none;border:2px solid #bdbdbd;border-radius:50%;
+  position:relative;margin-top:2px}
+.pk.on .rd{border-color:var(--ink)}
+.pk.on .rd::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--ink)}
+.pk .tx{flex:1;min-width:0}
+.pk .tx b{display:block;font-size:15px;font-weight:900;line-height:1.25}
+.pk .tx span{display:block;font-size:12.5px;color:var(--mut);line-height:1.4;margin-top:2px}
+.pk .pr{flex:none;text-align:right;line-height:1.25}
+.pk .pr s{display:block;font-size:12px;color:#9a9a9a}
+.pk .pr b{display:block;font-size:16px;font-weight:900}
+.pk .bg{position:absolute;top:-9px;right:10px;background:var(--copper);color:#fff;
+  font-size:10px;font-weight:900;letter-spacing:.06em;padding:3px 8px;border-radius:20px}
+.sw{display:flex;gap:10px;flex-wrap:wrap}
+.sw button{display:flex;flex-direction:column;align-items:center;gap:5px;border:0;
+  background:none;cursor:pointer;padding:0;font:inherit;color:inherit;width:64px}
+.sw .dot{width:38px;height:38px;border-radius:50%;border:2px solid var(--line);
+  box-shadow:inset 0 0 0 3px #fff}
+.sw button.on .dot{border-color:var(--ink)}
+.sw .nm{font-size:11px;line-height:1.2;text-align:center;color:#4a4a4a}
+.sw button.on .nm{font-weight:800;color:var(--ink)}
+
+/* 10 — CTA */
+.cta{display:block;width:100%;background:var(--cta);color:#fff;border:0;border-radius:8px;
+  padding:17px 14px;font:inherit;font-size:17px;font-weight:800;letter-spacing:.02em;
+  cursor:pointer;text-align:center;line-height:1.3}
+.cta:active{background:var(--ctaD)}
+.cta .s{display:block;font-size:12.5px;font-weight:600;opacity:.82;margin-top:3px;
+  letter-spacing:0}
+.paynote{text-align:center;font-size:12.5px;color:var(--mut);margin:9px 0 20px}
+
+/* 11 — accordions */
+.acc{border-top:1px solid var(--line)}
+.acc:last-of-type{border-bottom:1px solid var(--line)}
+.acc summary{display:flex;align-items:center;gap:10px;padding:15px 0;cursor:pointer;
+  font-size:15px;font-weight:700;list-style:none}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .ic{font-size:17px;width:22px;text-align:center;flex:none}
+.acc summary .ch{margin-left:auto;font-size:13px;color:var(--mut);transition:transform .2s}
+.acc[open] summary .ch{transform:rotate(180deg)}
+.acc .bd{padding:0 0 16px;font-size:14.5px;color:#3f3f3f;line-height:1.6}
+.acc .bd ul{margin:8px 0 0 18px}
+.acc .bd li{margin-bottom:3px}
+
+.dvd{height:1px;background:var(--line);margin:30px 0}
+
+/* 13/15 — content sections */
+.sec{padding:6px 0}
+.sec h2{font-size:26px;line-height:1.2;font-weight:900;margin-bottom:11px;letter-spacing:-.01em}
+.sec p.lead{font-size:15px;color:#3f3f3f;line-height:1.6;margin-bottom:16px}
+.sec img.wide{border-radius:12px;margin-bottom:18px}
+.fblocks{display:grid;gap:17px}
+.fb{display:flex;gap:12px;align-items:flex-start}
+.fb .ic{font-size:22px;flex:none;width:28px;text-align:center;line-height:1.3}
+.fb b{display:block;font-size:15.5px;font-weight:800;margin-bottom:3px;line-height:1.3}
+.fb span{font-size:14px;color:#4a4a4a;line-height:1.55}
+
+/* 17 — spec cards (replaces the source's study bars) */
+.specs{display:grid;gap:12px;margin-top:4px}
+.spc{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--wash)}
+.spc .k{font-size:11px;font-weight:900;letter-spacing:.1em;color:var(--copper);
+  margin-bottom:6px}
+.spc b{display:block;font-size:18px;font-weight:900;margin-bottom:4px}
+.spc span{font-size:14px;color:#4a4a4a;line-height:1.55}
+
+/* 19 — reviews */
+.rv{border:1px solid var(--line);border-radius:12px;padding:15px;margin-bottom:11px}
+.rv .top{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.rv .top .s{color:#f5a623;font-size:13px;letter-spacing:1px}
+.rv .top .n{font-size:13px;font-weight:800}
+.rv .top .v{font-size:11px;color:var(--green);font-weight:700}
+.rv b.ti{display:block;font-size:14.5px;font-weight:800;margin-bottom:4px}
+.rv p{font-size:14px;color:#4a4a4a;line-height:1.55}
+.rvhead{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.rvhead .big{font-size:30px;font-weight:900}
+.rvhead .cnt{font-size:13px;color:var(--mut)}
+
+/* footer */
+footer{background:var(--wash);margin-top:34px;padding:26px 0 34px;border-top:1px solid var(--line)}
+footer .lk{display:flex;flex-wrap:wrap;gap:9px 16px;justify-content:center;margin-bottom:14px}
+footer .lk a{font-size:13px;color:#3f3f3f;text-decoration:underline}
+footer .cp{text-align:center;font-size:12.5px;color:var(--mut);margin-bottom:12px}
+footer .ds{font-size:11.5px;color:#7a7a7a;line-height:1.55}
+footer .ds p{margin-bottom:7px}
+</style>
+</head>
+<body>
+
+<!-- 1 — announcement marquee -->
+<div class="mq"><div class="tk">
+  <span>☀️ LETNJA PONUDA — kupiš 1 prsten, dobijaš 2</span>
+  <span>Plaćanje pouzećem · isporuka 2–4 radna dana</span>
+  <span>☀️ LETNJA PONUDA — kupiš 1 prsten, dobijaš 2</span>
+  <span>Plaćanje pouzećem · isporuka 2–4 radna dana</span>
+</div></div>
+
+<!-- 2 — sticky header -->
+<header class="hdr"><div class="in">
+  <span class="ic" aria-hidden="true">☰</span>
+  <div class="logo">SMIRAJ</div>
+  <span class="ic" aria-hidden="true">🔍</span>
+  <span class="ic" aria-hidden="true">🛍️</span>
+</div></header>
+
+<!-- 3 — gallery -->
+<div class="gal">
+  <div class="stage">
+    <img id="stage" src="assets/color-srebro.jpg" alt="SMIRAJ magnetni prsten — Srebro">
+    <button class="nav p" id="prev" aria-label="Prethodna slika">‹</button>
+    <button class="nav n" id="next" aria-label="Sledeća slika">›</button>
+  </div>
+  <div class="thumbs" id="thumbs"></div>
+</div>
+
+<div class="wrap">
+
+  <!-- 4 — pink offer banner -->
+  <div class="pbn">🎁 Poslednji dani!<br>Kupiš 1 prsten = dobijaš 2</div>
+
+  <!-- 5 — title -->
+  <h1>Magnetni prsten koji staje na svaki prst</h1>
+
+  <!-- 6 — rating (PLACEHOLDER: replace score + count with real numbers before ads) -->
+  <div class="rate">
+    <span class="st"><i></i><i></i><i></i><i></i><i class="h"></i></span>
+    <span class="lb">4,7/5 Odlično | 1.100+ recenzija</span>
+  </div>
+
+  <!-- 7 — benefit lines -->
+  <div class="blines">
+    <div class="bline"><span class="ic">🔧</span><span><b>Veličina:</b> otvoren, podesiv obruč — staje na svaki prst, bez merenja i bez pogrešnog broja.</span></div>
+    <div class="bline"><span class="ic">🚿</span><span><b>Voda:</b> otporan na vodu i koroziju — nosiš ga pod tušem, u bazenu i na moru.</span></div>
+    <div class="bline"><span class="ic">🛡️</span><span><b>Koža:</b> nerđajući čelik bez nikla — ne tamni i ne ostavlja zelene tragove.</span></div>
+    <div class="bline"><span class="ic">🪶</span><span><b>Težina:</b> samo 6 g i 1,2 mm debljine — ne smeta pri kucanju, vožnji ni spavanju.</span></div>
+  </div>
+
+  <!-- 8 — cream dashed banner -->
+  <div class="wbn">
+    <b>☀️ LETNJA PONUDA ☀️</b>
+    <p><b>Uz paket od 2 prstena drugi prsten je gratis</b>, a dostava ti je besplatna. Ponuda važi do isteka zaliha.</p>
+  </div>
+
+  <!-- 9 — offer card -->
+  <div class="oc">
+    <div class="step">#1 IZABERI PAKET:</div>
+    <div id="pks"></div>
+    <div class="step" style="margin-top:16px">#2 IZABERI BOJU:</div>
+    <div class="sw" id="sw"></div>
+  </div>
+
+  <!-- 10 — CTA -->
+  <button class="cta" id="atc" onclick="kupi()">Naruči — plaćanje pouzećem
+    <span class="s" id="ctasub"></span></button>
+  <div class="paynote">Plaćaš kuriru na vratima · isporuka 2–4 radna dana</div>
+
+  <!-- 11 — accordions -->
+  <details class="acc"><summary><span class="ic">🔧</span>Podesiva veličina (one-size)<span class="ch">▾</span></summary>
+    <div class="bd">Prsten je otvoren i podesiv — blago ga raširiš ili stisneš prstima dok ne legne. Odgovara i muškim i ženskim prstima, od malog prsta do palca. Ne moraš da znaš svoj broj.</div></details>
+
+  <details class="acc"><summary><span class="ic">ℹ️</span>Dodatni detalji<span class="ch">▾</span></summary>
+    <div class="bd">Materijal:
+      <ul><li>Nerđajući čelik, bez nikla</li><li>Debljina: 1,2 mm</li><li>Težina: 6 g</li><li>Četiri magneta ugrađena u obruč</li></ul>
+      <p style="margin-top:8px">Boje: srebro, zlato, roze zlato i mat crna.</p></div></details>
+
+  <details class="acc"><summary><span class="ic">💵</span>Plaćanje pouzećem<span class="ch">▾</span></summary>
+    <div class="bd">Da — za sve porudžbine sa ovog sajta plaćaš pouzećem. Novac daješ kuriru, gotovinom ili karticom, tek kada ti paket stigne na vrata.</div></details>
+
+  <details class="acc"><summary><span class="ic">🚚</span>Isporuka za 2–4 radna dana<span class="ch">▾</span></summary>
+    <div class="bd">Šaljemo na celu teritoriju Srbije. Dostava je besplatna za pakete od 2 i više prstenova; uz pojedinačan prsten dostava se naplaćuje 390 RSD.</div></details>
+
+  <details class="acc"><summary><span class="ic">↩️</span>30 dana garancije<span class="ch">▾</span></summary>
+    <div class="bd">Ako se predomisliš, nekorišćen prsten vraćaš u roku od 30 dana od prijema pošiljke i dobijaš pun povraćaj novca. Za povraćaj nam se javi na e-poštu iz kontakt stranice.</div></details>
+
+  <div class="dvd"></div>
+
+  <!-- 13 — main content section -->
+  <section class="sec">
+    <h2>Jedan prsten, svaki prst</h2>
+    <p class="lead">Prsten se najčešće ne kupuje zato što ne znaš broj. Merenje koncem, tabele koje se međusobno ne slažu, pa onda vraćanje i čekanje zamene. SMIRAJ je otvoren obruč — blago ga raširiš ili stisneš prstima i legne tamo gde ga staviš.</p>
+    <img class="wide" src="assets/lifestyle.jpg" alt="SMIRAJ prsten na ruci">
+    <div class="fblocks">
+      <div class="fb"><span class="ic">🔧</span><div><b>Podesiv rukama, za petnaest sekundi</b><span>Bez alata i bez odlaska kod juvelira. Otvor okreneš ka dlanu, blago stisneš i proveriš da možeš da ga okreneš oko prsta.</span></div></div>
+      <div class="fb"><span class="ic">🛡️</span><div><b>Nerđajući čelik bez nikla</b><span>Ne oksidira i ne ostavlja zelene tragove kao pozlaćen nakit. Pogodan i za osetljivu kožu.</span></div></div>
+      <div class="fb"><span class="ic">🚿</span><div><b>Ne skidaš ga</b><span>Otporan je na vodu i koroziju — ostaje na prstu pod tušem, na treningu, pri pranju sudova i na moru.</span></div></div>
+      <div class="fb"><span class="ic">🎨</span><div><b>Četiri boje, isti oblik</b><span>Srebro, zlato, roze zlato i mat crna — biraš onu koja ide uz ostatak tvog nakita.</span></div></div>
+    </div>
+  </section>
+
+  <div class="dvd"></div>
+
+  <!-- 15 — image with text -->
+  <section class="sec">
+    <h2>Detalj koji se primeti</h2>
+    <p class="lead">Široka satenirana traka sa tankim urezanim linijama uz obe ivice i četiri magneta uglavljena u sam obruč — ne vire i ne kače se za odeću. Dovoljno diskretan za kancelariju, dovoljno upadljiv da ga neko pohvali.</p>
+    <img class="wide" src="assets/detail.jpg" alt="Detalj — otvoreni obruč i četiri magneta">
+    <p class="lead" style="margin-bottom:0">Nosi se sam ili uz ostali nakit, na kažiprstu, malom prstu ili palcu — muški i ženski, isti komad.</p>
+  </section>
+
+  <div class="dvd"></div>
+
+  <!-- 17 — spec cards -->
+  <section class="sec">
+    <h2>Šta tačno dobijaš</h2>
+    <p class="lead">Bez sitnih slova — evo tačno šta stiže u paketu.</p>
+    <div class="specs">
+      <div class="spc"><div class="k">MATERIJAL</div><b>Nerđajući čelik, bez nikla</b><span>Ne tamni, ne rđa i ne ostavlja tragove na koži. Isti materijal koji se koristi za satove i hirurške instrumente.</span></div>
+      <div class="spc"><div class="k">DIMENZIJE</div><b>1,2 mm · 6 g</b><span>Tanak profil i mala težina — posle par sati zaboraviš da ga imaš na prstu.</span></div>
+      <div class="spc"><div class="k">VELIČINA</div><b>Jedna, podesiva</b><span>Otvoren obruč koji prilagodiš prstima. Od malog prsta do palca, muški i ženski.</span></div>
+    </div>
+    <img class="wide" src="assets/specs.jpg" alt="Specifikacija — materijal, debljina, težina, veličina" style="margin-top:18px">
+  </section>
+
+  <div class="dvd"></div>
+
+  <!-- 18 — FAQ -->
+  <section class="sec">
+    <h2 style="text-align:center;font-size:22px;letter-spacing:.06em;margin-bottom:16px">ČESTA PITANJA</h2>
+    <details class="acc"><summary><span class="ic">❓</span>Kako da znam koja mi veličina treba?<span class="ch">▾</span></summary>
+      <div class="bd">Ne moraš da znaš. Prsten je otvoren i podesiv — blago ga raširiš ili stisneš prstima dok ne legne. Odgovara i muškim i ženskim prstima, od malog prsta do palca.</div></details>
+    <details class="acc"><summary><span class="ic">❓</span>Koliko dugo mogu da ga nosim?<span class="ch">▾</span></summary>
+      <div class="bd">Koliko god želiš. Napravljen je od nerđajućeg čelika bez nikla, pa ga većina kupaca nosi svakog dana.</div></details>
+    <details class="acc"><summary><span class="ic">❓</span>Da li tamni ili ostavlja tragove na koži?<span class="ch">▾</span></summary>
+      <div class="bd">Ne. Nerđajući čelik ne oksidira i ne ostavlja zelene tragove kao pozlaćen nakit.</div></details>
+    <details class="acc"><summary><span class="ic">❓</span>Mogu li da ga nosim u vodi?<span class="ch">▾</span></summary>
+      <div class="bd">Da. Otporan je na vodu i koroziju — možeš ga nositi pod tušem, u bazenu i na moru.</div></details>
+    <details class="acc"><summary><span class="ic">❓</span>Da li je važno na kom prstu ga nosim?<span class="ch">▾</span></summary>
+      <div class="bd">Nije. Nosi ga na prstu na kom ti je najudobnije.</div></details>
+    <details class="acc"><summary><span class="ic">❓</span>Čemu služe magneti?<span class="ch">▾</span></summary>
+      <div class="bd">Magneti su ugrađeni u obruč kao deo dizajna prstena. SMIRAJ je modni i wellness dodatak, a <b>ne medicinsko sredstvo</b> — ne služi za lečenje niti ublažavanje bilo koje tegobe. Ako imaš pejsmejker ili ugrađen medicinski uređaj, posavetuj se sa lekarom pre nošenja predmeta sa magnetima.</div></details>
+    <details class="acc"><summary><span class="ic">❓</span>Kako plaćam?<span class="ch">▾</span></summary>
+      <div class="bd">Pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata.</div></details>
+    <details class="acc"><summary><span class="ic">❓</span>Koliko traje isporuka?<span class="ch">▾</span></summary>
+      <div class="bd">2–4 radna dana na celoj teritoriji Srbije. Dostava je besplatna za pakete od 2 i više prstenova.</div></details>
+  </section>
+
+  <div class="dvd"></div>
+
+  <!-- 19 — reviews (PLACEHOLDER: replace with real reviews before ads) -->
+  <section class="sec">
+    <h2 style="font-size:22px;margin-bottom:10px">Ocene kupaca</h2>
+    <div class="rvhead">
+      <span class="big">4,7</span><span class="cnt">od 5 · 1.100+ recenzija</span>
+    </div>
+    <div class="rv"><div class="top"><span class="s">★★★★★</span><span class="n">Jelena P.</span><span class="v">Kupac</span></div>
+      <b class="ti">Nisam znala broj</b><p>Naručivala sam prsten preko interneta dva puta i oba puta promašila veličinu. Ovaj sam samo blago stisnula i stoji.</p></div>
+    <div class="rv"><div class="top"><span class="s">★★★★★</span><span class="n">Miloš R.</span><span class="v">Kupac</span></div>
+      <b class="ti">Ne skidam ga</b><p>Nosim ga i na treningu i pod tušem. Posle mesec dana izgleda isto kao prvog dana.</p></div>
+    <div class="rv"><div class="top"><span class="s">★★★★☆</span><span class="n">Ana T.</span><span class="v">Kupac</span></div>
+      <b class="ti">Uzeli smo dva</b><p>Naručila sam srebrni, mužu se dopao pa je uzeo mat crni iz istog paketa.</p></div>
+  </section>
+
+</div>
+
+<footer><div class="wrap">
+  <div class="lk">
+    <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>
+    <a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>
+    <a href="https://rs.unikatko.eu/policies/shipping-policy">Dostava</a>
+    <a href="https://rs.unikatko.eu/policies/refund-policy">Povraćaj novca</a>
+    <a href="https://rs.unikatko.eu/policies/terms-of-service">Uslovi korišćenja</a>
+  </div>
+  <div class="cp">© 2026 Unikatko d.o.o.</div>
+  <div class="ds">
+    <p>‡ Garancija povraćaja novca važi 30 dana od datuma prijema pošiljke i odnosi se na nekorišćen proizvod u originalnom pakovanju.</p>
+    <p>* SMIRAJ je modni i wellness dodatak od nerđajućeg čelika. Nije medicinsko sredstvo i nije namenjen dijagnostici, lečenju, ublažavanju niti sprečavanju bilo koje bolesti ili tegobe. Ne zamenjuje savet lekara. Osobe sa pejsmejkerom, ugrađenim medicinskim uređajem ili u trudnoći treba da se posavetuju sa lekarom pre nošenja predmeta sa magnetima.</p>
+  </div>
+</div></footer>
+
+<script>
+var BASE = 'https://rs.unikatko.eu';
+/* variantId per (paket, boja) — Shopify RS product 15647029100809 */
+var TIERS = [
+  {q:1, label:'1 prsten',  sub:'Pojedinačan prsten',      total:2499, cmp:4999,  per:2499, ship:true,  badge:null,
+   v:{'Srebro':'57243245379849','Zlato':'57243245412617','Roze zlato':'57243245445385','Mat crna':'57243245478153'}},
+  {q:2, label:'2 prstena', sub:'Drugi prsten je gratis',  total:3490, cmp:9998,  per:1745, ship:false, badge:'1+1 GRATIS',
+   v:{'Srebro':'57243245510921','Zlato':'57243245543689','Roze zlato':'57243245576457','Mat crna':'57243245609225'}},
+  {q:4, label:'4 prstena', sub:'Dva prstena su gratis',   total:5980, cmp:19996, per:1495, ship:false, badge:'2+2 GRATIS',
+   v:{'Srebro':'57243245641993','Zlato':'57243245674761','Roze zlato':'57243245707529','Mat crna':'57243245740297'}}
+];
+var COLORS = [
+  {name:'Srebro',     hex:'#c9ced2', img:'assets/color-srebro.jpg'},
+  {name:'Zlato',      hex:'#d5b160', img:'assets/color-zlato.jpg'},
+  {name:'Roze zlato', hex:'#d8a08a', img:'assets/color-roze.jpg'},
+  {name:'Mat crna',   hex:'#2c2c2c', img:'assets/color-crna.jpg'}
+];
+var GAL = [
+  {src:'assets/color-srebro.jpg', alt:'SMIRAJ magnetni prsten — Srebro'},
+  {src:'assets/benefits.jpg',     alt:'Zašto baš SMIRAJ'},
+  {src:'assets/lifestyle.jpg',    alt:'SMIRAJ prsten na ruci'},
+  {src:'assets/detail.jpg',       alt:'Detalj — otvoreni obruč i četiri magneta'},
+  {src:'assets/color-zlato.jpg',  alt:'SMIRAJ magnetni prsten — Zlato'},
+  {src:'assets/color-roze.jpg',   alt:'SMIRAJ magnetni prsten — Roze zlato'},
+  {src:'assets/color-crna.jpg',   alt:'SMIRAJ magnetni prsten — Mat crna'},
+  {src:'assets/specs.jpg',        alt:'Specifikacija — materijal, debljina, težina'}
+];
+
+var ti = 1;   /* mirrors the source page: the 1+1 offer is preselected */
+var ci = 0;
+var gi = 0;
+
+function fmt(n){ return n.toLocaleString('de-DE') + ' RSD'; }
+
+function renderPks(){
+  var h = '';
+  for (var i = 0; i < TIERS.length; i++) {
+    var t = TIERS[i];
+    h += '<button type="button" class="pk' + (i === ti ? ' on' : '') + '" onclick="pick(' + i + ')">'
+       + (t.badge ? '<span class="bg">' + t.badge + '</span>' : '')
+       + '<span class="rd"></span>'
+       + '<span class="tx"><b>' + t.label + '</b><span>' + t.sub + ' · ' + fmt(t.per) + '/kom'
+       + (t.ship ? ' + dostava' : '') + '</span></span>'
+       + '<span class="pr"><s>' + fmt(t.cmp) + '</s><b>' + fmt(t.total) + '</b></span>'
+       + '</button>';
+  }
+  document.getElementById('pks').innerHTML = h;
+}
+function renderSw(){
+  var h = '';
+  for (var i = 0; i < COLORS.length; i++) {
+    h += '<button type="button" class="' + (i === ci ? 'on' : '') + '" onclick="pickColor(' + i + ')">'
+       + '<span class="dot" style="background:' + COLORS[i].hex + '"></span>'
+       + '<span class="nm">' + COLORS[i].name + '</span></button>';
+  }
+  document.getElementById('sw').innerHTML = h;
+}
+function renderThumbs(){
+  var h = '';
+  for (var i = 0; i < GAL.length; i++) {
+    h += '<img src="' + GAL[i].src + '" alt="' + GAL[i].alt + '" class="' + (i === gi ? 'on' : '')
+       + '" onclick="showGal(' + i + ')">';
+  }
+  document.getElementById('thumbs').innerHTML = h;
+}
+function showGal(i){
+  gi = (i + GAL.length) % GAL.length;
+  var s = document.getElementById('stage');
+  s.src = GAL[gi].src; s.alt = GAL[gi].alt;
+  renderThumbs();
+}
+function sub(){
+  var t = TIERS[ti];
+  document.getElementById('ctasub').textContent =
+    t.label + ' · ' + COLORS[ci].name + ' · ' + fmt(t.total) + (t.ship ? ' + dostava' : ' · besplatna dostava');
+}
+function pick(i){ ti = i; renderPks(); sub(); }
+function pickColor(i){
+  ci = i; renderSw(); sub();
+  /* selecting a colour swaps the first gallery slot and shows it */
+  GAL[0] = {src: COLORS[ci].img, alt: 'SMIRAJ magnetni prsten — ' + COLORS[ci].name};
+  showGal(0);
+}
+function kupi(){ location.href = BASE + '/cart/' + TIERS[ti].v[COLORS[ci].name] + ':1'; }
+
+document.getElementById('prev').onclick = function(){ showGal(gi - 1); };
+document.getElementById('next').onclick = function(){ showGal(gi + 1); };
+
+renderPks(); renderSw(); renderThumbs(); sub();
+</script>
+</body>
+</html>
