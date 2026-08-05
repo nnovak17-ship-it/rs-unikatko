@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NIJANSA — Šampon u boji za sede | Gotovo za 10 minuta</title>
+<style>
+/* NIJANSA LP B — sr-Latn-RS. Hand-built 1:1 structural replica. Self-contained. */
+:root{
+  --navy:#2c3452; --navy2:#1b2138; --ink:#1e2123; --mut:#6b7280;
+  --line:#e5e7eb; --wash:#f4f4f4; --soft:#dddee2;
+  --ok:#16a34a; --bad:#dc2626; --redsoft:#fecaca; --redline:#f87171;
+  --grnsoft:#d1fae5; --grnline:#6ee7b7; --gold:#f5b301;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;overflow-x:hidden}
+body{font-family:'Lato',-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased;
+  padding-bottom:96px}
+img{max-width:100%;display:block}
+h1,h2,h3,h4,p{margin:0}
+.wrap{max-width:600px;margin:0 auto;padding:0 16px}
+
+/* --- bars + header --- */
+.ann1{background:var(--ink);color:rgba(244,244,244,.82);text-align:center;
+  font-size:13.5px;font-weight:700;letter-spacing:.09em;padding:11px 12px;text-transform:uppercase}
+header{display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;background:var(--wash);position:sticky;top:0;z-index:60}
+header .ico{font-size:21px;text-decoration:none;color:var(--ink);line-height:1}
+.logo{font-weight:400;font-size:23px;letter-spacing:.34em;color:var(--ink);text-align:center}
+.logo small{display:block;font-size:8.5px;letter-spacing:.3em;margin-top:2px;color:var(--mut)}
+.ann2{background:var(--navy);color:#fff;text-align:center;font-size:13.5px;font-weight:700;
+  letter-spacing:.05em;padding:13px 12px;text-transform:uppercase}
+
+/* --- gallery --- */
+.gal{padding:16px 16px 0;max-width:600px;margin:0 auto}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  border-radius:10px;background:var(--wash)}
+.slides::-webkit-scrollbar{display:none}
+.slides img{min-width:100%;scroll-snap-align:center;aspect-ratio:1/1;object-fit:cover}
+.dots{display:flex;gap:7px;justify-content:center;padding:12px 0 4px}
+.dots i{width:28px;height:4px;border-radius:3px;background:#d4d4d4;display:block;cursor:pointer}
+.dots i.on{background:var(--ink)}
+
+/* --- headline block --- */
+.rate{display:flex;align-items:center;gap:9px;padding:6px 0 2px;font-size:15px}
+.rate .st{color:var(--gold);font-size:19px;letter-spacing:1px}
+.rate b{font-weight:800}
+h1.pt{font-size:33px;font-weight:800;letter-spacing:-.02em;margin:6px 0 6px;line-height:1.08}
+.sub{font-size:16.5px;letter-spacing:.01em;text-transform:uppercase;color:#2b3344;font-weight:500}
+hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
+.prow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.prow s{font-size:20px;color:#9aa0a6;font-weight:500}
+.prow .now{font-size:29px;font-weight:800;letter-spacing:-.02em}
+.prow .save{background:var(--navy2);color:#fff;font-size:12.5px;font-weight:800;
+  padding:8px 13px;border-radius:999px;letter-spacing:.02em;white-space:nowrap}
+.shipnote{font-size:13px;color:var(--mut);margin-top:6px}
+
+/* --- bullets card --- */
+.bcard{border:1px solid var(--line);border-radius:12px;padding:16px 12px;margin:18px 0 4px;
+  display:grid;grid-template-columns:1fr 1fr;gap:16px 10px}
+.bcard div{display:flex;gap:9px;align-items:flex-start;font-size:14.5px;line-height:1.28}
+.bcard .c{width:19px;height:19px;flex:none;border-radius:50%;background:var(--ok);color:#fff;
+  display:grid;place-items:center;font-size:11px;font-weight:900;margin-top:1px}
+.bcard b{display:block;font-weight:800}
+
+/* --- colour swatches --- */
+.opth{font-size:17px;font-weight:800;margin:24px 0 10px}
+.opth span{font-weight:400}
+.swrow{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.swrow::-webkit-scrollbar{display:none}
+.sw{flex:none;width:72px;text-align:center;cursor:pointer;background:none;border:0;padding:0;font:inherit}
+.sw .im{width:72px;height:72px;border-radius:10px;overflow:hidden;background:var(--wash);
+  border:2px solid transparent;box-shadow:inset 0 0 0 1px var(--line)}
+.sw.on .im{border-color:var(--ink);box-shadow:none}
+.sw .im img{width:100%;height:100%;object-fit:cover}
+.sw span{display:block;font-size:12.5px;margin-top:6px;line-height:1.2;color:#2b3344}
+.sw.on span{font-weight:800}
+
+/* --- quantity grid --- */
+.qgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.qcol{display:flex;flex-direction:column;gap:8px;align-items:center}
+.qbox{position:relative;width:100%;border:1px solid var(--line);border-radius:8px;background:#fafafa;
+  min-height:86px;display:grid;place-items:center;cursor:pointer;padding:10px 4px;text-align:center}
+.qbox b{font-size:16px;font-weight:800;color:var(--ink)}
+.qcol.on .qbox{background:var(--navy);border-color:var(--navy)}
+.qcol.on .qbox b{color:#fff}
+.ribbon{position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;
+  font-size:9.5px;font-weight:800;letter-spacing:.02em;padding:4px 9px;border-radius:999px;
+  border:1px solid var(--redline);background:var(--redsoft);color:var(--bad)}
+.ribbon.g{border-color:var(--grnline);background:var(--grnsoft);color:#047857}
+.qper{font-size:13.5px;font-weight:800;color:var(--navy)}
+
+/* --- exclusive gift --- */
+.excl{width:100%;border:1px solid #d1d5db;border-radius:12px;overflow:hidden;margin:22px 0 16px}
+.excl .hd{background:var(--navy);color:#fff;font-size:14px;font-weight:800;
+  letter-spacing:.04em;padding:9px 14px;text-transform:uppercase}
+.excl .bd{background:var(--soft);padding:12px;display:flex;gap:12px;align-items:center}
+.excl .th{width:70px;height:70px;flex:none;border:1px solid #d1d5db;border-radius:8px;
+  overflow:hidden;background:#fff}
+.excl .th img{width:100%;height:100%;object-fit:cover}
+.excl .t1{font-size:14.5px;font-weight:800;color:#2b3344;line-height:1.2}
+.excl .t2{font-size:13px;color:#6b7280;text-decoration:line-through;margin-top:2px}
+.excl .t3{font-size:13px;color:#000;margin-top:2px}
+.excl .t3 u{text-underline-offset:3px}
+.excl .pill{display:inline-flex;align-items:center;gap:5px;margin-top:7px;font-size:11.5px;
+  font-weight:800;color:var(--bad);background:var(--redsoft);border:1px solid var(--redline);
+  padding:4px 9px;border-radius:999px}
+
+/* --- ATC --- */
+.atc{display:block;width:100%;border:0;border-radius:8px;cursor:pointer;
+  background:linear-gradient(120deg,var(--navy2),#3a3f6b 45%,var(--navy2));
+  color:#fff;font-family:inherit;font-size:18px;font-weight:700;letter-spacing:.04em;
+  padding:17px 12px;text-align:center;text-transform:uppercase}
+.atc:active{filter:brightness(.92)}
+.mbg{text-align:center;font-size:15px;margin:16px 0 4px}
+.mbg b{display:block;font-weight:800}
+.mbg span{color:#3f4650}
+
+/* --- low stock --- */
+.warn{border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0}
+.warn h4{font-size:18px;font-weight:500;display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.warn h4 i{width:22px;height:22px;flex:none;border:1.5px solid var(--ink);border-radius:50%;
+  display:grid;place-items:center;font-size:13px;font-style:normal;font-weight:700}
+.warn p{font-size:14.5px;color:#2b3344;margin-bottom:8px}
+.warn u{text-underline-offset:3px}
+
+/* --- accordions --- */
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;padding:17px 30px 17px 0;position:relative;
+  font-size:17px;font-weight:800}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"⌄";position:absolute;right:6px;top:12px;font-size:19px;color:#4b5563}
+.acc details[open] summary::after{content:"⌃";top:17px}
+.acc .body{padding:0 0 16px;font-size:14.5px;color:#374151}
+.acc .body p{margin-bottom:9px}
+.acc .body ul{margin:0 0 9px;padding-left:18px}
+.acc .body li{margin-bottom:5px}
+
+/* --- trust grid --- */
+.tgrid{border:1px solid var(--line);border-radius:12px;padding:20px 12px;margin:20px 0;
+  display:grid;grid-template-columns:1fr 1fr;gap:22px 8px;text-align:center}
+.tgrid .ic{font-size:24px;line-height:1}
+.tgrid b{display:block;font-size:14.5px;font-weight:800;margin:8px 0 3px}
+.tgrid span{font-size:13.5px;color:#3f4650}
+
+/* --- ugc carousel --- */
+.ugc{padding:8px 0 24px}
+.ugc h2{text-align:center;font-size:26px;font-weight:800;line-height:1.15;margin-bottom:16px}
+.ugcrow{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;padding:0 16px}
+.ugcrow::-webkit-scrollbar{display:none}
+.ugcrow .u{position:relative;flex:none;width:80%;max-width:300px;scroll-snap-align:center;
+  border-radius:12px;overflow:hidden;background:var(--wash)}
+.ugcrow .u img{width:100%;aspect-ratio:9/13;object-fit:cover}
+.ugcrow .play{position:absolute;inset:0;display:grid;place-items:center}
+.ugcrow .play i{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.55);
+  display:grid;place-items:center;font-style:normal;font-size:22px;color:#fff;padding-left:5px}
+.ugcrow .u .tag{position:absolute;left:10px;bottom:10px;background:rgba(30,33,35,.75);color:#fff;
+  font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:4px 8px;border-radius:6px}
+.arrs{display:flex;gap:26px;justify-content:center;padding-top:14px}
+.arrs button{width:34px;height:34px;border:0;background:none;font-size:26px;color:#2b3344;cursor:pointer;line-height:1}
+
+/* --- marquee band --- */
+.mq{background:linear-gradient(90deg,var(--navy2),var(--navy));color:#fff;padding:16px 0 18px;overflow:hidden}
+.mq .h{text-align:center;font-size:14px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:12px}
+.mqtrack{display:flex;gap:34px;width:max-content;animation:slide 22s linear infinite}
+.mqtrack span{font-size:14.5px;font-weight:800;letter-spacing:.1em;white-space:nowrap;
+  text-transform:uppercase;opacity:.92}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* --- feature list --- */
+.feat{background:var(--wash);padding:28px 0}
+.feat h2{text-align:center;font-size:17px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+.feat h2 b{display:block;font-size:27px;font-weight:800;letter-spacing:-.01em;text-transform:uppercase}
+.feat .lead{text-align:center;font-size:15px;color:#3f4650;margin:8px 0 18px}
+.feat .shot{border-radius:12px;overflow:hidden;margin-bottom:16px}
+.frow{display:flex;gap:12px;padding:13px 0;border-top:1px solid #e2e2e2}
+.frow .n{width:34px;height:34px;flex:none;border-radius:50%;background:var(--navy);color:#fff;
+  display:grid;place-items:center;font-size:15px;font-weight:800}
+.frow b{display:block;font-size:14.5px;font-weight:800;text-transform:uppercase;letter-spacing:.02em}
+.frow span{font-size:14px;color:#3f4650}
+
+/* --- results carousel --- */
+.res{padding:30px 0 26px}
+.res .stars{text-align:center;color:var(--gold);font-size:22px;letter-spacing:2px}
+.res h2{text-align:center;font-size:27px;font-weight:800;line-height:1.14;margin:10px 0 16px;
+  text-transform:uppercase}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px;margin-bottom:18px}
+.tabs button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:16px 6px;
+  font-family:inherit;font-size:14px;font-weight:800;letter-spacing:.03em;cursor:pointer;
+  text-transform:uppercase;color:var(--ink)}
+.tabs button.on{background:var(--navy2);border-color:var(--navy2);color:#fff}
+.rrow{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 16px}
+.rrow::-webkit-scrollbar{display:none}
+.rcard{flex:none;width:84%;max-width:330px;scroll-snap-align:center;
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.rcard .ph{position:relative;background:var(--wash)}
+.rcard .ph img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.rcard .ph .lb{position:absolute;bottom:12px;left:12px;background:#fff;color:var(--ink);
+  font-size:12px;font-weight:800;letter-spacing:.04em;padding:7px 14px;border-radius:999px}
+.rcard .ph .lb.a{left:auto;right:12px;background:var(--navy2);color:#fff}
+.rcard .bd{padding:14px}
+.rcard .bd .st{color:var(--gold);font-size:17px;letter-spacing:1px}
+.rcard .bd p{font-size:14.5px;margin:8px 0 12px;color:#2b3344}
+.rcard .who{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:13px;font-weight:700}
+.rcard .vb{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);
+  border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800;letter-spacing:.03em}
+.rcard .vb i{width:16px;height:16px;border-radius:50%;background:var(--ink);color:#fff;
+  display:grid;place-items:center;font-style:normal;font-size:9px}
+
+/* --- 4 reasons --- */
+.four{padding:30px 0 8px}
+.four .kick{text-align:center;font-size:13px;font-weight:800;letter-spacing:.2em;color:var(--navy);
+  text-transform:uppercase}
+.four h2{text-align:center;font-size:26px;font-weight:800;line-height:1.16;margin:8px 0 18px}
+.fcard{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px;
+  display:flex;gap:13px;align-items:flex-start}
+.fcard .ic{font-size:26px;line-height:1;flex:none}
+.fcard b{display:block;font-size:15px;font-weight:800;text-transform:uppercase;
+  letter-spacing:.02em;margin-bottom:4px}
+.fcard span{font-size:14.5px;color:#3f4650}
+
+/* --- comparison --- */
+.cmp{padding:26px 0 30px}
+.cmp h2{text-align:center;font-size:28px;font-weight:800;letter-spacing:-.01em}
+.cmp .lead{text-align:center;font-size:15px;color:#3f4650;margin:12px 0 22px}
+.cwrap{position:relative;border-radius:14px;overflow:hidden}
+.cwrap .cols{display:grid;grid-template-columns:1fr 1fr;min-height:100%}
+.cwrap .cols .l{background:linear-gradient(160deg,var(--navy2),#22284a);padding:22px 10px}
+.cwrap .cols .r{background:#f1f1f1;padding:22px 10px}
+.cwrap .cols .l b{display:block;color:#fff;font-size:19px;font-weight:400;letter-spacing:.26em;text-align:center}
+.cwrap .cols .r b{display:block;color:var(--ink);font-size:19px;font-weight:800;text-align:center;line-height:1.2}
+.crows{position:relative;padding:14px 10px 16px;margin-top:-8px}
+.crow{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.09);
+  padding:12px 12px 13px;margin-bottom:12px}
+.crow .lab{text-align:center;font-size:14.5px;font-weight:800;text-transform:uppercase;
+  letter-spacing:.02em;margin-bottom:9px}
+.crow .vals{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px}
+.crow .vals .v{display:flex;align-items:center;gap:7px}
+.crow .m{width:20px;height:20px;flex:none;border-radius:50%;display:grid;place-items:center;
+  font-size:11px;font-weight:900;color:#fff}
+.crow .m.y{background:var(--ok)} .crow .m.n{background:var(--bad)}
+
+/* --- guarantee --- */
+.gar{background:var(--wash);padding:30px 0;text-align:center}
+.gar .seal{width:118px;height:118px;margin:0 auto 16px;border-radius:50%;
+  border:3px solid var(--navy);color:var(--navy);display:grid;place-items:center;
+  font-size:15px;font-weight:800;line-height:1.15;text-transform:uppercase;background:#fff}
+.gar h2{font-size:26px;font-weight:800;line-height:1.14;text-transform:uppercase}
+.gar p{font-size:15px;color:#3f4650;margin-top:12px}
+
+/* --- faq --- */
+.faq{padding:30px 0 26px}
+.faq h2{text-align:center;font-size:26px;font-weight:800;line-height:1.14;
+  text-transform:uppercase;margin-bottom:14px}
+
+/* --- footer --- */
+footer{background:var(--ink);color:#a3a7ab;padding:26px 0;font-size:13.5px}
+footer .ab{font-size:14px;color:#c8cccf;margin-bottom:14px}
+footer .lk{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:center;margin:14px 0}
+footer a{color:#e2e5e7;text-decoration:none}
+footer .cp{text-align:center;font-size:12.5px;margin-top:6px}
+footer .disc{margin-top:14px;font-size:11px;line-height:1.55;color:#83888c}
+
+/* --- sticky ATC --- */
+.satc{position:fixed;left:0;right:0;bottom:0;z-index:80;background:#fff;
+  border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.09);
+  padding:9px 16px calc(10px + env(safe-area-inset-bottom))}
+.satc .in{max-width:600px;margin:0 auto;display:flex;align-items:center;gap:11px}
+.satc img{width:44px;height:44px;flex:none;border-radius:8px;object-fit:cover;background:var(--wash)}
+.satc .t b{display:block;font-size:13px;font-weight:800;line-height:1.2}
+.satc .t span{font-size:12px;color:var(--mut)}
+.satc .atc{margin-left:auto;width:auto;flex:none;padding:14px 16px;font-size:13px}
+
+@media(min-width:768px){ .gal{padding-left:0;padding-right:0} }
+</style>
+</head>
+<body>
+
+<div class="ann1">Letnja akcija je počela</div>
+
+<header>
+  <span class="ico">☰</span>
+  <span class="logo">NIJANSA<small>ZA KOSU</small></span>
+  <a class="ico" href="#ponuda" aria-label="Korpa">🛒</a>
+</header>
+
+<div class="ann2">Rezultat za 10 minuta ili vraćamo novac</div>
+
+<section class="gal">
+  <div class="slides" id="slides">
+    <img id="slide0" src="assets/color-crna.jpg" alt="NIJANSA šampon u boji — Crna">
+    <img src="assets/benefits.jpg" alt="Zašto baš NIJANSA">
+    <img src="assets/lifestyle.jpg" alt="Kosa bez sedih posle tuširanja">
+    <img src="assets/howto.jpg" alt="Kako se koristi NIJANSA">
+    <img src="assets/pack3.jpg" alt="NIJANSA komplet od 3 bočice">
+  </div>
+  <div class="dots" id="dots"></div>
+</section>
+
+<div class="wrap">
+  <!-- PLACEHOLDER rating — replace with real verified reviews before ads -->
+  <div class="rate"><span class="st">★★★★★</span><span><b>(12.480)</b> potvrđenih recenzija</span></div>
+  <h1 class="pt">Šampon u boji za sede</h1>
+  <div class="sub">Najlakši način da prekriješ sede</div>
+  <hr class="sep">
+
+  <div class="prow">
+    <s id="was"></s>
+    <span class="now" id="now"></span>
+    <span class="save" id="save"></span>
+  </div>
+  <div class="shipnote" id="shipnote"></div>
+
+  <div class="bcard">
+    <div><span class="c">✓</span><span>Prekriva sede<b>za 10 minuta</b></span></div>
+    <div><span class="c">✓</span><span>Čuva kosu —<b>bez amonijaka</b></span></div>
+    <div><span class="c">✓</span><span>Jednostavno kao<b>običan šampon</b></span></div>
+    <div><span class="c">✓</span><span>Odgovara<b>svim tipovima kose</b></span></div>
+  </div>
+
+  <div id="ponuda"></div>
+
+  <div class="opth">Izaberi nijansu: <span id="colname"></span></div>
+  <div class="swrow" id="swrow"></div>
+
+  <div class="opth">Izaberi pakovanje:</div>
+  <div class="qgrid" id="qgrid"></div>
+
+  <div class="excl">
+    <div class="hd">Ekskluzivno u akciji</div>
+    <div class="bd">
+      <div class="th"><img src="assets/pack3.jpg" alt="Poklon iznenađenja uz komplet od 3"></div>
+      <div>
+        <div class="t1">GRATIS poklon iznenađenja</div>
+        <div class="t2">vrednost 1.190 RSD</div>
+        <div class="t3">UZ <u>3 BOČICE</u></div>
+        <span class="pill">🚚 + besplatna dostava</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="atc" id="atc" onclick="kupi()"></button>
+
+  <div class="mbg">
+    <b>30 dana garancije povraćaja novca.</b>
+    <span>Ako ti ne odgovara, vraćamo novac — bez pitanja.<sup>‡</sup></span>
+  </div>
+
+  <div class="warn">
+    <h4><i>!</i> Pažnja: ograničene zalihe</h4>
+    <p>Nijanse se najbrže prodaju na početku sezone. Preporučujemo da iskoristiš <u>letnju akciju</u> dok traje.</p>
+    <p><b>P.S.</b> Poručuješ samo ovde — <u>ne kupuj falsifikate na oglasnim sajtovima</u>.</p>
+  </div>
+
+  <div class="acc">
+    <details open>
+      <summary>Opis</summary>
+      <div class="body">
+        <p><b>NIJANSA</b> je šampon u boji koji prekriva sede dok se ionako tuširaš. Naneseš na vlažnu kosu, umešaš rukama, ostaviš 10 minuta i ispereš — bez mešanja boje, bez rukavica i bez folija.</p>
+        <p>Formula je <b>bez amonijaka</b>, pa se boja stapa sa tvojom prirodnom nijansom bez oštre linije na korenu. Dostupna u četiri nijanse, od crne do svetlo smeđe. Koristi se i za sede u bradi.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Sastav i pakovanje</summary>
+      <div class="body">
+        <ul>
+          <li>Sadržaj: 1 bočica, 200 ml</li>
+          <li>Otprilike <b>10–15 primena</b> po bočici, u zavisnosti od dužine i gustine kose</li>
+          <li>Bez amonijaka</li>
+          <li>Kozmetički proizvod za bojenje kose — nije medicinsko sredstvo</li>
+        </ul>
+        <p>Pun sastav se nalazi na deklaraciji na pakovanju. Pre prve upotrebe obavezno uradi test osetljivosti (vidi „Kako se koristi”).</p>
+      </div>
+    </details>
+    <details>
+      <summary>Dostava i isporuka</summary>
+      <div class="body">
+        <p>Isporuka <b>2–4 radna dana</b> na celoj teritoriji Srbije, kurirskom službom.</p>
+        <p>Plaćaš <b>pouzećem</b> — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata.</p>
+        <p>Dostava se naplaćuje 390 RSD za jednu bočicu. Za <b>2 i više bočica dostava je besplatna</b>.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Cena po primeni</summary>
+      <div class="body">
+        <p>Jedna bočica traje otprilike <b>15 primena</b>.</p>
+        <ul>
+          <li>1 bočica — 3.499 RSD → oko <b>233 RSD po primeni</b></li>
+          <li>2 bočice — 6.098 RSD → oko <b>203 RSD po primeni</b></li>
+          <li>3 bočice — 6.999 RSD → oko <b>155 RSD po primeni</b></li>
+        </ul>
+      </div>
+    </details>
+    <details>
+      <summary>Kako se koristi</summary>
+      <div class="body">
+        <ul>
+          <li><b>48 sati ranije:</b> uradi test osetljivosti na maloj površini kože.</li>
+          <li><b>1.</b> Nanesi na vlažnu kosu i umešaj rukama, od korena.</li>
+          <li><b>2.</b> Ostavi 10 minuta (duže za intenzivniju nijansu).</li>
+          <li><b>3.</b> Isperi dok voda ne bude bistra.</li>
+          <li><b>4.</b> Ponovi po potrebi — obično jednom nedeljno.</li>
+        </ul>
+        <p>Izbegavaj kontakt sa očima. Nije za upotrebu kod dece.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="tgrid">
+    <div><div class="ic">💰</div><b>30 dana garancije</b><span>Povraćaj novca bez komplikacija</span></div>
+    <div><div class="ic">🚚</div><b>Brza isporuka</b><span>2–4 radna dana, na tvoju adresu</span></div>
+    <div><div class="ic">📦</div><b>Zamena i povraćaj</b><span>Jednostavna procedura</span></div>
+    <div><div class="ic">💵</div><b>Plaćanje pouzećem</b><span>Plaćaš tek kad ti paket stigne</span></div>
+  </div>
+</div>
+
+<!-- PLACEHOLDER: customer counts + UGC videos — operator supplies real clips before ads -->
+<section class="ugc">
+  <h2>Preko 12.000 zadovoljnih<br>kupaca je prešlo na NIJANSU</h2>
+  <div class="ugcrow" id="ugcrow">
+    <div class="u"><img src="assets/lifestyle.jpg" alt="Kosa bez sedih posle tuširanja"><span class="play"><i>▶</i></span><span class="tag">VIDEO USKORO</span></div>
+    <div class="u"><img src="assets/color-tamno.jpg" alt="NIJANSA — Tamno smeđa"><span class="play"><i>▶</i></span><span class="tag">VIDEO USKORO</span></div>
+    <div class="u"><img src="assets/pack3.jpg" alt="NIJANSA komplet od 3 bočice"><span class="play"><i>▶</i></span><span class="tag">VIDEO USKORO</span></div>
+  </div>
+  <div class="arrs">
+    <button onclick="ug(-1)" aria-label="Prethodni">‹</button>
+    <button onclick="ug(1)" aria-label="Sledeći">›</button>
+  </div>
+</section>
+
+<div class="mq">
+  <div class="h">Zašto NIJANSA</div>
+  <div class="mqtrack">
+    <span>Bez amonijaka</span><span>·</span><span>10 minuta</span><span>·</span><span>4 nijanse</span><span>·</span>
+    <span>Plaćanje pouzećem</span><span>·</span><span>30 dana garancije</span><span>·</span>
+    <span>Bez amonijaka</span><span>·</span><span>10 minuta</span><span>·</span><span>4 nijanse</span><span>·</span>
+    <span>Plaćanje pouzećem</span><span>·</span><span>30 dana garancije</span><span>·</span>
+  </div>
+</div>
+
+<section class="feat">
+  <div class="wrap">
+    <h2>Bojenje kose<b>Jednostavno i bez nereda</b></h2>
+    <div class="lead">Prirodna nijansa koja traje — za 10 minuta pod tušem</div>
+    <div class="shot"><img src="assets/howto.jpg" alt="Primena NIJANSA šampona"></div>
+    <div class="frow"><span class="n">1</span><div><b>Gotovo za 10 minuta</b><span>Naneseš na vlažnu kosu, sačekaš 10 minuta i ispereš. To je sve.</span></div></div>
+    <div class="frow"><span class="n">2</span><div><b>Bez mešanja i bez fleka</b><span>Bez rukavica, bez folija i bez čišćenja pločica posle. Radi kao običan šampon.</span></div></div>
+    <div class="frow"><span class="n">3</span><div><b>Blago prema kosi</b><span>Formula bez amonijaka — kosa ostaje mekana, bez oštre linije na korenu.</span></div></div>
+    <div class="frow"><span class="n">4</span><div><b>Nijansa koja se stapa</b><span>Boja prati tvoj prirodni ton, pa prelaz ka novom rastu nije vidljiv.</span></div></div>
+  </div>
+</section>
+
+<!-- PLACEHOLDER reviews — replace with real verified customer reviews + photos before ads -->
+<section class="res">
+  <div class="stars">★★★★★</div>
+  <h2>Šta kažu<br>naši kupci</h2>
+  <div class="tabs">
+    <button class="on" id="tab0" onclick="tab(0)">Žene</button>
+    <button id="tab1" onclick="tab(1)">Muškarci</button>
+  </div>
+  <div class="rrow" id="rrow"></div>
+</section>
+
+<div class="wrap">
+  <section class="four">
+    <div class="kick">4 razloga</div>
+    <h2>Zašto kupci prelaze<br>na NIJANSA šampon</h2>
+    <div class="fcard"><span class="ic">⏱️</span><div><b>Gotovo za 10 minuta</b><span>Ne moraš da planiraš pola dana oko farbanja. Naneseš, sačekaš 10 minuta, ispereš.</span></div></div>
+    <div class="fcard"><span class="ic">🧤</span><div><b>Bez rukavica i nereda</b><span>Zaboravi mešanje boje iz kutije. Bez fleka po pločicama i bez čišćenja posle.</span></div></div>
+    <div class="fcard"><span class="ic">🌿</span><div><b>Bez amonijaka</b><span>Blaga formula bez oštrog mirisa — kosa ostaje mekana, a ne suva i lomljiva.</span></div></div>
+    <div class="fcard"><span class="ic">🎨</span><div><b>Nijansa koja izgleda prirodno</b><span>Četiri nijanse, od crne do svetlo smeđe. Boja se stapa sa tvojom, bez oštre linije.</span></div></div>
+  </section>
+
+  <section class="cmp">
+    <h2>Bolji izbor</h2>
+    <div class="lead">Boja za kosu se decenijama koristi na isti način — mešanje, rukavice, sat vremena i nered u kupatilu. NIJANSA to menja.</div>
+    <div class="cwrap">
+      <div class="cols">
+        <div class="l"><b>NIJANSA</b></div>
+        <div class="r"><b>Klasična boja</b></div>
+      </div>
+      <div class="crows">
+        <div class="crow"><div class="lab">Broj primena</div><div class="vals">
+          <span class="v"><i class="m y">✓</i>oko 15 primena</span><span class="v">1 primena<i class="m n">✕</i></span></div></div>
+        <div class="crow"><div class="lab">Vreme primene</div><div class="vals">
+          <span class="v"><i class="m y">✓</i>10 minuta</span><span class="v">40–60 minuta<i class="m n">✕</i></span></div></div>
+        <div class="crow"><div class="lab">Cena po primeni</div><div class="vals">
+          <span class="v"><i class="m y">✓</i>od 155 RSD</span><span class="v">oko 800 RSD<i class="m n">✕</i></span></div></div>
+        <div class="crow"><div class="lab">Amonijak</div><div class="vals">
+          <span class="v"><i class="m y">✓</i>bez amonijaka</span><span class="v">najčešće sadrži<i class="m n">✕</i></span></div></div>
+        <div class="crow"><div class="lab">Priprema</div><div class="vals">
+          <span class="v"><i class="m y">✓</i>bez mešanja</span><span class="v">mešanje i rukavice<i class="m n">✕</i></span></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="gar">
+  <div class="wrap">
+    <div class="seal">30 dana<br>garancije</div>
+    <h2>Garancija<br>zadovoljstva 30 dana</h2>
+    <p>Znamo da je novi proizvod uvek mali rizik — zato ga kod nas nema. Ako se predomisliš, neotvoren proizvod vraćaš u roku od 30 dana od prijema i dobijaš pun povraćaj novca.<sup>‡</sup></p>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="faq">
+    <h2>Česta<br>pitanja</h2>
+    <div class="acc">
+      <details open><summary>Kako se koristi?</summary><div class="body"><p>Naneseš na vlažnu kosu i umešaš rukama kao običan šampon, ostaviš 10 minuta i ispereš. Bez mešanja boje, bez rukavica i bez folija.</p></div></details>
+      <details><summary>Koliko dugo se boja zadržava?</summary><div class="body"><p>Zavisi od tipa i poroznosti kose i od toga koliko često pereš kosu. Većina korisnica ponavlja otprilike jednom nedeljno.</p></div></details>
+      <details><summary>Koliko traje jedna bočica?</summary><div class="body"><p>Otprilike 10–15 primena, u zavisnosti od dužine i gustine kose. Uz upotrebu jednom nedeljno, to je oko tri meseca.</p></div></details>
+      <details><summary>Koju nijansu da izaberem?</summary><div class="body"><p>Izaberi onu koja je najbliža tvojoj prirodnoj boji. Ako si između dve, uzmi svetliju — lakše je pojačati nego ublažiti.</p></div></details>
+      <details><summary>Da li sadrži amonijak?</summary><div class="body"><p>Ne. Formula je bez amonijaka.</p></div></details>
+      <details><summary>Da li treba test osetljivosti?</summary><div class="body"><p>Da. Kao i kod svake boje za kosu, uradi test na maloj površini kože 48 sati pre prve upotrebe. Ako se pojavi iritacija, prekini upotrebu.</p></div></details>
+      <details><summary>Da li ostavlja fleke na koži i peškirima?</summary><div class="body"><p>Preporučujemo da tokom nanošenja koristiš rukavice i da izbegavaš bele i svetle peškire — dok se pigment ne ispere do kraja, može da se prenese na tkaninu.</p></div></details>
+      <details><summary>Može li na bradu?</summary><div class="body"><p>Da, koristi se i za sede u bradi, na isti način kao i na kosi.</p></div></details>
+      <details><summary>Može li na farbanu kosu?</summary><div class="body"><p>Da. Ako si skoro radila hemijski tretman ili imaš nedoumicu oko stanja kose, posavetuj se sa frizerom i obavezno uradi test osetljivosti.</p></div></details>
+      <details><summary>Kako plaćam i koliko traje isporuka?</summary><div class="body"><p>Pouzećem kod kurira — gotovinom ili karticom, tek kada ti paket stigne. Isporuka 2–4 radna dana; dostava je besplatna za 2 i više bočica.</p></div></details>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="ab">NIJANSA je šampon u boji za prekrivanje sedih — bez amonijaka, bez mešanja i bez nereda u kupatilu. Poručuješ pouzećem, plaćaš tek kada ti paket stigne.</div>
+    <div class="lk">
+      <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>
+      <a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>
+      <a href="https://rs.unikatko.eu/policies/shipping-policy">Dostava</a>
+      <a href="https://rs.unikatko.eu/policies/refund-policy">Povraćaj novca</a>
+      <a href="https://rs.unikatko.eu/policies/terms-of-service">Uslovi korišćenja</a>
+    </div>
+    <div class="cp">© 2026 Unikatko d.o.o.</div>
+    <div class="disc">
+      ‡ Garancija povraćaja novca važi 30 dana od datuma prijema pošiljke i odnosi se na neotvoren proizvod.<br>
+      * NIJANSA je kozmetički proizvod za bojenje kose i nije medicinsko sredstvo. Pre prve upotrebe uradi test osetljivosti na maloj površini kože 48 sati unapred. Izbegavati kontakt sa očima. Nije za upotrebu kod dece. Ako se pojavi iritacija, prekini upotrebu i obrati se lekaru. Rezultat i trajnost boje zavise od tipa, poroznosti i početne boje kose.
+    </div>
+  </div>
+</footer>
+
+<div class="satc" id="satc">
+  <div class="in">
+    <img id="satc-img" src="assets/color-crna.jpg" alt="">
+    <div class="t"><b>NIJANSA šampon</b><span id="satc-sub"></span></div>
+    <button class="atc" id="atc2" onclick="kupi()">Poruči bez rizika</button>
+  </div>
+</div>
+
+<script>
+const BASE = "https://rs.unikatko.eu";
+const COMPARE_UNIT = 5149;
+const SHIP = 390;
+
+const COLORS = [
+  { name:"Crna",          img:"assets/color-crna.jpg"    },
+  { name:"Tamno smeđa",   img:"assets/color-tamno.jpg"   },
+  { name:"Srednje smeđa", img:"assets/color-srednje.jpg" },
+  { name:"Svetlo smeđa",  img:"assets/color-svetlo.jpg"  },
+];
+
+/* variantId per (paket, nijansa) — Shopify RS product 15646853857545 */
+const TIERS = [
+  { qty:1, label:"1 bočica",  total:3499, per:3499, ribbon:null, ship:true,
+    v:{ "Crna":"57242565083401","Tamno smeđa":"57242565181705","Srednje smeđa":"57242565280009","Svetlo smeđa":"57242565378313" } },
+  { qty:2, label:"2 bočice",  total:6098, per:3049, ribbon:{t:"+ besplatna dostava", g:false}, ship:false,
+    v:{ "Crna":"57242565116169","Tamno smeđa":"57242565214473","Srednje smeđa":"57242565312777","Svetlo smeđa":"57242565411081" } },
+  { qty:3, label:"3 bočice",  total:6999, per:2333, ribbon:{t:"+ poklon iznenađenja", g:true}, ship:false,
+    v:{ "Crna":"57242565148937","Tamno smeđa":"57242565247241","Srednje smeđa":"57242565345545","Svetlo smeđa":"57242565443849" } },
+];
+
+/* PLACEHOLDER reviews — no real customer photos yet */
+const REVIEWS = [
+  [ { img:"assets/lifestyle.jpg", t:"Farbam se na šest nedelja, a sede se vide već posle četiri. Ovim popunim te dve nedelje i niko ne primeti razliku.", who:"Snežana M., Beograd" },
+    { img:"assets/color-tamno.jpg", t:"Najviše mi je smetalo čišćenje kupatila posle farbanja. Ovo je šampon — nanesem, isperem i to je sve.", who:"Dragana I., Novi Sad" },
+    { img:"assets/benefits.jpg", t:"Uzela sam srednje smeđu i legla je tačno na moju boju. Nema oštre linije na korenu kao kod boje iz kutije.", who:"Jelena P., Niš" } ],
+  [ { img:"assets/color-crna.jpg", t:"Koristim je za sede u bradi. Deset minuta pod tušem i gotovo, bez ikakvog nereda.", who:"Miloš T., Kragujevac" },
+    { img:"assets/howto.jpg", t:"Nisam verovao da može ovako jednostavno. Nema jakog mirisa i ne peče kožu glave.", who:"Nenad R., Subotica" },
+    { img:"assets/pack3.jpg", t:"Naručili smo tri odjednom jer po komadu ispadne znatno jeftinije, a i dostava je besplatna.", who:"Vladimir S., Zrenjanin" } ],
+];
+
+let ti = 0;   /* source preselects 1 bottle */
+let ci = 0;   /* source preselects the darkest shade */
+let tabi = 0;
+
+const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
+
+function renderColors(){
+  document.getElementById('swrow').innerHTML = COLORS.map((c,i)=>`
+    <button class="sw ${i===ci?'on':''}" onclick="pickColor(${i})" aria-label="${c.name}">
+      <span class="im"><img src="${c.img}" alt=""></span>
+      <span>${c.name}</span>
+    </button>`).join('');
+  document.getElementById('colname').textContent = COLORS[ci].name;
+  document.getElementById('slide0').src = COLORS[ci].img;
+  document.getElementById('slide0').alt = 'NIJANSA šampon u boji — ' + COLORS[ci].name;
+  document.getElementById('satc-img').src = COLORS[ci].img;
+}
+
+function renderTiers(){
+  document.getElementById('qgrid').innerHTML = TIERS.map((t,i)=>`
+    <div class="qcol ${i===ti?'on':''}" onclick="pickTier(${i})">
+      <div class="qbox">
+        ${t.ribbon?`<span class="ribbon ${t.ribbon.g?'g':''}">${t.ribbon.t}</span>`:''}
+        <b>${t.label}</b>
+      </div>
+      <span class="qper">${new Intl.NumberFormat('de-DE').format(t.per)} RSD/kom</span>
+    </div>`).join('');
+}
+
+function renderPrice(){
+  const t = TIERS[ti];
+  const was = COMPARE_UNIT * t.qty;
+  const off = Math.round((1 - t.total / was) * 100);
+  document.getElementById('was').textContent = fmt(was);
+  document.getElementById('now').textContent = fmt(t.total);
+  document.getElementById('save').textContent = 'AKCIJA | UŠTEDA ' + off + '%';
+  document.getElementById('shipnote').textContent = t.ship
+    ? 'Dostava ' + fmt(SHIP) + ' — besplatna od 2 bočice.'
+    : 'Dostava je besplatna za ovo pakovanje.';
+  document.getElementById('atc').textContent = 'Dodaj u korpu — ' + fmt(t.total) + (t.ship ? ' + dostava' : '');
+  document.getElementById('atc2').textContent = fmt(t.total);
+  document.getElementById('satc-sub').textContent = t.label + ' · ' + COLORS[ci].name;
+}
+
+function renderReviews(){
+  document.getElementById('rrow').innerHTML = REVIEWS[tabi].map(r=>`
+    <div class="rcard">
+      <div class="ph"><img src="${r.img}" alt=""></div>
+      <div class="bd">
+        <div class="st">★★★★★</div>
+        <p>${r.t}</p>
+        <div class="who"><span>${r.who}</span><span class="vb"><i>✓</i>Kupac</span></div>
+      </div>
+    </div>`).join('');
+}
+
+function pickTier(i){ ti=i; renderTiers(); renderPrice(); }
+function pickColor(i){ ci=i; renderColors(); renderPrice(); }
+function tab(i){
+  tabi=i;
+  document.getElementById('tab0').classList.toggle('on', i===0);
+  document.getElementById('tab1').classList.toggle('on', i===1);
+  renderReviews();
+  document.getElementById('rrow').scrollTo({left:0});
+}
+function kupi(){ location.href = BASE + '/cart/' + TIERS[ti].v[COLORS[ci].name] + ':1'; }
+
+/* gallery dots */
+const slides = document.getElementById('slides');
+function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'}); }
+(function(){
+  const n = slides.querySelectorAll('img').length;
+  document.getElementById('dots').innerHTML =
+    Array.from({length:n},(_,i)=>`<i class="${i===0?'on':''}" onclick="jmp(${i})"></i>`).join('');
+  const dots=[...document.querySelectorAll('#dots i')];
+  slides.addEventListener('scroll', ()=>{
+    const i=Math.round(slides.scrollLeft/slides.clientWidth);
+    dots.forEach((d,k)=>d.classList.toggle('on',k===i));
+  }, {passive:true});
+})();
+
+/* ugc carousel arrows */
+const ugcrow = document.getElementById('ugcrow');
+function ug(d){ ugcrow.scrollBy({left:d*ugcrow.clientWidth*0.85, behavior:'smooth'}); }
+
+/* sticky ATC hides while the on-page ATC is visible */
+(function(){
+  const bar=document.getElementById('satc'), main=document.getElementById('atc');
+  if(!bar||!main) return;
+  function sync(){
+    const r=main.getBoundingClientRect();
+    bar.style.display = (r.top < window.innerHeight && r.bottom > 0) ? 'none' : '';
+  }
+  addEventListener('scroll', sync, {passive:true});
+  addEventListener('resize', sync);
+  setInterval(sync, 200);
+  sync();
+})();
+
+renderColors(); renderTiers(); renderPrice(); renderReviews();
+</script>
+</body>
+</html>
