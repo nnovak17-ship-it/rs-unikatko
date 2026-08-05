@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ŠAPICA — Rukavice maramice za pse i mačke</title>
+<style>
+/* ŠAPICA LP — sr-Latn-RS. Hand-built, self-contained. */
+:root{
+  --ink:#22201e; --mut:#736c66; --line:#e9e2da;
+  --terra:#c2643c; --terra2:#a75335; --terrasoft:#f7e3d6;
+  --cream:#fbf3ec; --ok:#2fa84f;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;
+  padding-bottom:104px}
+img{max-width:100%;display:block}
+.wrap{max-width:600px;margin:0 auto;padding:0 16px}
+h1,h2,h3{margin:0;line-height:1.2}
+
+.annbar{background:var(--terra);color:#fff;text-align:center;font-size:13px;font-weight:700;padding:10px 12px}
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;
+  border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:50}
+header .ico{font-size:20px;color:var(--ink);text-decoration:none}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:21px;letter-spacing:.06em;color:var(--terra)}
+
+.gal{position:relative;background:var(--cream)}
+.gal .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.gal .slides::-webkit-scrollbar{display:none}
+.gal .slides img{min-width:100%;scroll-snap-align:center;aspect-ratio:1/1;object-fit:cover}
+.gal .arr{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;
+  border:0;background:rgba(255,255,255,.9);font-size:19px;cursor:pointer}
+.gal .arr.p{left:10px}.gal .arr.n{right:10px}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{width:62px;height:62px;object-fit:cover;border-radius:9px;flex:none;
+  border:2px solid transparent;cursor:pointer}
+.thumbs img.on{border-color:var(--terra)}
+
+.rate{display:flex;align-items:center;gap:9px;font-size:14px;padding:12px 0 4px}
+.rate .st{color:var(--terra);font-size:17px;letter-spacing:1px}
+.ph1{font-size:27px;font-weight:800;letter-spacing:-.01em;margin:6px 0 8px}
+.price{font-size:24px;font-weight:800;margin-bottom:14px}
+.price s{font-size:16px;font-weight:400;color:var(--mut);margin-right:8px}
+
+.blts{list-style:none;margin:0 0 18px;padding:0}
+.blts li{display:flex;gap:11px;padding:5px 0;font-size:15px;align-items:flex-start}
+.blts .c{width:20px;height:20px;flex:none;border-radius:50%;border:1.5px solid var(--terra);
+  color:var(--terra);display:grid;place-items:center;font-size:11px;font-weight:900;margin-top:2px}
+
+.opt{position:relative;border:1.5px solid var(--line);border-radius:12px;padding:14px;
+  margin-bottom:10px;cursor:pointer;background:#fff;display:flex;align-items:center;gap:12px}
+.opt.on{border-color:var(--terra);background:#fffaf7;box-shadow:0 0 0 1.5px var(--terra)}
+.opt .rad{width:20px;height:20px;flex:none;border-radius:50%;border:2px solid #c3bcb4;background:#fff}
+.opt.on .rad{border-color:var(--terra);background:var(--terra);box-shadow:inset 0 0 0 3.5px #fff}
+.opt .t b{display:block;font-size:15px}
+.opt .t span{font-size:13px;color:var(--mut)}
+.opt .pr{margin-left:auto;text-align:right;white-space:nowrap}
+.opt .pr b{display:block;font-size:15px}
+.opt .pr span{font-size:12px;color:var(--mut)}
+.opt .bdg{position:absolute;top:-10px;right:12px;font-size:10.5px;font-weight:800;text-transform:uppercase;
+  color:#fff;background:var(--terra);padding:3px 10px;border-radius:6px}
+
+.stock{display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;
+  color:var(--ok);font-weight:600;margin:14px 0 10px}
+.atc{display:block;width:100%;border:0;border-radius:10px;
+  background:linear-gradient(180deg,var(--terra),var(--terra2));color:#fff;
+  font-size:17px;font-weight:800;letter-spacing:.03em;padding:19px 20px;cursor:pointer;
+  text-align:center;text-transform:uppercase}
+.atc:active{filter:brightness(.95)}
+
+.giftbox{border:2px dashed var(--terra);border-radius:12px;padding:12px;margin:14px 0;
+  display:flex;align-items:center;gap:12px;position:relative;background:#fffaf7}
+.giftbox .free{position:absolute;top:-10px;left:14px;background:var(--terra);color:#fff;
+  font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:5px}
+.giftbox .em{font-size:30px}
+.giftbox b{display:block;font-size:14px}
+.giftbox span{font-size:12.5px;color:var(--mut)}
+.giftbox .note{margin-left:auto;text-align:right;font-size:12.5px;color:var(--mut);max-width:44%}
+
+.trust{background:var(--cream);border-radius:12px;padding:14px;margin:16px 0;
+  display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.trust div{display:flex;align-items:center;gap:9px;font-size:13px}
+.trust .i{font-size:19px}
+
+.band{background:var(--cream);margin:24px 0;padding:24px 0}
+.band h2{text-align:center;font-size:24px;font-weight:800;margin-bottom:12px}
+.band p{font-size:15px;margin:0 0 10px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.card{background:#fff;border-radius:12px;padding:14px 10px;text-align:center}
+.card .ic{font-size:26px}
+.card b{display:block;margin-top:6px;font-size:13.5px}
+
+.steps{padding:6px 0 22px}
+.steps h2{text-align:center;font-size:24px;font-weight:800;margin-bottom:4px}
+.steps .sub{text-align:center;font-size:14px;color:var(--mut);margin-bottom:18px}
+.step{display:flex;gap:14px;align-items:center;padding:10px 0}
+.step .n{width:52px;height:52px;flex:none;border-radius:50%;border:2.5px solid var(--terra);
+  display:grid;place-items:center;font-size:21px;font-weight:800;color:var(--terra)}
+.step b{font-size:16px;display:block}
+.step span{font-size:14px;color:var(--mut)}
+
+.rev{padding:6px 0 26px}
+.rev h2{text-align:center;font-size:24px;font-weight:800;margin-bottom:14px}
+.rcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px}
+.rcard .st{color:var(--terra);font-size:14px;letter-spacing:1px}
+.rcard h4{font-size:15px;margin:5px 0 4px}
+.rcard p{margin:0 0 8px;font-size:14px;color:#3f3a36}
+.rcard .who{font-size:12.5px;color:var(--mut);font-weight:700}
+
+.faq{padding:0 0 26px}
+.faq h2{text-align:center;font-size:24px;font-weight:800;margin-bottom:12px}
+details{border-bottom:1px solid var(--line)}
+summary{padding:15px 28px 15px 0;font-weight:700;font-size:15px;cursor:pointer;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:22px;color:var(--terra)}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 15px;font-size:14px;color:#3f3a36}
+
+footer{background:#2a2422;color:#a89f98;padding:24px 0;font-size:13px;text-align:center}
+footer a{color:#e4dbd4;margin:0 7px}
+footer .disc{margin-top:12px;font-size:11px;line-height:1.55;text-align:left;color:#8b827c}
+
+.satc{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;
+  border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.08);
+  padding:9px 16px calc(11px + env(safe-area-inset-bottom))}
+.satc .in{max-width:600px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.satc img{width:42px;height:42px;object-fit:cover;border-radius:9px;flex:none;background:var(--cream)}
+.satc .t b{display:block;font-size:13px}
+.satc .t span{font-size:12px;color:var(--mut)}
+.satc .atc{margin-left:auto;width:auto;flex:none;padding:14px 18px;font-size:13.5px}
+
+@media(min-width:768px){ .gal,.thumbs{max-width:560px;margin-left:auto;margin-right:auto} }
+</style>
+</head>
+<body>
+
+<div class="annbar">PROLEĆNA AKCIJA — POKLON UZ SVAKU PORUDŽBINU</div>
+
+<header>
+  <span class="ico">☰</span>
+  <span class="logo">🐾 ŠAPICA</span>
+  <a class="ico" href="#ponuda" aria-label="Korpa">🛒</a>
+</header>
+
+<section class="gal">
+  <div class="slides" id="slides">
+    <img src="assets/hero.jpg" alt="ŠAPICA rukavice maramice za pse i mačke">
+    <img src="assets/benefits.jpg" alt="Zašto baš ŠAPICA">
+    <img src="assets/howto.jpg" alt="Kako se koriste">
+    <img src="assets/lifestyle.jpg" alt="Brisanje psa posle šetnje">
+    <img src="assets/pack3.jpg" alt="Komplet od 3 pakovanja">
+  </div>
+  <button class="arr p" onclick="sl(-1)" aria-label="Prethodna">‹</button>
+  <button class="arr n" onclick="sl(1)" aria-label="Sledeća">›</button>
+</section>
+<div class="thumbs" id="thumbs"></div>
+
+<div class="wrap">
+  <!-- PLACEHOLDER rating -->
+  <div class="rate"><span class="st">★★★★★</span><span>1.200+ zadovoljnih vlasnika</span></div>
+  <h1 class="ph1">Rukavice maramice za pse i mačke</h1>
+  <div class="price" id="price"></div>
+
+  <ul class="blts">
+    <li><span class="c">✓</span><span>Očisti ljubimca za par minuta — bez vode</span></li>
+    <li><span class="c">✓</span><span>Skida dlaku, prašinu i miris sa krzna</span></li>
+    <li><span class="c">✓</span><span>Bez alkohola i parabena — bezbedno ako liže šape</span></li>
+    <li><span class="c">✓</span><span>Krzno ostaje meko i sveže</span></li>
+    <li><span class="c">✓</span><span>20 rukavica po kesi · 2 kese u pakovanju</span></li>
+  </ul>
+
+  <div id="ponuda"></div>
+  <div id="opts"></div>
+
+  <div class="stock"><span>●</span> Na stanju — spremno za slanje</div>
+  <button class="atc" id="atc" onclick="kupi()"></button>
+
+  <div class="giftbox">
+    <span class="free">GRATIS</span>
+    <span class="em">🎁</span>
+    <div><b>Poklon iznenađenja</b><span>vrednost 1.190 RSD</span></div>
+    <div class="note">Uz komplet od 3 pakovanja</div>
+  </div>
+
+  <div class="trust">
+    <div><span class="i">🛡️</span>30 dana garancije</div>
+    <div><span class="i">🚚</span>Isporuka 2–4 dana</div>
+    <div><span class="i">💵</span>Plaćanje pouzećem</div>
+    <div><span class="i">🐾</span>Za pse, mačke i zeceve</div>
+  </div>
+</div>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Čist ljubimac bez kupanja</h2>
+    <p>Kiša, blato, park. Vraćaš se kući i znaš šta sledi — ili kupanje koje niko ne voli, ili šape po celom stanu i dlaka na kauču.</p>
+    <p><b>ŠAPICA rešava to za dva minuta.</b> Navučeš rukavicu na šaku, pređeš preko krzna i gotovo — bez vode, bez kade i bez jurnjave. Teksturirana strana hvata dlaku i prašinu, a krzno ostaje meko i sveže.</p>
+    <div class="cards">
+      <div class="card"><div class="ic">💧</div><b>Bez vode i kupanja</b></div>
+      <div class="card"><div class="ic">🧹</div><b>Skida dlaku i prašinu</b></div>
+      <div class="card"><div class="ic">🐾</div><b>Bezbedno ako liže šape</b></div>
+      <div class="card"><div class="ic">🧤</div><b>40 rukavica po pakovanju</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="steps">
+    <h2>Kako se koriste</h2>
+    <div class="sub">Dva minuta, bez vode i bez stresa.</div>
+    <div class="step"><div class="n">1</div><div><b>Navuci rukavicu na šaku</b><span>Jedna rukavica je taman za jedno čišćenje.</span></div></div>
+    <div class="step"><div class="n">2</div><div><b>Pređi preko krzna</b><span>Šape, stomak, leđa — tamo gde se skuplja blato i dlaka.</span></div></div>
+    <div class="step"><div class="n">3</div><div><b>Baci i gotovo</b><span>Jednokratna je — bez pranja i sušenja.</span></div></div>
+  </section>
+
+  <!-- PLACEHOLDER reviews — replace with real verified reviews before ads -->
+  <section class="rev">
+    <h2>Šta kažu vlasnici</h2>
+    <div class="rcard"><div class="st">★★★★★</div><h4>Posle svake šetnje</h4>
+      <p>Zlatni retriver i kiša su bili moj najveći problem. Sada uzmem rukavicu na vratima i gotovo je pre nego što uđe u dnevnu sobu.</p>
+      <div class="who">Marina P.</div></div>
+    <div class="rcard"><div class="st">★★★★★</div><h4>Mačka konačno dozvoljava</h4>
+      <p>Kupanje mačke je bilo nemoguće. Ovo prihvata bez otimanja — pređem preko krzna dok prede.</p>
+      <div class="who">Ana Đ.</div></div>
+    <div class="rcard"><div class="st">★★★★★</div><h4>Uzeo sam tri pakovanja</h4>
+      <p>Jedno kod ulaznih vrata, jedno u kolima, jedno rezervno. Za dva psa se troši brže nego što misliš.</p>
+      <div class="who">Vladimir M.</div></div>
+  </section>
+
+  <section class="faq">
+    <h2>Česta pitanja</h2>
+    <details open><summary>Šta dobijam u pakovanju?</summary><p>Jedno pakovanje sadrži 2 kese sa po 20 rukavica — ukupno 40 rukavica. Svaka se navlači na šaku i jednokratna je.</p></details>
+    <details><summary>Da li je bezbedno ako ljubimac liže šape?</summary><p>Formula je bez alkohola i parabena, pa je bezbedna i ako ljubimac liže krzno posle brisanja. Rukavice ipak nisu za jelo — baci ih odmah posle upotrebe.</p></details>
+    <details><summary>Za koje životinje su namenjene?</summary><p>Za pse, mačke i zeceve, svih veličina i tipova dlake.</p></details>
+    <details><summary>Da li zamenjuju kupanje?</summary><p>Za svakodnevno održavanje — da. Posle valjanja u blatu i dalje je najbolja kada, ali ŠAPICA rešava većinu svakodnevnih situacija.</p></details>
+    <details><summary>Kako plaćam i koliko traje isporuka?</summary><p>Pouzećem kod kurira, bez plaćanja unapred. Isporuka 2–4 radna dana na celoj teritoriji Srbije; besplatna za 2 i više pakovanja.</p></details>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>·<a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>·<a href="https://rs.unikatko.eu/policies/shipping-policy">Dostava</a>·<a href="https://rs.unikatko.eu/policies/refund-policy">Povraćaj novca</a>·<a href="https://rs.unikatko.eu/policies/terms-of-service">Uslovi korišćenja</a>
+    <div style="margin-top:10px">© 2026 Unikatko d.o.o.</div>
+    <div class="disc">
+      ‡ Garancija povraćaja novca važi 30 dana od datuma prijema pošiljke i odnosi se na neotvoren proizvod.<br>
+      * ŠAPICA je proizvod za negu kućnih ljubimaca i nije veterinarsko niti medicinsko sredstvo. Ne služi za lečenje kožnih oboljenja. Ako ljubimac ima ranu, iritaciju ili kožno oboljenje, obrati se veterinaru. Držati van domašaja dece.
+    </div>
+  </div>
+</footer>
+
+<div class="satc" id="satc">
+  <div class="in">
+    <img src="assets/hero.jpg" alt="">
+    <div class="t"><b>ŠAPICA rukavice</b><span id="satc-sub"></span></div>
+    <button class="atc" id="atc2" onclick="kupi()"></button>
+  </div>
+</div>
+
+<script>
+const OPTS = [
+  { title:"1 pakovanje",  sub:"40 rukavica",  total:4599,  per:"4.599 RSD/pak", badge:null,               variantId:"57240036966665", ship:true  },
+  { title:"2 pakovanja",  sub:"80 rukavica",  total:7998,  per:"3.999 RSD/pak", badge:"NAJPOPULARNIJE",   variantId:"57240036999433", ship:false },
+  { title:"3 pakovanja",  sub:"120 rukavica", total:10497, per:"3.499 RSD/pak", badge:"NAJBOLJA PONUDA",  variantId:"57240037032201", ship:false },
+];
+const BASE = "https://rs.unikatko.eu";
+const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
+let sel = 0;   // source page sells a single option — we lead with the single pack
+
+function renderOpts(){
+  document.getElementById('opts').innerHTML = OPTS.map((o,i)=>`
+    <div class="opt ${i===sel?'on':''}" onclick="pickOpt(${i})">
+      ${o.badge?`<span class="bdg">${o.badge}</span>`:''}
+      <span class="rad"></span>
+      <div class="t"><b>${o.title}</b><span>${o.sub}</span></div>
+      <div class="pr"><b>${fmt(o.total)}${o.ship?' + dostava':''}</b><span>${o.per}</span></div>
+    </div>`).join('');
+  const o = OPTS[sel];
+  const label = 'DODAJ U KORPU — ' + fmt(o.total) + (o.ship ? ' + 390 RSD dostava' : '');
+  document.getElementById('atc').textContent = label;
+  const a2=document.getElementById('atc2'); if(a2) a2.textContent = fmt(o.total);
+  const ss=document.getElementById('satc-sub'); if(ss) ss.textContent = o.sub;
+  document.getElementById('price').innerHTML =
+    `<s>${fmt(9199)}</s>${fmt(o.total)}${o.ship?' <span style="font-size:14px;font-weight:400">+ 390 RSD dostava</span>':''}`;
+}
+function pickOpt(i){ sel=i; renderOpts(); }
+function kupi(){ location.href = BASE + '/cart/' + OPTS[sel].variantId + ':1'; }
+
+const slides = document.getElementById('slides');
+function sl(d){ slides.scrollBy({left:d*slides.clientWidth, behavior:'smooth'}); }
+function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'}); }
+(function(){
+  const imgs=[...slides.querySelectorAll('img')];
+  document.getElementById('thumbs').innerHTML = imgs
+    .map((im,i)=>`<img src="${im.getAttribute('src')}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="">`).join('');
+  slides.addEventListener('scroll',()=>{
+    const i=Math.round(slides.scrollLeft/slides.clientWidth);
+    [...document.querySelectorAll('.thumbs img')].forEach((t,k)=>t.classList.toggle('on',k===i));
+  });
+})();
+
+/* sticky ATC hides while the on-page ATC is visible */
+(function(){
+  const bar=document.getElementById('satc'), main=document.getElementById('atc');
+  if(!bar||!main) return;
+  function sync(){
+    const r=main.getBoundingClientRect();
+    bar.style.display = (r.top < window.innerHeight && r.bottom > 0) ? 'none' : '';
+  }
+  addEventListener('scroll', sync, {passive:true});
+  addEventListener('resize', sync);
+  setInterval(sync, 200);
+  sync();
+})();
+
+renderOpts();
+</script>
+</body>
+</html>
