@@ -106,6 +106,9 @@ h1,h2,h3{margin:0}
   cursor:pointer;display:grid;place-items:center;padding:0}
 .sw.on{border-color:var(--ink)}
 .sw i{width:28px;height:28px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.12)}
+/* text swatch: option entries without a `hex` (e.g. shoe sizes) render their name */
+.sw.txt{width:auto;min-width:66px;height:46px;padding:0 12px;font:800 15px/1 var(--body);color:var(--ink)}
+.sw.txt.on{background:var(--orange-soft)}
 
 /* ---------- tier grid ---------- */
 .tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
@@ -638,7 +641,8 @@ function renderColors(){
   if (!CFG.colors || !CFG.colors.length) return;
   document.getElementById('colorwrap').style.display = '';
   document.getElementById('swatches').innerHTML = CFG.colors.map((c,i)=>
-    `<button class="sw ${i===colorIdx?'on':''}" onclick="pickColor(${i})" title="${c.name}" aria-label="${c.name}"><i style="background:${c.hex}"></i></button>`
+    `<button class="sw ${c.hex?'':'txt'} ${i===colorIdx?'on':''}" onclick="pickColor(${i})" title="${c.name}" aria-label="${c.name}">`
+    + (c.hex ? `<i style="background:${c.hex}"></i>` : c.name) + `</button>`
   ).join('');
   document.getElementById('colorname').textContent = CFG.colors[colorIdx].name;
   // first gallery slide + its thumb follow the chosen colour
