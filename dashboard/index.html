@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="sr-Latn-RS"><head><meta charset="utf-8">
+<html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>LP Dashboard — Unikatko RS</title>
@@ -7,21 +7,29 @@
 :root{--ink:#15181c;--mut:#6b7480;--line:#e4e7ea;--acc:#0d6b6e;--bg:#f6f7f8}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
  font:15px/1.5 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:960px;margin:0 auto;padding:20px 16px 60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px 60px}
 h1{font-size:24px;margin:0 0 4px}
-.lead{color:var(--mut);font-size:14px;margin:0 0 20px}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+.lead{color:var(--mut);font-size:14px;margin:0 0 18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:14px;
+ display:flex;gap:18px;padding:16px;align-items:flex-start}
+.body{flex:1;min-width:0}
+.shot{flex:none;width:190px;border-radius:12px;overflow:hidden;border:1px solid var(--line);
+ background:#fafafa;display:block;text-decoration:none}
+.shot img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.shot:hover{border-color:var(--acc)}
 .card header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px;
  border-bottom:1px solid var(--line);padding-bottom:10px}
 .card h2{font-size:19px;margin:0;letter-spacing:.02em}
 .sub{color:var(--mut);font-size:14px}
-.grid{display:grid;grid-template-columns:120px 1fr;gap:8px 14px;align-items:start}
+.grid{display:grid;grid-template-columns:110px 1fr;gap:8px 14px;align-items:start}
 .k{color:var(--mut);font-size:13px;padding-top:3px}
 .v{font-size:14px;min-width:0}
 .links{display:flex;flex-wrap:wrap;gap:8px}
 .links a{display:inline-block;background:#eef4f4;color:var(--acc);text-decoration:none;
  padding:6px 11px;border-radius:8px;font-weight:600;font-size:13px}
 .links a:hover{background:#e0eded}
+.missing{display:inline-block;background:#fdeeee;color:#a33;padding:6px 11px;border-radius:8px;
+ font-weight:600;font-size:13px}
 ul.tiers{margin:0;padding-left:18px}
 ul.tiers li{margin:2px 0}
 textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px;font:inherit;
@@ -30,112 +38,243 @@ textarea:focus{outline:2px solid var(--acc);outline-offset:-1px;background:#fff}
 .note-caveat{background:#fff8e6;border:1px solid #f0e0b0;border-radius:10px;padding:10px 12px;
  font-size:13px;color:#6b5a20;margin-bottom:18px}
 footer{color:var(--mut);font-size:12px;margin-top:24px;text-align:center}
-@media(max-width:560px){.grid{grid-template-columns:1fr;gap:4px 0}.k{padding-top:10px;font-weight:600}}
+@media(max-width:760px){
+  .card{flex-direction:column-reverse;gap:14px}
+  .shot{width:100%}
+  .shot img{aspect-ratio:16/9}
+  .grid{grid-template-columns:1fr;gap:4px 0}
+  .k{padding-top:10px;font-weight:600}
+}
 </style></head><body><div class="wrap">
 <h1>LP Dashboard — Unikatko RS</h1>
-<p class="lead">Sve generisane landing stranice, Shopify proizvodi i aktuelne cene.</p>
-<div class="note-caveat"><b>Napomena o beleškama:</b> beleške se čuvaju lokalno u ovom pregledaču (localStorage) i <b>ne dele se</b> sa drugima. Za deljene beleške koristi tab u Google tabeli.</div>
+<p class="lead">All generated landing pages, Shopify products and current pricing.</p>
+<div class="note-caveat"><b>About notes:</b> notes are stored locally in this browser (localStorage) and are <b>not shared</b> with anyone else. Use the Google Sheet tab for shared notes.</div>
 
-  <article class="card" data-slug="limka-komplet">
-    <header><h2>LIMKA</h2><span class="sub">Magnetne naušnice</span></header>
-    <div class="grid">
-      <div class="k">Landing stranice</div>
-      <div class="v links">
-        <a href="https://rs.unikatko.com/limka-komplet/" target="_blank" rel="noopener">LP A — template ↗</a>
-        <a href="https://rs.unikatko.com/limka-komplet-2/" target="_blank" rel="noopener">LP B — replika ↗</a>
+  <article class="card">
+    <div class="body">
+      <header><h2>LIMKA</h2><span class="sub">Magnetic earrings</span></header>
+      <div class="grid">
+        <div class="k">Landing pages</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.com/limka-komplet/" target="_blank" rel="noopener">LP A — template ↗</a>
+          <span class="missing">LP B — not built</span>
+        </div>
+        <div class="k">Shopify</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.eu/products/limka-komplet-magnetne-nausnice" target="_blank" rel="noopener">Storefront ↗</a>
+          <a href="https://admin.shopify.com/store/a99226-2/products/15644965634313" target="_blank" rel="noopener">Admin ↗</a>
+        </div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 PAR: <b>1.499 RSD</b> + shipping</li><li>2 PARA: <b>2.398 RSD</b></li><li>3 PARA: <b>3.297 RSD</b></li><li>4 PARA: <b>3.996 RSD</b></li></ul></div>
+        <div class="k">Colours</div><div class="v">—</div>
+        <div class="k">Note</div>
+        <div class="v"><textarea data-note="limka-komplet" rows="2" placeholder="Your note…"></textarea></div>
       </div>
-      <div class="k">Shopify</div>
-      <div class="v links">
-        <a href="https://rs.unikatko.eu/products/limka-komplet-magnetne-nausnice" target="_blank" rel="noopener">Prodavnica ↗</a>
-        <a href="https://admin.shopify.com/store/a99226-2/products/15644965634313" target="_blank" rel="noopener">Admin ↗</a>
-      </div>
-      <div class="k">Cene</div><div class="v"><ul class="tiers"><li>1 PAR: 1.499 RSD + dostava</li><li>2 PARA: 2.398 RSD</li><li>3 PARA: 3.297 RSD</li><li>4 PARA: 3.996 RSD</li></ul></div>
-      
-      <div class="k">Beleška</div>
-      <div class="v"><textarea data-note="limka-komplet" rows="2" placeholder="Tvoja beleška…"></textarea></div>
     </div>
+    <a class="shot" href="https://rs.unikatko.com/limka-komplet/" target="_blank" rel="noopener" title="Open LP A">
+      <img src="https://rs.unikatko.com/limka-komplet/assets/hero.jpg" alt="LIMKA product photo" loading="lazy">
+    </a>
   </article>
 
-  <article class="card" data-slug="suvo-stik">
-    <header><h2>SUVO</h2><span class="sub">Antiperspirant stik</span></header>
-    <div class="grid">
-      <div class="k">Landing stranice</div>
-      <div class="v links">
-        <a href="https://rs.unikatko.com/suvo-stik/" target="_blank" rel="noopener">LP A — template ↗</a>
-        <a href="https://rs.unikatko.com/suvo-stik-2/" target="_blank" rel="noopener">LP B — replika ↗</a>
+  <article class="card">
+    <div class="body">
+      <header><h2>SUVO</h2><span class="sub">Antiperspirant stick</span></header>
+      <div class="grid">
+        <div class="k">Landing pages</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.com/suvo-stik/" target="_blank" rel="noopener">LP A — template ↗</a>
+          <span class="missing">LP B — not built</span>
+        </div>
+        <div class="k">Shopify</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.eu/products/suvo-antiperspirant-stik" target="_blank" rel="noopener">Storefront ↗</a>
+          <a href="https://admin.shopify.com/store/a99226-2/products/15645113876745" target="_blank" rel="noopener">Admin ↗</a>
+        </div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 STIK: <b>1.699 RSD</b> + shipping</li><li>2 STIKA: <b>2.798 RSD</b></li><li>3 STIKA: <b>3.747 RSD</b></li><li>4 STIKA: <b>4.596 RSD</b></li></ul></div>
+        <div class="k">Colours</div><div class="v">—</div>
+        <div class="k">Note</div>
+        <div class="v"><textarea data-note="suvo-stik" rows="2" placeholder="Your note…"></textarea></div>
       </div>
-      <div class="k">Shopify</div>
-      <div class="v links">
-        <a href="https://rs.unikatko.eu/products/suvo-antiperspirant-stik" target="_blank" rel="noopener">Prodavnica ↗</a>
-        <a href="https://admin.shopify.com/store/a99226-2/products/15645113876745" target="_blank" rel="noopener">Admin ↗</a>
-      </div>
-      <div class="k">Cene</div><div class="v"><ul class="tiers"><li>1 STIK: 1.699 RSD + dostava</li><li>2 STIKA: 2.798 RSD</li><li>3 STIKA: 3.747 RSD</li><li>4 STIKA: 4.596 RSD</li></ul></div>
-      
-      <div class="k">Beleška</div>
-      <div class="v"><textarea data-note="suvo-stik" rows="2" placeholder="Tvoja beleška…"></textarea></div>
     </div>
+    <a class="shot" href="https://rs.unikatko.com/suvo-stik/" target="_blank" rel="noopener" title="Open LP A">
+      <img src="https://rs.unikatko.com/suvo-stik/assets/hero.jpg" alt="SUVO product photo" loading="lazy">
+    </a>
   </article>
 
-  <article class="card" data-slug="lokna-kovrdze">
-    <header><h2>LOKNA</h2><span class="sub">Traka za kovrdže</span></header>
-    <div class="grid">
-      <div class="k">Landing stranice</div>
-      <div class="v links">
-        <a href="https://rs.unikatko.com/lokna-kovrdze/" target="_blank" rel="noopener">LP A — template ↗</a>
-        <a href="https://rs.unikatko.com/lokna-kovrdze-2/" target="_blank" rel="noopener">LP B — replika ↗</a>
+  <article class="card">
+    <div class="body">
+      <header><h2>LOKNA</h2><span class="sub">Heatless curling band</span></header>
+      <div class="grid">
+        <div class="k">Landing pages</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.com/lokna-kovrdze/" target="_blank" rel="noopener">LP A — template ↗</a>
+          <span class="missing">LP B — not built</span>
+        </div>
+        <div class="k">Shopify</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.eu/products/lokna-traka-za-kovrdze" target="_blank" rel="noopener">Storefront ↗</a>
+          <a href="https://admin.shopify.com/store/a99226-2/products/15645123215625" target="_blank" rel="noopener">Admin ↗</a>
+        </div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 TRAKA: <b>3.399 RSD</b> + shipping</li><li>2 TRAKE: <b>5.598 RSD</b></li><li>3 TRAKE: <b>7.497 RSD</b></li><li>4 TRAKE: <b>9.196 RSD</b></li></ul></div>
+        <div class="k">Colours</div><div class="v">—</div>
+        <div class="k">Note</div>
+        <div class="v"><textarea data-note="lokna-kovrdze" rows="2" placeholder="Your note…"></textarea></div>
       </div>
-      <div class="k">Shopify</div>
-      <div class="v links">
-        <a href="https://rs.unikatko.eu/products/lokna-traka-za-kovrdze" target="_blank" rel="noopener">Prodavnica ↗</a>
-        <a href="https://admin.shopify.com/store/a99226-2/products/15645123215625" target="_blank" rel="noopener">Admin ↗</a>
-      </div>
-      <div class="k">Cene</div><div class="v"><ul class="tiers"><li>1 TRAKA: 3.399 RSD + dostava</li><li>2 TRAKE: 5.598 RSD</li><li>3 TRAKE: 7.497 RSD</li><li>4 TRAKE: 9.196 RSD</li></ul></div>
-      
-      <div class="k">Beleška</div>
-      <div class="v"><textarea data-note="lokna-kovrdze" rows="2" placeholder="Tvoja beleška…"></textarea></div>
     </div>
+    <a class="shot" href="https://rs.unikatko.com/lokna-kovrdze/" target="_blank" rel="noopener" title="Open LP A">
+      <img src="https://rs.unikatko.com/lokna-kovrdze/assets/hero.jpg" alt="LOKNA product photo" loading="lazy">
+    </a>
   </article>
 
-  <article class="card" data-slug="vrhunac-gumice">
-    <header><h2>VRHUNAC</h2><span class="sub">Gumeni bomboni 6-u-1</span></header>
-    <div class="grid">
-      <div class="k">Landing stranice</div>
-      <div class="v links">
-        <a href="https://rs.unikatko.com/vrhunac-gumice/" target="_blank" rel="noopener">LP A — template ↗</a>
-        <a href="https://rs.unikatko.com/vrhunac-gumice-2/" target="_blank" rel="noopener">LP B — replika ↗</a>
+  <article class="card">
+    <div class="body">
+      <header><h2>VRHUNAC</h2><span class="sub">Men’s 6-in-1 gummies</span></header>
+      <div class="grid">
+        <div class="k">Landing pages</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.com/vrhunac-gumice/" target="_blank" rel="noopener">LP A — template ↗</a>
+          <a href="https://rs.unikatko.com/vrhunac-gumice-2/" target="_blank" rel="noopener">LP B — replica ↗</a>
+        </div>
+        <div class="k">Shopify</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.eu/products/vrhunac-gumice-za-muskarce" target="_blank" rel="noopener">Storefront ↗</a>
+          <a href="https://admin.shopify.com/store/a99226-2/products/15645156507913" target="_blank" rel="noopener">Admin ↗</a>
+        </div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 KUTIJA: <b>3.999 RSD</b> + shipping</li><li>3 KUTIJE (2+1): <b>7.998 RSD</b></li><li>5 KUTIJA (3+2): <b>11.995 RSD</b></li></ul></div>
+        <div class="k">Colours</div><div class="v">—</div>
+        <div class="k">Note</div>
+        <div class="v"><textarea data-note="vrhunac-gumice" rows="2" placeholder="Your note…"></textarea></div>
       </div>
-      <div class="k">Shopify</div>
-      <div class="v links">
-        <a href="https://rs.unikatko.eu/products/vrhunac-gumice-za-muskarce" target="_blank" rel="noopener">Prodavnica ↗</a>
-        <a href="https://admin.shopify.com/store/a99226-2/products/15645156507913" target="_blank" rel="noopener">Admin ↗</a>
-      </div>
-      <div class="k">Cene</div><div class="v"><ul class="tiers"><li>1 KUTIJA: 3.999 RSD + dostava</li><li>3 KUTIJE (2+1): 7.998 RSD</li><li>5 KUTIJA (3+2): 11.995 RSD</li></ul></div>
-      
-      <div class="k">Beleška</div>
-      <div class="v"><textarea data-note="vrhunac-gumice" rows="2" placeholder="Tvoja beleška…"></textarea></div>
     </div>
+    <a class="shot" href="https://rs.unikatko.com/vrhunac-gumice/" target="_blank" rel="noopener" title="Open LP A">
+      <img src="https://rs.unikatko.com/vrhunac-gumice/assets/hero.jpg" alt="VRHUNAC product photo" loading="lazy">
+    </a>
   </article>
 
-  <article class="card" data-slug="tisina-cepici">
-    <header><h2>TIŠINA</h2><span class="sub">Čepići za spavanje</span></header>
-    <div class="grid">
-      <div class="k">Landing stranice</div>
-      <div class="v links">
-        <a href="https://rs.unikatko.com/tisina-cepici/" target="_blank" rel="noopener">LP A — template ↗</a>
-        <a href="https://rs.unikatko.com/tisina-cepici-2/" target="_blank" rel="noopener">LP B — replika ↗</a>
+  <article class="card">
+    <div class="body">
+      <header><h2>TIŠINA</h2><span class="sub">Sleep earplugs</span></header>
+      <div class="grid">
+        <div class="k">Landing pages</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.com/tisina-cepici/" target="_blank" rel="noopener">LP A — template ↗</a>
+          <a href="https://rs.unikatko.com/tisina-cepici-2/" target="_blank" rel="noopener">LP B — replica ↗</a>
+        </div>
+        <div class="k">Shopify</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.eu/products/tisina-cepici-za-spavanje" target="_blank" rel="noopener">Storefront ↗</a>
+          <a href="https://admin.shopify.com/store/a99226-2/products/15645287022857" target="_blank" rel="noopener">Admin ↗</a>
+        </div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 SET: <b>4.599 RSD</b> + shipping</li><li>3 SETA (2+1): <b>9.498 RSD</b></li></ul></div>
+        <div class="k">Colours</div><div class="v">Ponoćna zelena · Peščana · Ugljeno siva · Prašnjava ruža</div>
+        <div class="k">Note</div>
+        <div class="v"><textarea data-note="tisina-cepici" rows="2" placeholder="Your note…"></textarea></div>
       </div>
-      <div class="k">Shopify</div>
-      <div class="v links">
-        <a href="https://rs.unikatko.eu/products/tisina-cepici-za-spavanje" target="_blank" rel="noopener">Prodavnica ↗</a>
-        <a href="https://admin.shopify.com/store/a99226-2/products/15645287022857" target="_blank" rel="noopener">Admin ↗</a>
-      </div>
-      <div class="k">Cene</div><div class="v"><ul class="tiers"><li>1 SET: 4.599 RSD + dostava</li><li>3 SETA (2+1): 9.498 RSD</li></ul></div>
-      <div class="k">Boje</div><div class="v">Ponoćna zelena · Peščana · Ugljeno siva · Prašnjava ruža</div>
-      <div class="k">Beleška</div>
-      <div class="v"><textarea data-note="tisina-cepici" rows="2" placeholder="Tvoja beleška…"></textarea></div>
     </div>
+    <a class="shot" href="https://rs.unikatko.com/tisina-cepici/" target="_blank" rel="noopener" title="Open LP A">
+      <img src="https://rs.unikatko.com/tisina-cepici/assets/color-zelena.jpg" alt="TIŠINA product photo" loading="lazy">
+    </a>
   </article>
-<footer>Generisano automatski iz page.json konfiguracija · rs.unikatko.com</footer>
+
+  <article class="card">
+    <div class="body">
+      <header><h2>ŠAPICA</h2><span class="sub">Pet grooming glove wipes</span></header>
+      <div class="grid">
+        <div class="k">Landing pages</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.com/sapica-rukavice/" target="_blank" rel="noopener">LP A — template ↗</a>
+          <a href="https://rs.unikatko.com/sapica-rukavice-2/" target="_blank" rel="noopener">LP B — replica ↗</a>
+        </div>
+        <div class="k">Shopify</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.eu/products/sapica-rukavice-maramice-za-ljubimce" target="_blank" rel="noopener">Storefront ↗</a>
+          <a href="https://admin.shopify.com/store/a99226-2/products/15645935239433" target="_blank" rel="noopener">Admin ↗</a>
+        </div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 PAKOVANJE: <b>4.599 RSD</b> + shipping</li><li>2 PAKOVANJA: <b>7.998 RSD</b></li><li>3 PAKOVANJA: <b>10.497 RSD</b></li></ul></div>
+        <div class="k">Colours</div><div class="v">—</div>
+        <div class="k">Note</div>
+        <div class="v"><textarea data-note="sapica-rukavice" rows="2" placeholder="Your note…"></textarea></div>
+      </div>
+    </div>
+    <a class="shot" href="https://rs.unikatko.com/sapica-rukavice/" target="_blank" rel="noopener" title="Open LP A">
+      <img src="https://rs.unikatko.com/sapica-rukavice/assets/hero.jpg" alt="ŠAPICA product photo" loading="lazy">
+    </a>
+  </article>
+
+  <article class="card">
+    <div class="body">
+      <header><h2>PLAVICA</h2><span class="sub">Butterfly-pea herbal tea</span></header>
+      <div class="grid">
+        <div class="k">Landing pages</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.com/plavica-caj/" target="_blank" rel="noopener">LP A — template ↗</a>
+          <a href="https://rs.unikatko.com/plavica-caj-2/" target="_blank" rel="noopener">LP B — replica ↗</a>
+        </div>
+        <div class="k">Shopify</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.eu/products/plavica-biljni-caj-leptirov-grasak" target="_blank" rel="noopener">Storefront ↗</a>
+          <a href="https://admin.shopify.com/store/a99226-2/products/15646828364041" target="_blank" rel="noopener">Admin ↗</a>
+        </div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 PAKOVANJE: <b>2.499 RSD</b> + shipping</li><li>2 PAKOVANJA: <b>4.398 RSD</b></li><li>3 PAKOVANJA: <b>5.997 RSD</b></li></ul></div>
+        <div class="k">Colours</div><div class="v">—</div>
+        <div class="k">Note</div>
+        <div class="v"><textarea data-note="plavica-caj" rows="2" placeholder="Your note…"></textarea></div>
+      </div>
+    </div>
+    <a class="shot" href="https://rs.unikatko.com/plavica-caj/" target="_blank" rel="noopener" title="Open LP A">
+      <img src="https://rs.unikatko.com/plavica-caj/assets/hero.jpg" alt="PLAVICA product photo" loading="lazy">
+    </a>
+  </article>
+
+  <article class="card">
+    <div class="body">
+      <header><h2>NIJANSA</h2><span class="sub">Colour shampoo for greys</span></header>
+      <div class="grid">
+        <div class="k">Landing pages</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.com/nijansa-sampon/" target="_blank" rel="noopener">LP A — template ↗</a>
+          <a href="https://rs.unikatko.com/nijansa-sampon-2/" target="_blank" rel="noopener">LP B — replica ↗</a>
+        </div>
+        <div class="k">Shopify</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.eu/products/nijansa-sampon-u-boji-za-sede" target="_blank" rel="noopener">Storefront ↗</a>
+          <a href="https://admin.shopify.com/store/a99226-2/products/15646853857545" target="_blank" rel="noopener">Admin ↗</a>
+        </div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 BOČICA: <b>3.499 RSD</b> + shipping</li><li>2 BOČICE: <b>6.098 RSD</b></li><li>3 BOČICE: <b>6.999 RSD</b></li></ul></div>
+        <div class="k">Colours</div><div class="v">Crna · Tamno smeđa · Srednje smeđa · Svetlo smeđa</div>
+        <div class="k">Note</div>
+        <div class="v"><textarea data-note="nijansa-sampon" rows="2" placeholder="Your note…"></textarea></div>
+      </div>
+    </div>
+    <a class="shot" href="https://rs.unikatko.com/nijansa-sampon/" target="_blank" rel="noopener" title="Open LP A">
+      <img src="https://rs.unikatko.com/nijansa-sampon/assets/color-crna.jpg" alt="NIJANSA product photo" loading="lazy">
+    </a>
+  </article>
+
+  <article class="card">
+    <div class="body">
+      <header><h2>SMIRAJ</h2><span class="sub">Adjustable magnetic ring</span></header>
+      <div class="grid">
+        <div class="k">Landing pages</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.com/smiraj-prsten/" target="_blank" rel="noopener">LP A — template ↗</a>
+          <a href="https://rs.unikatko.com/smiraj-prsten-2/" target="_blank" rel="noopener">LP B — replica ↗</a>
+        </div>
+        <div class="k">Shopify</div>
+        <div class="v links">
+          <a href="https://rs.unikatko.eu/products/smiraj-magnetni-prsten-podesiv" target="_blank" rel="noopener">Storefront ↗</a>
+          <a href="https://admin.shopify.com/store/a99226-2/products/15647029100809" target="_blank" rel="noopener">Admin ↗</a>
+        </div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 PRSTEN: <b>2.499 RSD</b> + shipping</li><li>2 PRSTENA: <b>3.490 RSD</b></li><li>4 PRSTENA: <b>5.980 RSD</b></li></ul></div>
+        <div class="k">Colours</div><div class="v">Srebro · Zlato · Roze zlato · Mat crna</div>
+        <div class="k">Note</div>
+        <div class="v"><textarea data-note="smiraj-prsten" rows="2" placeholder="Your note…"></textarea></div>
+      </div>
+    </div>
+    <a class="shot" href="https://rs.unikatko.com/smiraj-prsten/" target="_blank" rel="noopener" title="Open LP A">
+      <img src="https://rs.unikatko.com/smiraj-prsten/assets/color-srebro.jpg" alt="SMIRAJ product photo" loading="lazy">
+    </a>
+  </article>
+<footer>Generated automatically from page.json configs · rs.unikatko.com</footer>
 </div>
 <script>
 document.querySelectorAll('textarea[data-note]').forEach(t=>{
