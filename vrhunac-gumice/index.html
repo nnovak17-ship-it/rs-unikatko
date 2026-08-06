@@ -110,6 +110,29 @@ h1,h2,h3{margin:0}
 .sw.txt{width:auto;min-width:66px;height:46px;padding:0 12px;font:800 15px/1 var(--body);color:var(--ink)}
 .sw.txt.on{background:var(--orange-soft)}
 
+/* ---------- per-unit variant rows (only when page.json sets perUnitVariants) ----------
+   One row per unit of the chosen tier, numbered #1..#N, each independently
+   selectable. Swatches are shrunk vs the single selector so 5 options still fit
+   a 375px viewport; .swatches keeps flex-wrap, so a longer set wraps to a second
+   line instead of overflowing the page. */
+.unitwrap{margin-top:20px}
+.unitwrap .ulb{font-size:14px;font-weight:800;margin-bottom:2px}
+.unitwrap .uhint{margin:0 0 10px;font-size:12.5px;color:var(--muted)}
+.urow{border:1px solid var(--line);border-radius:12px;background:#fff;padding:9px 10px;margin-bottom:8px}
+.urow .uhead{display:flex;align-items:center;gap:8px;margin-bottom:7px;min-width:0}
+.urow .un{
+  flex:none;font-family:var(--display);font-size:13px;line-height:1;
+  background:var(--navy);color:#fff;border-radius:6px;padding:4px 7px;
+}
+.urow .unm{
+  font-size:13.5px;font-weight:700;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.urow .swatches{gap:8px}
+.urow .sw{width:40px;height:40px;border-radius:10px}
+.urow .sw i{width:22px;height:22px}
+.urow .sw.txt{width:auto;min-width:50px;height:36px;padding:0 9px;font-size:14px}
+
 /* ---------- tier grid ---------- */
 .tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
 .tier{
@@ -380,6 +403,12 @@ footer .disc{margin-top:12px;font-size:11px;line-height:1.5;text-align:left}
   <!-- ============ TIER LADDER ============ -->
   <div class="tiers" id="tiers"></div>
 
+  <!-- ============ PER-UNIT VARIANT ROWS ============
+       Populated only when page.json sets `perUnitVariants: true`; it sits BELOW
+       the tiers because the number of rows follows the chosen quantity. Pages
+       without it keep the single selector above and leave this empty+hidden. -->
+  <div class="unitwrap" id="unitwrap" style="display:none"></div>
+
   <!-- ============ GIFT LADDER ============ -->
   <div class="gifts-h">MUŠKA FORMULA! <span>Pokloni uz tvoju porudžbinu</span></div>
   <div class="gifts" id="gifts"></div>
@@ -546,7 +575,9 @@ const CFG = {
   "defaultTier": 0,
   "freeShippingQty": 3,
   "checkoutBase": "https://rs.unikatko.eu",
+  "perUnitVariants": false,
   "colors": [],
+  "colorLabel": "Boja:",
   "tiers": [
     {
       "qty": 1,
@@ -618,35 +649,91 @@ let selected = (CFG.tiers[CFG.defaultTier] && !CFG.tiers[CFG.defaultTier].oos)
   : CFG.tiers.findIndex(t => !t.oos);
 let colorIdx = 0;   // index into CFG.colors (empty array = product has no colours)
 
-/* Resolve the Shopify variant for the current (tier, colour) pair. Pages with
-   colours carry a variantsByColor map; colourless pages keep a flat variantId. */
-function currentVariantId(){
-  const t = CFG.tiers[selected];
-  if (CFG.colors && CFG.colors.length && t.variantsByColor) {
-    return t.variantsByColor[CFG.colors[colorIdx].name] || t.variantId;
+const HAS_COLORS = !!(CFG.colors && CFG.colors.length);
+/* Per-unit mode: a tier of quantity N gets N independent variant selectors and
+   sends N cart lines. Opt-in via page.json `perUnitVariants`; without it the
+   page keeps the single selector and the single-line permalink, unchanged. */
+const PER_UNIT = !!(CFG.perUnitVariants && HAS_COLORS);
+
+/* Colour index chosen for each unit. picks[0] doubles as the single-selector
+   choice, so both modes share one source of truth for the gallery swap.
+   pickTouched marks rows the shopper changed by hand: untouched rows follow
+   row #1, which is what preserves picks when the tier changes. */
+let picks = [0];
+const pickTouched = [];
+
+function syncPicks(){
+  const n = (CFG.tiers[selected] && CFG.tiers[selected].qty) || 1;
+  if (picks[0] === undefined) picks[0] = 0;
+  for (let i = 1; i < n; i++){
+    if (!pickTouched[i] || picks[i] === undefined) picks[i] = picks[0];
+  }
+  colorIdx = picks[0];
+}
+
+/* Resolve the Shopify variant for a (tier, colour) pair. Pages with colours
+   carry a variantsByColor map; colourless pages keep a flat variantId. */
+function variantFor(t, ci){
+  if (HAS_COLORS && t.variantsByColor) {
+    const c = CFG.colors[ci] || CFG.colors[0];
+    return t.variantsByColor[c.name] || t.variantId;
   }
   return t.variantId;
 }
+function currentVariantId(){ return variantFor(CFG.tiers[selected], colorIdx); }
 
 /* ---- colours ---- */
+/* First gallery slide + its thumb follow the colour chosen for unit #1. */
+function applyColorImage(){
+  if (!HAS_COLORS) return;
+  const c = CFG.colors[PER_UNIT ? picks[0] : colorIdx];
+  if (!c || !c.img) return;
+  const first = slides.querySelector('img');
+  if (first) first.src = c.img;
+  const t0 = document.querySelector('.thumbs img');
+  if (t0) t0.src = c.img;
+}
+
 function renderColors(){
-  if (!CFG.colors || !CFG.colors.length) return;
+  if (!HAS_COLORS) return;
+  if (PER_UNIT) { renderUnitRows(); applyColorImage(); return; }
   document.getElementById('colorwrap').style.display = '';
   document.getElementById('swatches').innerHTML = CFG.colors.map((c,i)=>
     `<button class="sw ${c.hex?'':'txt'} ${i===colorIdx?'on':''}" onclick="pickColor(${i})" title="${c.name}" aria-label="${c.name}">`
     + (c.hex ? `<i style="background:${c.hex}"></i>` : c.name) + `</button>`
   ).join('');
   document.getElementById('colorname').textContent = CFG.colors[colorIdx].name;
-  // first gallery slide + its thumb follow the chosen colour
-  const c = CFG.colors[colorIdx];
-  if (c.img) {
-    const first = slides.querySelector('img');
-    if (first) first.src = c.img;
-    const t0 = document.querySelector('.thumbs img');
-    if (t0) t0.src = c.img;
-  }
+  applyColorImage();
 }
-function pickColor(i){ colorIdx = i; renderColors(); }
+function pickColor(i){ colorIdx = i; picks[0] = i; pickTouched[0] = true; renderColors(); }
+
+/* ---- per-unit variant rows ---- */
+function renderUnitRows(){
+  const box = document.getElementById('unitwrap');
+  if (!box) return;
+  if (!PER_UNIT) { box.style.display = 'none'; return; }
+  syncPicks();
+  const n = CFG.tiers[selected].qty || 1;
+  let rows = '';
+  for (let r = 0; r < n; r++){
+    const sw = CFG.colors.map((c,i)=>
+      `<button class="sw ${c.hex?'':'txt'} ${i===picks[r]?'on':''}" onclick="pickUnit(${r},${i})" title="${c.name}" aria-label="#${r+1} ${c.name}">`
+      + (c.hex ? `<i style="background:${c.hex}"></i>` : c.name) + `</button>`
+    ).join('');
+    rows += `<div class="urow" data-unit="${r+1}">
+      <div class="uhead"><span class="un">#${r+1}</span><span class="unm">${CFG.colors[picks[r]].name}</span></div>
+      <div class="swatches">${sw}</div>
+    </div>`;
+  }
+  const hint = CFG.labels.perUnitHint ? `<p class="uhint">${CFG.labels.perUnitHint}</p>` : '';
+  box.innerHTML = `<div class="ulb">${CFG.colorLabel || ''}</div>${hint}${rows}`;
+  box.style.display = '';
+}
+function pickUnit(r, i){
+  picks[r] = i; pickTouched[r] = true;
+  renderUnitRows();
+  applyColorImage();   // row #1 drives the gallery
+}
 
 /* ---- tiers ---- */
 function renderTiers(){
@@ -664,7 +751,11 @@ function renderTiers(){
     </div>`;
   }).join('');
 }
-function pick(i){ if(CFG.tiers[i].oos) return; selected = i; renderTiers(); renderGifts(); renderTotal(); }
+function pick(i){
+  if(!CFG.tiers[i] || CFG.tiers[i].oos) return;
+  selected = i;
+  renderTiers(); renderGifts(); renderTotal(); renderUnitRows();
+}
 
 /* ---- gift ladder ---- */
 function renderGifts(){
@@ -695,15 +786,52 @@ function renderTotal(){
   document.getElementById('cta-total-2').textContent = label;
 }
 
-/* ---- checkout: Shopify cart permalink per tier variant ---- */
-function goCheckout(){
+/* ---- checkout: Shopify cart permalink ----
+   Single-selector pages send one line (`<variant>:<cartQty|1>`) exactly as
+   before. Per-unit pages send ONE LINE PER UNIT, identical picks collapsed
+   (`<variantA>:2,<variantB>:1`), because each variant is now priced PER UNIT —
+   so the cart total is unit x qty, i.e. the tier total the page advertises. */
+function cartLines(){
   const t = CFG.tiers[selected];
-  const vid = currentVariantId();
-  if(CFG.checkoutBase && vid){
-    location.href = CFG.checkoutBase.replace(/\/+$/,'') + '/cart/' + vid + ':' + (t.cartQty || 1);
-    return;
+  if (!PER_UNIT){
+    const vid = currentVariantId();
+    return vid ? [vid + ':' + (t.cartQty || 1)] : [];
   }
-  alert(CFG.labels.notConnected + '\n\n' + t.name);
+  syncPicks();
+  const order = [], n = {};
+  for (let i = 0; i < (t.qty || 1); i++){
+    const vid = variantFor(t, picks[i]);
+    if (!vid) return [];
+    if (n[vid] === undefined){ n[vid] = 0; order.push(vid); }
+    n[vid]++;
+  }
+  return order.map(v => v + ':' + n[v]);
+}
+
+/* The gift obligation must reach ops ONCE PER ORDER, never once per line: a
+   multi-line cart whose variant titles each read "(+3 poklona)" gets 3x the
+   gifts picked. It rides on a cart attribute instead, which Shopify shows once
+   on the order. Opt-in via labels.giftAttrKey — omitted, no attribute is sent. */
+function giftAttr(){
+  const key = CFG.labels.giftAttrKey;
+  if (!key) return '';
+  const qty = CFG.tiers[selected].qty;
+  const caps = CFG.gifts.filter(g => qty >= g.at).map(g => g.cap);
+  if (!caps.length) return '';
+  const val = (CFG.labels.giftAttrPrefix || '') + caps.join(' + ');
+  return '?attributes%5B' + encodeURIComponent(key) + '%5D=' + encodeURIComponent(val);
+}
+
+function checkoutUrl(){
+  const lines = cartLines();
+  if (!CFG.checkoutBase || !lines.length) return '';
+  return CFG.checkoutBase.replace(/\/+$/,'') + '/cart/' + lines.join(',') + giftAttr();
+}
+
+function goCheckout(){
+  const url = checkoutUrl();
+  if (url){ location.href = url; return; }
+  alert(CFG.labels.notConnected + '\n\n' + CFG.tiers[selected].name);
 }
 
 /* ---- gallery ---- */
