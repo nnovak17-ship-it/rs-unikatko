@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ŠAPICA — Rukavice maramice za pse i mačke</title>
+<title>Rukavice maramice za pse i mačke – očisti ljubimca za dva minuta, bez vode i kade | ŠAPICA</title>
 <style>
 /* ŠAPICA LP — sr-Latn-RS. Hand-built, self-contained. */
 :root{
@@ -278,12 +278,12 @@ function renderOpts(){
       <div class="pr"><b>${fmt(o.total)}${o.ship?' + dostava':''}</b><span>${o.per}</span></div>
     </div>`).join('');
   const o = OPTS[sel];
-  const label = 'DODAJ U KORPU — ' + fmt(o.total) + (o.ship ? ' + 390 RSD dostava' : '');
+  const label = 'DODAJ U KORPU — ' + fmt(o.total) + (o.ship ? ' + 490 RSD dostava' : '');
   document.getElementById('atc').textContent = label;
   const a2=document.getElementById('atc2'); if(a2) a2.textContent = fmt(o.total);
   const ss=document.getElementById('satc-sub'); if(ss) ss.textContent = o.sub;
   document.getElementById('price').innerHTML =
-    `<s>${fmt(9199)}</s>${fmt(o.total)}${o.ship?' <span style="font-size:14px;font-weight:400">+ 390 RSD dostava</span>':''}`;
+    `<s>${fmt(9199)}</s>${fmt(o.total)}${o.ship?' <span style="font-size:14px;font-weight:400">+ 490 RSD dostava</span>':''}`;
 }
 function pickOpt(i){ sel=i; renderOpts(); }
 function kupi(){ location.href = BASE + '/cart/' + OPTS[sel].variantId + ':1'; }

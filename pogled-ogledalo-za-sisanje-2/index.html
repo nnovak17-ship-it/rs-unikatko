@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trokrilno LED ogledalo za šišanje – vidiš potiljak dok se sam šišaš | POGLED</title>
+<style>
+/* POGLED LP B — sr-Latn-RS. Hand-built 1:1 klon strukture izvorne stranice. */
+:root{
+  --ink:#171B1E; --body:#4A555C; --mut:#8A959B; --line:#E1E4E6;
+  --dark:#161C21; --dark2:#28323A; --wash:#F4F5F6;
+  --teal:#2FB6C4; --teal2:#1F8E9A; --tealsoft:#E4F7F9; --tealink:#155A63;
+  --amber:#E39A2B; --ambersoft:#FBEBD2;
+  --ok:#2FA84F; --bad:#D9576A;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;
+  padding-bottom:96px;font-size:15px}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;line-height:1.18;letter-spacing:-.015em}
+.wrap{max-width:620px;margin:0 auto;padding:0 16px}
+
+/* 1. header */
+header{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;
+  border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:60}
+header .ico{font-size:18px;text-decoration:none;color:var(--ink)}
+.logo{font-weight:800;font-size:20px;letter-spacing:.10em}
+.logo i{font-style:normal;color:var(--teal)}
+
+/* 2. review badge row */
+.rbadge{display:flex;align-items:center;gap:9px;padding:14px 0 4px}
+.rbadge .av{display:flex}
+.rbadge .av span{width:26px;height:26px;border-radius:50%;border:2px solid #fff;margin-left:-8px;
+  background:var(--dark2);display:grid;place-items:center;color:#fff;font-size:10px;font-weight:700}
+.rbadge .av span:first-child{margin-left:0}
+.rbadge .st{color:var(--amber);font-size:14px;letter-spacing:1px}
+.rbadge .tx{font-size:12.5px;color:var(--body);font-weight:600}
+
+/* 3. gallery */
+.gal{position:relative;background:var(--wash)}
+.gal .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.gal .slides::-webkit-scrollbar{display:none}
+.gal .slides img{min-width:100%;scroll-snap-align:center;aspect-ratio:1/1;object-fit:cover}
+.gal .nx{position:absolute;right:12px;bottom:12px;width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;font-size:17px;cursor:pointer;display:grid;place-items:center}
+.thumbs{display:flex;gap:7px;overflow-x:auto;padding:9px 16px;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{width:56px;height:56px;object-fit:cover;border-radius:8px;flex:none;
+  border:2px solid transparent;cursor:pointer}
+.thumbs img.on{border-color:var(--teal)}
+
+/* 4. eyebrow + title */
+.eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.05em;color:var(--tealink);background:var(--tealsoft);
+  border:1px solid #B8E9EE;padding:4px 10px;border-radius:20px;margin:14px 0 9px}
+.ptitle{font-size:23px;font-weight:800;margin-bottom:10px}
+.pdesc{font-size:13.5px;color:var(--body);line-height:1.6;margin:0 0 14px}
+.pdesc .chip{background:#D5F3F6;color:var(--tealink);padding:1px 6px;border-radius:5px;font-weight:700}
+.pdesc em{display:block;margin-top:7px;font-style:normal;color:var(--tealink);font-weight:600}
+
+/* 5. price */
+.parea{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:14px}
+.parea .cur{font-size:26px;font-weight:800}
+.parea .cmp{font-size:15px;color:var(--mut);text-decoration:line-through}
+.parea .sv{background:var(--amber);color:#fff;font-size:11.5px;font-weight:800;
+  padding:3px 9px;border-radius:6px;letter-spacing:.02em}
+
+/* 6. checklist */
+.chk{margin:0 0 18px}
+.chk div{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;padding:4px 0;color:var(--ink)}
+.chk .m{color:var(--teal);font-weight:900;flex:none;line-height:1.5}
+
+/* 7. tiers */
+.twrap{position:relative;margin-bottom:11px}
+.tbadge{position:absolute;top:-9px;left:14px;z-index:2;background:var(--dark);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:.06em;padding:3px 10px;border-radius:5px;text-transform:uppercase}
+.tier{border:1.5px solid var(--line);border-radius:13px;padding:13px;background:#fff;cursor:pointer;
+  display:flex;gap:10px;align-items:flex-start}
+.tier.on{border-color:var(--teal);box-shadow:0 0 0 1.5px var(--teal);background:#FCFEFE}
+.tier .radio{width:19px;height:19px;border-radius:50%;border:2px solid #C4CDD3;flex:none;margin-top:2px;
+  display:grid;place-items:center}
+.tier.on .radio{border-color:var(--teal)}
+.tier.on .radio::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--teal)}
+.tier .th{width:46px;height:46px;border-radius:8px;object-fit:cover;flex:none;background:var(--wash)}
+.tier .bd{min-width:0;flex:1}
+.tier .lb{font-size:14.5px;font-weight:700;line-height:1.25}
+.tier .pu{font-size:12.5px;color:var(--tealink);font-weight:700;margin-top:1px}
+.tier .ds{font-size:12px;color:var(--body);margin-top:3px;line-height:1.4}
+.tier .va{display:inline-block;margin-top:5px;font-size:11px;font-weight:700;color:var(--amber);
+  background:var(--ambersoft);border-radius:12px;padding:2px 8px}
+.tier .rt{text-align:right;flex:none}
+.tier .rt .pr{font-size:15px;font-weight:800;white-space:nowrap}
+.tier .rt .cm{font-size:11.5px;color:var(--mut);text-decoration:line-through;white-space:nowrap}
+.tier .rt .sv{display:inline-block;margin-top:3px;background:var(--tealsoft);color:var(--tealink);
+  font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:11px;white-space:nowrap}
+
+/* 8. ATC */
+.atc{display:block;width:100%;border:0;border-radius:10px;background:var(--dark);color:#fff;
+  font-size:15.5px;font-weight:700;padding:17px 14px;cursor:pointer;text-align:center;
+  letter-spacing:.01em;margin-top:14px}
+.atc:active{filter:brightness(1.25)}
+.pills{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;padding:12px 0 4px}
+.pills span{font-size:11.5px;font-weight:600;line-height:1.35;color:var(--body);background:var(--wash);
+  border:1px solid var(--line);border-radius:20px;padding:4px 10px}
+.shipline{display:flex;align-items:center;justify-content:center;gap:7px;font-size:12.5px;
+  color:var(--body);padding:8px 0 18px}
+.shipline b{color:var(--ink)}
+
+/* 9. mini reviews */
+.mrev{padding:6px 0 22px}
+.mrh{text-align:center;margin-bottom:12px}
+.mrh h2{font-size:20px;font-weight:800}
+.mrh p{font-size:12.5px;color:var(--mut);margin:4px 0 0}
+.mrow{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
+.mrow::-webkit-scrollbar{display:none}
+.mcard{flex:none;width:82%;border:1px solid var(--line);border-radius:13px;padding:13px;background:#fff}
+.mcard .who{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;margin-bottom:5px}
+.mcard .who i{font-style:normal;color:var(--ok);font-size:11px;font-weight:700}
+.mcard .st{color:var(--amber);font-size:12px;letter-spacing:1px;margin-bottom:5px}
+.mcard p{margin:0;font-size:12.5px;color:var(--body);line-height:1.55}
+
+/* 10. accordions */
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{padding:15px 26px 15px 0;font-weight:700;font-size:14.5px;cursor:pointer;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:2px;top:12px;font-size:20px;color:var(--mut);font-weight:400}
+details[open] summary::after{content:"−"}
+details .bd{padding:0 0 15px;font-size:13.5px;color:var(--body)}
+details .bd p{margin:0 0 8px}
+details .bd ul{margin:0;padding-left:18px}
+details .bd li{margin-bottom:5px}
+
+/* 11. tabbed customer reviews */
+.crev{padding:24px 0 6px}
+.crev h2{text-align:center;font-size:21px;font-weight:800}
+.crev .sub{text-align:center;font-size:12.5px;color:var(--mut);margin:5px 0 14px}
+.tabs{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding-bottom:12px}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;border:1px solid var(--line);background:#fff;color:var(--body);font-size:12px;
+  font-weight:700;padding:7px 13px;border-radius:20px;cursor:pointer}
+.tabs button.on{background:var(--dark);color:#fff;border-color:var(--dark)}
+.cgrid{display:grid;gap:10px}
+.ccard{border:1px solid var(--line);border-radius:13px;padding:13px;background:#fff}
+.ccard .who{font-size:12.5px;font-weight:700;margin-bottom:4px}
+.ccard .st{color:var(--amber);font-size:12px;letter-spacing:1px}
+.ccard p{margin:5px 0 0;font-size:13px;color:var(--body)}
+.ccard b{color:var(--ink)}
+
+/* 12. dark hero band */
+.vh{background:var(--dark);color:#EEF2F4;padding:34px 0 30px;margin-top:26px}
+.vh .eb{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:9px}
+.vh h2{font-size:27px;font-weight:800;margin-bottom:10px}
+.vh p{font-size:14px;color:#C4CDD3;margin:0 0 16px}
+.vh .vp{display:flex;flex-wrap:wrap;gap:7px}
+.vh .vp span{background:var(--dark2);color:#EEF2F4;font-size:11.5px;font-weight:600;
+  border-radius:20px;padding:6px 11px}
+
+/* 13. generic light section */
+.sec{padding:30px 0}
+.sec .eb{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal2);margin-bottom:8px}
+.sec h2{font-size:23px;font-weight:800;margin-bottom:12px}
+.sec p{font-size:14px;color:var(--body);margin:0 0 12px}
+.plist{list-style:none;margin:0 0 14px;padding:0}
+.plist li{position:relative;padding-left:20px;font-size:14px;color:var(--body);margin-bottom:9px}
+.plist li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.emph{background:var(--tealsoft);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;
+  padding:13px 14px;font-size:14px;color:var(--tealink)}
+
+/* 14. numbered steps */
+.step{display:flex;gap:13px;margin-bottom:18px}
+.step .n{width:30px;height:30px;flex:none;border-radius:50%;background:var(--dark);color:#fff;
+  display:grid;place-items:center;font-weight:800;font-size:14px}
+.step h3{font-size:15.5px;font-weight:700;margin-bottom:4px}
+.step p{font-size:13.5px;margin:0;color:var(--body)}
+.featpills{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.featpills span{background:var(--wash);border:1px solid var(--line);border-radius:20px;
+  padding:6px 11px;font-size:11.5px;font-weight:600;color:var(--body)}
+
+/* 15. UGC row */
+.ugc{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
+.ugc::-webkit-scrollbar{display:none}
+.ucard{flex:none;width:62%;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff}
+.ucard img{aspect-ratio:1/1;object-fit:cover}
+.ucard .b{padding:10px}
+.ucard .st{color:var(--amber);font-size:11px;letter-spacing:1px}
+.ucard b{display:block;font-size:12.5px;margin-top:3px}
+.ucard span{font-size:11.5px;color:var(--mut)}
+
+/* 16. comparison */
+.cmpwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ctab{width:100%;min-width:320px;border-collapse:separate;border-spacing:0;font-size:12px}
+.ctab th,.ctab td{padding:10px 6px;text-align:center;border-bottom:1px solid var(--line)}
+.ctab th:first-child,.ctab td:first-child{text-align:left;font-weight:600;color:var(--ink);width:38%}
+.ctab thead th{font-size:11.5px;font-weight:800;color:var(--body);vertical-align:bottom}
+.ctab thead th.us{background:var(--dark);color:#fff;border-radius:10px 10px 0 0}
+.ctab td.us{background:var(--dark2);color:#fff}
+.ctab tbody tr:last-child td.us{border-radius:0 0 10px 10px}
+.ctab .y{color:var(--teal);font-weight:900;font-size:14px}
+.ctab .yw{color:#fff;font-weight:900;font-size:14px}
+.ctab .x{color:#C4CDD3;font-weight:900;font-size:14px}
+.ctab .vr{font-size:11px;color:var(--mut)}
+
+/* 17. savings callout */
+.save{background:var(--dark);color:#EEF2F4;border-radius:16px;padding:22px 18px;text-align:center;margin:6px 0 4px}
+.save .big{font-size:29px;font-weight:800;color:var(--amber);line-height:1.1}
+.save p{font-size:13px;color:#C4CDD3;margin:9px 0 0}
+.save .fine{font-size:11px;color:#8A959B;margin-top:8px}
+
+/* 18. two questions */
+.q2{border:1px solid var(--line);border-radius:13px;padding:15px;margin-bottom:11px;background:#fff}
+.q2 h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.q2 p{font-size:13.5px;color:var(--body);margin:0}
+.q2row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.q2row span{background:var(--tealsoft);color:var(--tealink);font-size:11.5px;font-weight:700;
+  border-radius:20px;padding:6px 11px}
+
+/* 19. rating summary */
+.sum{text-align:center;padding:4px 0 18px}
+.sum .st{color:var(--amber);font-size:19px;letter-spacing:2px}
+.sum .ln{font-size:13px;color:var(--body);margin-top:6px}
+.sum .ln b{color:var(--ink)}
+
+/* 20. FAQ */
+.faq{background:var(--wash);border-radius:16px;padding:4px 15px 8px;margin:8px 0 26px}
+.faq h2{text-align:center;font-size:21px;font-weight:800;padding:18px 0 3px}
+.faq .sub{text-align:center;font-size:12.5px;color:var(--mut);margin-bottom:6px}
+.faq details{border-top:1px solid #DDE2E4}
+.faq details:first-of-type{border-top:0}
+.faq details:last-of-type{border-bottom:0}
+
+/* 21. final CTA */
+.fin{background:var(--dark);color:#EEF2F4;padding:34px 0 36px;text-align:center}
+.fin .eb{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:9px}
+.fin h2{font-size:24px;font-weight:800;margin-bottom:11px}
+.fin p{font-size:13.5px;color:#C4CDD3;margin:0 0 18px}
+.fin .atc{background:var(--teal);color:#08262A;margin-top:0}
+.fin .tl{font-size:11.5px;color:#8A959B;margin-top:12px}
+
+/* 22. sticky ATC (izvorna stranica je ima) */
+.satc{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;
+  border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.10);
+  padding:9px 16px calc(10px + env(safe-area-inset-bottom))}
+.satc .in{max-width:620px;margin:0 auto;display:flex;align-items:center;gap:11px}
+.satc .t{min-width:0;flex:1}
+.satc .t b{display:block;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.satc .t span{font-size:12.5px;font-weight:800}
+.satc .atc{margin:0;width:auto;flex:none;padding:13px 18px;font-size:13.5px;border-radius:9px}
+
+footer{background:var(--dark);color:#8A959B;padding:26px 0 30px;font-size:12.5px}
+footer .ft{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#C4CDD3;margin-bottom:8px}
+footer a{color:#DDE2E4;text-decoration:none;display:inline-block;margin:0 8px 6px 0}
+footer .disc{margin-top:16px;font-size:10.5px;line-height:1.6;color:#6B7880}
+footer .cp{margin-top:14px;font-size:11.5px}
+</style>
+</head>
+<body>
+
+<!-- 1. header -->
+<header>
+  <span class="ico">☰</span>
+  <span class="logo">POG<i>L</i>ED</span>
+  <a class="ico" href="#ponuda" aria-label="Korpa">🛒</a>
+</header>
+
+<div class="wrap">
+  <!-- 2. review badge (PLACEHOLDER brojevi) -->
+  <div class="rbadge">
+    <span class="av"><span>★</span><span>★</span><span>★</span></span>
+    <span class="st">★★★★★</span>
+    <span class="tx">1.400+ recenzija</span>
+  </div>
+</div>
+
+<!-- 3. gallery -->
+<section class="gal">
+  <div class="slides" id="slides">
+    <img src="assets/hero.jpg" alt="POGLED trokrilno LED ogledalo za šišanje">
+    <img src="assets/product.jpg" alt="POGLED ogledalo — tri panela, kuke i izvlačna polica">
+    <img src="assets/features.jpg" alt="Šta sve dobijaš u setu">
+    <img src="assets/lifestyle.jpg" alt="Muškarac se sam šiša ispred POGLED ogledala">
+    <img src="assets/shelf.jpg" alt="Izvlačna polica za mašinicu i nastavke">
+    <img src="assets/hang.jpg" alt="Kači se preko vrata bez bušenja">
+    <img src="assets/lightmodes.jpg" alt="Tri režima svetla">
+    <img src="assets/compare.jpg" alt="POGLED naspram običnog trokrilnog ogledala">
+  </div>
+  <button class="nx" aria-label="Sledeća slika" onclick="document.getElementById('slides').scrollBy({left:document.getElementById('slides').clientWidth,behavior:'smooth'})">›</button>
+</section>
+<div class="thumbs" id="thumbs"></div>
+
+<div class="wrap">
+  <!-- 4. eyebrow + title + desc -->
+  <div class="eyebrow">🔥 Najtraženije</div>
+  <h1 class="ptitle">Trokrilno LED ogledalo za šišanje — POGLED</h1>
+  <p class="pdesc">Konačno <span class="chip">vidiš svoj potiljak</span> — tri panela sa LED svetlom vraćaju ti zadnju stranu glave pravo u vidno polje, pa se šišaš i ravnaš bradu sam, kad tebi odgovara.
+    <em>Kompletna stanica za šišanje kod kuće, bez berberina i bez druge osobe.</em></p>
+
+  <!-- 5. price -->
+  <div class="parea">
+    <span class="cur" id="p-cur">4.590 RSD</span>
+    <span class="cmp" id="p-cmp">6.290 RSD</span>
+    <span class="sv" id="p-sv">Ušteda 27%</span>
+  </div>
+
+  <!-- 6. checklist -->
+  <div class="chk">
+    <div><span class="m">✓</span><span>Tri LED panela — vidiš potiljak, bez slepe tačke</span></div>
+    <div><span class="m">✓</span><span>Punjiva bežična baterija + izvlačna polica za alat</span></div>
+    <div><span class="m">✓</span><span>Kači se preko svakih vrata za minut — bez bušenja</span></div>
+    <div><span class="m">✓</span><span>30 dana garancije povraćaja novca</span></div>
+  </div>
+
+  <!-- 7. tiers -->
+  <div id="ponuda"></div>
+  <div id="tiers"></div>
+
+  <!-- 8. ATC -->
+  <button class="atc" id="atc" onclick="kupi()">DODAJ U KORPU — 4.590 RSD</button>
+  <div class="pills">
+    <span>✓ 30 dana garancije</span><span>✓ Plaćanje pouzećem</span><span id="pill-ship">✓ Dostava 2–4 radna dana</span>
+  </div>
+  <div class="shipline">🚚 Isporuka <b>2–4 radna dana</b> na celoj teritoriji Srbije</div>
+
+  <!-- 9. mini reviews (PLACEHOLDER) -->
+  <section class="mrev">
+    <div class="mrh"><h2>Šta kažu oni koji se sami šišaju</h2><p>Recenzije kupaca</p></div>
+    <div class="mrow">
+      <div class="mcard"><div class="who">Nemanja P. <i>✓ kupac</i></div><div class="st">★★★★★</div>
+        <p>Dve godine sam se mučio sa malim ogledalom u ruci i uvek pogodio krivo. Sad vidim ceo potiljak dok radim. Prvo šišanje je ispalo bolje nego kod berberina.</p></div>
+      <div class="mcard"><div class="who">Miloš J. <i>✓ kupac</i></div><div class="st">★★★★★</div>
+        <p>Skoro sam dao duplo za jedno bez svetla. Ovo ima LED, bateriju i policu za nastavke. Prebaci se preko vrata za minut, ništa se ne buši.</p></div>
+      <div class="mcard"><div class="who">Vladimir R. <i>✓ kupac</i></div><div class="st">★★★★★</div>
+        <p>Obrnuta slika mi je smetala prvih pet minuta, posle se ni ne setiš. Šipke su čvrste, nije plastika koja puca. Berberina nisam video dva meseca.</p></div>
+    </div>
+  </section>
+
+  <!-- 10. accordions -->
+  <details open>
+    <summary>Opis proizvoda</summary>
+    <div class="bd"><p>POGLED je kompletna stanica za samostalno šišanje. Tri panela sa LED osvetljenjem stoje pod uglom i vraćaju ti sliku potiljka i profila pravo u vidno polje, pa možeš da se šišaš, ravnaš bradu i sređuješ zalizak bez drugog ogledala u ruci. Ugrađena punjiva baterija, tri režima svetla i izvlačna polica za mašinicu i nastavke.</p></div>
+  </details>
+  <details>
+    <summary>Kako se koristi</summary>
+    <div class="bd">
+      <p>1. Prebaci teleskopske kuke preko svakih sobnih vrata — bez alata i bez bušenja.</p>
+      <p>2. Rasklopi bočne panele tako da budu blago okrenuti ka tebi.</p>
+      <p>3. Uključi LED (belo, prirodno ili toplo) i stani ispred srednjeg panela.</p>
+      <p>4. Bočni paneli ti vraćaju osvetljen potiljak i profil u vidno polje — obe ruke su ti slobodne. Na obrnutu sliku se navikneš već tokom prvog šišanja.</p>
+    </div>
+  </details>
+  <details>
+    <summary>Šta je u pakovanju</summary>
+    <div class="bd"><ul>
+      <li>Trokrilno LED ogledalo (3 panela)</li>
+      <li>Teleskopske kuke za kačenje preko vrata</li>
+      <li>Izvlačna polica za alat</li>
+      <li>Ugrađena punjiva baterija (1500 mAh prema podacima dobavljača)</li>
+      <li>Kabl za punjenje i uputstvo</li>
+    </ul><p>Mašinica, makaze, češalj i nastavci sa fotografija služe samo za prikaz i nisu deo pakovanja.</p></div>
+  </details>
+  <details>
+    <summary>Dostava i povraćaj</summary>
+    <div class="bd">
+      <p>Plaćaš pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata. Isporuka 2–4 radna dana na celoj teritoriji Srbije.</p>
+      <p>Dostava je besplatna za pakete od 2 i više komada; uz jedan komad se dostava naplaćuje po tarifi kurirske službe.</p>
+      <p>30 dana garancije povraćaja novca — proizvod u nekorišćenom stanju vraćaš uz pun povraćaj novca.</p>
+    </div>
+  </details>
+
+  <!-- 11. tabbed reviews (PLACEHOLDER) -->
+  <section class="crev" id="recenzije">
+    <h2>Šta kažu kupci</h2>
+    <div class="sub">Recenzije kupaca — zamenićemo ih proverenim recenzijama</div>
+    <div class="tabs" id="tabs"></div>
+    <div class="cgrid" id="cgrid"></div>
+  </section>
+</div>
+
+<!-- 12. dark hero band -->
+<section class="vh"><div class="wrap">
+  <div class="eb">Stanica za šišanje kod kuće</div>
+  <h2>Konačno vidiš svoj potiljak.</h2>
+  <p>Osvetljen pogled iz tri ugla koji ti drži liniju oštrom kad tebi odgovara — bez zakazivanja i bez izvrtanja vrata nad malim ogledalom.</p>
+  <div class="vp"><span>Vidiš svaki ugao, osvetljeno</span><span>Prava stanica, ne ogledalce u ruci</span><span>LED po celom obodu</span></div>
+</div></section>
+
+<div class="wrap">
+  <!-- 13. the real problem -->
+  <section class="sec">
+    <div class="eb">Pravi problem</div>
+    <h2>Nikad ti ruka nije bila problem — nego ogledalce u njoj.</h2>
+    <ul class="plist">
+      <li>Nasloniš malo ogledalo na lavabo i izvrneš vrat da uhvatiš potiljak u velikom ogledalu.</li>
+      <li>Jedna ruka drži ogledalo i umori se, dok druga pokušava da vodi mašinicu.</li>
+      <li>Pozadi ti ostaje slepa tačka koju nikad ne pogodiš iz prve.</li>
+      <li>Pa ili živiš s tim, ili odustaneš i opet zakažeš berberina.</li>
+    </ul>
+    <div class="emph">To je <b>problem vidljivosti, ne problem veštine</b>. Daj ruci nešto pametnije da drži od ogledala i potiljak prestaje da bude pogađanje.</div>
+  </section>
+
+  <!-- 14. how it works -->
+  <section class="sec">
+    <div class="eb">Kako radi pogled iz tri ugla</div>
+    <h2>Dva bočna panela. Jedan osvetljen pogled na potiljak.</h2>
+    <p>Nije potrebna nikakva veština — samo linija pogleda. Evo kako ti trokrilna postavka dovodi potiljak i profil pravo ispred očiju, dok su ti obe ruke slobodne.</p>
+    <div class="step"><div class="n">1</div><div><h3>Prebaci ga preko vrata za minut</h3><p>Teleskopske kuke se spuste preko svakih standardnih sobnih vrata. Bez bušenja, bez alata, bez tragova na zidu.</p></div></div>
+    <div class="step"><div class="n">2</div><div><h3>Rasklopi bočne panele ka sebi</h3><p>Levi i desni panel okreneš blago prema sebi i uključiš LED — belo, prirodno ili toplo svetlo, da je cela glava ravnomerno osvetljena.</p></div></div>
+    <div class="step"><div class="n">3</div><div><h3>Stani na sredinu — i vidi potiljak</h3><p>Bočni paneli ti vraćaju osvetljenu zadnju stranu i profil glave pravo u vidno polje. Obe ruke ostaju na mašinici, jer ne moraš da držiš drugo ogledalo.</p></div></div>
+    <div class="featpills"><span>Kačenje na vrata bez bušenja</span><span>Izvlačna polica za alat</span><span>Punjiva bežična baterija</span><span>3 režima LED svetla</span></div>
+  </section>
+
+  <!-- 15. UGC row (PLACEHOLDER slike) -->
+  <section class="sec" style="padding-top:6px">
+    <div class="eb">Kod kuće, u praksi</div>
+    <h2>Postavka iza svakog urednog domaćeg šišanja.</h2>
+    <p>Šišanje, ravnanje brade i sređivanje — ljudi koji gledaju osvetljen potiljak dok sami sebe drže urednim.</p>
+    <div class="ugc">
+      <div class="ucard"><img src="assets/lifestyle.jpg" alt=""><div class="b"><div class="st">★★★★★</div><b>Nemanja P.</b><span>Šišanje svake druge nedelje</span></div></div>
+      <div class="ucard"><img src="assets/shelf.jpg" alt=""><div class="b"><div class="st">★★★★★</div><b>Miloš J.</b><span>Ravnanje brade kod kuće</span></div></div>
+      <div class="ucard"><img src="assets/hang.jpg" alt=""><div class="b"><div class="st">★★★★★</div><b>Tijana S.</b><span>Sama plete pozadi</span></div></div>
+      <div class="ucard"><img src="assets/lightmodes.jpg" alt=""><div class="b"><div class="st">★★★★★</div><b>Vladimir R.</b><span>Prvo domaće šišanje</span></div></div>
+    </div>
+  </section>
+
+  <!-- 16. comparison -->
+  <section class="sec">
+    <div class="eb">Šta dobijaš za novac</div>
+    <h2>POGLED, obično trokrilno ogledalo i ogledalce u ruci.</h2>
+    <div class="cmpwrap">
+      <table class="ctab">
+        <thead><tr><th></th><th class="us">POGLED</th><th>Obično trokrilno</th><th>Ogledalce u ruci</th></tr></thead>
+        <tbody>
+          <tr><td>Vidiš potiljak bez tuđe pomoći</td><td class="us"><span class="yw">✓</span></td><td><span class="y">✓</span></td><td><span class="x">✕</span></td></tr>
+          <tr><td>LED osvetljenje</td><td class="us"><span class="yw">✓</span></td><td><span class="x">✕</span></td><td><span class="x">✕</span></td></tr>
+          <tr><td>Punjiva bežična baterija</td><td class="us"><span class="yw">✓</span></td><td><span class="x">✕</span></td><td><span class="x">✕</span></td></tr>
+          <tr><td>Polica za mašinicu i nastavke</td><td class="us"><span class="yw">✓</span></td><td><span class="x">✕</span></td><td><span class="x">✕</span></td></tr>
+          <tr><td>Obe ruke slobodne</td><td class="us"><span class="yw">✓</span></td><td><span class="y">✓</span></td><td><span class="x">✕</span></td></tr>
+          <tr><td>Garancija povraćaja 30 dana</td><td class="us"><span class="yw">✓</span></td><td><span class="vr">zavisi</span></td><td><span class="vr">zavisi</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 17. savings callout -->
+  <div class="save">
+    <div class="big">oko 15.600 RSD</div>
+    <p>Toliko otprilike ode godišnje ako ideš kod berberina na svake dve nedelje po 600 RSD. Ogledalo se isplati posle nekoliko šišanja.</p>
+    <div class="fine">Primer računice, ne obećanje — cena šišanja se razlikuje od grada do grada.</div>
+  </div>
+
+  <!-- 18. two questions -->
+  <section class="sec">
+    <div class="eb">Dva pitanja koja svi postave</div>
+    <h2>Obrnuta slika? Šipke koje pucaju? Rešeno.</h2>
+    <div class="q2"><h3>Zar me obrnuta slika neće zbuniti?</h3><p>Navikneš se tokom prvog šišanja. Pošto je slika mirna i uvek na istom mestu — a ne klati se u umornoj ruci — većini je lakše nego sa ogledalcem koje zamenjuje. Mozak to sam preokrene posle prvog prelaza.</p></div>
+    <div class="q2"><h3>Hoće li šipke ili šarke da popuste?</h3><p>Najčešća zamerka jeftinim trokrilnim ogledalima jesu šipke koje se savijaju. Zato su ovde teleskopske šipke i šarke rađene da drže. A ako ti nešto ne odgovara, imaš 30 dana za povraćaj novca — rizik je na nama.</p></div>
+    <div class="q2row"><span>30 dana povraćaj novca</span><span>Plaćanje pouzećem</span><span>Isporuka 2–4 dana</span></div>
+  </section>
+
+  <!-- 19. rating summary + testimonials (PLACEHOLDER) -->
+  <section class="sec" style="padding-top:0">
+    <div class="eb">Oni koji se sami šišaju</div>
+    <h2>Prestali su da pogađaju potiljak.</h2>
+    <div class="sum">
+      <div class="st">★★★★★</div>
+      <div class="ln"><b>4,8</b> prosečna ocena · <b>1.400+</b> recenzija · <b>6.000+</b> kupaca</div>
+    </div>
+    <div class="cgrid">
+      <div class="ccard"><div class="st">★★★★★</div><p>Konačno vidim zadnju stranu glave. To je i bio ceo problem — sad mi linija pozadi ispadne prava iz prve.</p><div class="who" style="margin-top:7px">Nemanja P. — šiša se sam 3 meseca · ✓ kupac</div></div>
+      <div class="ccard"><div class="st">★★★★★</div><p>Kači se na vrata kupatila za par sekundi, a uz LED konačno vidim liniju na vratu. Berberina nisam video dva meseca.</p><div class="who" style="margin-top:7px">Miloš J. — održavanje svake nedelje · ✓ kupac</div></div>
+      <div class="ccard"><div class="st">★★★★★</div><p>Pletem se sama pozadi umesto da molim nekoga. Bočni paneli sa svetlom čine da vidim tačno šta radim.</p><div class="who" style="margin-top:7px">Tijana S. — plete sama 5 meseci · ✓ kupac</div></div>
+      <div class="ccard"><div class="st">★★★★☆</div><p>Solidno napravljeno, šipke deluju čvrsto i polica je stvarno korisna. Jedina zamerka — voleo bih da baterija traje malo duže na najjačem svetlu.</p><div class="who" style="margin-top:7px">Vladimir R. — brada i zalisci · ✓ kupac</div></div>
+    </div>
+  </section>
+
+  <!-- 20. FAQ -->
+  <section class="faq">
+    <h2>Pre nego što ga okačiš</h2>
+    <div class="sub">Sve što ljudi pitaju prvo</div>
+    <details><summary>Da li stvarno mogu da vidim svoj potiljak?</summary><div class="bd"><p>Da, to je i cela poenta. Dok gledaš u srednji panel, dva bočna su okrenuta ka tebi i vraćaju ti zadnju stranu i profil glave u vidno polje. LED traka osvetli zadnju liniju, pa ne pogađaš napamet kao sa ogledalcem u ruci.</p></div></details>
+    <details><summary>Hoće li da se polomi? Jesu li šipke čvrste?</summary><div class="bd"><p>Teleskopske šipke i šarke rađene su za svakodnevnu upotrebu. Ogledalo drži za okvir, ne za same panele, i ne opterećuj policu preko potrebnog.</p></div></details>
+    <details><summary>Zbunjuje li obrnuta slika u ogledalu?</summary><div class="bd"><p>Prvih par minuta je neobično, a onda se navikneš. Pošto je slika mirna i uvek na istom mestu, većini je lakše nego sa ručnim ogledalom. Već kod drugog šišanja i ne razmišljaš o tome.</p></div></details>
+    <details><summary>Da li odgovara mojim vratima — moram li da bušim?</summary><div class="bd"><p>Ne buši se ništa. Teleskopske kuke se prebace preko svakih standardnih sobnih vrata za oko minut, bez alata i bez tragova. Ogledalo se sklapa ravno pa možeš da ga skloniš ili poneseš na put.</p></div></details>
+    <details><summary>Kako se puni i koliko traje baterija?</summary><div class="bd"><p>Ima ugrađenu punjivu bateriju pa nema kabla ni utičnice u kupatilu — napuniš je kablom iz pakovanja i koristiš bežično. Prema podacima dobavljača, kapacitet baterije je 1500 mAh.</p></div></details>
+    <details><summary>Koristi li se samo za šišanje?</summary><div class="bd"><p>Ne. Isti osvetljen pogled iz tri ugla pomaže i kod ravnanja brade, pletenica pozadi, farbanja korena i šminkanja. Radi za svakoga ko se sređuje kod kuće.</p></div></details>
+    <details><summary>Kako plaćam i šta je sa povraćajem?</summary><div class="bd"><p>Plaćaš pouzećem kod kurira, tek kada ti paket stigne. Dostava je besplatna za pakete od 2 i više komada. Imaš 30 dana garancije povraćaja novca za proizvod u nekorišćenom stanju.</p></div></details>
+  </section>
+</div>
+
+<!-- 21. final CTA -->
+<section class="fin"><div class="wrap">
+  <div class="eb">Bez rizika 30 dana</div>
+  <h2>Drži svoju liniju oštrom — bez rizika 30 dana.</h2>
+  <p>Okači stanicu na vrata, šišaj se mirno, a ako ti ne legne — vrati je. Plaćanje pouzećem i 30 dana garancije povraćaja novca.</p>
+  <button class="atc" onclick="document.getElementById('ponuda').scrollIntoView({behavior:'smooth'})">POSTAVI SVOJU STANICU</button>
+  <div class="tl">30 dana garancije povraćaja novca · plaćanje pouzećem · isporuka 2–4 radna dana</div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="ft">Brzi linkovi</div>
+  <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>
+  <a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>
+  <a href="https://rs.unikatko.eu/policies/refund-policy">Povraćaj novca</a>
+  <a href="https://rs.unikatko.eu/policies/shipping-policy">Dostava</a>
+  <a href="https://rs.unikatko.eu/policies/terms-of-service">Uslovi korišćenja</a>
+  <div class="cp">© 2026 Unikatko d.o.o.</div>
+  <div class="disc">
+    ‡ Garancija povraćaja novca važi 30 dana od datuma prijema pošiljke i odnosi se na proizvod u nekorišćenom stanju.<br>
+    * POGLED je ogledalo za negu i uređivanje izgleda kod kuće i nije medicinsko sredstvo. Mašinica, makaze, češalj i nastavci sa fotografija služe samo za prikaz i nisu deo pakovanja. Kapacitet baterije od 1500 mAh naveden je prema podacima dobavljača. Ogledalo drži za okvir, ne za panele, i drži ga van domašaja male dece.
+  </div>
+</div></footer>
+
+<!-- 22. sticky ATC -->
+<div class="satc" id="satc">
+  <div class="in">
+    <div class="t"><b>Trokrilno LED ogledalo za šišanje</b><span id="satc-price">4.590 RSD</span></div>
+    <button class="atc" id="atc2" onclick="kupi()">DODAJ U KORPU</button>
+  </div>
+</div>
+
+<script>
+const BASE = "https://rs.unikatko.eu";
+const CMP_UNIT = 6290;               /* prekrižena cena po komadu */
+const TIERS = [
+  { qty:1, label:"Jedno ogledalo (1 kom)", desc:"Tvoja LED stanica za šišanje kod kuće",
+    unit:4590, total:4590,  was:6290,  save:27, ship:true,  va:"+ 🎁 PDF vodič gratis",
+    variantId:"57244445671689", badge:null },
+  { qty:2, label:"Za dvoje ili rezerva (2 kom)", desc:"<b>Najpopularnije</b> — jedno kod kuće, jedno na poklon",
+    unit:3999, total:7998,  was:12580, save:36, ship:false, va:"+ 🎁 PDF vodič + besplatna dostava",
+    variantId:"57244445704457", badge:"NAJPOPULARNIJE" },
+  { qty:3, label:"Za ekipu (3 kom)", desc:"<b>Najbolja cena</b> po komadu",
+    unit:3690, total:11070, was:18870, save:41, ship:false, va:"+ 🎁 PDF vodič + dostava + ogrtač za šišanje",
+    variantId:"57244445737225", badge:null },
+];
+const REV = {
+  "Vidi potiljak":[
+    ["Nemanja P.","Osvetljeni bočni paneli mi <b>dovedu potiljak pravo u vidno polje</b>. Prvi put posle godina mi je linija na vratu ravna, jer vidim šta radim."],
+    ["Tijana S.","Ne izvrćem više vrat nad ogledalcem. Ruka slobodna za mašinicu, osvetljen pogled pozadi — to mi je i falilo."]
+  ],
+  "Bolje od skupljeg":[
+    ["Miloš J.","U prodavnici je isto takvo ogledalo bilo skuplje i <b>bez ijedne sijalice</b>. Ovo ima LED, bateriju i policu. Bez razmišljanja."],
+    ["Vladimir R.","Isplati se posle par šišanja u odnosu na ono što bih dao berberinu. Žao mi je što nisam ranije prestao da plaćam."]
+  ],
+  "Izrada":[
+    ["Stefan M.","Brinuo sam da će šipke biti klimave kao kod jeftinih. Nisu — <b>teleskopske šipke drže, šarke su čvrste</b>, ogledala čista."],
+    ["Ana K.","Uzela sam ga za pletenice i šminkanje. LED svetlo je odlično i konačno vidim svaki ugao."]
+  ]
+};
+const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
+let sel = 0;   /* izvorna stranica ima unapred izabran 1 komad */
+
+function renderTiers(){
+  document.getElementById('tiers').innerHTML = TIERS.map((t,i)=>`
+    <div class="twrap">
+      ${t.badge?`<span class="tbadge">${t.badge}</span>`:''}
+      <div class="tier ${i===sel?'on':''}" onclick="pick(${i})">
+        <span class="radio"></span>
+        <img class="th" src="assets/product.jpg" alt="">
+        <div class="bd">
+          <div class="lb">${t.label}</div>
+          ${t.qty>1?`<div class="pu">${fmt(t.unit)}/kom</div>`:''}
+          <div class="ds">${t.desc}</div>
+          ${t.va?`<span class="va">${t.va}</span>`:''}
+        </div>
+        <div class="rt">
+          <div class="pr">${fmt(t.total)}</div>
+          <div class="cm">${fmt(t.was)}</div>
+          <span class="sv">Ušteda ${t.save}%</span>
+        </div>
+      </div>
+    </div>`).join('');
+  const t = TIERS[sel];
+  document.getElementById('p-cur').textContent = fmt(t.total);
+  document.getElementById('p-cmp').textContent = fmt(t.was);
+  document.getElementById('p-sv').textContent  = 'Ušteda ' + t.save + '%';
+  document.getElementById('atc').textContent =
+    'DODAJ U KORPU — ' + fmt(t.total) + (t.ship ? ' + dostava' : '');
+  document.getElementById('satc-price').textContent = fmt(t.total) + (t.ship ? ' + dostava' : '');
+  document.getElementById('pill-ship').textContent =
+    t.ship ? '✓ Dostava 2–4 radna dana' : '✓ Besplatna dostava';
+}
+function pick(i){ sel=i; renderTiers(); }
+function kupi(){ location.href = BASE + '/cart/' + TIERS[sel].variantId + ':1'; }
+
+/* tabbed reviews */
+let tab = Object.keys(REV)[0];
+function renderRev(){
+  document.getElementById('tabs').innerHTML = Object.keys(REV).map(k=>
+    `<button class="${k===tab?'on':''}" onclick="pickTab('${k}')">${k}</button>`).join('');
+  document.getElementById('cgrid').innerHTML = REV[tab].map(r=>
+    `<div class="ccard"><div class="who">${r[0]}</div><div class="st">★★★★★</div><p>${r[1]}</p></div>`).join('');
+}
+function pickTab(k){ tab=k; renderRev(); }
+
+/* gallery thumbs */
+const slides = document.getElementById('slides');
+function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'}); }
+(function(){
+  const imgs=[...slides.querySelectorAll('img')];
+  document.getElementById('thumbs').innerHTML = imgs
+    .map((im,i)=>`<img src="${im.getAttribute('src')}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="">`).join('');
+  slides.addEventListener('scroll',()=>{
+    const i=Math.round(slides.scrollLeft/slides.clientWidth);
+    [...document.querySelectorAll('.thumbs img')].forEach((t,k)=>t.classList.toggle('on',k===i));
+  },{passive:true});
+})();
+
+/* sticky ATC se sakriva dok je glavni ATC u vidnom polju (pravilo vlasnika).
+   Provera pravougaonika + interval — scroll događaji nisu pouzdani u svim webview-ima. */
+(function(){
+  const bar=document.getElementById('satc'), main=document.getElementById('atc');
+  if(!bar||!main) return;
+  function sync(){
+    const r=main.getBoundingClientRect();
+    bar.style.display = (r.top < window.innerHeight && r.bottom > 0) ? 'none' : '';
+  }
+  addEventListener('scroll', sync, {passive:true});
+  addEventListener('resize', sync);
+  setInterval(sync, 200);
+  sync();
+})();
+
+renderTiers(); renderRev();
+</script>
+</body>
+</html>

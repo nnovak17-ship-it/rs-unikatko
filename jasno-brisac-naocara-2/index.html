@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brisač za naočare – čisti obe strane stakla u jednom stisku, bez fleka i otisaka prstiju | JASNO</title>
+<meta name="description" content="Brisač za naočare sa dve mikrofiber jastučice: uhvatiš staklo, jednom prevučeš i obe strane su čiste. Bez spreja i bez otisaka. Plaćanje pouzećem.">
+<style>
+:root{
+  --ink:#132532; --ink2:#4a6072; --mut:#7b8b98;
+  --line:#dbe9ee; --bg:#f2f8fa; --card:#fff;
+  --cta:#0aa2b8; --ctaD:#08808f; --amber:#f5a524; --amberS:#fdefd3;
+  --dark:#0f1e29; --ok:#2fa84f;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{max-width:100%;overflow-x:hidden}
+body{font:400 16px/1.6 var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font:inherit;cursor:pointer;border:0}
+.wrap{max-width:560px;margin:0 auto;padding:0 14px}
+
+/* ---------- header ---------- */
+.hdr{position:sticky;top:0;z-index:70;background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;padding:14px 16px}
+.hdr .bm{font:800 22px/1 var(--sans);letter-spacing:.06em}
+.hdr .bm i{color:var(--cta);font-style:normal}
+.hdr .ic{display:flex;gap:16px;font-size:19px;opacity:.9}
+.hdr .bg{font-size:20px;line-height:1}
+
+/* ---------- product card ---------- */
+.pcard{background:var(--card);border-radius:18px;margin:14px 0;padding:12px;box-shadow:0 2px 14px rgba(19,37,50,.06)}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:0;border-radius:12px;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none}
+.slides::-webkit-scrollbar{display:none}
+.slides img{min-width:100%;scroll-snap-align:center;border-radius:12px}
+.thumbs{display:flex;gap:7px;overflow-x:auto;margin-top:10px;padding-bottom:2px;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{width:58px;height:58px;object-fit:cover;border-radius:9px;border:2px solid var(--line);flex:0 0 auto;cursor:pointer}
+.thumbs img.on{border-color:var(--cta)}
+
+/* ---------- rating strip ---------- */
+.tpilot{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--ink2);margin:16px 0 10px}
+.tpilot .st{color:var(--amber);letter-spacing:1px}
+.ph{font-size:10px;color:var(--mut);border:1px dashed var(--mut);border-radius:5px;padding:0 4px;letter-spacing:.04em}
+
+.eyebrow{font:800 11px/1 var(--sans);letter-spacing:.16em;color:var(--cta);text-transform:uppercase;margin-bottom:9px}
+h1{font:800 26px/1.22 var(--sans);letter-spacing:-.01em;margin-bottom:10px}
+.lede{font-size:15px;color:var(--ink2);margin-bottom:10px}
+.lede2{font-size:15px;color:var(--ink2);margin-bottom:16px}
+.hl{background:var(--amberS);border-radius:6px;padding:1px 6px;color:var(--ink);font-weight:600;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+.prow{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.prow .now{font:800 27px/1 var(--sans)}
+.prow .was{color:var(--mut);text-decoration:line-through;font-size:16px}
+.prow .sv{background:var(--amberS);color:#8a5a00;font:800 12px/1 var(--sans);padding:6px 9px;border-radius:20px}
+
+.tbadges{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;margin-bottom:16px}
+.tbadges div{padding:11px 5px;text-align:center;border-right:1px solid var(--line)}
+.tbadges div:last-child{border-right:0}
+.tbadges .i{font-size:17px;line-height:1;margin-bottom:5px}
+.tbadges b{display:block;font:700 11.5px/1.25 var(--sans)}
+.tbadges span{display:block;font-size:10.5px;color:var(--mut);margin-top:2px}
+
+/* ---------- tiers ---------- */
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.opt{position:relative;border:2px solid var(--line);background:#fff;border-radius:13px;padding:26px 6px 11px;text-align:center;cursor:pointer;transition:.15s}
+.opt.on{border-color:var(--cta);box-shadow:0 0 0 3px rgba(10,162,184,.11)}
+.opt img{width:52px;height:52px;object-fit:contain;margin:0 auto 7px}
+.opt .nm{font:700 12px/1.25 var(--sans);min-height:30px}
+.opt .pr{font:800 15px/1 var(--sans);margin-top:5px}
+.opt .sv{display:block;font:700 11px/1.3 var(--sans);color:var(--ctaD);margin-top:3px;min-height:14px}
+.opt .sv.ship{color:var(--mut);font-weight:600}
+.bdg{position:absolute;top:-1px;left:50%;transform:translate(-50%,-50%);background:var(--cta);color:#fff;
+  font:800 9px/1 var(--sans);letter-spacing:.07em;padding:5px 8px;border-radius:20px;white-space:nowrap}
+
+.clab{font:700 12.5px/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin-bottom:8px}
+.clab b{color:var(--ink);text-transform:none;letter-spacing:0}
+.sws{display:flex;gap:9px;margin-bottom:16px;flex-wrap:wrap}
+.sw{width:46px;height:46px;border-radius:12px;border:2px solid var(--line);background:#fff;
+  display:flex;align-items:center;justify-content:center;padding:0}
+.sw.on{border-color:var(--cta);box-shadow:0 0 0 3px rgba(10,162,184,.11)}
+.sw i{width:26px;height:26px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.14)}
+
+.atc{width:100%;background:var(--cta);color:#fff;border-radius:13px;padding:17px 12px;
+  font:800 16px/1.2 var(--sans);letter-spacing:.01em;box-shadow:0 4px 0 var(--ctaD)}
+.atc:active{transform:translateY(2px);box-shadow:0 2px 0 var(--ctaD)}
+.micro{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;font-size:11.5px;color:var(--ink2);margin-top:11px}
+.ships{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;
+  border:1px solid var(--line);border-radius:11px;padding:10px 12px;margin-top:12px;font-size:12.5px;color:var(--ink2)}
+.ships .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:6px}
+
+/* ---------- steps ---------- */
+.sec{background:#fff;border-radius:18px;padding:18px 14px;margin:14px 0;box-shadow:0 2px 14px rgba(19,37,50,.06)}
+.sechead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.pill{background:var(--amberS);color:#8a5a00;font:800 10px/1 var(--sans);letter-spacing:.11em;padding:6px 10px;border-radius:20px;text-transform:uppercase}
+.sechead .sm{font-size:11.5px;color:var(--mut)}
+h2{font:800 21px/1.28 var(--sans);letter-spacing:-.01em}
+.sub{font-size:14px;color:var(--ink2);margin-top:5px}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
+.step{border:1px solid var(--line);border-radius:12px;padding:11px 10px;background:#fbfdfe}
+.step .n{font:800 12px/1 var(--sans);color:var(--cta)}
+.step .n span{color:var(--mut);font-weight:700;letter-spacing:.09em;margin-left:5px;font-size:9.5px;text-transform:uppercase}
+.step b{display:block;font:700 14px/1.3 var(--sans);margin:6px 0 3px}
+.step p{font-size:12px;line-height:1.42;color:var(--ink2)}
+.fine{font-size:11px;color:var(--mut);margin-top:11px}
+
+/* ---------- feature pills ---------- */
+.frow{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-top:12px;scrollbar-width:none}
+.frow::-webkit-scrollbar{display:none}
+.fp{flex:0 0 auto;display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:#fbfdfe;
+  border-radius:22px;padding:8px 13px;font:700 12.5px/1 var(--sans);white-space:nowrap}
+.fp em{font-style:normal;color:var(--cta);font-size:14px}
+
+/* ---------- quote card ---------- */
+.qcard{display:flex;gap:11px;align-items:flex-start;background:#fff;border-radius:14px;padding:13px;
+  margin:14px 0;box-shadow:0 2px 14px rgba(19,37,50,.06)}
+.qcard .av{width:42px;height:42px;border-radius:50%;flex:0 0 auto;background:linear-gradient(135deg,var(--cta),var(--ink));
+  color:#fff;display:flex;align-items:center;justify-content:center;font:800 15px/1 var(--sans)}
+.qcard .nm{font:700 13.5px/1 var(--sans);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.qcard .st{color:var(--amber);font-size:11px;letter-spacing:1px}
+.qcard p{font-size:12.5px;line-height:1.5;color:var(--ink2);margin-top:5px}
+
+/* ---------- accordion ---------- */
+details{background:#fff;border-radius:13px;margin-bottom:9px;box-shadow:0 2px 10px rgba(19,37,50,.05);overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:15px 14px;font:700 15px/1.35 var(--sans);
+  display:flex;justify-content:space-between;align-items:center;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"⌄";font-size:17px;color:var(--mut);flex:0 0 auto;transition:.2s}
+details[open] summary::after{transform:rotate(180deg)}
+details .bd{padding:0 14px 15px;font-size:13.5px;line-height:1.62;color:var(--ink2)}
+details .bd p+p{margin-top:9px}
+details .bd b{color:var(--ink)}
+
+/* ---------- editorial ---------- */
+.ed{background:#eaf4f7;padding:18px 0 22px;margin-top:16px}
+.ed img{border-radius:14px}
+.ed .ey{font:700 11px/1 var(--serif);letter-spacing:.2em;color:var(--ctaD);text-transform:uppercase;margin:16px 0 10px}
+.ed h2{font:700 27px/1.2 var(--serif);letter-spacing:-.01em}
+.ed h2 em{color:var(--cta);font-style:italic}
+.ed p{font:400 15.5px/1.6 var(--serif);color:var(--ink2);margin-top:12px}
+.edbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid #cfe3ea;margin-top:16px;padding-top:12px;font-size:12.5px;color:var(--ink2)}
+
+/* ---------- dark story ---------- */
+.dk{background:var(--dark);color:#f0f5f7;padding:22px 0 26px}
+.dk img{border-radius:14px}
+.dk .ey{font:700 11px/1 var(--serif);letter-spacing:.2em;color:var(--amber);text-transform:uppercase;margin:16px 0 10px}
+.dk h2{font:700 26px/1.22 var(--serif);color:#fff}
+.dk h2 em{color:var(--amber);font-style:italic}
+.dk p{font:400 15px/1.62 var(--serif);color:#c2d2da;margin-top:12px}
+.pull{border-left:3px solid var(--amber);padding:11px 0 11px 14px;margin-top:16px;
+  font:italic 700 15px/1.5 var(--serif);color:#fff}
+.dcards{display:grid;gap:9px;margin-top:16px}
+.dcard{border:1px solid #24394a;border-radius:13px;padding:13px;background:#14283600}
+.dcard b{display:block;font:700 15px/1.3 var(--serif);color:#fff;margin-bottom:5px}
+.dcard p{font-size:13.5px;line-height:1.55;margin-top:0;color:#a9bdc8}
+.strip{display:flex;gap:9px;overflow-x:auto;margin-top:14px;padding-bottom:4px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.stile{flex:0 0 62%;max-width:230px}
+.stile img{border-radius:12px;aspect-ratio:1/1;object-fit:cover}
+.stile .cap{font-size:11.5px;color:#a9bdc8;margin-top:6px}
+.stile .cap b{color:#fff;display:block;font:700 12.5px/1.3 var(--sans)}
+.rcards{display:grid;gap:9px;margin-top:14px}
+.rcard{border:1px solid #24394a;border-radius:13px;padding:13px}
+.rcard .st{color:var(--amber);font-size:12px;letter-spacing:1px}
+.rcard q{display:block;font:italic 700 14.5px/1.5 var(--serif);color:#fff;margin:7px 0 9px}
+.rcard .who{font:700 12.5px/1 var(--sans);color:#fff}
+.rcard .who span{display:block;font-weight:400;color:#8fa5b2;font-size:11px;margin-top:3px}
+
+/* ---------- final cta ---------- */
+.fin{background:#eaf4f7;padding:26px 0 30px;text-align:center}
+.fin .bm{font:800 21px/1 var(--sans);letter-spacing:.08em;color:var(--ink)}
+.fin .bm i{color:var(--cta);font-style:normal}
+.fin h2{font:700 26px/1.24 var(--serif);margin-top:12px}
+.fin p{font:400 15px/1.6 var(--serif);color:var(--ink2);margin-top:11px}
+.fin .atc{margin-top:18px}
+.fin .gl{font-size:11.5px;color:var(--mut);margin-top:11px}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:#a9c0cd;padding:22px 0 96px;font-size:12.5px}
+footer h4{color:#fff;font:800 11px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;margin-bottom:9px}
+footer a{color:#a9c0cd;text-decoration:none;display:block;padding:3px 0}
+footer .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+footer .dis{border-top:1px solid #24394a;margin-top:18px;padding-top:13px;font-size:10.5px;line-height:1.55;color:#7d95a3}
+
+/* ---------- sticky atc ---------- */
+.satc{position:fixed;left:0;right:0;bottom:0;z-index:80;background:#fff;border-top:1px solid var(--line);
+  box-shadow:0 -4px 18px rgba(19,37,50,.1);padding:9px 12px calc(9px + env(safe-area-inset-bottom))}
+.satc .in{max-width:560px;margin:0 auto;display:flex;align-items:center;gap:10px}
+.satc img{width:42px;height:42px;object-fit:cover;border-radius:9px;flex:0 0 auto}
+.satc .t{flex:1;min-width:0}
+.satc .t b{display:block;font:700 13px/1.2 var(--sans);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.satc .t span{display:block;font-size:11.5px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.satc .atc{width:auto;flex:0 0 auto;padding:13px 15px;font-size:14px;box-shadow:0 3px 0 var(--ctaD)}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="bg">☰</div>
+  <div class="bm">JASNO<i>.</i></div>
+  <div class="ic"><span>⌕</span><span>⛨</span></div>
+</header>
+
+<div class="wrap">
+
+  <div class="pcard">
+    <div class="slides" id="slides">
+      <img src="assets/product-roze.jpg" alt="JASNO brisač za naočare — Roze zlato">
+      <img src="assets/lifestyle.jpg" alt="Čišćenje stakla naočara sa obe strane u jednom pokretu">
+      <img src="assets/macro.jpg" alt="Dve meke mikrofiber jastučice">
+      <img src="assets/howto.jpg" alt="Kako se koristi JASNO brisač za naočare">
+      <img src="assets/benefits.jpg" alt="Zašto baš JASNO brisač za naočare">
+      <img src="assets/pocket.jpg" alt="JASNO staje u džep, tašnu i na privezak za ključeve">
+      <img src="assets/product-bordo.jpg" alt="JASNO brisač za naočare — Bordo braon">
+      <img src="assets/product-crna.jpg" alt="JASNO brisač za naočare — Crna">
+    </div>
+    <div class="thumbs" id="thumbs"></div>
+  </div>
+
+  <div class="tpilot">
+    <span class="st">★★★★★</span>
+    <span>4,8 — 4.200+ ocena kupaca</span>
+    <span class="ph">PLACEHOLDER</span>
+  </div>
+
+  <div class="eyebrow">Najtraženiji izbor</div>
+  <h1>Brisač za naočare sa dve mikrofiber jastučice</h1>
+  <p class="lede">Elegantna sitnica koja čisti obe strane stakla u jednom stisku — bez razmazivanja i bez masnih otisaka.</p>
+  <p class="lede2"><span class="hl">Dve meke mikrofiber jastučice skidaju masnoću sa obe strane odjednom</span> u jednom pokretu, pa stakla ostaju <span class="hl">bistra ceo dan</span>. Onaj lep komad koji držiš u tašni — a ne još jedna plastična štipaljka za bacanje.</p>
+
+  <div class="prow">
+    <span class="now" id="p-now">2.990 RSD</span>
+    <s class="was" id="p-was">4.780 RSD</s>
+    <span class="sv" id="p-sv">Ušteda 37%</span>
+  </div>
+
+  <div class="tbadges">
+    <div><div class="i">↩</div><b>30 dana</b><span>Povraćaj novca</span></div>
+    <div><div class="i">🚚</div><b>Besplatna dostava</b><span>od 2 komada</span></div>
+    <div><div class="i">✓</div><b>1 godina</b><span>Garancija</span></div>
+  </div>
+
+  <div class="opts" id="opts"></div>
+
+  <div class="clab">Boja: <b id="colorname"></b></div>
+  <div class="sws" id="sws"></div>
+
+  <button class="atc" id="atc" onclick="kupi()">DODAJ U KORPU — 2.990 RSD</button>
+
+  <div class="micro">
+    <span>✓ 1 godina garancije</span><span>·</span>
+    <span>🚚 Besplatna dostava od 2 kom</span><span>·</span>
+    <span>↩ 30 dana za povraćaj</span><span>·</span>
+    <span>💵 Plaćanje pouzećem</span>
+  </div>
+
+  <div class="ships">
+    <span><span class="dot"></span>Šaljemo u roku od <b>1 radnog dana</b></span>
+    <span>🇷🇸 Isporuka 2–4 radna dana</span>
+  </div>
+
+  <section class="sec">
+    <div class="sechead">
+      <span class="pill">Čišćenje za dve sekunde</span>
+      <span class="sm">Vođeni postupak u 4 koraka</span>
+    </div>
+    <h2>Bistra stakla za nekoliko sekundi</h2>
+    <p class="sub">Bez sudopere, bez spreja, bez rituala — samo stisni, prevuci, gotovo.</p>
+    <div class="steps">
+      <div class="step"><div class="n">01 <span>Korak 1</span></div><b>Rasklopi</b><p>Rasklopi dva mekana kraka jednom rukom.</p></div>
+      <div class="step"><div class="n">02 <span>Korak 2</span></div><b>Stavi staklo</b><p>Jedno staklo ide između jastučica, pa blago stisni.</p></div>
+      <div class="step"><div class="n">03 <span>Korak 3</span></div><b>Prevuci</b><p>Jedan pokret — obe strane se čiste istovremeno.</p></div>
+      <div class="step"><div class="n">04 <span>Korak 4</span></div><b>Gotovo</b><p>Bistro staklo, bez otisaka i bez razmazivanja.</p></div>
+    </div>
+    <p class="fine">Rezultat zavisi od premaza na staklu i od toga koliko je fleka teška. Pre brisanja ukloni krupnu prašinu i pesak.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><span class="pill">Uvek uz tebe</span></div>
+    <div class="frow">
+      <div class="fp"><em>◈</em>Džepni format</div>
+      <div class="fp"><em>✋</em>Prsti ne diraju staklo</div>
+      <div class="fp"><em>🚿</em>Bez spreja i sudopere</div>
+      <div class="fp"><em>⇄</em>Obe strane odjednom</div>
+      <div class="fp"><em>🎨</em>3 boje</div>
+      <div class="fp"><em>✓</em>1 godina garancije</div>
+    </div>
+  </section>
+
+  <div class="qcard">
+    <div class="av">M</div>
+    <div>
+      <div class="nm">Marina T. <span class="st">★★★★★</span> <span class="ph">PLACEHOLDER</span></div>
+      <p>Razlika je u tome što stvarno skida masnoću umesto da je vuče u krug — zato jeftine štipaljke nikad nisu radile, a ovaj radi.</p>
+    </div>
+  </div>
+
+  <details open>
+    <summary>Opis</summary>
+    <div class="bd">
+      <p>JASNO je elegantan ručni brisač za naočare koji čisti <b>obe strane stakla u jednom stisku</b> — a da prstima nikada ne dodirneš staklo. Dve mekane mikrofiber jastučice stoje jedna naspram druge: staviš staklo između njih, blago stisneš i jednom prevučeš. Obe strane su čiste u jednom pokretu.</p>
+      <p>Napravljen je za ljude koji naočare nose svaki dan i koji ih „čiste kako treba”, a do podne opet gledaju kroz mrlju. Ravna krpica dodiruje samo jednu stranu i masnoću razmazuje — JASNO je hvata sa obe strane i skida.</p>
+      <p>Bez spreja, bez sudopere, bez rituala. Lep svakodnevni predmet koji nosiš sa sobom, a ne još jedna plastika za bacanje.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Upotreba i održavanje</summary>
+    <div class="bd">
+      <p><b>Čišćenje:</b> rasklopi krakove, stavi jedno staklo između mekanih mikrofiber jastučica, blago stisni i prevuci jednom. Obe strane se čiste istovremeno. Ponovi na drugom staklu.</p>
+      <p><b>Boje:</b> roze zlato, bordo braon i crna.</p>
+      <p><b>Nega jastučica:</b> kada vremenom pokupe naslage, isperi ih mlakom vodom sa malo blagog sapuna i ostavi da se potpuno osuše na vazduhu. Između upotreba drži brisač u tašni ili džepu.</p>
+      <p><b>Radi na:</b> dioptrijskim staklima i naočarima za sunce, uključujući stakla sa antirefleks premazom. Prevuci blago — nije potrebno pritiskati.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Dostava i povraćaj</summary>
+    <div class="bd">
+      <p><b>Besplatna dostava za pakete od 2 i više komada.</b> Za pojedinačni komad dostava se naplaćuje po ceni kurirske službe. Šaljemo u roku od 1 radnog dana, isporuka 2–4 radna dana na celoj teritoriji Srbije.</p>
+      <p><b>Plaćaš pouzećem</b> — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata.</p>
+      <p><b>30 dana za povraćaj novca</b> — ako ti ne reši problem sa flekama, vrati proizvod u nekorišćenom stanju u roku od 30 dana i dobijaš pun povraćaj. Uz svaki brisač ide i <b>12 meseci garancije</b> na greške u izradi.</p>
+    </div>
+  </details>
+
+</div>
+
+<section class="ed">
+  <div class="wrap">
+    <img src="assets/lifestyle.jpg" alt="Ruka drži JASNO brisač iznad naočara na stolu">
+    <div class="ey">JASNO · svakodnevni alat za stakla</div>
+    <h2>Godinama čistiš stakla jednu po jednu stranu. Zato su i dalje <em>zamućena.</em></h2>
+    <p>Dve mekane mikrofiber jastučice uhvate staklo i skinu masnoću sa obe strane u jednom pokretu. Prsti ti nikada ne dodiruju staklo. Bez spreja, bez sudopere, bez razmazivanja.</p>
+    <div class="clab" style="margin-top:16px">Boja: <b id="colorname2"></b></div>
+    <div class="sws" id="sws2" style="margin-bottom:0"></div>
+    <div class="edbar">
+      <span class="st" style="color:var(--amber)">★★★★★</span>
+      <span>4,8 · 4.200+ ocena <span class="ph">PLACEHOLDER</span></span>
+      <span>🚚 Besplatna dostava od 2 komada</span>
+    </div>
+  </div>
+</section>
+
+<section class="dk">
+  <div class="wrap">
+    <img src="assets/macro.jpg" alt="Detalj mekanih mikrofiber jastučica">
+    <div class="ey">Pravi razlog</div>
+    <h2>Ne radiš ti pogrešno. <em>Metod</em> je pogrešan.</h2>
+    <p>Obrišeš ih o majicu. Dahneš pa protrljaš rukavom. I do podne su opet zamućene. Deluje kao da je do tebe. Nije.</p>
+    <p>Ravna krpica dodiruje samo jednu stranu odjednom i ne skida masnoću sa stakla — ona je samo vuče u krug. Zato brišeš, pa brišeš, a i dalje gledaš kroz isti sloj.</p>
+    <div class="pull">Rešenje nije da brišeš jače. Rešenje je da dodirneš obe strane odjednom i masnoću podigneš, umesto da je guraš okolo.</div>
+
+    <div class="ey" style="margin-top:26px">Sa razlogom</div>
+    <h2>Svaki detalj namerno. Ne još jedna <em>plastika</em> za bacanje.</h2>
+    <div class="dcards">
+      <div class="dcard"><b>Mekani mikrofiber</b><p>Dve jastučice od finog mikrofibera — znatno nežnije prema staklima sa premazom od majice ili salvete za koje inače posegneš. Podiže masnoću, ne grebe.</p></div>
+      <div class="dcard"><b>Ne diraš staklo</b><p>Hvataljka drži staklo umesto tebe. Nema masnih otisaka i nema novih fleka dok skidaš stare.</p></div>
+      <div class="dcard"><b>Živi u tvojoj tašni</b><p>Veličina za džep i tašnu, lagan toliko da zaboraviš da ga nosiš — a tu je čim se pojavi fleka. Otvor na vrhu ide na privezak za ključeve.</p></div>
+      <div class="dcard"><b>Bez spreja, bez sudopere</b><p>Nema bočice koja se isprazni, nema sudopere koju tražiš, nema rituala koji pamtiš. Stisni, prevuci i vidiš jasno — gde god da si.</p></div>
+    </div>
+
+    <div class="ey" style="margin-top:26px">U stvarnom životu</div>
+    <h2>Pravi ljudi, jedan stisak.</h2>
+    <div class="strip">
+      <div class="stile"><img src="assets/pocket.jpg" alt="JASNO na privezku za ključeve pored naočara"><div class="cap"><b>Uvek pri ruci</b>Na privesku, uz ključeve</div></div>
+      <div class="stile"><img src="assets/lifestyle.jpg" alt="Čišćenje naočara za radnim stolom"><div class="cap"><b>Za radnim stolom</b>Dve sekunde između poziva</div></div>
+      <div class="stile"><img src="assets/howto.jpg" alt="Četiri koraka upotrebe"><div class="cap"><b>Četiri koraka</b>Rasklopi, stavi, stisni, gotovo</div></div>
+    </div>
+
+    <div class="ey" style="margin-top:26px">Reč kupaca</div>
+    <h2>Konačno bistra stakla. <span class="ph">PLACEHOLDER</span></h2>
+    <div class="rcards">
+      <div class="rcard"><div class="st">★★★★★</div><q>Čisti obe strane odjednom. To je cela poenta i stvarno radi.</q><div class="who">Marina T.<span>Kupac iz Srbije</span></div></div>
+      <div class="rcard"><div class="st">★★★★★</div><q>Probao sam one jeftine štipaljke i samo su razmazivale. Ovaj stvarno skida masnoću umesto da je gura okolo.</q><div class="who">Dragan K.<span>Kupac iz Srbije</span></div></div>
+      <div class="rcard"><div class="st">★★★★★</div><q>Dovoljno je mali da mi stalno stoji u tašni. Naočare za sunce očistim na semaforu.</q><div class="who">Nikola P.<span>Kupac iz Srbije</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="padding-top:18px">
+  <div class="eyebrow">Iskreni odgovori</div>
+  <h2 style="margin-bottom:12px">Bez uvijanja.</h2>
+
+  <details open>
+    <summary>Da li i ovaj razmazuje, kao jeftine štipaljke?</summary>
+    <div class="bd"><p>Ne, jer ne radi kao ravna krpica. Krpica ili štipaljka sa jednim jastučićem dodiruje samo jednu stranu i masnoću vuče u krug. Dve mekane mikrofiber jastučice hvataju staklo sa obe strane i skidaju masnoću u jednom pokretu, pa je ne premeštaš negde drugde.</p></div>
+  </details>
+  <details>
+    <summary>Da li je bezbedno za stakla sa antirefleks premazom?</summary>
+    <div class="bd"><p>Koristi meki mikrofiber — materijal koji optičari i preporučuju za brisanje stakala i koji je znatno nežniji od majice, salvete ili papirne maramice, a upravo su te grube tkanine pravi rizik od ogrebotina. Pre brisanja obavezno ukloni krupnu prašinu i pesak, pa tek onda blago prevuci.</p></div>
+  </details>
+  <details>
+    <summary>Da li odgovara naočarima za sunce i većim staklima?</summary>
+    <div class="bd"><p>Da. Krakovi se dovoljno rasklapaju i za dioptrijska i za veća sunčana stakla. Čistiš jedno po jedno staklo, pa pređeš na drugo.</p></div>
+  </details>
+  <details>
+    <summary>Kako se peru mikrofiber jastučice?</summary>
+    <div class="bd"><p>Kada vremenom pokupe naslage, isperi ih mlakom vodom sa malo blagog sapuna i ostavi da se potpuno osuše na vazduhu pre sledeće upotrebe. Čiste jastučice su ono što svaki prelaz drži bez tragova.</p></div>
+  </details>
+  <details>
+    <summary>Koje boje mogu da biram?</summary>
+    <div class="bd"><p>Tri: roze zlato, bordo braon i crna. Boju biraš iznad dugmeta za poručivanje i tačno ta boja ti stiže na adresu.</p></div>
+  </details>
+  <details>
+    <summary>Koliko košta dostava i koliko traje?</summary>
+    <div class="bd"><p>Dostava je <b>besplatna za pakete od 2 i više komada</b>. Za pojedinačni komad naplaćuje se po ceni kurirske službe. Šaljemo u roku od 1 radnog dana, isporuka je 2–4 radna dana na celoj teritoriji Srbije. Plaćaš pouzećem, kod kurira.</p></div>
+  </details>
+  <details>
+    <summary>Šta ako mi se ne svidi?</summary>
+    <div class="bd"><p>Pokriva te <b>30 dana za povraćaj novca</b> i <b>12 meseci garancije</b>. Ako ti ne reši problem sa flekama, vrati proizvod u nekorišćenom stanju u roku od 30 dana i dobijaš pun povraćaj. Bez objašnjavanja.</p></div>
+  </details>
+</div>
+
+<section class="fin">
+  <div class="wrap">
+    <div class="bm">JASNO<i>.</i></div>
+    <h2>Bistra stakla — ili ti vraćamo novac.</h2>
+    <p>Svakodnevna fleka koju si tiho prihvatio kao datost, konačno rešena — lepom verzijom alata koja ti živi u tašni.</p>
+    <button class="atc" onclick="kupi()">UZMI ONAJ LEP — <span id="fin-price">2.990 RSD</span></button>
+    <p class="gl">30 dana za povraćaj novca · Besplatna dostava od 2 komada · 12 meseci garancije · Plaćanje pouzećem</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Brzi linkovi</h4>
+        <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>
+        <a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>
+        <a href="https://rs.unikatko.eu/policies/shipping-policy">Dostava</a>
+        <a href="https://rs.unikatko.eu/policies/refund-policy">Povraćaj novca</a>
+        <a href="https://rs.unikatko.eu/policies/terms-of-service">Uslovi korišćenja</a>
+      </div>
+      <div>
+        <h4>Prodavac</h4>
+        <p>Unikatko d.o.o.</p>
+        <p style="margin-top:6px">Plaćanje pouzećem<br>Isporuka 2–4 radna dana</p>
+        <p style="margin-top:6px">© 2026 Unikatko d.o.o.</p>
+      </div>
+    </div>
+    <div class="dis">
+      ‡ Garancija povraćaja novca važi 30 dana od datuma prijema pošiljke i odnosi se na proizvod u nekorišćenom stanju. Garancija na proizvod važi 12 meseci i pokriva greške u izradi.<br>
+      * JASNO je pribor za čišćenje naočara i nije medicinsko sredstvo. Ne služi za lečenje, dijagnostikovanje niti sprečavanje bilo koje bolesti i ne zamenjuje pregled kod oftalmologa ili optičara. Pre brisanja ukloni krupnu prašinu i pesak sa stakala. Držati van domašaja dece.<br>
+      Ocene, broj recenzija i citati kupaca označeni sa PLACEHOLDER su primeri i moraju se zameniti stvarnim podacima pre objavljivanja oglasa.
+    </div>
+  </div>
+</footer>
+
+<div class="satc" id="satc">
+  <div class="in">
+    <img src="assets/product-roze.jpg" alt="">
+    <div class="t"><b>JASNO brisač za naočare</b><span id="satc-sub">2 komada</span></div>
+    <button class="atc" id="atc2" onclick="kupi()">2.990 RSD</button>
+  </div>
+</div>
+
+<script>
+const OPTS = [
+  { title:"1 komad", sub:"1 komad", total:1790, was:2390, per:"1.790 RSD/kom",
+    save:null, ship:true, badge:null,
+    byColor:{"Roze zlato":"57244492038409","Bordo braon":"57244492071177","Crna":"57244492103945"} },
+  { title:"2 komada", sub:"2 komada — najpopularnije", total:2990, was:4780, per:"1.495 RSD/kom",
+    save:"Ušteda 37%", ship:false, badge:"NAJPOPULARNIJE",
+    byColor:{"Roze zlato":"57244492136713","Bordo braon":"57244492169481","Crna":"57244492202249"} },
+  { title:"3 komada", sub:"3 komada — najbolja ponuda", total:4170, was:7170, per:"1.390 RSD/kom",
+    save:"Ušteda 42%", ship:false, badge:null,
+    byColor:{"Roze zlato":"57244492235017","Bordo braon":"57244492267785","Crna":"57244492300553"} },
+];
+const COLORS = [
+  { name:"Roze zlato",  hex:"#e0b49f", img:"assets/product-roze.jpg" },
+  { name:"Bordo braon", hex:"#6e2a2c", img:"assets/product-bordo.jpg" },
+  { name:"Crna",        hex:"#1f1f22", img:"assets/product-crna.jpg" },
+];
+const BASE = "https://rs.unikatko.eu";
+const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
+let sel = 1;   // izvorna stranica pretselektuje paket od 2 komada
+let col = 0;
+
+function renderOpts(){
+  /* Tier thumbnails MUST show the colour the buyer has selected — a fixed
+     per-tier colour reads as "the 2-pack comes in bordo" and turns into a
+     refused COD parcel. */
+  const cimg = COLORS[col].img;
+  document.getElementById('opts').innerHTML = OPTS.map((o,i)=>`
+    <div class="opt ${i===sel?'on':''}" onclick="pickOpt(${i})">
+      ${o.badge?`<span class="bdg">${o.badge}</span>`:''}
+      <img src="${cimg}" alt="">
+      <div class="nm">${o.title}${o.ship?'':'<br><span style="font-weight:600;color:#7b8b98">'+(i===1?'najpopularnije':'najbolja ponuda')+'</span>'}</div>
+      <div class="pr">${fmt(o.total)}</div>
+      <span class="sv${o.save?'':' ship'}">${o.save || '+ dostava'}</span>
+    </div>`).join('');
+  const o = OPTS[sel];
+  document.getElementById('p-now').textContent = fmt(o.total);
+  document.getElementById('p-was').textContent = fmt(o.was);
+  document.getElementById('p-sv').textContent  = o.save || 'Ušteda 25%';
+  document.getElementById('atc').textContent = 'DODAJ U KORPU — ' + fmt(o.total) + (o.ship ? ' + dostava' : '');
+  document.getElementById('atc2').textContent = fmt(o.total);
+  document.getElementById('fin-price').textContent = fmt(o.total);
+  document.getElementById('satc-sub').textContent = o.sub;
+}
+function pickOpt(i){ sel=i; renderOpts(); }
+function variantId(){ return OPTS[sel].byColor[COLORS[col].name]; }
+function kupi(){ location.href = BASE + '/cart/' + variantId() + ':1'; }
+
+function swHtml(active){
+  return COLORS.map((c,i)=>
+    `<button class="sw ${i===active?'on':''}" onclick="pickColor(${i})" title="${c.name}" aria-label="${c.name}"><i style="background:${c.hex}"></i></button>`).join('');
+}
+function renderColors(){
+  document.getElementById('sws').innerHTML  = swHtml(col);
+  document.getElementById('sws2').innerHTML = swHtml(col);
+  document.getElementById('colorname').textContent  = COLORS[col].name;
+  document.getElementById('colorname2').textContent = COLORS[col].name;
+  const first = slides.querySelector('img'); if(first) first.src = COLORS[col].img;
+  const t0 = document.querySelector('.thumbs img'); if(t0) t0.src = COLORS[col].img;
+  const s0 = document.querySelector('.satc img');  if(s0) s0.src = COLORS[col].img;
+}
+function pickColor(i){ col=i; renderColors(); renderOpts(); }
+
+/* galerija */
+const slides = document.getElementById('slides');
+function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'}); }
+(function(){
+  const imgs=[...slides.querySelectorAll('img')];
+  document.getElementById('thumbs').innerHTML = imgs
+    .map((im,i)=>`<img src="${im.getAttribute('src')}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="">`).join('');
+  slides.addEventListener('scroll',()=>{
+    const i=Math.round(slides.scrollLeft/slides.clientWidth);
+    [...document.querySelectorAll('.thumbs img')].forEach((t,k)=>t.classList.toggle('on',k===i));
+  });
+})();
+
+/* sticky ATC se skriva dok je glavni ATC u vidnom polju (pravilo vlasnika).
+   Provera pravougaonika + interval — scroll događaji su nepouzdani u nekim webview-ovima. */
+(function(){
+  const bar=document.getElementById('satc'), main=document.getElementById('atc');
+  if(!bar||!main) return;
+  function sync(){
+    const r=main.getBoundingClientRect();
+    bar.style.display = (r.top < window.innerHeight && r.bottom > 0) ? 'none' : '';
+  }
+  addEventListener('scroll', sync, {passive:true});
+  addEventListener('resize', sync);
+  setInterval(sync, 200);
+  sync();
+})();
+
+renderColors(); renderOpts();
+</script>
+</body>
+</html>

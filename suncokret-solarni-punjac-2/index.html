@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Solarni punjač za telefon – napuni telefon na suncu kad nema utičnice, za kamp i nestanak struje | SUNCOKRET</title>
+<meta name="description" content="Sklopivi solarni punjač sa USB-A i USB-C izlazom. Napuni telefon na suncu — na kampovanju, na putu i kad nestane struje. Plaćanje pouzećem.">
+<style>
+/* SUNCOKRET LP B — sr-Latn-RS. Hand-built 1:1 structural clone of the source funnel. */
+:root{
+  --ink:#121212; --mut:#6d6d6d; --line:#e4e6ea; --bg:#fcfcfc;
+  --blue:#337bc8; --blue2:#2664a7; --blued:#1c3f66;
+  --red:#dd1d1d; --dark:#2e2a39; --amber:#f2a516; --ambersoft:#fdeccb;
+  --ok:#28a745;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.55;font-size:15px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;line-height:1.15;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:600px;margin:0 auto;padding:0 16px}
+
+/* 1. header (source: sticky, 56px) */
+header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line);
+  height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 16px}
+header .ico{font-size:19px;text-decoration:none;color:var(--ink);line-height:1}
+.logo{display:flex;align-items:center;gap:6px;font-weight:800;font-size:19px;letter-spacing:.06em;color:var(--blued)}
+.logo .s{color:var(--amber);font-size:17px}
+
+/* 2. hero slideshow (source: 450px, image + heading overlay) */
+.hero{position:relative;background:#0d1c2b}
+.hero img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;opacity:.9}
+.hero .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;color:#fff;
+  background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.72));font-weight:700;font-size:19px;line-height:1.25}
+
+/* 3. ticker (source: horizontal marquee bar) */
+.tick{background:var(--red);color:#fdfbf7;overflow:hidden;white-space:nowrap;height:44px;
+  display:flex;align-items:center;font-size:13px;font-weight:700;letter-spacing:.04em}
+.tick .run{display:inline-flex;gap:26px;padding-left:26px;animation:mv 22s linear infinite;will-change:transform}
+.tick span{flex:none}
+@keyframes mv{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tick .run{animation:none}}
+
+/* 4. gallery */
+.gal{background:#fff;margin-top:14px;border-radius:12px;overflow:hidden;position:relative}
+.gal .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.gal .slides::-webkit-scrollbar{display:none}
+.gal .slides img{min-width:100%;scroll-snap-align:center;aspect-ratio:1/1;object-fit:cover}
+.gal .nx{position:absolute;right:12px;bottom:12px;width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;font-size:17px;cursor:pointer;display:grid;place-items:center}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{width:58px;height:58px;object-fit:cover;border-radius:8px;flex:none;
+  border:2px solid transparent;cursor:pointer;background:#fff}
+.thumbs img.on{border-color:var(--blue)}
+
+/* 5. title + rating */
+h1{font-size:25px;margin:14px 0 8px}
+.rate{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--mut);margin-bottom:12px;flex-wrap:wrap}
+.rate .st{color:var(--amber);font-size:16px;letter-spacing:1px}
+.rate a{color:var(--mut)}
+
+/* 6. price block */
+.prices{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.prices .now{font-size:23px;font-weight:800;color:var(--blue)}
+.prices .was{font-size:15px;color:var(--mut);text-decoration:line-through}
+.prices .sv{background:var(--red);color:#fff;font-size:11.5px;font-weight:800;padding:3px 8px;border-radius:5px;letter-spacing:.03em}
+.pnote{font-size:12.5px;color:var(--mut);margin:-4px 0 14px}
+
+/* 7. icon bullets (source: 3 emoji bullets) */
+.blts{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:7px}
+.blts li{display:flex;gap:9px;align-items:flex-start;font-size:14px}
+.blts li .e{flex:none;font-size:16px;line-height:1.35}
+
+/* 8. tier options (source has a quantity stepper; our offer needs a ladder) */
+.opt{border:2px solid var(--line);border-radius:11px;padding:13px 13px 11px;margin-bottom:10px;
+  background:#fff;cursor:pointer;position:relative}
+.opt.on{border-color:var(--blue);box-shadow:0 0 0 3px rgba(51,123,200,.12)}
+.opt .bdg{position:absolute;top:-10px;left:12px;background:var(--blue);color:#fff;font-size:10.5px;
+  font-weight:800;padding:3px 9px;border-radius:20px;letter-spacing:.04em}
+.opt.best .bdg{background:var(--amber);color:#1c1c1c}
+.opt .row{display:flex;align-items:center;gap:11px}
+.opt .rd{flex:none;width:19px;height:19px;border-radius:50%;border:2px solid #c3c8d0;display:grid;place-items:center}
+.opt.on .rd{border-color:var(--blue)}
+.opt.on .rd::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--blue)}
+.opt .nm{font-weight:800;font-size:15.5px}
+.opt .save{display:inline-block;margin-top:3px;font-size:11px;font-weight:800;color:#0f7a2e;
+  background:#e4f6e9;border-radius:4px;padding:2px 6px}
+.opt .pr{margin-left:auto;text-align:right;min-width:0}
+.opt .pr b{display:block;font-size:15.5px;font-weight:800;white-space:nowrap;line-height:1.25}
+/* the was-price sits on its own line: on one nowrap line it clipped .pr at 375px */
+.opt .pr b s{display:block;color:var(--mut);font-weight:600;font-size:12.5px;line-height:1.2}
+.opt .pr span{display:block;font-size:11.5px;color:var(--mut);white-space:nowrap}
+.opt .strip{margin-top:9px;background:var(--ambersoft);border-radius:7px;padding:6px 9px;
+  font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px}
+.opt .strip + .strip{margin-top:5px}
+.opt .strip .amt{margin-left:auto;color:var(--mut);font-weight:600;text-decoration:line-through}
+
+/* 9. ATC */
+.stock{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#0f7a2e;font-weight:700;margin:2px 0 9px}
+.atc{display:block;width:100%;border:0;border-radius:8px;background:var(--blue);color:#fdfbf7;
+  font-size:17px;font-weight:800;text-transform:uppercase;padding:17px 18px;cursor:pointer;
+  letter-spacing:.02em;font-family:inherit}
+.atc:active{background:var(--blue2)}
+.gtee{text-align:center;font-size:12.5px;color:var(--mut);margin:10px 0 4px}
+.gtee a{color:var(--mut)}
+
+/* 10. delivery timeline (source widget) */
+.tl{display:flex;gap:6px;margin:18px 0 4px;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:14px 10px}
+.tl .st{flex:1;text-align:center;position:relative}
+.tl .st .ic{font-size:19px}
+.tl .st b{display:block;font-size:12px;margin-top:3px}
+.tl .st span{display:block;font-size:11px;color:var(--mut)}
+.tl .st:not(:last-child)::after{content:"";position:absolute;top:12px;right:-3px;width:6px;height:2px;background:var(--line)}
+
+/* 11. review quotes (source carousel) */
+.qs{display:flex;gap:10px;overflow-x:auto;padding:16px 0 4px;scrollbar-width:none;scroll-snap-type:x mandatory}
+.qs::-webkit-scrollbar{display:none}
+.qc{flex:none;width:78%;scroll-snap-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:14px}
+.qc .st{color:var(--amber);font-size:14px;letter-spacing:1px}
+.qc p{margin:6px 0 8px;font-size:14px}
+.qc .who{font-size:12.5px;color:var(--mut);font-weight:700}
+
+/* 12. trust strip (replaces the source's press-logo row) */
+.trust{display:flex;gap:8px;margin:18px 0 4px;flex-wrap:wrap;justify-content:center}
+.trust div{background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 13px;
+  font-size:12px;font-weight:700;color:var(--blued)}
+
+/* 13. image_with_text blocks (source: 3 of them + emergencies) */
+.iwt{margin:26px 0}
+.iwt img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px}
+.iwt h2{font-size:24px;margin:16px 0 8px}
+.iwt p{margin:0;color:#33383f}
+.divi{height:1px;background:var(--line);margin:26px 0}
+
+/* 14. FAQ */
+.faq h2{font-size:24px;text-align:center;margin-bottom:14px}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:9px;overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:14px 15px;font-weight:700;font-size:14.5px;
+  display:flex;align-items:center;gap:9px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";margin-left:auto;font-size:19px;color:var(--blue);font-weight:700;line-height:1}
+details[open] summary::after{content:"\2212"}
+details .bd{padding:0 15px 14px;font-size:14px;color:#33383f}
+details .bd p{margin:0 0 9px}
+details .bd p:last-child{margin:0}
+
+/* 15. final CTA panel (replaces the source's contact form slot) */
+.ask{background:var(--blued);color:#fff;border-radius:12px;padding:22px 18px;margin:26px 0;text-align:center}
+.ask h2{font-size:22px;margin-bottom:8px}
+.ask p{margin:0 0 14px;font-size:14px;color:#d6e4f3}
+.ask .b{display:inline-block;background:var(--amber);color:#1c1c1c;font-weight:800;text-decoration:none;
+  border-radius:8px;padding:14px 22px;font-size:15px}
+.ask .lnk{display:block;margin-top:12px;color:#bcd6ef;font-size:13px}
+
+/* 16. footer (source: solid blue) */
+footer{background:var(--blue);color:rgba(255,255,255,.92);padding:26px 0;font-size:13.5px;margin-top:26px}
+footer h4{font-size:14px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
+footer a{color:#fff;text-decoration:none;display:block;padding:3px 0}
+footer .cols{display:grid;gap:20px}
+footer .pay{display:flex;gap:7px;flex-wrap:wrap;font-size:12px}
+footer .pay span{background:rgba(255,255,255,.16);border-radius:5px;padding:4px 9px;font-weight:700}
+footer .cr{margin-top:20px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2);font-size:12px}
+footer .disc{margin-top:10px;font-size:11px;line-height:1.6;color:rgba(255,255,255,.8)}
+
+@media(min-width:700px){
+  footer .cols{grid-template-columns:1fr 1fr}
+  .hero img{aspect-ratio:16/9}
+}
+</style>
+</head>
+<body>
+
+<!-- 1. header (source: sticky header, hamburger / logo / cart) -->
+<header>
+  <span class="ico" aria-hidden="true">☰</span>
+  <span class="logo"><span class="s">☀</span>SUNCOKRET</span>
+  <a class="ico" href="#ponuda" aria-label="Korpa">🛒</a>
+</header>
+
+<!-- 2. hero slideshow (source: image + heading overlay) -->
+<section class="hero">
+  <img src="assets/lifestyle.jpg" alt="Solarni panel okačen na šator puni telefon u planini">
+  <div class="cap">Ostani na struji — gde god da si 🛰️</div>
+</section>
+
+<!-- 3. ticker (source: scrolling promo bar; source's fake "until out of stock" scarcity removed) -->
+<div class="tick"><div class="run">
+  <span>DO 63% POPUSTA NA KOMPLETE</span><span>•</span><span>PLAĆANJE POUZEĆEM</span><span>•</span><span>ISPORUKA 2–4 RADNA DANA</span><span>•</span><span>30 DANA GARANCIJE</span><span>•</span>
+  <span>DO 63% POPUSTA NA KOMPLETE</span><span>•</span><span>PLAĆANJE POUZEĆEM</span><span>•</span><span>ISPORUKA 2–4 RADNA DANA</span><span>•</span><span>30 DANA GARANCIJE</span><span>•</span>
+</div></div>
+
+<div class="wrap">
+
+  <!-- 4. product media -->
+  <section class="gal">
+    <div class="slides" id="slides">
+      <img src="assets/product.jpg" alt="SUNCOKRET sklopivi solarni punjač sa USB kablom">
+      <img src="assets/hero.jpg" alt="SUNCOKRET solarni panel na suncu puni telefon">
+      <img src="assets/compact.jpg" alt="Sklopljen SUNCOKRET panel staje u dlan">
+      <img src="assets/ports.jpg" alt="USB-A i USB-C izlaz na panelu">
+      <img src="assets/lifestyle.jpg" alt="Panel okačen na šator u planini">
+      <img src="assets/benefits.jpg" alt="Zašto baš SUNCOKRET">
+      <img src="assets/howto.jpg" alt="Kako se koristi SUNCOKRET panel">
+    </div>
+    <button class="nx" onclick="slides.scrollBy({left:slides.clientWidth,behavior:'smooth'})" aria-label="Sledeća slika">›</button>
+  </section>
+  <div class="thumbs" id="thumbs"></div>
+
+  <!-- 5. title + rating (PLACEHOLDER numbers) -->
+  <h1>Solarni punjač za telefon — napuni telefon na suncu kad nema utičnice</h1>
+  <div class="rate"><span class="st">★★★★★</span><a href="#recenzije">1.700+ zadovoljnih kupaca</a></div>
+
+  <!-- 6. price -->
+  <div class="prices">
+    <span class="now" id="pnow">3.490 RSD</span>
+    <span class="was" id="pwas">6.990 RSD</span>
+    <span class="sv" id="psv">UŠTEDA 50%</span>
+  </div>
+  <div class="pnote" id="pnote">Cena za 1 komad + dostava. Plaćaš pouzećem kad ti kurir donese paket.</div>
+
+  <!-- 7. bullets (source: 3 icon bullets; source's "free worldwide shipping" removed — we charge shipping on 1 komad) -->
+  <ul class="blts">
+    <li><span class="e">☀️</span><span>Puni direktno sa sunca — ništa ne moraš da napuniš unapred</span></li>
+    <li><span class="e">🔌</span><span>USB-A i USB-C izlaz — dva uređaja odjednom</span></li>
+    <li><span class="e">⛅</span><span>Otporan na vremenske uslove, sklapa se na veličinu telefona</span></li>
+  </ul>
+
+  <!-- 8. offer ladder (ours — the source page sells a single unit) -->
+  <div id="ponuda"></div>
+  <div id="opts"></div>
+
+  <!-- 9. ATC -->
+  <div class="stock"><span>●</span> Na stanju — spremno za slanje</div>
+  <button class="atc" id="atc" onclick="kupi()">DODAJ U KORPU</button>
+  <div class="gtee">🛡️ 30 dana garancije povraćaja novca<sup>‡</sup> · <a href="https://rs.unikatko.eu/policies/refund-policy">Uslovi porudžbine</a></div>
+
+  <!-- 10. delivery timeline (source widget) -->
+  <div class="tl">
+    <div class="st"><div class="ic">🛒</div><b>Poručeno</b><span>danas</span></div>
+    <div class="st"><div class="ic">📦</div><b>Spremno</b><span>1 radni dan</span></div>
+    <div class="st"><div class="ic">🚚</div><b>Isporučeno</b><span>2–4 radna dana</span></div>
+  </div>
+
+  <!-- 11. review quotes (source carousel) — PLACEHOLDER, replace before ads -->
+  <div class="qs" id="recenzije">
+    <div class="qc"><div class="st">★★★★★</div><p>Okačim ga karabinerima na ranac dok hodam i telefon mi je uveče pun. Tri dana na Tari bez utičnice.</p><div class="who">Nemanja P.</div></div>
+    <div class="qc"><div class="st">★★★★★</div><p>Jedan stoji u kolima, jedan na vikendici, jedan u ruksaku. Kad je nestala struja, jedini smo u ulici imali pun telefon.</p><div class="who">Marija S.</div></div>
+    <div class="qc"><div class="st">★★★★★</div><p>Sklopljen staje u bočni džep ranca. Platio kuriru na vrata, sve kako piše na sajtu.</p><div class="who">Dušan I.</div></div>
+  </div>
+
+  <!-- 12. trust strip (source had an "As Seen On" press-logo row — omitted, we have no real press coverage) -->
+  <div class="trust">
+    <div>💵 Plaćanje pouzećem</div><div>🚚 2–4 radna dana</div><div>🛡️ 30 dana garancije</div>
+  </div>
+
+  <div class="divi"></div>
+
+  <!-- 13. image_with_text 1 (source: "Harness Solar Power Anywhere") -->
+  <section class="iwt">
+    <img src="assets/hero.jpg" alt="Solarni panel na kamenu okrenut prema suncu">
+    <h2>Struja svuda gde ima sunca</h2>
+    <p>Rasklopiš panel kao knjigu, okreneš ga prema suncu i priključiš telefon USB kablom. Nema utičnice, nema agregata, nema goriva — dok sunce greje, panel radi. Koliko će brzo puniti zavisi od toga koliko je sunce jako i pod kojim uglom pada, pa ga tokom dana pomeraj za suncem.</p>
+  </section>
+
+  <div class="divi"></div>
+
+  <!-- 14. image_with_text 2 (source: "Power Any Device") -->
+  <section class="iwt">
+    <img src="assets/ports.jpg" alt="USB-A i USB-C izlaz sa dva priključena kabla">
+    <h2>Puni sve što ide na USB</h2>
+    <p>Telefon, power bank, bežične slušalice, GPS uređaj, kampersku lampu ili čitač. Panel ima USB-A i USB-C izlaz, pa možeš da priključiš dva uređaja odjednom. Nema ugrađenu bateriju — energiju ne skladišti, nego je koristiš dok je panel na suncu. Ako ti treba struja i uveče, priključi svoj power bank preko dana.</p>
+  </section>
+
+  <div class="divi"></div>
+
+  <!-- 15. image_with_text 3 (source: "Easy to Carry") -->
+  <section class="iwt">
+    <img src="assets/compact.jpg" alt="Sklopljen panel staje u dlan">
+    <h2>Sklopi ga i strpaj u ranac</h2>
+    <p>Sklopljen je ravan kvadrat veličine velikog telefona i staje u bočni džep ranca. Dva karabinera na uglovima znače da ga možeš okačiti na ranac, šator ili granu — panel radi dok ti hodaš, a ruke su ti slobodne.</p>
+  </section>
+
+  <div class="divi"></div>
+
+  <!-- 16. FAQ (source: collapsible content) -->
+  <section class="faq">
+    <h2>Česta pitanja</h2>
+    <details open><summary>🔋 Da li ima ugrađenu bateriju?</summary><div class="bd"><p>Ne. SUNCOKRET je solarni panel, a ne power bank — energiju ne skladišti, nego je pravi dok je izložen suncu i tada puni uređaj direktno preko USB kabla.</p><p>Ako želiš struju i uveče, priključi svoj power bank na panel preko dana, pa iz njega puni telefon noću.</p></div></details>
+    <details><summary>☀️ Koliko brzo puni?</summary><div class="bd"><p>Zavisi od sunca i ne možemo da ti obećamo tačno vreme. Na jakom direktnom suncu, kad je panel okrenut pravo prema njemu, radi punom snagom; po oblačnom danu, u hladu ili iza prozorskog stakla punjenje je znatno sporije ili izostane.</p><p>Zato ga tokom dana pomeraj za suncem — to je jedina stvar koja stvarno pravi razliku.</p></div></details>
+    <details><summary>📱 Šta sve mogu da punim?</summary><div class="bd"><p>Sve što se puni preko USB-a: telefon, power bank, bežične slušalice, GPS uređaj, kampersku lampu, čitač. Panel ima USB-A i USB-C izlaz, pa možeš i dva uređaja odjednom.</p></div></details>
+    <details><summary>🌧️ Šta ako pada kiša?</summary><div class="bd"><p>Panel je otporan na vremenske uslove i povremene kapi mu ne smetaju, ali nije vodootporan uređaj: nemoj da ga potapaš u vodu niti da ga ostavljaš na pljusku, a USB izlaze drži zatvorenim kad se ne koriste.</p></div></details>
+    <details><summary>📦 Šta tačno dobijam u paketu?</summary><div class="bd"><p>Jedan sklopivi solarni panel sa USB-A i USB-C izlazom, USB kabl i dva karabinera za kačenje. Uz komplet od 3 komada dobijaš i putnu torbicu.</p></div></details>
+    <details><summary>💵 Kako plaćam i koliko traje isporuka?</summary><div class="bd"><p>Plaćaš pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata. Ne plaćaš ništa unapred.</p><p>Isporuka 2–4 radna dana na celoj teritoriji Srbije. Dostava je besplatna za komplete od 2 i više komada.</p></div></details>
+  </section>
+
+  <div class="divi"></div>
+
+  <!-- 17. image_with_text 4 (source: "Be Prepared for Emergencies") -->
+  <section class="iwt">
+    <img src="assets/benefits.jpg" alt="Zašto baš SUNCOKRET — pregled prednosti">
+    <h2>Spremi se za nestanak struje</h2>
+    <p>Kad struje nema po ceo dan, telefon je prvo što ti zafali — a punjač u zidu ne vredi ništa. Jedan panel na terasi ili prozorskoj dasci znači da telefon i lampa ostaju živi dok se struja ne vrati. Zato većina kupaca uzme dva ili tri: jedan u ranac, jedan u auto, jedan da stoji kod kuće.</p>
+  </section>
+
+  <!-- 18. final CTA (source had a contact form in this slot) -->
+  <section class="ask">
+    <h2>Imaš pitanje pre porudžbine?</h2>
+    <p>Piši nam i odgovorićemo ti na srpskom, obično isti dan.</p>
+    <a class="b" href="#ponuda">NARUČI POUZEĆEM</a>
+    <a class="lnk" href="https://rs.unikatko.eu/pages/contact">Kontaktiraj nas →</a>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Korisni linkovi</h4>
+        <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>
+        <a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>
+        <a href="https://rs.unikatko.eu/policies/shipping-policy">Dostava</a>
+        <a href="https://rs.unikatko.eu/policies/refund-policy">Povraćaj novca</a>
+        <a href="https://rs.unikatko.eu/policies/terms-of-service">Uslovi korišćenja</a>
+      </div>
+      <div>
+        <h4>Plaćanje</h4>
+        <div class="pay"><span>Pouzećem — gotovina</span><span>Pouzećem — kartica</span></div>
+      </div>
+    </div>
+    <div class="cr">© 2026 Unikatko d.o.o.</div>
+    <div class="disc">
+      ‡ Garancija povraćaja novca važi 30 dana od datuma prijema pošiljke i odnosi se na proizvod u nekorišćenom stanju.<br>
+      * SUNCOKRET je sklopivi solarni punjač za USB uređaje i nema ugrađenu bateriju — energiju ne skladišti. Brzina punjenja zavisi od jačine i ugla sunčeve svetlosti, doba dana i vremenskih uslova i može znatno da varira; po oblačnom vremenu, u hladu ili iza stakla punjenje je znatno sporije ili izostaje. Panel je otporan na vremenske uslove, ali nije vodootporan uređaj i ne treba ga potapati u vodu. Nije zamena za mrežno napajanje.
+    </div>
+  </div>
+</footer>
+
+<script>
+/* The source page sells ONE unit at one price and preselects quantity 1,
+   so this ladder is ours and tier 0 is preselected to mirror the source. */
+/* Gift ladder is CUMULATIVE and must match LP A's `gifts` block in page.json
+   (unlock at 1 / 2 / 3) — LP A, LP B and the Shopify variant "(+N poklona)"
+   suffixes all have to count the same gifts. */
+const OPTS = [
+  { title:"1 komad", total:3490, was:6990, per:"3.490 RSD/kom", badge:null, cls:"",
+    save:null, off:"UŠTEDA 50%", ship:true, variant:"57244492497161",
+    strips:[{txt:"+ PDF vodič za kamp", amt:"490 RSD"}] },
+  { title:"2 komada", total:5980, was:13980, per:"2.990 RSD/kom", badge:"NAJPOPULARNIJE", cls:"",
+    save:"UŠTEDA 14%/kom", off:"UŠTEDA 57%", ship:false, variant:"57244492529929",
+    strips:[{txt:"+ PDF vodič za kamp", amt:"490 RSD"},
+            {txt:"+ Besplatna dostava", amt:"390 RSD"}] },
+  { title:"3 komada", total:7770, was:20970, per:"2.590 RSD/kom", badge:"NAJBOLJA PONUDA", cls:"best",
+    save:"UŠTEDA 26%/kom", off:"UŠTEDA 63%", ship:false, variant:"57244492562697",
+    strips:[{txt:"+ PDF vodič za kamp", amt:"490 RSD"},
+            {txt:"+ Besplatna dostava", amt:"390 RSD"},
+            {txt:"+ Putna torbica", amt:"690 RSD"}] },
+];
+const BASE = "https://rs.unikatko.eu";
+const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
+let sel = 0;
+
+function renderOpts(){
+  document.getElementById('opts').innerHTML = OPTS.map((o,i)=>`
+    <div class="opt ${o.cls} ${i===sel?'on':''}" onclick="pickOpt(${i})">
+      ${o.badge?`<span class="bdg">${o.badge}</span>`:''}
+      <div class="row">
+        <span class="rd"></span>
+        <div>
+          <div class="nm">${o.title}</div>
+          ${o.save?`<span class="save">${o.save}</span>`:''}
+        </div>
+        <div class="pr"><b><s>${fmt(o.was)}</s>${fmt(o.total)}</b><span>${o.per}${o.ship?' + dostava':''}</span></div>
+      </div>
+      ${(o.strips||[]).map(s=>`<div class="strip"><span>🎁</span>${s.txt}<span class="amt">${s.amt}</span></div>`).join('')}
+    </div>`).join('');
+  const o = OPTS[sel];
+  document.getElementById('atc').textContent = 'DODAJ U KORPU — ' + fmt(o.total) + (o.ship ? ' + dostava' : '');
+  document.getElementById('pnow').textContent = fmt(o.total);
+  document.getElementById('pwas').textContent = fmt(o.was);
+  document.getElementById('psv').textContent = o.off;
+  document.getElementById('pnote').textContent = o.ship
+    ? 'Cena za 1 komad + dostava. Plaćaš pouzećem kad ti kurir donese paket.'
+    : 'Cena za ' + o.title + ', dostava besplatna. Plaćaš pouzećem kad ti kurir donese paket.';
+}
+function pickOpt(i){ sel=i; renderOpts(); }
+function kupi(){ location.href = BASE + '/cart/' + OPTS[sel].variant + ':1'; }
+
+/* gallery */
+const slides = document.getElementById('slides');
+function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'}); }
+(function(){
+  const imgs=[...slides.querySelectorAll('img')];
+  document.getElementById('thumbs').innerHTML = imgs
+    .map((im,i)=>`<img src="${im.getAttribute('src')}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="">`).join('');
+  slides.addEventListener('scroll',()=>{
+    const i=Math.round(slides.scrollLeft/slides.clientWidth);
+    [...document.querySelectorAll('.thumbs img')].forEach((t,k)=>t.classList.toggle('on',k===i));
+  },{passive:true});
+})();
+
+renderOpts();
+</script>
+</body>
+</html>

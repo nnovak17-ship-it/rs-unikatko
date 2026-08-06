@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>TIŠINA — Čepići za spavanje | 2+1 GRATIS</title>
+<title>Čepići za spavanje koji ne ispadaju – prigušuju hrkanje i komšije, udobni i kad spavaš na boku | TIŠINA</title>
 <style>
 /* TIŠINA LP — sr-Latn-RS. Hand-built, self-contained. */
 :root{
@@ -494,12 +494,12 @@ function renderOpts(){
           <div class="nm">${o.title}</div>
           ${o.save?`<span class="save">${o.save}</span>`:''}
         </div>
-        <div class="pr"><b>${o.was>o.total?`<s>${fmt(o.was)}</s>`:''}${fmt(o.total)}</b><span>${o.per}${o.ship?' + 390 RSD dostava':''}</span></div>
+        <div class="pr"><b>${o.was>o.total?`<s>${fmt(o.was)}</s>`:''}${fmt(o.total)}</b><span>${o.per}${o.ship?' + 490 RSD dostava':''}</span></div>
       </div>
       ${o.strip?`<div class="strip"><span>🧴</span>${o.strip.txt}<span class="amt">${o.strip.amt}</span></div>`:''}
     </div>`).join('');
   const o = OPTS[sel];
-  const label = 'DODAJ U KORPU — ' + fmt(o.total) + (o.ship ? ' + 390 RSD dostava' : '');
+  const label = 'DODAJ U KORPU — ' + fmt(o.total) + (o.ship ? ' + 490 RSD dostava' : '');
   document.getElementById('atc').textContent = label;
   const a2=document.getElementById('atc2'); if(a2) a2.textContent = fmt(o.total) + (o.ship ? ' + dostava' : '');
   const ss=document.getElementById('satc-sub'); if(ss) ss.textContent = o.sub;
