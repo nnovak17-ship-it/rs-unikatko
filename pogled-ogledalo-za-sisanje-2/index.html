@@ -304,8 +304,8 @@ body > header{display:none!important}
 
   <!-- 5. price -->
   <div class="parea">
-    <span class="cur" id="p-cur">4.590 RSD</span>
-    <span class="cmp" id="p-cmp">6.290 RSD</span>
+    <span class="cur" id="p-cur">8.190 RSD</span>
+    <span class="cmp" id="p-cmp">11.190 RSD</span>
     <span class="sv" id="p-sv">Ušteda 27%</span>
   </div>
 
@@ -322,9 +322,9 @@ body > header{display:none!important}
   <div id="tiers"></div>
 
   <!-- 8. ATC -->
-  <button class="atc" id="atc" onclick="kupi()">DODAJ U KORPU — 4.590 RSD</button>
+  <button class="atc" id="atc" onclick="kupi()">DODAJ U KORPU — 8.190 RSD</button>
   <div class="pills">
-    <span>✓ 30 dana garancije</span><span>✓ Plaćanje pouzećem</span><span id="pill-ship">✓ Dostava 2–4 radna dana</span>
+    <span>✓ 30 dana garancije</span><span>✓ Plaćanje pouzećem</span><span id="pill-ship">✓ Besplatna dostava</span>
   </div>
   <div class="shipline">🚚 Isporuka <b>2–4 radna dana</b> na celoj teritoriji Srbije</div>
 
@@ -369,7 +369,7 @@ body > header{display:none!important}
     <summary>Dostava i povraćaj</summary>
     <div class="bd">
       <p>Plaćaš pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata. Isporuka 2–4 radna dana na celoj teritoriji Srbije.</p>
-      <p>Dostava je besplatna za pakete od 2 i više komada; uz jedan komad se dostava naplaćuje po tarifi kurirske službe.</p>
+      <p>Dostava ti je besplatna na svaku porudžbinu, bez obzira na broj komada.</p>
       <p>30 dana garancije povraćaja novca — proizvod u nekorišćenom stanju vraćaš uz pun povraćaj novca.</p>
     </div>
   </details>
@@ -451,7 +451,7 @@ body > header{display:none!important}
   <!-- 17. savings callout -->
   <div class="save">
     <div class="big">oko 15.600 RSD</div>
-    <p>Toliko otprilike ode godišnje ako ideš kod berberina na svake dve nedelje po 600 RSD. Ogledalo se isplati posle nekoliko šišanja.</p>
+    <p>Toliko otprilike ode godišnje ako ideš kod berberina na svake dve nedelje po 600 RSD. Ogledalo se isplati za nešto više od pola godine, a ostaje ti zauvek.</p>
     <div class="fine">Primer računice, ne obećanje — cena šišanja se razlikuje od grada do grada.</div>
   </div>
 
@@ -490,7 +490,7 @@ body > header{display:none!important}
     <details><summary>Da li odgovara mojim vratima — moram li da bušim?</summary><div class="bd"><p>Ne buši se ništa. Teleskopske kuke se prebace preko svakih standardnih sobnih vrata za oko minut, bez alata i bez tragova. Ogledalo se sklapa ravno pa možeš da ga skloniš ili poneseš na put.</p></div></details>
     <details><summary>Kako se puni i koliko traje baterija?</summary><div class="bd"><p>Ima ugrađenu punjivu bateriju pa nema kabla ni utičnice u kupatilu — napuniš je kablom iz pakovanja i koristiš bežično. Prema podacima dobavljača, kapacitet baterije je 1500 mAh.</p></div></details>
     <details><summary>Koristi li se samo za šišanje?</summary><div class="bd"><p>Ne. Isti osvetljen pogled iz tri ugla pomaže i kod ravnanja brade, pletenica pozadi, farbanja korena i šminkanja. Radi za svakoga ko se sređuje kod kuće.</p></div></details>
-    <details><summary>Kako plaćam i šta je sa povraćajem?</summary><div class="bd"><p>Plaćaš pouzećem kod kurira, tek kada ti paket stigne. Dostava je besplatna za pakete od 2 i više komada. Imaš 30 dana garancije povraćaja novca za proizvod u nekorišćenom stanju.</p></div></details>
+    <details><summary>Kako plaćam i šta je sa povraćajem?</summary><div class="bd"><p>Plaćaš pouzećem kod kurira, tek kada ti paket stigne. Dostava ti je besplatna na svaku porudžbinu. Imaš 30 dana garancije povraćaja novca za proizvod u nekorišćenom stanju.</p></div></details>
   </section>
 </div>
 
@@ -520,23 +520,23 @@ body > header{display:none!important}
 <!-- 22. sticky ATC -->
 <div class="satc" id="satc">
   <div class="in">
-    <div class="t"><b>Trokrilno LED ogledalo za šišanje</b><span id="satc-price">4.590 RSD</span></div>
+    <div class="t"><b>Trokrilno LED ogledalo za šišanje</b><span id="satc-price">8.190 RSD</span></div>
     <button class="atc" id="atc2" onclick="kupi()">DODAJ U KORPU</button>
   </div>
 </div>
 
 <script>
 const BASE = "https://rs.unikatko.eu";
-const CMP_UNIT = 6290;               /* prekrižena cena po komadu */
+const CMP_UNIT = 11190;              /* prekrižena cena po komadu */
 const TIERS = [
   { qty:1, label:"Jedno ogledalo (1 kom)", desc:"Tvoja LED stanica za šišanje kod kuće",
-    unit:4590, total:4590,  was:6290,  save:27, ship:true,  va:"+ 🎁 PDF vodič gratis",
+    unit:8190, total:8190,  was:11190, save:27, ship:false, va:"+ 🎁 besplatna dostava",
     variantId:"57244445671689", badge:null },
   { qty:2, label:"Za dvoje ili rezerva (2 kom)", desc:"<b>Najpopularnije</b> — jedno kod kuće, jedno na poklon",
-    unit:3999, total:7998,  was:12580, save:36, ship:false, va:"+ 🎁 PDF vodič + besplatna dostava",
+    unit:7190, total:14380, was:22380, save:36, ship:false, va:"+ 🎁 dostava + PDF vodič",
     variantId:"57244445704457", badge:"NAJPOPULARNIJE" },
   { qty:3, label:"Za ekipu (3 kom)", desc:"<b>Najbolja cena</b> po komadu",
-    unit:3690, total:11070, was:18870, save:41, ship:false, va:"+ 🎁 PDF vodič + dostava + ogrtač za šišanje",
+    unit:6590, total:19770, was:33570, save:41, ship:false, va:"+ 🎁 dostava + PDF vodič + ogrtač za šišanje",
     variantId:"57244445737225", badge:null },
 ];
 const REV = {

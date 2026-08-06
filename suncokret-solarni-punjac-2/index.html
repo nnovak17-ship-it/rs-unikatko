@@ -194,8 +194,8 @@ body > header{display:none!important}
 
 <!-- 3. ticker (source: scrolling promo bar; source's fake "until out of stock" scarcity removed) -->
 <div class="tick"><div class="run">
-  <span>DO 63% POPUSTA NA KOMPLETE</span><span>•</span><span>PLAĆANJE POUZEĆEM</span><span>•</span><span>ISPORUKA 2–4 RADNA DANA</span><span>•</span><span>30 DANA GARANCIJE</span><span>•</span>
-  <span>DO 63% POPUSTA NA KOMPLETE</span><span>•</span><span>PLAĆANJE POUZEĆEM</span><span>•</span><span>ISPORUKA 2–4 RADNA DANA</span><span>•</span><span>30 DANA GARANCIJE</span><span>•</span>
+  <span>DO 53% POPUSTA NA KOMPLETE</span><span>•</span><span>PLAĆANJE POUZEĆEM</span><span>•</span><span>ISPORUKA 2–4 RADNA DANA</span><span>•</span><span>30 DANA GARANCIJE</span><span>•</span>
+  <span>DO 53% POPUSTA NA KOMPLETE</span><span>•</span><span>PLAĆANJE POUZEĆEM</span><span>•</span><span>ISPORUKA 2–4 RADNA DANA</span><span>•</span><span>30 DANA GARANCIJE</span><span>•</span>
 </div></div>
 
 <div class="wrap">
@@ -221,13 +221,13 @@ body > header{display:none!important}
 
   <!-- 6. price -->
   <div class="prices">
-    <span class="now" id="pnow">3.490 RSD</span>
-    <span class="was" id="pwas">6.990 RSD</span>
-    <span class="sv" id="psv">UŠTEDA 50%</span>
+    <span class="now" id="pnow">7.090 RSD</span>
+    <span class="was" id="pwas">11.190 RSD</span>
+    <span class="sv" id="psv">UŠTEDA 37%</span>
   </div>
-  <div class="pnote" id="pnote">Cena za 1 komad + dostava. Plaćaš pouzećem kad ti kurir donese paket.</div>
+  <div class="pnote" id="pnote">Cena za 1 komad, dostava besplatna. Plaćaš pouzećem kad ti kurir donese paket.</div>
 
-  <!-- 7. bullets (source: 3 icon bullets; source's "free worldwide shipping" removed — we charge shipping on 1 komad) -->
+  <!-- 7. bullets (source: 3 icon bullets; source's "free worldwide shipping" claim not reproduced verbatim — RS free shipping comes from the automatic besplatnadostava2999 subtotal discount, which every tier now clears) -->
   <ul class="blts">
     <li><span class="e">☀️</span><span>Puni direktno sa sunca — ništa ne moraš da napuniš unapred</span></li>
     <li><span class="e">🔌</span><span>USB-A i USB-C izlaz — dva uređaja odjednom</span></li>
@@ -299,7 +299,7 @@ body > header{display:none!important}
     <details><summary>📱 Šta sve mogu da punim?</summary><div class="bd"><p>Sve što se puni preko USB-a: telefon, power bank, bežične slušalice, GPS uređaj, kampersku lampu, čitač. Panel ima USB-A i USB-C izlaz, pa možeš i dva uređaja odjednom.</p></div></details>
     <details><summary>🌧️ Šta ako pada kiša?</summary><div class="bd"><p>Panel je otporan na vremenske uslove i povremene kapi mu ne smetaju, ali nije vodootporan uređaj: nemoj da ga potapaš u vodu niti da ga ostavljaš na pljusku, a USB izlaze drži zatvorenim kad se ne koriste.</p></div></details>
     <details><summary>📦 Šta tačno dobijam u paketu?</summary><div class="bd"><p>Jedan sklopivi solarni panel sa USB-A i USB-C izlazom, USB kabl i dva karabinera za kačenje. Uz komplet od 3 komada dobijaš i putnu torbicu.</p></div></details>
-    <details><summary>💵 Kako plaćam i koliko traje isporuka?</summary><div class="bd"><p>Plaćaš pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata. Ne plaćaš ništa unapred.</p><p>Isporuka 2–4 radna dana na celoj teritoriji Srbije. Dostava je besplatna za komplete od 2 i više komada.</p></div></details>
+    <details><summary>💵 Kako plaćam i koliko traje isporuka?</summary><div class="bd"><p>Plaćaš pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata. Ne plaćaš ništa unapred.</p><p>Isporuka 2–4 radna dana na celoj teritoriji Srbije. Dostava ti je besplatna na svaku porudžbinu.</p></div></details>
   </section>
 
   <div class="divi"></div>
@@ -352,17 +352,17 @@ body > header{display:none!important}
    (unlock at 1 / 2 / 3) — LP A, LP B and the Shopify variant "(+N poklona)"
    suffixes all have to count the same gifts. */
 const OPTS = [
-  { title:"1 komad", total:3490, was:6990, per:"3.490 RSD/kom", badge:null, cls:"",
-    save:null, off:"UŠTEDA 50%", ship:true, variant:"57244492497161",
-    strips:[{txt:"+ PDF vodič za kamp", amt:"490 RSD"}] },
-  { title:"2 komada", total:5980, was:13980, per:"2.990 RSD/kom", badge:"NAJPOPULARNIJE", cls:"",
-    save:"UŠTEDA 14%/kom", off:"UŠTEDA 57%", ship:false, variant:"57244492529929",
-    strips:[{txt:"+ PDF vodič za kamp", amt:"490 RSD"},
-            {txt:"+ Besplatna dostava", amt:"390 RSD"}] },
-  { title:"3 komada", total:7770, was:20970, per:"2.590 RSD/kom", badge:"NAJBOLJA PONUDA", cls:"best",
-    save:"UŠTEDA 26%/kom", off:"UŠTEDA 63%", ship:false, variant:"57244492562697",
-    strips:[{txt:"+ PDF vodič za kamp", amt:"490 RSD"},
-            {txt:"+ Besplatna dostava", amt:"390 RSD"},
+  { title:"1 komad", total:7090, was:11190, per:"7.090 RSD/kom", badge:null, cls:"",
+    save:null, off:"UŠTEDA 37%", ship:false, variant:"57244492497161",
+    strips:[{txt:"+ Besplatna dostava", amt:"490 RSD"}] },
+  { title:"2 komada", total:12180, was:22380, per:"6.090 RSD/kom", badge:"NAJPOPULARNIJE", cls:"",
+    save:"UŠTEDA 14%/kom", off:"UŠTEDA 46%", ship:false, variant:"57244492529929",
+    strips:[{txt:"+ Besplatna dostava", amt:"490 RSD"},
+            {txt:"+ PDF vodič za kamp", amt:"490 RSD"}] },
+  { title:"3 komada", total:15870, was:33570, per:"5.290 RSD/kom", badge:"NAJBOLJA PONUDA", cls:"best",
+    save:"UŠTEDA 25%/kom", off:"UŠTEDA 53%", ship:false, variant:"57244492562697",
+    strips:[{txt:"+ Besplatna dostava", amt:"490 RSD"},
+            {txt:"+ PDF vodič za kamp", amt:"490 RSD"},
             {txt:"+ Putna torbica", amt:"690 RSD"}] },
 ];
 const BASE = "https://rs.unikatko.eu";
@@ -388,9 +388,8 @@ function renderOpts(){
   document.getElementById('pnow').textContent = fmt(o.total);
   document.getElementById('pwas').textContent = fmt(o.was);
   document.getElementById('psv').textContent = o.off;
-  document.getElementById('pnote').textContent = o.ship
-    ? 'Cena za 1 komad + dostava. Plaćaš pouzećem kad ti kurir donese paket.'
-    : 'Cena za ' + o.title + ', dostava besplatna. Plaćaš pouzećem kad ti kurir donese paket.';
+  document.getElementById('pnote').textContent =
+    'Cena za ' + o.title + ', dostava besplatna. Plaćaš pouzećem kad ti kurir donese paket.';
 }
 function pickOpt(i){ sel=i; renderOpts(); }
 function kupi(){ location.href = BASE + '/cart/' + OPTS[sel].variant + ':1'; }

@@ -83,6 +83,18 @@ h1{font:800 26px/1.22 var(--sans);letter-spacing:-.01em;margin-bottom:10px}
 .sw.on{border-color:var(--cta);box-shadow:0 0 0 3px rgba(10,162,184,.11)}
 .sw i{width:26px;height:26px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.14)}
 
+/* Po jedan red za svaki komad u paketu — boja se bira zasebno za svaki komad. */
+.unitwrap{margin-bottom:16px}
+.uhint{margin:0 0 10px;font-size:12.5px;color:var(--mut);line-height:1.4}
+.urow{border:1px solid var(--line);border-radius:12px;background:#fff;padding:9px 10px;margin-bottom:8px}
+.urow .uhead{display:flex;align-items:center;gap:8px;margin-bottom:7px;min-width:0}
+.urow .un{flex:0 0 auto;min-width:26px;height:22px;padding:0 6px;border-radius:7px;background:var(--ink);
+  color:#fff;font:800 12px/22px var(--sans);text-align:center}
+.urow .unm{font:700 13px/1.2 var(--sans);color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.urow .sws{gap:6px;margin-bottom:0}
+.urow .sw{width:40px;height:40px;border-radius:10px}
+.urow .sw i{width:22px;height:22px}
+
 .atc{width:100%;background:var(--cta);color:#fff;border-radius:13px;padding:17px 12px;
   font:800 16px/1.2 var(--sans);letter-spacing:.01em;box-shadow:0 4px 0 var(--ctaD)}
 .atc:active{transform:translateY(2px);box-shadow:0 2px 0 var(--ctaD)}
@@ -236,27 +248,27 @@ body > header{display:none!important}
   <p class="lede2"><span class="hl">Dve meke mikrofiber jastučice skidaju masnoću sa obe strane odjednom</span> u jednom pokretu, pa stakla ostaju <span class="hl">bistra ceo dan</span>. Onaj lep komad koji držiš u tašni — a ne još jedna plastična štipaljka za bacanje.</p>
 
   <div class="prow">
-    <span class="now" id="p-now">2.990 RSD</span>
-    <s class="was" id="p-was">4.780 RSD</s>
-    <span class="sv" id="p-sv">Ušteda 37%</span>
+    <span class="now" id="p-now">4.980 RSD</span>
+    <s class="was" id="p-was">8.180 RSD</s>
+    <span class="sv" id="p-sv">Ušteda 39%</span>
   </div>
 
   <div class="tbadges">
     <div><div class="i">↩</div><b>30 dana</b><span>Povraćaj novca</span></div>
-    <div><div class="i">🚚</div><b>Besplatna dostava</b><span>od 2 komada</span></div>
+    <div><div class="i">🚚</div><b>Besplatna dostava</b><span>na svaku porudžbinu</span></div>
     <div><div class="i">✓</div><b>1 godina</b><span>Garancija</span></div>
   </div>
 
   <div class="opts" id="opts"></div>
 
-  <div class="clab">Boja: <b id="colorname"></b></div>
-  <div class="sws" id="sws"></div>
+  <div class="clab">Boja:</div>
+  <div class="unitwrap" id="unitwrap"></div>
 
-  <button class="atc" id="atc" onclick="kupi()">DODAJ U KORPU — 2.990 RSD</button>
+  <button class="atc" id="atc" onclick="kupi()">DODAJ U KORPU — 4.980 RSD</button>
 
   <div class="micro">
     <span>✓ 1 godina garancije</span><span>·</span>
-    <span>🚚 Besplatna dostava od 2 kom</span><span>·</span>
+    <span>🚚 Besplatna dostava</span><span>·</span>
     <span>↩ 30 dana za povraćaj</span><span>·</span>
     <span>💵 Plaćanje pouzećem</span>
   </div>
@@ -324,7 +336,7 @@ body > header{display:none!important}
   <details>
     <summary>Dostava i povraćaj</summary>
     <div class="bd">
-      <p><b>Besplatna dostava za pakete od 2 i više komada.</b> Za pojedinačni komad dostava se naplaćuje po ceni kurirske službe. Šaljemo u roku od 1 radnog dana, isporuka 2–4 radna dana na celoj teritoriji Srbije.</p>
+      <p><b>Dostava je besplatna na svaku porudžbinu</b> — i kada uzmeš samo jedan komad. Šaljemo u roku od 1 radnog dana, isporuka 2–4 radna dana na celoj teritoriji Srbije.</p>
       <p><b>Plaćaš pouzećem</b> — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata.</p>
       <p><b>30 dana za povraćaj novca</b> — ako ti ne reši problem sa flekama, vrati proizvod u nekorišćenom stanju u roku od 30 dana i dobijaš pun povraćaj. Uz svaki brisač ide i <b>12 meseci garancije</b> na greške u izradi.</p>
     </div>
@@ -343,7 +355,7 @@ body > header{display:none!important}
     <div class="edbar">
       <span class="st" style="color:var(--amber)">★★★★★</span>
       <span>4,8 · 4.200+ ocena <span class="ph">PLACEHOLDER</span></span>
-      <span>🚚 Besplatna dostava od 2 komada</span>
+      <span>🚚 Besplatna dostava na svaku porudžbinu</span>
     </div>
   </div>
 </section>
@@ -410,7 +422,7 @@ body > header{display:none!important}
   </details>
   <details>
     <summary>Koliko košta dostava i koliko traje?</summary>
-    <div class="bd"><p>Dostava je <b>besplatna za pakete od 2 i više komada</b>. Za pojedinačni komad naplaćuje se po ceni kurirske službe. Šaljemo u roku od 1 radnog dana, isporuka je 2–4 radna dana na celoj teritoriji Srbije. Plaćaš pouzećem, kod kurira.</p></div>
+    <div class="bd"><p>Dostava je <b>besplatna na svaku porudžbinu</b> — i za jedan komad. Šaljemo u roku od 1 radnog dana, isporuka je 2–4 radna dana na celoj teritoriji Srbije. Plaćaš pouzećem, kod kurira.</p></div>
   </details>
   <details>
     <summary>Šta ako mi se ne svidi?</summary>
@@ -423,8 +435,8 @@ body > header{display:none!important}
     <div class="bm">JASNO<i>.</i></div>
     <h2>Bistra stakla — ili ti vraćamo novac.</h2>
     <p>Svakodnevna fleka koju si tiho prihvatio kao datost, konačno rešena — lepom verzijom alata koja ti živi u tašni.</p>
-    <button class="atc" onclick="kupi()">UZMI ONAJ LEP — <span id="fin-price">2.990 RSD</span></button>
-    <p class="gl">30 dana za povraćaj novca · Besplatna dostava od 2 komada · 12 meseci garancije · Plaćanje pouzećem</p>
+    <button class="atc" onclick="kupi()">UZMI ONAJ LEP — <span id="fin-price">4.980 RSD</span></button>
+    <p class="gl">30 dana za povraćaj novca · Besplatna dostava · 12 meseci garancije · Plaćanje pouzećem</p>
   </div>
 </section>
 
@@ -458,20 +470,22 @@ body > header{display:none!important}
   <div class="in">
     <img src="assets/product-roze.jpg" alt="">
     <div class="t"><b>JASNO brisač za naočare</b><span id="satc-sub">2 komada</span></div>
-    <button class="atc" id="atc2" onclick="kupi()">2.990 RSD</button>
+    <button class="atc" id="atc2" onclick="kupi()">4.980 RSD</button>
   </div>
 </div>
 
 <script>
+/* Cene su PO KOMADU (unit) — kao i na Shopify varijantama. Ukupno = unit × qty,
+   jer korpa nosi po jednu stavku za svaki komad. */
 const OPTS = [
-  { title:"1 komad", sub:"1 komad", total:1790, was:2390, per:"1.790 RSD/kom",
-    save:null, ship:true, badge:null,
+  { title:"1 komad", sub:"1 komad", qty:1, unit:3090, total:3090, was:4090, per:"3.090 RSD/kom",
+    save:"Ušteda 24%", ship:false, badge:null,
     byColor:{"Roze zlato":"57244492038409","Bordo braon":"57244492071177","Crna":"57244492103945"} },
-  { title:"2 komada", sub:"2 komada — najpopularnije", total:2990, was:4780, per:"1.495 RSD/kom",
-    save:"Ušteda 37%", ship:false, badge:"NAJPOPULARNIJE",
+  { title:"2 komada", sub:"2 komada — najpopularnije", qty:2, unit:2490, total:4980, was:8180, per:"2.490 RSD/kom",
+    save:"Ušteda 39%", ship:false, badge:"NAJPOPULARNIJE",
     byColor:{"Roze zlato":"57244492136713","Bordo braon":"57244492169481","Crna":"57244492202249"} },
-  { title:"3 komada", sub:"3 komada — najbolja ponuda", total:4170, was:7170, per:"1.390 RSD/kom",
-    save:"Ušteda 42%", ship:false, badge:null,
+  { title:"3 komada", sub:"3 komada — najbolja ponuda", qty:3, unit:2290, total:6870, was:12270, per:"2.290 RSD/kom",
+    save:"Ušteda 44%", ship:false, badge:null,
     byColor:{"Roze zlato":"57244492235017","Bordo braon":"57244492267785","Crna":"57244492300553"} },
 ];
 const COLORS = [
@@ -482,7 +496,23 @@ const COLORS = [
 const BASE = "https://rs.unikatko.eu";
 const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
 let sel = 1;   // izvorna stranica pretselektuje paket od 2 komada
-let col = 0;
+let col = 0;   // boja komada #1 — vodi galeriju, sličice paketa i sticky traku
+
+/* Izbor boje ZA SVAKI KOMAD posebno. picks[0] je ujedno i `col`, pa galerija i
+   redovi imaju jedan izvor istine. pickTouched pamti redove koje je kupac sam
+   promenio — nedirnuti redovi prate red #1, tako da promena paketa ne briše
+   već izabrane boje. */
+let picks = [0];
+const pickTouched = [];
+
+function syncPicks(){
+  const n = OPTS[sel].qty || 1;
+  if (picks[0] === undefined) picks[0] = 0;
+  for (let i = 1; i < n; i++){
+    if (!pickTouched[i] || picks[i] === undefined) picks[i] = picks[0];
+  }
+  col = picks[0];
+}
 
 function renderOpts(){
   /* Tier thumbnails MUST show the colour the buyer has selected — a fixed
@@ -493,37 +523,76 @@ function renderOpts(){
     <div class="opt ${i===sel?'on':''}" onclick="pickOpt(${i})">
       ${o.badge?`<span class="bdg">${o.badge}</span>`:''}
       <img src="${cimg}" alt="">
-      <div class="nm">${o.title}${o.ship?'':'<br><span style="font-weight:600;color:#7b8b98">'+(i===1?'najpopularnije':'najbolja ponuda')+'</span>'}</div>
+      <div class="nm">${o.title}${i===0?'':'<br><span style="font-weight:600;color:#7b8b98">'+(i===1?'najpopularnije':'najbolja ponuda')+'</span>'}</div>
       <div class="pr">${fmt(o.total)}</div>
-      <span class="sv${o.save?'':' ship'}">${o.save || '+ dostava'}</span>
+      <span class="sv${o.save?'':' ship'}">${o.save || (o.ship ? '+ dostava' : '')}</span>
     </div>`).join('');
   const o = OPTS[sel];
   document.getElementById('p-now').textContent = fmt(o.total);
   document.getElementById('p-was').textContent = fmt(o.was);
-  document.getElementById('p-sv').textContent  = o.save || 'Ušteda 25%';
+  document.getElementById('p-sv').textContent  = o.save || '';
   document.getElementById('atc').textContent = 'DODAJ U KORPU — ' + fmt(o.total) + (o.ship ? ' + dostava' : '');
   document.getElementById('atc2').textContent = fmt(o.total);
   document.getElementById('fin-price').textContent = fmt(o.total);
   document.getElementById('satc-sub').textContent = o.sub;
 }
-function pickOpt(i){ sel=i; renderOpts(); }
-function variantId(){ return OPTS[sel].byColor[COLORS[col].name]; }
-function kupi(){ location.href = BASE + '/cart/' + variantId() + ':1'; }
+function pickOpt(i){ sel=i; renderUnits(); renderColors(); renderOpts(); }
+
+/* ---- po jedan red boje za svaki komad ---- */
+function renderUnits(){
+  syncPicks();
+  const n = OPTS[sel].qty || 1;
+  let rows = '';
+  for (let r = 0; r < n; r++){
+    const sw = COLORS.map((c,i)=>
+      `<button class="sw ${i===picks[r]?'on':''}" onclick="pickUnit(${r},${i})" title="${c.name}" aria-label="#${r+1} ${c.name}"><i style="background:${c.hex}"></i></button>`).join('');
+    rows += `<div class="urow" data-unit="${r+1}">
+      <div class="uhead"><span class="un">#${r+1}</span><span class="unm">${COLORS[picks[r]].name}</span></div>
+      <div class="sws">${sw}</div>
+    </div>`;
+  }
+  document.getElementById('unitwrap').innerHTML =
+    `<p class="uhint">Izaberi boju za svaki komad posebno — svaki komad može biti druge boje.</p>` + rows;
+}
+function pickUnit(r,i){
+  picks[r]=i; pickTouched[r]=true;
+  renderUnits(); renderColors(); renderOpts();   // red #1 vodi galeriju i sličice
+}
+
+/* ---- kasa: Shopify cart permalink, PO JEDNA STAVKA ZA SVAKI KOMAD ----
+   Varijante su sada plaćene PO KOMADU, pa je zbir korpe = unit × qty, tačno
+   ono što stranica i obećava. Identični izbori se sabiraju (`<v>:2`). */
+function cartLines(){
+  const o = OPTS[sel];
+  syncPicks();
+  const order = [], n = {};
+  for (let i = 0; i < (o.qty || 1); i++){
+    const vid = o.byColor[COLORS[picks[i]].name];
+    if (!vid) return [];
+    if (n[vid] === undefined){ n[vid] = 0; order.push(vid); }
+    n[vid]++;
+  }
+  return order.map(v => v + ':' + n[v]);
+}
+function checkoutUrl(){
+  const lines = cartLines();
+  return lines.length ? BASE + '/cart/' + lines.join(',') : '';
+}
+function kupi(){ const u = checkoutUrl(); if (u) location.href = u; }
 
 function swHtml(active){
   return COLORS.map((c,i)=>
     `<button class="sw ${i===active?'on':''}" onclick="pickColor(${i})" title="${c.name}" aria-label="${c.name}"><i style="background:${c.hex}"></i></button>`).join('');
 }
 function renderColors(){
-  document.getElementById('sws').innerHTML  = swHtml(col);
   document.getElementById('sws2').innerHTML = swHtml(col);
-  document.getElementById('colorname').textContent  = COLORS[col].name;
   document.getElementById('colorname2').textContent = COLORS[col].name;
   const first = slides.querySelector('img'); if(first) first.src = COLORS[col].img;
   const t0 = document.querySelector('.thumbs img'); if(t0) t0.src = COLORS[col].img;
   const s0 = document.querySelector('.satc img');  if(s0) s0.src = COLORS[col].img;
 }
-function pickColor(i){ col=i; renderColors(); renderOpts(); }
+/* Sekundarni izbornik u uredničkoj sekciji menja boju komada #1. */
+function pickColor(i){ picks[0]=i; pickTouched[0]=true; renderUnits(); renderColors(); renderOpts(); }
 
 /* galerija */
 const slides = document.getElementById('slides');
@@ -553,7 +622,7 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
   sync();
 })();
 
-renderColors(); renderOpts();
+renderUnits(); renderColors(); renderOpts();
 </script>
 </body>
 </html>

@@ -66,14 +66,27 @@ header .ico{font-size:19px;color:var(--ink);text-decoration:none}
 .blts .c{width:19px;height:19px;flex:none;border-radius:50%;background:var(--teal);color:#fff;
   display:grid;place-items:center;font-size:10px;font-weight:900;margin-top:2px}
 
-/* 7. color row */
+/* 7. per-unit colour rows — one row per set in the chosen package (#1..#N),
+   each independently selectable. Swatches wrap instead of overflowing 375px. */
 .colorrow{font-size:14px;margin-bottom:8px}
 .colorrow b{font-weight:700}
-.swatches{display:flex;gap:9px;margin-bottom:18px}
+.swatches{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px}
 .sw{width:52px;height:52px;border-radius:10px;border:2px solid var(--line);cursor:pointer;
   display:grid;place-items:center;background:#fff;padding:0}
 .sw.on{border-color:var(--teal)}
 .sw i{width:26px;height:26px;border-radius:50%;display:block}
+.unitwrap{margin:2px 0 18px}
+.unitwrap .ulb{font-size:14px;font-weight:800;margin-bottom:2px}
+.unitwrap .uhint{margin:0 0 10px;font-size:12.5px;color:var(--mut)}
+.urow{border:1px solid var(--line);border-radius:12px;background:#fff;padding:9px 10px;margin-bottom:8px}
+.urow .uhead{display:flex;align-items:center;gap:8px;margin-bottom:7px;min-width:0}
+.urow .un{flex:none;font-size:13px;font-weight:800;line-height:1;
+  background:var(--dark);color:#fff;border-radius:6px;padding:5px 7px}
+.urow .unm{font-size:13.5px;font-weight:700;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.urow .swatches{gap:5px;margin-bottom:0}
+.urow .sw{width:40px;height:40px;border-radius:10px}
+.urow .sw i{width:22px;height:22px}
 
 /* 8. bundle options */
 .opt{position:relative;border:1.5px solid var(--line);border-radius:14px;padding:16px;
@@ -299,17 +312,16 @@ body > header{display:none!important}
   </ul>
 
 
-  <!-- 7. colour -->
-  <div class="colorrow">Boja: <b id="colorname"></b></div>
-  <div class="swatches" id="swatches"></div>
-
-  <!-- 8. bundles -->
+  <!-- 7. bundles -->
   <div id="ponuda"></div>
   <div id="opts"></div>
 
+  <!-- 8. colour, one row per set in the chosen package -->
+  <div class="unitwrap" id="unitwrap"></div>
+
   <!-- 9. stock + ATC -->
   <div class="stock"><span>●</span> Na stanju — spremno za slanje</div>
-  <button class="atc" id="atc" onclick="kupi()">DODAJ U KORPU — 9.498 RSD</button>
+  <button class="atc" id="atc" onclick="kupi()">DODAJ U KORPU — 7.980 RSD</button>
   <div class="gtee">🛡️ 30 dana garancije povraćaja novca<sup>‡</sup></div>
 
   <!-- 10. description -->
@@ -325,7 +337,7 @@ body > header{display:none!important}
   </details>
   <details>
     <summary>📦 Isporuka i povraćaj</summary>
-    <div class="bd"><p>Isporuka 2–4 radna dana na celoj teritoriji Srbije. Plaćanje pouzećem — gotovinom ili karticom kod kurira.</p><p>Besplatna dostava uz paket 2+1 gratis. Neotvoren proizvod možeš da vratiš u roku od 30 dana uz pun povraćaj novca.</p></div>
+    <div class="bd"><p>Isporuka 2–4 radna dana na celoj teritoriji Srbije. Plaćanje pouzećem — gotovinom ili karticom kod kurira.</p><p>Dostava je besplatna na svaku porudžbinu. Neotvoren proizvod možeš da vratiš u roku od 30 dana uz pun povraćaj novca.</p></div>
   </details>
   <details>
     <summary>💳 Načini plaćanja</summary>
@@ -465,20 +477,29 @@ body > header{display:none!important}
   <div class="in">
     <img src="assets/color-zelena.jpg" alt="">
     <div class="t"><b>TIŠINA čepići</b><span id="satc-sub">3 seta (2+1 gratis)</span></div>
-    <button class="atc" id="atc2" onclick="kupi()">9.498 RSD</button>
+    <button class="atc" id="atc2" onclick="kupi()">7.980 RSD</button>
   </div>
 </div>
 
 <script>
+/* `unit` is the PER-UNIT price = the price on the Shopify variant. The cart gets
+   one line per set, so total = unit x qty. `gifts` is the obligation for the
+   WHOLE order (see giftAttr) — never per line. */
 const OPTS = [
-  { title:"1 set",  sub:"1 set čepića",       total:4599, was:9199,  per:"4.599 RSD po setu", badge:null,
-    save:null, strip:null, ship:true,
+  { title:"1 set",  sub:"1 set čepića", qty:1, unit:3990, total:3990, was:7990,
+    per:"3.990 RSD po setu", badge:null, save:null, strip:null, ship:false,
+    gifts:["Besplatna dostava"],
     byColor:{"Ponoćna zelena":"57238176235785","Peščana":"57238695772425","Ugljeno siva":"57238695805193","Prašnjava ruža":"57238695837961"} },
-  { title:"Kupi 2, treći GRATIS", sub:"3 seta", total:9498, was:13797, per:"3.166 RSD po setu",
-    badge:"NAJPOPULARNIJE", save:"UŠTEDA 31%", strip:{txt:"+ Kutijica za čišćenje GRATIS", amt:"1.090 RSD"},
+  { title:"Kupi 2, treći GRATIS", sub:"3 seta", qty:3, unit:2660, total:7980, was:11970,
+    per:"2.660 RSD po setu",
+    badge:"NAJPOPULARNIJE", save:"UŠTEDA 33%", strip:{txt:"+ Kutijica za čišćenje GRATIS", amt:"1.090 RSD"},
     ship:false,
+    gifts:["Besplatna dostava","PDF vodič za bolji san","Kutijica za čišćenje"],
     byColor:{"Ponoćna zelena":"57238176268553","Peščana":"57238695870729","Ugljeno siva":"57238695903497","Prašnjava ruža":"57238695936265"} },
 ];
+const GIFT_ATTR_KEY = "Pokloni";
+const GIFT_ATTR_PREFIX = "1x po porudžbini: ";
+const UNIT_HINT = "Izaberi boju za svaki set posebno.";
 const COLORS = [
   { name:"Ponoćna zelena", hex:"#123c3f", img:"assets/color-zelena.jpg" },
   { name:"Peščana",        hex:"#d9c3a5", img:"assets/color-pescana.jpg" },
@@ -488,7 +509,15 @@ const COLORS = [
 const BASE = "https://rs.unikatko.eu";
 const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
 let sel = 1;   // source preselects the Buy-2-Get-1 bundle
-let col = 0;
+/* One colour pick per set. picks[0] also drives the gallery + sticky thumbnail.
+   Rows the shopper never touched follow row #1, so switching package keeps picks. */
+let picks = [0];
+const pickTouched = [];
+function syncPicks(){
+  const n = OPTS[sel].qty || 1;
+  if (picks[0] === undefined) picks[0] = 0;
+  for (let i = 1; i < n; i++){ if (!pickTouched[i] || picks[i] === undefined) picks[i] = picks[0]; }
+}
 
 function renderOpts(){
   document.getElementById('opts').innerHTML = OPTS.map((o,i)=>`
@@ -509,18 +538,61 @@ function renderOpts(){
   const a2=document.getElementById('atc2'); if(a2) a2.textContent = fmt(o.total) + (o.ship ? ' + dostava' : '');
   const ss=document.getElementById('satc-sub'); if(ss) ss.textContent = o.sub;
 }
-function pickOpt(i){ sel=i; renderOpts(); }
-function variantId(){ return OPTS[sel].byColor[COLORS[col].name]; }
-function kupi(){ location.href = BASE + '/cart/' + variantId() + ':1'; }
+function pickOpt(i){ sel=i; renderOpts(); renderColors(); }
+
+/* ---- per-unit colour rows ---- */
 function renderColors(){
-  document.getElementById('swatches').innerHTML = COLORS.map((c,i)=>
-    `<button class="sw ${i===col?'on':''}" onclick="pickColor(${i})" title="${c.name}" aria-label="${c.name}"><i style="background:${c.hex}"></i></button>`).join('');
-  document.getElementById('colorname').textContent = COLORS[col].name;
-  const first = slides.querySelector('img'); if(first) first.src = COLORS[col].img;
-  const t0 = document.querySelector('.thumbs img'); if(t0) t0.src = COLORS[col].img;
-  const s0 = document.querySelector('.satc img'); if(s0) s0.src = COLORS[col].img;
+  syncPicks();
+  const n = OPTS[sel].qty || 1;
+  let rows = '';
+  for (let r = 0; r < n; r++){
+    const sw = COLORS.map((c,i)=>
+      `<button class="sw ${i===picks[r]?'on':''}" onclick="pickUnit(${r},${i})" title="${c.name}" aria-label="#${r+1} ${c.name}"><i style="background:${c.hex}"></i></button>`
+    ).join('');
+    rows += `<div class="urow" data-unit="${r+1}">
+      <div class="uhead"><span class="un">#${r+1}</span><span class="unm">${COLORS[picks[r]].name}</span></div>
+      <div class="swatches">${sw}</div>
+    </div>`;
+  }
+  document.getElementById('unitwrap').innerHTML =
+    `<div class="ulb">Boja:</div><p class="uhint">${UNIT_HINT}</p>${rows}`;
+  applyColorImage();
 }
-function pickColor(i){ col=i; renderColors(); }
+function pickUnit(r, i){ picks[r]=i; pickTouched[r]=true; renderColors(); }
+function applyColorImage(){
+  const c = COLORS[picks[0]];   // row #1 drives the gallery
+  const first = slides.querySelector('img'); if(first) first.src = c.img;
+  const t0 = document.querySelector('.thumbs img'); if(t0) t0.src = c.img;
+  const s0 = document.querySelector('.satc img'); if(s0) s0.src = c.img;
+}
+
+/* ---- checkout ----
+   ONE cart line per set, identical picks collapsed (`<v>:2,<v2>:1`). Each variant
+   is priced PER SET, so the cart total is unit x qty = the advertised package price. */
+function cartLines(){
+  syncPicks();
+  const o = OPTS[sel], order = [], n = {};
+  for (let i = 0; i < (o.qty || 1); i++){
+    const vid = o.byColor[COLORS[picks[i]].name];
+    if (!vid) return [];
+    if (n[vid] === undefined){ n[vid] = 0; order.push(vid); }
+    n[vid]++;
+  }
+  return order.map(v => v + ':' + n[v]);
+}
+/* The gift obligation reaches ops ONCE PER ORDER: it rides on a cart ATTRIBUTE,
+   not on the line items. Three lines must never be read as three sets of gifts. */
+function giftAttr(){
+  const g = OPTS[sel].gifts || [];
+  if (!g.length) return '';
+  return '?attributes%5B' + encodeURIComponent(GIFT_ATTR_KEY) + '%5D='
+       + encodeURIComponent(GIFT_ATTR_PREFIX + g.join(' + '));
+}
+function checkoutUrl(){
+  const lines = cartLines();
+  return lines.length ? BASE + '/cart/' + lines.join(',') + giftAttr() : '';
+}
+function kupi(){ const u = checkoutUrl(); if (u) location.href = u; }
 
 /* gallery */
 const slides = document.getElementById('slides');

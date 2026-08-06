@@ -358,11 +358,11 @@ body > header{display:none!important}
 var BASE = 'https://rs.unikatko.eu';
 /* variantId per (paket, boja) — Shopify RS product 15647029100809 */
 var TIERS = [
-  {q:1, label:'1 prsten',  sub:'Pojedinačan prsten',      total:2499, cmp:4999,  per:2499, ship:true,  badge:null,
+  {q:1, label:'1 prsten',  sub:'Pojedinačan prsten',      total:3499, cmp:6990,  per:3499, ship:true,  badge:null,
    v:{'Srebro':'57243245379849','Zlato':'57243245412617','Roze zlato':'57243245445385','Mat crna':'57243245478153'}},
-  {q:2, label:'2 prstena', sub:'Drugi prsten je gratis',  total:3490, cmp:9998,  per:1745, ship:false, badge:'1+1 GRATIS',
+  {q:2, label:'2 prstena', sub:'Drugi prsten je gratis',  total:3498, cmp:13980, per:1749, ship:false, badge:'1+1 GRATIS',
    v:{'Srebro':'57243245510921','Zlato':'57243245543689','Roze zlato':'57243245576457','Mat crna':'57243245609225'}},
-  {q:4, label:'4 prstena', sub:'Dva prstena su gratis',   total:5980, cmp:19996, per:1495, ship:false, badge:'2+2 GRATIS',
+  {q:4, label:'4 prstena', sub:'Dva prstena su gratis',   total:5996, cmp:27960, per:1499, ship:false, badge:'2+2 GRATIS',
    v:{'Srebro':'57243245641993','Zlato':'57243245674761','Roze zlato':'57243245707529','Mat crna':'57243245740297'}}
 ];
 var COLORS = [
@@ -437,7 +437,16 @@ function pickColor(i){
   GAL[0] = {src: COLORS[ci].img, alt: 'SMIRAJ magnetni prsten — ' + COLORS[ci].name};
   showGal(0);
 }
-function kupi(){ location.href = BASE + '/cart/' + TIERS[ti].v[COLORS[ci].name] + ':1'; }
+function kupi(){
+  /* Per-unit Shopify prices: send REAL quantity (q lines of the chosen colour),
+     never :1 — a :1 link now charges one unit for the whole pack. The BUNDLE
+     codes need cart quantity >= 2, which this satisfies. */
+  var t = TIERS[ti];
+  var url = BASE + '/cart/' + t.v[COLORS[ci].name] + ':' + t.q;
+  if (t.q >= 3) url += '?discount=BUNDLE3_RS_SHIP';
+  else if (t.q === 2) url += '?discount=BUNDLE2_RS_SHIP';
+  location.href = url;
+}
 
 document.getElementById('prev').onclick = function(){ showGal(gi - 1); };
 document.getElementById('next').onclick = function(){ showGal(gi + 1); };

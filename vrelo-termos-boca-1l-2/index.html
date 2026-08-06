@@ -45,13 +45,17 @@ h1{font-size:24px;line-height:1.2;margin:0 0 8px;font-weight:800;letter-spacing:
 .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
 .pill{border:1px solid var(--line);background:#fff;font-size:11px;padding:4px 9px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
 
-/* ---- colours ---- */
+/* ---- colours: ONE selector row per unit (owner rule 2026-08-06) ---- */
 .opt{margin:16px 0}
-.opt__lab{font-size:13px;margin-bottom:8px}
-.opt__lab b{font-weight:700}
+.opt__lab{font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:2px}
+.opt__hint{font-size:11.5px;color:var(--muted);margin:0 0 9px}
 .sw{display:flex;gap:10px;flex-wrap:wrap}
 .sw button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);padding:0;cursor:pointer;outline:2px solid transparent;outline-offset:2px}
 .sw button[aria-pressed="true"]{outline-color:var(--ink)}
+.urow{border:1px solid var(--line);background:#fff;padding:9px 11px;margin-bottom:7px}
+.urow__h{display:flex;align-items:center;gap:8px;margin-bottom:7px;min-width:0}
+.urow__n{flex:none;background:var(--green);color:#fff;font-size:11px;font-weight:800;padding:3px 6px;line-height:1}
+.urow__c{font-size:13px;font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* ---- price ---- */
 .price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:14px 0 2px}
@@ -167,8 +171,8 @@ footer nav a{text-decoration:none}
 
 <!-- ANNOUNCEMENT MARQUEE (source has one; site chrome/header deliberately omitted) -->
 <div class="ann"><div class="ann__t">
-<span>DO −63% NA VRELO TERMOS BOCU 1L</span><span>UZ 2 ILI 3 BOCE — DO 4 POKLONA GRATIS</span><span>PLAĆANJE POUZEĆEM</span>
-<span>DO −63% NA VRELO TERMOS BOCU 1L</span><span>UZ 2 ILI 3 BOCE — DO 4 POKLONA GRATIS</span><span>PLAĆANJE POUZEĆEM</span>
+<span>DO −63% NA VRELO TERMOS BOCU 1L</span><span>DOSTAVA GRATIS — UZ 2 ILI 3 BOCE DO 4 POKLONA</span><span>PLAĆANJE POUZEĆEM</span>
+<span>DO −63% NA VRELO TERMOS BOCU 1L</span><span>DOSTAVA GRATIS — UZ 2 ILI 3 BOCE DO 4 POKLONA</span><span>PLAĆANJE POUZEĆEM</span>
 </div></div>
 
 <div class="wrap">
@@ -193,17 +197,11 @@ footer nav a{text-decoration:none}
   <h1>VRELO Termos boca 1L</h1>
   <div class="pills"><span class="pill">Vakuumska izolacija</span><span class="pill">1 litar</span><span class="pill">Čelik 18/8</span></div>
 
-  <!-- COLOUR -->
-  <div class="opt">
-    <div class="opt__lab">Boja: <b id="cname">Šumsko zelena</b></div>
-    <div class="sw" id="sw"></div>
-  </div>
-
   <!-- PRICE -->
   <div class="price">
-    <span class="price__now" id="pnow">2.990 RSD</span>
-    <span class="price__was" id="pwas">5.990 RSD</span>
-    <span class="price__off" id="poff">−50%</span>
+    <span class="price__now" id="pnow">3.590 RSD</span>
+    <span class="price__was" id="pwas">6.990 RSD</span>
+    <span class="price__off" id="poff">−49%</span>
   </div>
   <p class="fine" id="pfine">Cena po komadu. PDV uračunat.</p>
   <div class="stock"><i></i> Na stanju — šalje se u roku od 1 radnog dana</div>
@@ -213,31 +211,34 @@ footer nav a{text-decoration:none}
     <div class="paket__h">Izaberi paket</div>
     <label class="row on" data-t="0">
       <input type="radio" name="t" checked>
-      <span class="row__m"><span class="row__t">1 boca</span><span class="row__s">2.990 RSD/kom + 490 RSD dostava</span></span>
-      <span class="row__p"><b>2.990 RSD</b><s>5.990 RSD</s></span>
+      <span class="row__m"><span class="row__t">1 boca</span><span class="row__s">3.590 RSD/kom · dostava gratis</span></span>
+      <span class="row__p"><b>3.590 RSD</b><s>6.990 RSD</s></span>
     </label>
     <label class="row" data-t="1">
       <span class="tag">NAJPOPULARNIJE</span>
       <input type="radio" name="t">
-      <span class="row__m"><span class="row__t">2 boce</span><span class="row__s">2.490 RSD/kom · 2 poklona</span></span>
-      <span class="row__p"><b>4.980 RSD</b><s>11.980 RSD</s></span>
+      <span class="row__m"><span class="row__t">2 boce</span><span class="row__s">2.990 RSD/kom · 2 poklona</span></span>
+      <span class="row__p"><b>5.980 RSD</b><s>13.980 RSD</s></span>
     </label>
     <label class="row" data-t="2">
       <span class="tag">NAJBOLJA CENA</span>
       <input type="radio" name="t">
-      <span class="row__m"><span class="row__t">3 boce</span><span class="row__s">2.190 RSD/kom · 4 poklona</span></span>
-      <span class="row__p"><b>6.570 RSD</b><s>17.970 RSD</s></span>
+      <span class="row__m"><span class="row__t">3 boce</span><span class="row__s">2.590 RSD/kom · 4 poklona</span></span>
+      <span class="row__p"><b>7.770 RSD</b><s>20.970 RSD</s></span>
     </label>
   </div>
+
+  <!-- COLOUR — one row per bottle, rebuilt whenever the paket changes -->
+  <div class="opt" id="unitwrap"></div>
 
   <!-- GIFTS (source's "Don't miss" accessory upsells) -->
   <div class="dm__h">Ne propusti: <span id="gc">0/4</span> poklona</div>
   <div id="gifts"></div>
 
-  <a class="cta" id="atc" href="#">Naruči — 2.990 RSD</a>
+  <a class="cta" id="atc" href="#">Naruči — 3.590 RSD</a>
   <p class="cta__sub">Plaćanje pouzećem · isporuka 1–2 radna dana</p>
 
-  <div class="note">👋 <b>Akcija traje dok traju zalihe</b> 👋<br>Uz 2 ili 3 boce dostava ti je gratis</div>
+  <div class="note">👋 <b>Akcija traje dok traju zalihe</b> 👋<br>Dostava ti je gratis — pokloni idu jednom po porudžbini, prema paketu</div>
 
   <!-- GUARANTEE (source claims LIFETIME — we cannot honour it) -->
   <div class="guar">
@@ -276,7 +277,7 @@ footer nav a{text-decoration:none}
   <details><summary>Dostava i plaćanje</summary><div class="acc">
     <p>Porudžbine se šalju sledećeg radnog dana. Isporuka na teritoriji Srbije traje <b>1–2 radna dana</b>.</p>
     <p><b>Plaćaš pouzećem</b> — kuriru, kada ti paket stigne na vrata. Ne ostavljaš podatke o kartici i ne plaćaš ništa unapred.</p>
-    <p>Dostava se naplaćuje <b>490 RSD</b> uz porudžbinu od jedne boce. Uz paket od 2 ili 3 boce dostava je gratis.</p>
+    <p><b>Dostava je gratis</b> na svaku porudžbinu ovog proizvoda — i kada uzmeš samo jednu bocu.</p>
   </div></details>
 
   <details><summary>Garancija</summary><div class="acc">
@@ -310,7 +311,7 @@ footer nav a{text-decoration:none}
 <!-- COLOUR SHOWCASE (source's engraving before/after slot) -->
 <section class="sec sec--w"><div class="wrap">
   <h2 class="sec__h">Izaberi svoju boju</h2>
-  <p class="about" style="margin-bottom:18px">Četiri boje, ista boca. Boju koju izabereš gore šaljemo ti u paketu.</p>
+  <p class="about" style="margin-bottom:18px">Četiri boje, ista boca. U paketu od 2 ili 3 boce biraš boju za svaku bocu posebno — tačno te boje ti i šaljemo.</p>
   <div class="colors">
     <figure><img src="assets/color-zelena.jpg" alt="Šumsko zelena"><figcaption>Šumsko zelena</figcaption></figure>
     <figure><img src="assets/color-crna.jpg" alt="Crna"><figcaption>Crna</figcaption></figure>
@@ -373,7 +374,9 @@ footer nav a{text-decoration:none}
 
 <script>
 var CHECKOUT = "https://rs.unikatko.eu";
-var COMPARE_AT = 5990;
+/* Per-unit model: `unit` is the PER-UNIT price pushed to the Shopify variant and
+   COMPARE_AT is the per-unit anchor, so a tier total is always unit x qty. */
+var COMPARE_AT = 6990;
 var COLORS = [
   {name:"Šumsko zelena", hex:"#0E5A34", img:"assets/color-zelena.jpg"},
   {name:"Crna",          hex:"#14161A", img:"assets/color-crna.jpg"},
@@ -381,31 +384,86 @@ var COLORS = [
   {name:"Tirkizno plava",hex:"#1E9EA8", img:"assets/color-tirkiz.jpg"}
 ];
 var TIERS = [
-  {qty:1, unit:2990, total:2990, byColor:{"Šumsko zelena":"57245325656329","Crna":"57245325689097","Peščano bež":"57245325721865","Tirkizno plava":"57245325754633"}},
-  {qty:2, unit:2490, total:4980, byColor:{"Šumsko zelena":"57245325787401","Crna":"57245325820169","Peščano bež":"57245325852937","Tirkizno plava":"57245325885705"}},
-  {qty:3, unit:2190, total:6570, byColor:{"Šumsko zelena":"57245325918473","Crna":"57245325951241","Peščano bež":"57245325984009","Tirkizno plava":"57245326016777"}}
+  {qty:1, unit:3590, total:3590, byColor:{"Šumsko zelena":"57245325656329","Crna":"57245325689097","Peščano bež":"57245325721865","Tirkizno plava":"57245325754633"}},
+  {qty:2, unit:2990, total:5980, byColor:{"Šumsko zelena":"57245325787401","Crna":"57245325820169","Peščano bež":"57245325852937","Tirkizno plava":"57245325885705"}},
+  {qty:3, unit:2590, total:7770, byColor:{"Šumsko zelena":"57245325918473","Crna":"57245325951241","Peščano bež":"57245325984009","Tirkizno plava":"57245326016777"}}
 ];
 var GIFTS = [
-  {at:2, t:"Besplatna dostava",                 v:490,  i:"🚚"},
+  {at:1, t:"Besplatna dostava",                 v:490,  i:"🚚"},
   {at:2, t:"Sportski čep za brzo pijenje",      v:1190, i:"🥤"},
   {at:3, t:"Četka za čišćenje boce",            v:890,  i:"🧽"},
   {at:3, t:"Silikonska podloga protiv klizanja",v:690,  i:"⚫"}
 ];
-var FREE_SHIP_QTY = 2, SHIP = 490;
+/* Every tier subtotal clears the 2.990 RSD minimum of the RS store's automatic
+   discount `besplatnadostava2999`, so shipping is genuinely free from qty 1. */
+var FREE_SHIP_QTY = 1, SHIP = 490;
+var GIFT_ATTR_KEY = "Pokloni", GIFT_ATTR_PREFIX = "1x po porudžbini: ";
 
-var state = {tier:0, color:0};                        // default 1 boca — mirrors the source page
+var state = {tier:0, picks:[0,0,0], touched:[false,false,false]};  // default 1 boca — mirrors the source page
 var fmt = function(n){ return new Intl.NumberFormat("de-DE").format(n) + " RSD"; };
 
-/* colour swatches */
-var sw = document.getElementById("sw");
-COLORS.forEach(function(c,i){
-  var b = document.createElement("button");
-  b.type = "button"; b.style.background = c.hex; b.title = c.name;
-  b.setAttribute("aria-label", c.name);
-  b.setAttribute("aria-pressed", i === state.color ? "true" : "false");
-  b.onclick = function(){ state.color = i; render(); };
-  sw.appendChild(b);
-});
+/* Untouched rows follow row #1, so switching paket keeps the colours you picked. */
+function syncPicks(){
+  var n = TIERS[state.tier].qty;
+  for (var i = 1; i < n; i++){ if (!state.touched[i]) state.picks[i] = state.picks[0]; }
+}
+
+/* One selector row per unit (#1, #2, #3), each independently changeable. */
+function renderUnits(){
+  syncPicks();
+  var n = TIERS[state.tier].qty, html = "", r, i;
+  for (r = 0; r < n; r++){
+    var sw = "";
+    for (i = 0; i < COLORS.length; i++){
+      sw += '<button type="button" style="background:' + COLORS[i].hex + '" title="' + COLORS[i].name +
+            '" aria-label="#' + (r+1) + ' ' + COLORS[i].name + '" aria-pressed="' + (i === state.picks[r]) +
+            '" data-u="' + r + '" data-c="' + i + '"></button>';
+    }
+    html += '<div class="urow" data-unit="' + (r+1) + '">' +
+              '<div class="urow__h"><span class="urow__n">#' + (r+1) + '</span>' +
+              '<span class="urow__c">' + COLORS[state.picks[r]].name + '</span></div>' +
+              '<div class="sw">' + sw + '</div></div>';
+  }
+  var box = document.getElementById("unitwrap");
+  box.innerHTML = '<div class="opt__lab">Boja:</div>' +
+                  '<p class="opt__hint">Biraš boju za svaku bocu posebno.</p>' + html;
+  [].slice.call(box.querySelectorAll(".sw button")).forEach(function(b){
+    b.onclick = function(){
+      state.picks[+b.dataset.u] = +b.dataset.c;
+      state.touched[+b.dataset.u] = true;
+      render();
+    };
+  });
+}
+
+/* ONE cart line per unit — identical picks collapsed (`<v>:2`). Each variant is
+   priced per unit, so the cart total is unit x qty = the advertised tier total. */
+function cartLines(){
+  var t = TIERS[state.tier], order = [], n = {}, i, vid;
+  syncPicks();
+  for (i = 0; i < t.qty; i++){
+    vid = t.byColor[COLORS[state.picks[i]].name];
+    if (!vid) return [];
+    if (n[vid] === undefined){ n[vid] = 0; order.push(vid); }
+    n[vid]++;
+  }
+  return order.map(function(v){ return v + ":" + n[v]; });
+}
+
+/* The gift obligation rides on an ORDER-level cart attribute, never on the line
+   items: three lines each reading "(+3 poklona)" would get 3x the gifts picked. */
+function giftAttr(){
+  var qty = TIERS[state.tier].qty;
+  var caps = GIFTS.filter(function(g){ return qty >= g.at; }).map(function(g){ return g.t; });
+  if (!caps.length) return "";
+  return "?attributes%5B" + encodeURIComponent(GIFT_ATTR_KEY) + "%5D=" +
+         encodeURIComponent(GIFT_ATTR_PREFIX + caps.join(" + "));
+}
+
+function checkoutHref(){
+  var lines = cartLines();
+  return lines.length ? CHECKOUT + "/cart/" + lines.join(",") + giftAttr() : "#";
+}
 
 /* gallery */
 var track = document.getElementById("track"),
@@ -432,11 +490,11 @@ setInterval(syncGal, 200);
 });
 
 function render(){
-  var c = COLORS[state.color], t = TIERS[state.tier];
+  var t = TIERS[state.tier];
 
-  /* colour */
-  document.getElementById("cname").textContent = c.name;
-  [].slice.call(sw.children).forEach(function(b,i){ b.setAttribute("aria-pressed", i===state.color ? "true":"false"); });
+  /* colour — one row per unit; row #1 drives the gallery */
+  renderUnits();
+  var c = COLORS[state.picks[0]];
   imgs[0].src = c.img;
   thumbs.children[0].src = c.img;
 
@@ -448,7 +506,7 @@ function render(){
 
   /* price */
   var was = COMPARE_AT * t.qty;
-  document.getElementById("pnow").textContent = fmt(t.total);
+  document.getElementById("pnow").textContent = fmt(t.unit * t.qty);
   document.getElementById("pwas").textContent = fmt(was);
   document.getElementById("poff").textContent = "−" + Math.round((1 - t.unit/COMPARE_AT)*100) + "%";
   document.getElementById("pfine").textContent =
@@ -461,15 +519,14 @@ function render(){
     return '<div class="dm' + (open ? "" : " locked") + '">' +
       '<div class="dm__i">' + g.i + '</div>' +
       '<div class="dm__m"><div class="dm__t">' + g.t + '</div>' +
-      '<div class="dm__s">' + (open ? "Otključano — ide uz tvoj paket" : "Otključava se uz " + g.at + (g.at===2?" boce":" boce")) + '</div></div>' +
+      '<div class="dm__s">' + (open ? "Otključano — ide uz tvoju porudžbinu" : "Otključava se uz " + g.at + " boce") + '</div></div>' +
       '<div class="dm__p">' + (open ? "GRATIS" : "") + '<s>' + fmt(g.v) + '</s></div></div>';
   }).join("");
   document.getElementById("gc").textContent = unlocked + "/" + GIFTS.length;
 
   /* CTA */
-  var vid  = t.byColor[c.name];
-  var href = vid ? CHECKOUT + "/cart/" + vid + ":1" : "#";
-  var lab  = "Naruči — " + fmt(t.total) + (t.qty < FREE_SHIP_QTY ? " + " + fmt(SHIP) + " dostava" : "");
+  var href = checkoutHref();
+  var lab  = "Naruči — " + fmt(t.unit * t.qty) + (t.qty < FREE_SHIP_QTY ? " + " + fmt(SHIP) + " dostava" : "");
   ["atc","atc2"].forEach(function(id){
     var a = document.getElementById(id);
     a.href = href; a.textContent = lab;

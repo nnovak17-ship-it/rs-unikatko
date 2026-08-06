@@ -40,6 +40,31 @@ ul.tiers li{margin:2px 0}
 textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px;font:inherit;
  font-size:13px;resize:vertical;background:#fcfcfd}
 textarea:focus{outline:2px solid var(--acc);outline-offset:-1px;background:#fff}
+.ana{margin-bottom:26px}
+.ana h2{font-size:19px;margin:0 0 10px}
+.ana h3{font-size:15px;margin:16px 0 8px}
+.asub{color:var(--mut);font-weight:400;font-size:13px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px}
+.tile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.tv{font-size:20px;font-weight:700;letter-spacing:-.01em}
+.tk{color:var(--mut);font-size:12px;margin-top:2px}
+.chartbox{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;position:relative}
+.chartbox svg{width:100%;height:auto;display:block}
+.bar rect:not(.hit){fill:#2a78d6}
+.bar .hit{fill:transparent}
+.bar:hover rect:not(.hit){fill:#1c5eae}
+.ax{font-size:9px;fill:#6b7480;text-anchor:middle}
+.gl{stroke:#e4e7ea;stroke-width:1}
+.bl{stroke:#c9ced4;stroke-width:1}
+.tip{position:absolute;background:#15181c;color:#fff;font-size:12px;padding:6px 9px;border-radius:8px;
+ pointer-events:none;white-space:nowrap;z-index:5}
+.tscroll{overflow-x:auto}
+.atab{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px}
+.atab th{text-align:left;color:var(--mut);font-size:12px;font-weight:600;padding:8px 12px;border-bottom:1px solid var(--line)}
+.atab td{padding:8px 12px;font-size:14px;border-bottom:1px solid var(--line)}
+.atab tr:last-child td{border-bottom:0}
+.atab td:nth-child(n+2),.atab th:nth-child(n+2){text-align:right}
+.anote{color:var(--mut);font-size:13px}
 .note-caveat{background:#fff8e6;border:1px solid #f0e0b0;border-radius:10px;padding:10px 12px;
  font-size:13px;color:#6b5a20;margin-bottom:18px}
 footer{color:var(--mut);font-size:12px;margin-top:24px;text-align:center}
@@ -55,6 +80,18 @@ footer{color:var(--mut);font-size:12px;margin-top:24px;text-align:center}
 <p class="lead">All generated landing pages, Shopify products and current pricing.
 Prices are in RSD, as charged at checkout. Brand names are ours and stay as-is;
 the landing pages themselves remain in Serbian.</p>
+
+<section class="ana">
+  <h2>Store analytics <span class="asub">RS · last 30 days · updated 2026-08-06 22:00</span></h2>
+  <div class="tiles"><div class="tile"><div class="tv">520.121 RSD</div><div class="tk">Revenue · 30d</div></div><div class="tile"><div class="tv">218</div><div class="tk">Orders · 30d</div></div><div class="tile"><div class="tv">2.408 RSD</div><div class="tk">AOV · 30d</div></div><div class="tile"><div class="tv">101.751 RSD</div><div class="tk">Revenue · 7d</div></div><div class="tile"><div class="tv">40</div><div class="tk">Orders · 7d</div></div><div class="tile"><div class="tv">127</div><div class="tk">Fulfilled · 30d</div></div><div class="tile"><div class="tv">2 (1%)</div><div class="tk">Cancelled · 30d</div></div></div>
+  <div class="chartbox"><h3>Orders per day <span class="asub">last 14 days</span></h3><svg viewBox="0 0 700 150" role="img" aria-label="Orders per day, last 14 days"><line x1="22" y1="10" x2="700" y2="10" class="gl"/><line x1="22" y1="130" x2="700" y2="130" class="bl"/><text x="16" y="12" class="ax" text-anchor="end">10</text><g class="bar" data-d="07-24" data-o="9" data-r="20.330 RSD"><rect x="24" y="22" width="44" height="108" rx="4"/><rect class="hit" x="22" y="0" width="48" height="150"/></g><g class="bar" data-d="07-25" data-o="5" data-r="10.853 RSD"><rect x="72" y="70" width="44" height="60" rx="4"/><rect class="hit" x="70" y="0" width="48" height="150"/></g><g class="bar" data-d="07-26" data-o="5" data-r="11.854 RSD"><rect x="121" y="70" width="44" height="60" rx="4"/><rect class="hit" x="119" y="0" width="48" height="150"/></g><g class="bar" data-d="07-27" data-o="6" data-r="15.343 RSD"><rect x="169" y="58" width="44" height="72" rx="4"/><rect class="hit" x="167" y="0" width="48" height="150"/></g><g class="bar" data-d="07-28" data-o="10" data-r="25.233 RSD"><rect x="218" y="10" width="44" height="120" rx="4"/><rect class="hit" x="216" y="0" width="48" height="150"/></g><g class="bar" data-d="07-29" data-o="7" data-r="16.932 RSD"><rect x="266" y="46" width="44" height="84" rx="4"/><rect class="hit" x="264" y="0" width="48" height="150"/></g><g class="bar" data-d="07-30" data-o="8" data-r="19.731 RSD"><rect x="315" y="34" width="44" height="96" rx="4"/><rect class="hit" x="313" y="0" width="48" height="150"/></g><g class="bar" data-d="07-31" data-o="4" data-r="12.874 RSD"><rect x="363" y="82" width="44" height="48" rx="4"/><rect class="hit" x="361" y="0" width="48" height="150"/></g><g class="bar" data-d="08-01" data-o="6" data-r="14.943 RSD"><rect x="411" y="58" width="44" height="72" rx="4"/><rect class="hit" x="409" y="0" width="48" height="150"/></g><g class="bar" data-d="08-02" data-o="6" data-r="13.934 RSD"><rect x="460" y="58" width="44" height="72" rx="4"/><rect class="hit" x="458" y="0" width="48" height="150"/></g><g class="bar" data-d="08-03" data-o="8" data-r="19.430 RSD"><rect x="508" y="34" width="44" height="96" rx="4"/><rect class="hit" x="506" y="0" width="48" height="150"/></g><g class="bar" data-d="08-04" data-o="5" data-r="11.454 RSD"><rect x="557" y="70" width="44" height="60" rx="4"/><rect class="hit" x="555" y="0" width="48" height="150"/></g><g class="bar" data-d="08-05" data-o="6" data-r="16.152 RSD"><rect x="605" y="58" width="44" height="72" rx="4"/><rect class="hit" x="603" y="0" width="48" height="150"/></g><g class="bar" data-d="08-06" data-o="4" data-r="10.475 RSD"><rect x="654" y="82" width="44" height="48" rx="4"/><rect class="hit" x="652" y="0" width="48" height="150"/></g><text x="46.0" y="144" class="ax">24</text><text x="143.0" y="144" class="ax">26</text><text x="240.0" y="144" class="ax">28</text><text x="337.0" y="144" class="ax">30</text><text x="433.0" y="144" class="ax">01</text><text x="530.0" y="144" class="ax">03</text><text x="627.0" y="144" class="ax">05</text></svg>
+    <div id="tip" class="tip" hidden></div></div>
+  <h3>Sales by funnel</h3>
+  <div class="tscroll"><table class="atab">
+    <thead><tr><th>Product</th><th>Orders</th><th>Units</th><th>Revenue</th><th>AOV</th></tr></thead>
+    <tbody><tr><td>Other store products</td><td>216</td><td>261</td><td>520.121 RSD</td><td>2.408 RSD</td></tr></tbody></table></div>
+  <p class="anote">No funnel orders in the last 30 days yet — funnels are live but not carrying ad traffic. Rows appear here automatically once orders arrive.</p>
+</section>
 <div class="note-caveat"><b>About notes:</b> notes are stored locally in this browser
 (localStorage) and are <b>not shared</b> with anyone else.</div>
 
@@ -172,7 +209,7 @@ the landing pages themselves remain in Serbian.</p>
           <a href="https://rs.unikatko.eu/products/tisina-cepici-za-spavanje" target="_blank" rel="noopener">Storefront ↗</a>
           <a href="https://admin.shopify.com/store/a99226-2/products/15645287022857" target="_blank" rel="noopener">Admin ↗</a>
         </div>
-        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 set: <b>4.599 RSD</b> + shipping</li><li>3 sets (2+1): <b>9.498 RSD</b></li></ul></div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 set: <b>3.990 RSD</b></li><li>3 sets (2+1): <b>7.980 RSD</b></li></ul></div>
         <div class="k">Colours</div><div class="v">Midnight green · Sand · Charcoal grey · Dusty rose</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="tisina-cepici" rows="2" placeholder="Your note…"></textarea></div>
@@ -247,7 +284,7 @@ the landing pages themselves remain in Serbian.</p>
           <a href="https://rs.unikatko.eu/products/nijansa-sampon-u-boji-za-sede" target="_blank" rel="noopener">Storefront ↗</a>
           <a href="https://admin.shopify.com/store/a99226-2/products/15646853857545" target="_blank" rel="noopener">Admin ↗</a>
         </div>
-        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 bottle: <b>3.499 RSD</b> + shipping</li><li>2 bottles: <b>6.098 RSD</b></li><li>3 bottles: <b>6.999 RSD</b></li></ul></div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 bottle: <b>3.590 RSD</b></li><li>2 bottles: <b>6.180 RSD</b></li><li>3 bottles: <b>7.197 RSD</b></li></ul></div>
         <div class="k">Shades</div><div class="v">Black · Dark brown · Medium brown · Light brown</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="nijansa-sampon" rows="2" placeholder="Your note…"></textarea></div>
@@ -272,7 +309,7 @@ the landing pages themselves remain in Serbian.</p>
           <a href="https://rs.unikatko.eu/products/smiraj-magnetni-prsten-podesiv" target="_blank" rel="noopener">Storefront ↗</a>
           <a href="https://admin.shopify.com/store/a99226-2/products/15647029100809" target="_blank" rel="noopener">Admin ↗</a>
         </div>
-        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 ring: <b>2.499 RSD</b> + shipping</li><li>2 rings: <b>3.490 RSD</b></li><li>4 rings: <b>5.980 RSD</b></li></ul></div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 ring: <b>3.499 RSD</b></li><li>2 rings: <b>3.498 RSD</b></li><li>4 rings: <b>5.996 RSD</b></li></ul></div>
         <div class="k">Colours</div><div class="v">Silver · Gold · Rose gold · Matte black</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="smiraj-prsten" rows="2" placeholder="Your note…"></textarea></div>
@@ -322,7 +359,7 @@ the landing pages themselves remain in Serbian.</p>
           <a href="https://rs.unikatko.eu/products/pogled-trokrilno-led-ogledalo-za-sisanje" target="_blank" rel="noopener">Storefront ↗</a>
           <a href="https://admin.shopify.com/store/a99226-2/products/15647492833545" target="_blank" rel="noopener">Admin ↗</a>
         </div>
-        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 mirror: <b>4.590 RSD</b> + shipping</li><li>2 mirrors: <b>7.998 RSD</b></li><li>3 mirrors: <b>11.070 RSD</b></li></ul></div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 mirror: <b>8.190 RSD</b></li><li>2 mirrors: <b>14.380 RSD</b></li><li>3 mirrors: <b>19.770 RSD</b></li></ul></div>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="pogled-ogledalo-za-sisanje" rows="2" placeholder="Your note…"></textarea></div>
@@ -372,7 +409,7 @@ the landing pages themselves remain in Serbian.</p>
           <a href="https://rs.unikatko.eu/products/jasno-brisac-za-naocare" target="_blank" rel="noopener">Storefront ↗</a>
           <a href="https://admin.shopify.com/store/a99226-2/products/15647506596105" target="_blank" rel="noopener">Admin ↗</a>
         </div>
-        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 piece: <b>1.790 RSD</b> + shipping</li><li>2 pieces: <b>2.990 RSD</b></li><li>3 pieces: <b>4.170 RSD</b></li></ul></div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 piece: <b>3.090 RSD</b></li><li>2 pieces: <b>4.980 RSD</b></li><li>3 pieces: <b>6.870 RSD</b></li></ul></div>
         <div class="k">Colours</div><div class="v">Rose gold · Burgundy brown · Black</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="jasno-brisac-naocara" rows="2" placeholder="Your note…"></textarea></div>
@@ -397,7 +434,7 @@ the landing pages themselves remain in Serbian.</p>
           <a href="https://rs.unikatko.eu/products/suncokret-solarni-punjac-za-telefon" target="_blank" rel="noopener">Storefront ↗</a>
           <a href="https://admin.shopify.com/store/a99226-2/products/15647506792713" target="_blank" rel="noopener">Admin ↗</a>
         </div>
-        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 piece: <b>3.490 RSD</b> + shipping</li><li>2 pieces: <b>5.980 RSD</b></li><li>3 pieces: <b>7.770 RSD</b></li></ul></div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 piece: <b>7.090 RSD</b></li><li>2 pieces: <b>12.180 RSD</b></li><li>3 pieces: <b>15.870 RSD</b></li></ul></div>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="suncokret-solarni-punjac" rows="2" placeholder="Your note…"></textarea></div>
@@ -422,7 +459,7 @@ the landing pages themselves remain in Serbian.</p>
           <a href="https://rs.unikatko.eu/products/vrelo-termos-boca-1l" target="_blank" rel="noopener">Storefront ↗</a>
           <a href="https://admin.shopify.com/store/a99226-2/products/15647896273161" target="_blank" rel="noopener">Admin ↗</a>
         </div>
-        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 bottle: <b>2.990 RSD</b> + shipping</li><li>2 bottles: <b>4.980 RSD</b></li><li>3 bottles: <b>6.570 RSD</b></li></ul></div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 bottle: <b>3.590 RSD</b></li><li>2 bottles: <b>5.980 RSD</b></li><li>3 bottles: <b>7.770 RSD</b></li></ul></div>
         <div class="k">Colours</div><div class="v">Forest green · Black · Sand beige · Turquoise</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="vrelo-termos-boca-1l" rows="2" placeholder="Your note…"></textarea></div>
@@ -510,6 +547,17 @@ the landing pages themselves remain in Serbian.</p>
 <footer>Generated from page.json configs · rs.unikatko.com</footer>
 </div>
 <script>
+const tip=document.getElementById('tip');
+if(tip){document.querySelectorAll('.bar').forEach(b=>{
+  b.addEventListener('mouseenter',()=>{
+    tip.textContent=`${b.dataset.d}: ${b.dataset.o} orders · ${b.dataset.r}`;
+    tip.hidden=false;
+    const r=b.getBoundingClientRect(),c=tip.offsetParent.getBoundingClientRect();
+    tip.style.left=Math.min(r.left-c.left, c.width-tip.offsetWidth-8)+'px';
+    tip.style.top=(r.top-c.top-30)+'px';
+  });
+  b.addEventListener('mouseleave',()=>tip.hidden=true);
+});}
 document.querySelectorAll('textarea[data-note]').forEach(t=>{
   const k='lpnote:'+t.dataset.note;
   t.value=localStorage.getItem(k)||'';
