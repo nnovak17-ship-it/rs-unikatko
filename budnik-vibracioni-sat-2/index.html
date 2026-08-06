@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vibracioni budilnik za ruku – budi te vibracijom umesto zvonom, ne budi partnera | BUDNIK</title>
+<meta name="description" content="Narukvica koja te budi vibracijom na zglobu, ne zvukom. Tri jačine, 14+ dana baterije, bez telefona i aplikacije. Plaćanje pouzećem, 30 dana povraćaj.">
+<style>
+/* BUDNIK LP B — sr-Latn-RS. Ručno građen 1:1 klon strukture izvorne stranice. */
+:root{
+  --ink:#0F1115; --body:#4A525C; --mut:#8A929B; --line:#E3E6EA;
+  --dark:#0F1115; --dark2:#1C2029; --wash:#F6F7F8;
+  --amber:#F5A524; --ambersoft:#FDEFD3; --amberink:#7A4E05;
+  --ok:#2FA84F; --bad:#D9576A;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;
+  padding-bottom:96px;font-size:15px}
+img{max-width:100%;display:block}
+.wrap{max-width:620px;margin:0 auto;padding:0 16px}
+
+/* --- traka sa najavom (izvor: crna traka na vrhu) --- */
+.ann{background:var(--dark);color:#FAFAFA;font-size:12px;letter-spacing:.02em;
+  padding:9px 16px;text-align:center;font-weight:600}
+.ann b{color:var(--amber)}
+
+/* --- galerija --- */
+.gal{margin-top:14px}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.slides::-webkit-scrollbar{display:none}
+.slides img{flex:0 0 100%;scroll-snap-align:center;border-radius:14px;background:var(--wash)}
+.thumbs{display:flex;gap:8px;overflow-x:auto;margin-top:10px;scrollbar-width:none;padding-bottom:2px}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{width:54px;height:54px;object-fit:cover;border-radius:9px;flex:none;
+  border:2px solid transparent;opacity:.55;cursor:pointer}
+.thumbs img.on{border-color:var(--ink);opacity:1}
+
+/* --- naslovni blok --- */
+.rev{display:inline-flex;align-items:center;gap:7px;margin:16px 0 8px;
+  font-size:12.5px;color:var(--body)}
+.rev .st{color:var(--amber);letter-spacing:1px}
+h1{font-size:23px;line-height:1.22;margin:6px 0 10px;letter-spacing:-.015em}
+.prow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.pnow{font-size:24px;font-weight:800}
+.pwas{font-size:16px;color:var(--mut);text-decoration:line-through}
+.poff{background:#FDE7E7;color:#C42B2B;font-size:11.5px;font-weight:800;
+  padding:4px 8px;border-radius:6px;letter-spacing:.02em}
+.pship{font-size:12.5px;color:var(--mut);margin-bottom:14px}
+
+/* --- izbor količine (izvor: Choose Your Quantity) --- */
+.qh{font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin:16px 0 9px}
+.qopts{display:flex;flex-direction:column;gap:9px}
+.qo{position:relative;border:1.5px solid var(--line);border-radius:13px;padding:13px 13px 13px 42px;
+  background:#fff;cursor:pointer;transition:border-color .15s,background .15s}
+.qo.on{border-color:var(--ink);background:#FBFBFC;border-width:2px;padding:12.5px 12.5px 12.5px 41.5px}
+.qo .dot{position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  width:18px;height:18px;border-radius:50%;border:2px solid #C9CFD5;background:#fff}
+.qo.on .dot{border-color:var(--ink)}
+.qo.on .dot:after{content:"";position:absolute;left:3px;top:3px;width:8px;height:8px;
+  border-radius:50%;background:var(--ink)}
+.qo .qtop{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.qo .qn{font-size:15px;font-weight:800}
+.qo .qt{font-size:15px;font-weight:800;white-space:nowrap}
+.qo .qbot{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:2px}
+.qo .qu{font-size:12.5px;color:var(--body)}
+.qo .qw{font-size:12.5px;color:var(--mut);text-decoration:line-through;white-space:nowrap}
+.qbadge{position:absolute;top:-9px;right:11px;background:var(--amber);color:#20160A;
+  font-size:10.5px;font-weight:800;letter-spacing:.03em;padding:3px 8px;border-radius:5px}
+
+/* --- dugme --- */
+.atc{display:block;width:100%;margin:14px 0 0;border:0;border-radius:100px;
+  background:var(--dark);color:#FAFAFA;font-size:16px;font-weight:700;
+  padding:17px 16px;cursor:pointer;text-align:center;font-family:inherit;
+  letter-spacing:.01em;line-height:1.25}
+.atc:active{background:#000}
+.paylink{display:block;text-align:center;font-size:12.5px;color:var(--mut);margin-top:9px}
+
+/* --- kvačice --- */
+.ticks{margin:18px 0 0;padding:0;list-style:none}
+.ticks li{position:relative;padding-left:26px;margin-bottom:8px;font-size:14px}
+.ticks li:before{content:"";position:absolute;left:0;top:5px;width:16px;height:16px;
+  border-radius:50%;background:var(--ok)}
+.ticks li:after{content:"";position:absolute;left:5px;top:9px;width:4px;height:7px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+/* --- garancija --- */
+.grt{display:flex;gap:11px;align-items:flex-start;background:var(--wash);
+  border-radius:12px;padding:13px;margin-top:16px}
+.grt .sh{flex:none;width:34px;height:34px;border-radius:9px;background:var(--dark);
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px}
+.grt b{display:block;font-size:13px;letter-spacing:.02em}
+.grt span{font-size:12.5px;color:var(--body)}
+
+/* --- harmonika --- */
+.acc{margin-top:22px;border-top:1px solid var(--line)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;padding:15px 30px 15px 0;position:relative;
+  font-size:14.5px;font-weight:700}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);
+  font-size:20px;font-weight:400;color:var(--mut)}
+.acc details[open] summary:after{content:"–"}
+.acc .ab{padding:0 0 15px;font-size:14px;color:var(--body)}
+.acc .ab p{margin:0 0 9px}
+.acc .ab ul{margin:0;padding-left:19px}
+.acc .ab li{margin-bottom:5px}
+
+/* --- tamni pojas sa prednostima --- */
+.band{background:var(--dark);color:#fff;margin-top:34px;padding:32px 0 30px}
+.band h2{font-size:20px;line-height:1.28;margin:0 0 8px;letter-spacing:-.01em}
+.band p{font-size:14.5px;color:#C6CCD4;margin:0 0 18px}
+.tiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
+.tile{background:#1C2029;border-radius:12px;padding:14px 9px;text-align:center}
+.tile b{display:block;font-size:19px;color:var(--amber);line-height:1.1}
+.tile span{display:block;font-size:11px;color:#AFB7C0;margin-top:5px;line-height:1.3}
+
+/* --- tabela poređenja --- */
+.cmp{margin-top:34px}
+.cmp h2{font-size:19px;margin:0 0 4px;letter-spacing:-.01em}
+.cmp .sub{font-size:14px;color:var(--body);margin:0 0 14px}
+.ctab{width:100%;border-collapse:collapse;font-size:13px}
+.ctab th,.ctab td{padding:10px 4px;border-bottom:1px solid var(--line);text-align:center}
+.ctab th:first-child,.ctab td:first-child{text-align:left;width:46%;font-weight:400;color:var(--body)}
+.ctab thead th{font-size:11.5px;font-weight:800;letter-spacing:.03em;text-transform:uppercase}
+.ctab thead th.us{color:var(--ink)}
+.ctab thead th.them{color:var(--mut)}
+.ctab .y{color:var(--ok);font-size:16px;font-weight:800}
+.ctab .n{color:var(--bad);font-size:16px;font-weight:800}
+
+/* --- odlike --- */
+.feat{margin-top:34px}
+.feat h2{font-size:19px;margin:0 0 4px;letter-spacing:-.01em}
+.feat .sub{font-size:14px;color:var(--body);margin:0 0 16px}
+.fb{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:13px}
+.fb img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.fb .fc{padding:14px}
+.fb h3{font-size:16px;margin:0 0 5px}
+.fb p{font-size:13.5px;color:var(--body);margin:0 0 11px}
+.fst{display:flex;gap:9px}
+.fst div{flex:1;background:var(--wash);border-radius:9px;padding:9px;text-align:center}
+.fst b{display:block;font-size:15px}
+.fst span{display:block;font-size:10.5px;color:var(--mut);letter-spacing:.03em;
+  text-transform:uppercase;margin-top:2px;line-height:1.25}
+
+/* --- recenzije --- */
+.tst{margin-top:34px}
+.tst h2{font-size:19px;margin:0 0 4px;letter-spacing:-.01em}
+.tst .sub{font-size:14px;color:var(--body);margin:0 0 14px}
+.tc{border:1px solid var(--line);border-radius:14px;padding:15px;margin-bottom:11px}
+.tc .st{color:var(--amber);font-size:12px;letter-spacing:1.5px}
+.tc h4{font-size:15px;margin:7px 0 6px}
+.tc p{font-size:13.5px;color:var(--body);margin:0 0 11px}
+.tc .who{display:flex;align-items:center;gap:8px;font-size:12.5px}
+.tc .av{width:28px;height:28px;border-radius:50%;background:var(--ambersoft);
+  color:var(--amberink);display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:12px;flex:none}
+.tc .who b{font-weight:700}
+.tc .who span{color:var(--mut)}
+
+/* --- podnožje --- */
+footer{background:var(--wash);margin-top:36px;padding:26px 0 30px;font-size:12.5px;color:var(--body)}
+footer .fl{display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:14px}
+footer a{color:var(--body);text-decoration:underline}
+footer .dis{font-size:11px;color:var(--mut);line-height:1.5;margin-top:10px}
+footer .cp{margin-top:14px;font-size:11.5px;color:var(--mut)}
+
+/* --- lepljivo dugme (izvor ima mobilnu lepljivu traku) --- */
+.satc{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;
+  border-top:1px solid var(--line);padding:9px 16px calc(9px + env(safe-area-inset-bottom));
+  box-shadow:0 -6px 18px rgba(15,17,21,.09)}
+.satc .in{max-width:620px;margin:0 auto;display:flex;align-items:center;gap:11px}
+.satc .t{min-width:0;flex:1}
+.satc .t b{display:block;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.satc .t span{font-size:12.5px;font-weight:800}
+.satc .atc{margin:0;width:auto;flex:none;padding:13px 18px;font-size:13.5px;border-radius:100px}
+
+.ph{font-size:10.5px;color:var(--mut);text-align:center;margin-top:8px}
+</style>
+</head>
+<body>
+
+<div class="ann">TIŠINA UMESTO ZVONA — <b>do 62% popusta</b> + plaćanje pouzećem</div>
+
+<div class="wrap">
+
+  <div class="gal">
+    <div class="slides" id="slides">
+      <img src="assets/product-flat.jpg" alt="BUDNIK vibracioni budilnik za ruku — crna silikonska narukvica sa skrivenim LED prikazom vremena">
+      <img src="assets/product.jpg" alt="BUDNIK narukvica iz drugog ugla">
+      <img src="assets/lifestyle.jpg" alt="Narukvica na ruci u mraku — vibracija umesto zvuka">
+      <img src="assets/couple.jpg" alt="Jedan se budi, drugi i dalje spava">
+      <img src="assets/benefits.jpg" alt="Zašto BUDNIK — tri nivoa vibracije, 14+ dana baterije, bez telefona">
+      <img src="assets/compare.jpg" alt="BUDNIK ili telefon — poređenje">
+      <img src="assets/howto.jpg" alt="Kako se koristi BUDNIK — tri koraka">
+      <img src="assets/charging.jpg" alt="Magnetno punjenje i 14+ dana baterije">
+    </div>
+    <div class="thumbs" id="thumbs"></div>
+  </div>
+
+  <div class="rev"><span class="st">★★★★★</span> <span id="revcount">(1.800) potvrđenih recenzija</span></div>
+
+  <h1>Vibracioni budilnik za ruku — budi te vibracijom, ne zvonom</h1>
+
+  <div class="prow">
+    <span class="pnow" id="p-now">3.990 RSD</span>
+    <span class="pwas" id="p-was">8.490 RSD</span>
+    <span class="poff" id="p-off">−53%</span>
+  </div>
+  <div class="pship" id="p-ship">+ dostava · plaćaš pouzećem</div>
+
+  <div class="qh">Izaberi količinu</div>
+  <div class="qopts" id="qopts"></div>
+
+  <button class="atc" id="atc" onclick="kupi()">DODAJ U KORPU — 3.990 RSD</button>
+  <span class="paylink">Plaćanje pouzećem · isporuka 2–4 radna dana</span>
+
+  <ul class="ticks">
+    <li>Vibracija na zglobu umesto zvona koje budi celu sobu</li>
+    <li>Tri nivoa jačine — kreće blago i pojačava se dok ne ustaneš</li>
+    <li>Radi bez telefona i bez aplikacije</li>
+  </ul>
+
+  <div class="grt">
+    <div class="sh">🛡</div>
+    <div>
+      <b>30 DANA ZA POVRAĆAJ NOVCA</b>
+      <span>Vrati je u nekorišćenom stanju u roku od 30 dana i dobijaš pun povraćaj. Na uređaj ide godinu dana garancije.</span>
+    </div>
+  </div>
+
+  <div class="acc">
+    <details open>
+      <summary>Šta je ovo?</summary>
+      <div class="ab">
+        <p>Tanka silikonska narukvica koja te budi <b>vibracijom na zglobu</b> — bez zvuka, bez svetla i bez telefona u sobi.</p>
+        <p>Umesto oštrog zvona, vibracija kreće blago i pojačava se dok se ne probudiš, pa je jutro mirnije i tvoje, a ne cele kuće.</p>
+        <p>Odgovara ti ako:</p>
+        <ul>
+          <li>spavaš tvrdo i gasiš alarme u polusnu</li>
+          <li>ustaješ u drugo vreme od partnera</li>
+          <li>radiš u smenama i budiš se dok drugi spavaju</li>
+          <li>hoćeš telefon van spavaće sobe</li>
+        </ul>
+      </div>
+    </details>
+    <details>
+      <summary>Da li će me stvarno probuditi?</summary>
+      <div class="ab">
+        <p>Radi na drugom principu nego zvuk. Zvono dolazi iz sobe i mozak ga vremenom svrsta u pozadinsku buku, pa ga ugasiš bez sećanja.</p>
+        <p><b>Vibracija je fizički dodir na koži zgloba</b> i ne prestaje sama — prolazi kroz tri nivoa jačine dok je ne isključiš na samoj narukvici. Ako ni najjači nivo ne bude dovoljan za tebe, imaš 30 dana da je vratiš uz pun povraćaj novca.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Kako se puni?</summary>
+      <div class="ab">
+        <p>U paketu ide <b>magnetni punjač</b> sa USB kablom. Prislonim ga na dva kontakta sa unutrašnje strane trake, sam se zalepi i puni.</p>
+        <p>Uz uobičajenu noćnu upotrebu jedno punjenje traje <b>14+ dana</b>.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Da li smeta dok spavam?</summary>
+      <div class="ab">
+        <p>Traka je od mekog silikona, tanka i lagana, bez kućišta i bez ekrana koji bi štrčao — prikaz vremena svetli kroz samu traku.</p>
+        <p>Zakopčava se na više pozicija pa se podesi i na tanji i na deblji zglob. Otporna je na vodu za svakodnevnu upotrebu (znoj, kiša, pranje ruku), ali nije za plivanje i ronjenje.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Dostava i povraćaj</summary>
+      <div class="ab">
+        <p>Isporuka za <b>2–4 radna dana</b> na celoj teritoriji Srbije. Plaćaš <b>pouzećem</b> — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata.</p>
+        <p>Dostava je besplatna za pakete od 2 i više komada. Povraćaj u roku od 30 dana, garancija na uređaj 12 meseci.</p>
+      </div>
+    </details>
+  </div>
+
+</div>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Napravljen za one koji spavaju najtvrđe — i za one koji spavaju pored njih</h2>
+    <p>Bez zvuka, bez ekrana, bez aplikacije. Samo vibracija koja te digne.</p>
+    <div class="tiles">
+      <div class="tile"><b>3</b><span>nivoa vibracije</span></div>
+      <div class="tile"><b>14+</b><span>dana baterije</span></div>
+      <div class="tile"><b>3</b><span>nezavisna alarma</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cmp">
+  <div class="wrap">
+    <h2>BUDNIK, telefon ili pametni sat?</h2>
+    <p class="sub">Fizička vibracija radi drugačije od zvuka.</p>
+    <table class="ctab">
+      <thead>
+        <tr><th></th><th class="us">BUDNIK</th><th class="them">Telefon</th><th class="them">Pametni sat</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Budi bez ijednog zvuka</td><td class="y">✓</td><td class="n">✕</td><td class="n">✕</td></tr>
+        <tr><td>Ne budi partnera</td><td class="y">✓</td><td class="n">✕</td><td class="y">✓</td></tr>
+        <tr><td>Vibracija se pojačava dok ne ustaneš</td><td class="y">✓</td><td class="n">✕</td><td class="n">✕</td></tr>
+        <tr><td>Radi bez aplikacije i naloga</td><td class="y">✓</td><td class="n">✕</td><td class="n">✕</td></tr>
+        <tr><td>Baterija traje 14+ dana</td><td class="y">✓</td><td class="n">✕</td><td class="n">✕</td></tr>
+        <tr><td>Nema ekrana koji te uvuče u skrolovanje</td><td class="y">✓</td><td class="n">✕</td><td class="n">✕</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="feat">
+  <div class="wrap">
+    <h2>VRATI SEBI JUTRO</h2>
+    <p class="sub">Podesi vreme buđenja na samoj narukvici i ostavi telefon u drugoj sobi.</p>
+
+    <div class="fb">
+      <img src="assets/lifestyle.jpg" alt="Vibracija na zglobu u mraku">
+      <div class="fc">
+        <h3>Vibracija koja se pojačava</h3>
+        <p>Kreće blago i prolazi kroz tri nivoa jačine dok te ne digne. Signal dolazi sa tvoje kože, ne iz sobe, pa ne može da se ugasi „u prolazu”.</p>
+        <div class="fst">
+          <div><b>3</b><span>nivoa jačine</span></div>
+          <div><b>0</b><span>decibela zvuka</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fb">
+      <img src="assets/couple.jpg" alt="Partner nastavlja da spava">
+      <div class="fc">
+        <h3>Buđenje bez svađe ujutru</h3>
+        <p>Ti ustaješ u pet, partner u sedam. Bez zvona i bez svetla — vibraciju osećaš samo ti, a druga strana kreveta ostaje netaknuta.</p>
+        <div class="fst">
+          <div><b>Tiho</b><span>bez zvuka u sobi</span></div>
+          <div><b>3</b><span>odvojena alarma</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fb">
+      <img src="assets/charging.jpg" alt="Magnetno punjenje i 14+ dana baterije">
+      <div class="fc">
+        <h3>Podesiš i zaboraviš</h3>
+        <p>Jedno punjenje izdrži više od dve nedelje uobičajene noćne upotrebe. Magnetni punjač i USB kabl idu u paketu.</p>
+        <div class="fst">
+          <div><b>14+</b><span>dana po punjenju</span></div>
+          <div><b>USB</b><span>magnetno punjenje</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tst">
+  <div class="wrap">
+    <h2>Šta kažu kupci</h2>
+    <p class="sub">Iskustva ljudi koji ustaju pre svih ostalih u kući.</p>
+
+    <div class="tc">
+      <div class="st">★★★★★</div>
+      <h4>Žena me više ne psuje ujutru</h4>
+      <p>Ustajem u pet, ona u sedam. Ranije bi se oboje budili, sad se budim samo ja. To je za nas bilo vredno svake pare.</p>
+      <div class="who"><span class="av">M</span><b>Miloš J.</b><span>· Recenzija kupca</span></div>
+    </div>
+
+    <div class="tc">
+      <div class="st">★★★★★</div>
+      <h4>Prvi put ustajem iz prve</h4>
+      <p>Spavao sam kroz tri alarma svaki dan. Ovo ne mogu da ignorišem jer se pojačava dok me ne digne, a nema onog trzaja od zvona.</p>
+      <div class="who"><span class="av">S</span><b>Stefan R.</b><span>· Recenzija kupca</span></div>
+    </div>
+
+    <div class="tc">
+      <div class="st">★★★★★</div>
+      <h4>Telefon više ne držim u sobi</h4>
+      <p>Uzela sam ga da izbacim telefon iz spavaće sobe i to je jedina promena koja mi je stvarno pomogla da uveče ne skrolujem.</p>
+      <div class="who"><span class="av">J</span><b>Jelena M.</b><span>· Recenzija kupca</span></div>
+    </div>
+
+    <p class="ph">Ocena, broj recenzija i citati kupaca su PRIMERI (placeholder) i menjaju se stvarnim podacima pre oglašavanja.</p>
+  </div>
+</section>
+
+<section class="cmp" id="faq">
+  <div class="wrap">
+    <h2>Česta pitanja</h2>
+    <div class="acc" style="margin-top:12px">
+      <details><summary>Spavam kao top i gasim alarme u snu. Zašto bi ovo bilo drugačije?</summary>
+        <div class="ab"><p>Zato što je signal druge vrste. Zvuk dolazi iz sobe i mozak ga vremenom svrsta u pozadinsku buku, pa ga ugasiš bez sećanja. Vibracija je fizički dodir na koži zgloba i ne prestaje sama — kreće blago i pojačava se kroz tri nivoa dok je ne isključiš na samoj narukvici. Ako ni najjači nivo nije dovoljan, imaš 30 dana da je vratiš.</p></div></details>
+      <details><summary>Da li će probuditi partnera pored mene?</summary>
+        <div class="ab"><p>Ne emituje zvuk — vibracija se prenosi na tvoj zglob, ne kroz vazduh. Ako ruka leži direktno na tvrdoj tabli kreveta, može se čuti tiho zujanje, kao kada telefon vibrira na stolu. Na dušeku i jastuku se ne čuje.</p></div></details>
+      <details><summary>Treba li mi telefon ili aplikacija?</summary>
+        <div class="ab"><p>Ne. Vreme i alarme podešavaš dugmetom na samoj narukvici. Nema uparivanja, naloga ni aplikacije — zato i može da ti izbaci telefon iz spavaće sobe.</p></div></details>
+      <details><summary>Koliko traje baterija i kako se puni?</summary>
+        <div class="ab"><p>Uz uobičajenu noćnu upotrebu izdrži 14+ dana na jednom punjenju. Puni se magnetnim punjačem koji ide u paketu — prislonite ga na kontakte sa unutrašnje strane trake i to je to. USB kabl je uključen.</p></div></details>
+      <details><summary>Da li mogu da se tuširam sa njom?</summary>
+        <div class="ab"><p>Otporna je na vodu za svakodnevnu upotrebu — znoj, kišu, pranje ruku. Nije predviđena za plivanje ni za ronjenje, pa je za bazen i more skini.</p></div></details>
+      <details><summary>Koliko alarma mogu da podesim?</summary>
+        <div class="ab"><p>Do tri nezavisna alarma — na primer radni dan, teretana i vikend — i svakom biraš jačinu vibracije.</p></div></details>
+      <details><summary>Kako plaćam i koliko traje isporuka?</summary>
+        <div class="ab"><p>Plaćaš pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata. Isporuka je 2–4 radna dana na celoj teritoriji Srbije, a dostava je besplatna za pakete od 2 i više komada.</p></div></details>
+      <details><summary>Šta ako mi ne odgovara?</summary>
+        <div class="ab"><p>Imaš 30 dana za povraćaj novca i godinu dana garancije na uređaj. Vrati je u nekorišćenom stanju u roku od 30 dana i dobijaš pun povraćaj — bez objašnjavanja.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>
+      <a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>
+      <a href="https://rs.unikatko.eu/policies/shipping-policy">Dostava</a>
+      <a href="https://rs.unikatko.eu/policies/refund-policy">Povraćaj novca</a>
+      <a href="https://rs.unikatko.eu/policies/terms-of-service">Uslovi korišćenja</a>
+    </div>
+    <div class="dis">‡ Garancija povraćaja novca važi 30 dana od datuma prijema pošiljke i odnosi se na proizvod u nekorišćenom stanju. Garancija na uređaj važi 12 meseci i pokriva greške u izradi.</div>
+    <div class="dis">* BUDNIK je budilnik sa vibracijom i nije medicinsko sredstvo. Ne služi za lečenje, dijagnostikovanje niti sprečavanje bilo koje bolesti i ne zamenjuje savet lekara kod poremećaja spavanja. Otporan je na vodu za svakodnevnu upotrebu, ali nije namenjen plivanju i ronjenju. Držati van domašaja dece.</div>
+    <div class="cp">© 2026 Unikatko d.o.o.</div>
+  </div>
+</footer>
+
+<div class="satc" id="satc">
+  <div class="in">
+    <div class="t"><b>Vibracioni budilnik za ruku</b><span id="satc-price">3.990 RSD + dostava</span></div>
+    <button class="atc" onclick="kupi()">NARUČI</button>
+  </div>
+</div>
+
+<script>
+/* ---- ponuda ---- */
+var CHECKOUT = "https://rs.unikatko.eu";
+var COMPARE  = 8490;
+var SHIPFREE = 2;           /* besplatna dostava od 2 komada */
+var TIERS = [
+  {qty:1, unit:3990, name:"1 KOMAD",  badge:null,          variant:"57245329228041"},
+  {qty:2, unit:3590, name:"2 KOMADA", badge:"UŠTEDA 10%",  variant:"57245329260809"},
+  {qty:3, unit:3190, name:"3 KOMADA", badge:"UŠTEDA 20%",  variant:"57245329293577"}
+];
+var sel = 0;                /* izvor unapred bira 1 komad */
+
+function fmt(n){ return n.toLocaleString('de-DE') + ' RSD'; }
+
+function renderTiers(){
+  var h = '';
+  TIERS.forEach(function(t,i){
+    var total = t.unit * t.qty;
+    var was   = COMPARE * t.qty;
+    h += '<div class="qo' + (i===sel?' on':'') + '" onclick="pick(' + i + ')">'
+      +  (t.badge ? '<span class="qbadge">' + t.badge + '</span>' : '')
+      +  '<span class="dot"></span>'
+      +  '<div class="qtop"><span class="qn">' + t.name + '</span>'
+      +  '<span class="qt">' + fmt(total) + '</span></div>'
+      +  '<div class="qbot"><span class="qu">' + fmt(t.unit) + '/kom'
+      +  (t.qty >= SHIPFREE ? ' · besplatna dostava' : ' + dostava') + '</span>'
+      +  '<span class="qw">' + fmt(was) + '</span></div>'
+      +  '</div>';
+  });
+  document.getElementById('qopts').innerHTML = h;
+  syncPrice();
+}
+
+function syncPrice(){
+  var t = TIERS[sel], total = t.unit * t.qty;
+  var off = Math.round((1 - t.unit / COMPARE) * 100);
+  document.getElementById('p-now').textContent  = fmt(total);
+  document.getElementById('p-was').textContent  = fmt(COMPARE * t.qty);
+  document.getElementById('p-off').textContent  = '−' + off + '%';
+  document.getElementById('p-ship').textContent =
+    (t.qty >= SHIPFREE ? 'Besplatna dostava' : '+ dostava') + ' · plaćaš pouzećem';
+  document.getElementById('atc').textContent = 'DODAJ U KORPU — ' + fmt(total);
+  document.getElementById('satc-price').textContent =
+    fmt(total) + (t.qty >= SHIPFREE ? ' · gratis dostava' : ' + dostava');
+}
+
+function pick(i){
+  sel = i;
+  var cards = document.querySelectorAll('#qopts .qo');
+  for (var k = 0; k < cards.length; k++) cards[k].classList.toggle('on', k === i);
+  syncPrice();
+}
+
+function kupi(){
+  var t = TIERS[sel];
+  location.href = CHECKOUT + '/cart/' + t.variant + ':1';
+}
+
+/* ---- galerija: sličice ---- */
+(function(){
+  var slides = document.getElementById('slides');
+  var imgs   = slides.querySelectorAll('img');
+  var th     = document.getElementById('thumbs');
+  var h = '';
+  imgs.forEach(function(im,i){
+    h += '<img src="' + im.getAttribute('src') + '" alt="" class="' + (i===0?'on':'') + '" onclick="goSlide(' + i + ')">';
+  });
+  th.innerHTML = h;
+  slides.addEventListener('scroll', function(){
+    var i = Math.round(slides.scrollLeft / slides.clientWidth);
+    var ts = th.querySelectorAll('img');
+    for (var k = 0; k < ts.length; k++) ts[k].classList.toggle('on', k === i);
+  }, {passive:true});
+})();
+
+function goSlide(i){
+  var slides = document.getElementById('slides');
+  slides.scrollTo({left: i * slides.clientWidth, behavior:'smooth'});
+}
+
+/* Lepljivo dugme se sakriva dok je glavni ATC u vidnom polju (pravilo vlasnika).
+   Provera pravougaonika + interval — scroll događaji nisu pouzdani u svim webview-ima. */
+(function(){
+  var bar = document.getElementById('satc'), main = document.getElementById('atc');
+  if (!bar || !main) return;
+  function sync(){
+    var r = main.getBoundingClientRect();
+    bar.style.display = (r.top < window.innerHeight && r.bottom > 0) ? 'none' : '';
+  }
+  addEventListener('scroll', sync, {passive:true});
+  addEventListener('resize', sync);
+  setInterval(sync, 200);
+  sync();
+})();
+
+renderTiers();
+</script>
+</body>
+</html>
