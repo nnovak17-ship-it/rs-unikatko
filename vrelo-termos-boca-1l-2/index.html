@@ -1,0 +1,479 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Termos boca 1L od nerđajućeg čelika – drži toplo 12h i hladno 24h | VRELO</title>
+<meta name="description" content="VRELO termos boca 1L od 18/8 nerđajućeg čelika: piće ostaje toplo 12 sati i hladno 24 sata. Poklopac ne curi, sa ručkom za nošenje. Plaćanje pouzećem.">
+<style>
+:root{
+  --bg:#F4F1EE; --ink:#151515; --muted:#6b6b66; --line:#dcd6cf;
+  --green:#0E5A34; --green-d:#093C22; --sand:#B07C4A; --sand-s:#F0E4D6;
+  --white:#fff; --red:#c02626; --ok:#2f8f4e;
+  --f:"Public Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px}
+
+/* ---- announcement marquee (source has one) ---- */
+.ann{background:var(--green);color:#fff;overflow:hidden;white-space:nowrap;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.ann__t{display:inline-block;padding:10px 0;animation:mq 22s linear infinite}
+.ann__t span{padding:0 22px}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---- breadcrumbs ---- */
+.crumb{font-size:12px;color:var(--muted);padding:12px 0 4px}
+.crumb b{color:var(--ink);font-weight:600}
+
+/* ---- gallery ---- */
+.gal{position:relative;background:var(--white);border:1px solid var(--line)}
+.gal__badge{position:absolute;top:10px;left:10px;z-index:2;background:var(--ink);color:#fff;font-size:10px;font-weight:800;letter-spacing:.1em;padding:5px 9px}
+.gal__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.gal__track::-webkit-scrollbar{display:none}
+.gal__track img{min-width:100%;scroll-snap-align:center}
+.gal__count{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:3px 9px;border-radius:20px}
+.thumbs{display:flex;gap:6px;margin-top:8px;overflow-x:auto;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{width:56px;min-width:56px;border:1px solid var(--line);background:#fff;opacity:.55;cursor:pointer}
+.thumbs img.on{opacity:1;border-color:var(--ink)}
+
+/* ---- head block ---- */
+.stars{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);margin:14px 0 6px}
+.stars b{color:#e8a33d;letter-spacing:1px;font-size:13px}
+h1{font-size:24px;line-height:1.2;margin:0 0 8px;font-weight:800;letter-spacing:-.01em}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.pill{border:1px solid var(--line);background:#fff;font-size:11px;padding:4px 9px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+
+/* ---- colours ---- */
+.opt{margin:16px 0}
+.opt__lab{font-size:13px;margin-bottom:8px}
+.opt__lab b{font-weight:700}
+.sw{display:flex;gap:10px;flex-wrap:wrap}
+.sw button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);padding:0;cursor:pointer;outline:2px solid transparent;outline-offset:2px}
+.sw button[aria-pressed="true"]{outline-color:var(--ink)}
+
+/* ---- price ---- */
+.price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:14px 0 2px}
+.price__now{font-size:26px;font-weight:800}
+.price__was{font-size:15px;color:var(--muted);text-decoration:line-through}
+.price__off{background:var(--red);color:#fff;font-size:11px;font-weight:800;padding:3px 7px}
+.fine{font-size:11px;color:var(--muted);margin:2px 0 0}
+.stock{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--ok);font-weight:600;margin:10px 0}
+.stock i{width:8px;height:8px;border-radius:50%;background:var(--ok);display:inline-block}
+
+/* ---- paket selector (replaces source's engraving box) ---- */
+.paket{border:1px solid var(--line);background:#fff;margin:16px 0}
+.paket__h{padding:11px 13px;border-bottom:1px solid var(--line);font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.row{display:flex;align-items:center;gap:11px;padding:12px 13px;border-bottom:1px solid var(--line);cursor:pointer;position:relative}
+.row:last-child{border-bottom:0}
+.row.on{background:var(--sand-s)}
+.row input{width:18px;height:18px;min-width:18px;accent-color:var(--green);margin:0}
+.row__m{flex:1;min-width:0}
+.row__m{display:block}
+.row__t{display:block;font-size:14px;font-weight:700}
+.row__s{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
+.row__p{text-align:right;white-space:nowrap}
+.row__p b{font-size:15px;font-weight:800;display:block}
+.row__p s{font-size:11px;color:var(--muted)}
+.tag{position:absolute;top:-1px;right:10px;background:var(--green);color:#fff;font-size:9px;font-weight:800;letter-spacing:.08em;padding:3px 7px}
+
+/* ---- gift cards (source's "Don't miss" upsells → our gifts) ---- */
+.dm__h{font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin:18px 0 8px}
+.dm{display:flex;gap:11px;align-items:center;border:1px solid var(--line);background:#fff;padding:10px 12px;margin-bottom:8px}
+.dm.locked{opacity:.5}
+.dm__i{width:34px;min-width:34px;height:34px;display:grid;place-items:center;background:var(--sand-s);font-size:17px}
+.dm__m{flex:1;min-width:0}
+.dm__t{font-size:13px;font-weight:700}
+.dm__s{font-size:11px;color:var(--muted)}
+.dm__p{text-align:right;white-space:nowrap;font-size:12px;font-weight:800;color:var(--green)}
+.dm__p s{display:block;font-weight:400;color:var(--muted)}
+
+/* ---- CTA (source buttons are square, uppercase) ---- */
+.cta{display:block;width:100%;background:var(--green);color:#fff;border:0;border-radius:0;padding:17px 14px;font:800 15px/1 var(--f);letter-spacing:.07em;text-transform:uppercase;text-align:center;text-decoration:none;cursor:pointer}
+.cta:active{background:var(--green-d)}
+.cta__sub{text-align:center;font-size:12px;color:var(--muted);margin-top:9px}
+
+/* ---- notices ---- */
+.note{background:var(--sand-s);border:1px solid var(--sand);padding:11px 13px;font-size:13px;text-align:center;margin:16px 0}
+.note b{font-weight:800}
+.guar{display:flex;gap:12px;align-items:center;border:1px solid var(--line);background:#fff;padding:13px;margin:16px 0}
+.guar__s{width:62px;min-width:62px;height:62px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;text-align:center;font-size:10px;font-weight:800;line-height:1.15}
+.guar__t{font-size:13px}
+
+/* ---- icon badges ---- */
+.badges{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin:18px 0}
+.badge{background:var(--bg);padding:14px 10px;text-align:center}
+.badge i{font-size:21px;font-style:normal;display:block;margin-bottom:5px}
+.badge span{font-size:11.5px;font-weight:700;line-height:1.25;display:block}
+
+/* ---- accordions ---- */
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:15px 26px 15px 0;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:2px;top:13px;font-size:19px;font-weight:400}
+details[open] summary:after{content:"–"}
+.acc{padding:0 0 16px;font-size:14px;color:#2f2f2c}
+.acc h4{font-size:15px;margin:0 0 8px}
+.acc ul{padding-left:18px;margin:8px 0}
+.acc li{margin-bottom:5px}
+
+/* ---- tech section ---- */
+.sec{padding:34px 0}
+.sec--d{background:var(--green);color:#fff}
+.sec--w{background:#fff}
+.sec__h{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;text-align:center;margin:0 0 22px;opacity:.75}
+.tech{display:grid;gap:22px}
+.tech__t{font-size:15px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin:0 0 5px}
+.tech__p{font-size:14px;margin:0;opacity:.9}
+
+/* ---- contact bar ---- */
+.contact{text-align:center;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.contact h3{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin:0 0 10px}
+.contact a{display:block;font-size:14px;text-decoration:none;margin:3px 0}
+
+/* ---- colour showcase (replaces source's engraving before/after) ---- */
+.colors{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.colors figure{margin:0;background:#fff;border:1px solid var(--line)}
+.colors figcaption{font-size:11.5px;text-align:center;padding:7px 4px;font-weight:600}
+
+/* ---- reviews ---- */
+.rev__top{text-align:center;margin-bottom:18px}
+.rev__score{font-size:34px;font-weight:800;line-height:1}
+.rev__st{color:#e8a33d;letter-spacing:2px;font-size:15px;margin:5px 0}
+.rev{background:#fff;border:1px solid var(--line);padding:14px;margin-bottom:10px}
+.rev__t{font-size:14px;font-weight:800;margin-bottom:5px}
+.rev__q{font-size:13.5px;margin:0 0 9px}
+.rev__n{font-size:11.5px;color:var(--muted)}
+.rev__n b{color:var(--ok)}
+
+/* ---- about ---- */
+.about{text-align:center}
+.about h3{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+.about p{font-size:14px;margin:0 auto;max-width:420px}
+.feat{display:grid;gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:26px}
+.feat div{background:var(--bg);padding:15px 12px;text-align:center}
+.feat b{display:block;font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:3px}
+.feat span{font-size:12.5px;color:var(--muted)}
+
+/* ---- footer ---- */
+footer{padding:26px 0 40px;font-size:12px;color:var(--muted);text-align:center}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;margin-bottom:14px}
+footer nav a{text-decoration:none}
+.disc{font-size:10.5px;line-height:1.5;margin-top:12px;text-align:left}
+.ph{background:#fff3cd;border:1px dashed #b8860b;color:#6b5200;font-size:10px;padding:2px 6px;display:inline-block;margin-top:6px}
+@media(min-width:520px){ .tech{grid-template-columns:1fr 1fr;gap:22px 26px} .feat{grid-template-columns:1fr 1fr 1fr} }
+</style>
+
+<!-- ANNOUNCEMENT MARQUEE (source has one; site chrome/header deliberately omitted) -->
+<div class="ann"><div class="ann__t">
+<span>DO −63% NA VRELO TERMOS BOCU 1L</span><span>UZ 2 ILI 3 BOCE — DO 4 POKLONA GRATIS</span><span>PLAĆANJE POUZEĆEM</span>
+<span>DO −63% NA VRELO TERMOS BOCU 1L</span><span>UZ 2 ILI 3 BOCE — DO 4 POKLONA GRATIS</span><span>PLAĆANJE POUZEĆEM</span>
+</div></div>
+
+<div class="wrap">
+  <div class="crumb">Početna / Termos boce / <b>VRELO Termos boca 1L</b></div>
+
+  <!-- GALLERY -->
+  <div class="gal">
+    <div class="gal__badge">BESTSELLER</div>
+    <div class="gal__track" id="track">
+      <img src="assets/color-zelena.jpg" alt="VRELO termos boca 1L — Šumsko zelena">
+      <img src="assets/lifestyle.jpg" alt="VRELO termos boca 1L na planinarenju">
+      <img src="assets/benefits.jpg" alt="12 sati toplo, 24 sata hladno, ne curi, čelik 18/8">
+      <img src="assets/pokloni.jpg" alt="VRELO boca sa sportskim čepom, četkom i silikonskom podlogom">
+      <img src="assets/auto.jpg" alt="VRELO termos boca u držaču za čaše u autu">
+    </div>
+    <div class="gal__count" id="count">1 / 5</div>
+  </div>
+  <div class="thumbs" id="thumbs"></div>
+
+  <!-- HEAD -->
+  <div class="stars"><b>★★★★★</b> <span>(<span id="revn">300</span>+ recenzija)</span></div>
+  <h1>VRELO Termos boca 1L</h1>
+  <div class="pills"><span class="pill">Vakuumska izolacija</span><span class="pill">1 litar</span><span class="pill">Čelik 18/8</span></div>
+
+  <!-- COLOUR -->
+  <div class="opt">
+    <div class="opt__lab">Boja: <b id="cname">Šumsko zelena</b></div>
+    <div class="sw" id="sw"></div>
+  </div>
+
+  <!-- PRICE -->
+  <div class="price">
+    <span class="price__now" id="pnow">2.990 RSD</span>
+    <span class="price__was" id="pwas">5.990 RSD</span>
+    <span class="price__off" id="poff">−50%</span>
+  </div>
+  <p class="fine" id="pfine">Cena po komadu. PDV uračunat.</p>
+  <div class="stock"><i></i> Na stanju — šalje se u roku od 1 radnog dana</div>
+
+  <!-- PAKET (source's engraving upsell slot) -->
+  <div class="paket">
+    <div class="paket__h">Izaberi paket</div>
+    <label class="row on" data-t="0">
+      <input type="radio" name="t" checked>
+      <span class="row__m"><span class="row__t">1 boca</span><span class="row__s">2.990 RSD/kom + 490 RSD dostava</span></span>
+      <span class="row__p"><b>2.990 RSD</b><s>5.990 RSD</s></span>
+    </label>
+    <label class="row" data-t="1">
+      <span class="tag">NAJPOPULARNIJE</span>
+      <input type="radio" name="t">
+      <span class="row__m"><span class="row__t">2 boce</span><span class="row__s">2.490 RSD/kom · 2 poklona</span></span>
+      <span class="row__p"><b>4.980 RSD</b><s>11.980 RSD</s></span>
+    </label>
+    <label class="row" data-t="2">
+      <span class="tag">NAJBOLJA CENA</span>
+      <input type="radio" name="t">
+      <span class="row__m"><span class="row__t">3 boce</span><span class="row__s">2.190 RSD/kom · 4 poklona</span></span>
+      <span class="row__p"><b>6.570 RSD</b><s>17.970 RSD</s></span>
+    </label>
+  </div>
+
+  <!-- GIFTS (source's "Don't miss" accessory upsells) -->
+  <div class="dm__h">Ne propusti: <span id="gc">0/4</span> poklona</div>
+  <div id="gifts"></div>
+
+  <a class="cta" id="atc" href="#">Naruči — 2.990 RSD</a>
+  <p class="cta__sub">Plaćanje pouzećem · isporuka 1–2 radna dana</p>
+
+  <div class="note">👋 <b>Akcija traje dok traju zalihe</b> 👋<br>Uz 2 ili 3 boce dostava ti je gratis</div>
+
+  <!-- GUARANTEE (source claims LIFETIME — we cannot honour it) -->
+  <div class="guar">
+    <div class="guar__s">30 DANA<br>GARANCIJE</div>
+    <div class="guar__t">Ako se predomisliš — neotvoren proizvod vraćaš u roku od 30 dana od prijema uz pun povraćaj novca.<sup>‡</sup></div>
+  </div>
+
+  <div class="badges">
+    <div class="badge"><i>☕</i><span>12 h toplo / 24 h hladno</span></div>
+    <div class="badge"><i>🎒</i><span>Poklopac ne curi</span></div>
+    <div class="badge"><i>💪</i><span>Nerđajući čelik 18/8</span></div>
+    <div class="badge"><i>🛡️</i><span>30 dana garancije</span></div>
+  </div>
+
+  <!-- ACCORDIONS -->
+  <details open><summary>Opis</summary><div class="acc">
+    <h4>Napravljena za svakog avanturistu</h4>
+    <p>VRELO Traveler boca drži tvoje piće na temperaturi ceo dan. Poklopac koji ne curi, sa praktičnom ručkom za nošenje, pouzdano prati tvoj ritam — od jutarnje kafe do večernje ture.</p>
+    <p>Sa zapreminom od 1 litra spremna je za duge puteve, zahtevne uspone i dane koji se ne odvijaju po planu.</p>
+    <p>Izrađena je od kvalitetnog 18/8 nerđajućeg čelika, pa ostaje čitava i u grubim uslovima. Poklopac je bez BPA.</p>
+    <p>Vakuumska izolacija sa duplim zidom drži piće hladnim do 24 sata, odnosno toplim do 12 sati.<sup>*</sup></p>
+    <p>Široko grlo znači da led lako ulazi, a boca se lako pere iznutra.</p>
+  </div></details>
+
+  <details><summary>Specifikacija</summary><div class="acc"><ul>
+    <li><b>Zapremina:</b> 1 L</li>
+    <li><b>Dimenzije:</b> visina 260 mm, prečnik 90 mm, otvor 5,5 cm</li>
+    <li><b>Težina:</b> 401 g</li>
+    <li><b>Izolacija:</b> vakuumska, dupli zid — do 12 h toplo, do 24 h hladno<sup>*</sup></li>
+    <li><b>Materijal:</b> 18/8 nerđajući čelik, bez aluminijuma; ne prenosi ukus između pića</li>
+    <li><b>Poklopac:</b> bez BPA i ftalata, sa ručkom za nošenje</li>
+    <li><b>Boje:</b> šumsko zelena, crna, peščano bež, tirkizno plava</li>
+    <li><b>Održavanje:</b> može u mašinu, ali ručno pranje duže čuva mat boju</li>
+  </ul></div></details>
+
+  <details><summary>Dostava i plaćanje</summary><div class="acc">
+    <p>Porudžbine se šalju sledećeg radnog dana. Isporuka na teritoriji Srbije traje <b>1–2 radna dana</b>.</p>
+    <p><b>Plaćaš pouzećem</b> — kuriru, kada ti paket stigne na vrata. Ne ostavljaš podatke o kartici i ne plaćaš ništa unapred.</p>
+    <p>Dostava se naplaćuje <b>490 RSD</b> uz porudžbinu od jedne boce. Uz paket od 2 ili 3 boce dostava je gratis.</p>
+  </div></details>
+
+  <details><summary>Garancija</summary><div class="acc">
+    <p>Naši proizvodi su pravljeni da traju. <b>Garancija na povraćaj novca važi 30 dana</b> od dana prijema pošiljke i odnosi se na neotvoren proizvod.</p>
+    <p>Ako proizvod ima fabrički nedostatak — ne drži temperaturu ili poklopac propušta — javi nam se i rešavamo to bez komplikacija.</p>
+    <p>Ogrebotine i tragovi upotrebe nisu fabrički nedostatak i nisu pokriveni garancijom.</p>
+  </div></details>
+</div>
+
+<!-- TECHNOLOGY (source: "SNOW MONKEY TECHNOLOGY", 6 blocks) -->
+<section class="sec sec--d">
+  <div class="wrap">
+    <h2 class="sec__h">VRELO tehnologija</h2>
+    <div class="tech">
+      <div><h3 class="tech__t">12 sati toplo — 24 sata hladno</h3><p class="tech__p">Vakuum između dva zida ne propušta toplotu, pa sadržaj ostaje na temperaturi bez obzira na to koliko je toplo ili hladno napolju.<sup>*</sup></p></div>
+      <div><h3 class="tech__t">Bez BPA</h3><p class="tech__p">Boca i poklopac su bez BPA, bez aluminijuma i bez ftalata. Materijal ne reaguje sa pićem i ne prelazi u njega.</p></div>
+      <div><h3 class="tech__t">Vrhunski kvalitet</h3><p class="tech__p">Nerđajući čelik 18/8 je izuzetno izdržljiv — ne puca kada boca padne i zadržava funkciju.</p></div>
+      <div><h3 class="tech__t">30 dana garancije</h3><p class="tech__p">Verujemo u ono što prodajemo, pa neotvoren proizvod vraćaš u roku od 30 dana uz pun povraćaj novca.<sup>‡</sup></p></div>
+      <div><h3 class="tech__t">Manje plastike</h3><p class="tech__p">Jedna boca koja traje godinama zamenjuje stotine plastičnih flašica za jednokratnu upotrebu.</p></div>
+      <div><h3 class="tech__t">Poklopac koji ne curi</h3><p class="tech__p">Zategnut poklopac zatvara grlo, pa boca može i naopako u rancu — bez mokrog laptopa.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="contact">
+  <h3>Imaš još pitanja? Tu smo za tebe.</h3>
+  <a href="mailto:info@unikatko.com">info@unikatko.com</a>
+  <a href="https://rs.unikatko.eu/pages/contact">Kontakt stranica</a>
+</div></div>
+
+<!-- COLOUR SHOWCASE (source's engraving before/after slot) -->
+<section class="sec sec--w"><div class="wrap">
+  <h2 class="sec__h">Izaberi svoju boju</h2>
+  <p class="about" style="margin-bottom:18px">Četiri boje, ista boca. Boju koju izabereš gore šaljemo ti u paketu.</p>
+  <div class="colors">
+    <figure><img src="assets/color-zelena.jpg" alt="Šumsko zelena"><figcaption>Šumsko zelena</figcaption></figure>
+    <figure><img src="assets/color-crna.jpg" alt="Crna"><figcaption>Crna</figcaption></figure>
+    <figure><img src="assets/color-bez.jpg" alt="Peščano bež"><figcaption>Peščano bež</figcaption></figure>
+    <figure><img src="assets/color-tirkiz.jpg" alt="Tirkizno plava"><figcaption>Tirkizno plava</figcaption></figure>
+  </div>
+</div></section>
+
+<!-- REVIEWS -->
+<section class="sec"><div class="wrap">
+  <h2 class="sec__h">Recenzije kupaca</h2>
+  <div class="rev__top">
+    <div class="rev__score">4,9</div>
+    <div class="rev__st">★★★★★</div>
+    <div style="font-size:12px;color:var(--muted)">na osnovu 300+ recenzija</div>
+    <div class="ph">PLACEHOLDER — zameniti stvarnim recenzijama pre oglasa</div>
+  </div>
+  <div class="rev"><div class="rev__t">Kafa topla i posle smene</div><p class="rev__q">Sipam kafu u pola šest ujutru, pijem je u dva popodne i još je vrela. Ranije sam nosio dve termosice, sad mi treba samo ova.</p><div class="rev__n">Nemanja P. · <b>✓ Recenzija kupca</b></div></div>
+  <div class="rev"><div class="rev__t">Ne curi u rancu</div><p class="rev__q">Prethodna mi je procurila i pokvasila laptop. Ovu okrenem naopako u rancu i ništa. Ručka na poklopcu je sitnica, ali stalno je koristim.</p><div class="rev__n">Jelena M. · <b>✓ Recenzija kupca</b></div></div>
+  <div class="rev"><div class="rev__t">Uzela sam tri</div><p class="rev__q">Jedna kod mene na poslu, jedna mužu u kolima, jedna klincu za trening. Litar je taman — ne moram da dosipam preko dana.</p><div class="rev__n">Marija S. · <b>✓ Recenzija kupca</b></div></div>
+</div></section>
+
+<!-- ABOUT + FEATURES -->
+<section class="sec sec--w"><div class="wrap">
+  <div class="about">
+    <h3>O nama</h3>
+    <p>Opušteni po prirodi, ali bez kompromisa kada je kvalitet u pitanju. Pravimo stvari koje traju i koje ti ne otkažu na pola puta.</p>
+  </div>
+  <div class="feat">
+    <div><b>Pravljeno da traje</b><span>Jedna boca umesto stotina plastičnih</span></div>
+    <div><b>Plaćanje pouzećem</b><span>Plaćaš tek kad ti paket stigne</span></div>
+    <div><b>Za svaku turu</b><span>Posao, planina, auto, teretana</span></div>
+  </div>
+</div></section>
+
+<div class="wrap">
+  <a class="cta" id="atc2" href="#" style="margin-top:8px">Naruči — 2.990 RSD</a>
+  <p class="cta__sub">30 dana garancije · plaćanje pouzećem</p>
+
+  <div class="contact" style="border-bottom:0;margin-top:24px">
+    <h3>Imaš još pitanja? Tu smo za tebe.</h3>
+    <a href="mailto:info@unikatko.com">info@unikatko.com</a>
+  </div>
+
+  <footer>
+    <nav>
+      <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>
+      <a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>
+      <a href="https://rs.unikatko.eu/policies/shipping-policy">Dostava</a>
+      <a href="https://rs.unikatko.eu/policies/refund-policy">Povraćaj novca</a>
+      <a href="https://rs.unikatko.eu/policies/terms-of-service">Uslovi korišćenja</a>
+    </nav>
+    <div>© 2026 Unikatko d.o.o.</div>
+    <div class="disc">
+      ‡ Garancija povraćaja novca važi 30 dana od datuma prijema pošiljke i odnosi se na neotvoren proizvod.<br>
+      * Navedeno vreme održavanja temperature (do 12 sati toplo, do 24 sata hladno) izmereno je sa punom bocom i zatvorenim poklopcem. Stvarno vreme zavisi od količine napunjenog pića, početne temperature i učestalosti otvaranja. VRELO je posuda za piće za svakodnevnu upotrebu i nije medicinsko sredstvo.
+    </div>
+  </footer>
+</div>
+
+<script>
+var CHECKOUT = "https://rs.unikatko.eu";
+var COMPARE_AT = 5990;
+var COLORS = [
+  {name:"Šumsko zelena", hex:"#0E5A34", img:"assets/color-zelena.jpg"},
+  {name:"Crna",          hex:"#14161A", img:"assets/color-crna.jpg"},
+  {name:"Peščano bež",   hex:"#C9B79C", img:"assets/color-bez.jpg"},
+  {name:"Tirkizno plava",hex:"#1E9EA8", img:"assets/color-tirkiz.jpg"}
+];
+var TIERS = [
+  {qty:1, unit:2990, total:2990, byColor:{"Šumsko zelena":"57245325656329","Crna":"57245325689097","Peščano bež":"57245325721865","Tirkizno plava":"57245325754633"}},
+  {qty:2, unit:2490, total:4980, byColor:{"Šumsko zelena":"57245325787401","Crna":"57245325820169","Peščano bež":"57245325852937","Tirkizno plava":"57245325885705"}},
+  {qty:3, unit:2190, total:6570, byColor:{"Šumsko zelena":"57245325918473","Crna":"57245325951241","Peščano bež":"57245325984009","Tirkizno plava":"57245326016777"}}
+];
+var GIFTS = [
+  {at:2, t:"Besplatna dostava",                 v:490,  i:"🚚"},
+  {at:2, t:"Sportski čep za brzo pijenje",      v:1190, i:"🥤"},
+  {at:3, t:"Četka za čišćenje boce",            v:890,  i:"🧽"},
+  {at:3, t:"Silikonska podloga protiv klizanja",v:690,  i:"⚫"}
+];
+var FREE_SHIP_QTY = 2, SHIP = 490;
+
+var state = {tier:0, color:0};                        // default 1 boca — mirrors the source page
+var fmt = function(n){ return new Intl.NumberFormat("de-DE").format(n) + " RSD"; };
+
+/* colour swatches */
+var sw = document.getElementById("sw");
+COLORS.forEach(function(c,i){
+  var b = document.createElement("button");
+  b.type = "button"; b.style.background = c.hex; b.title = c.name;
+  b.setAttribute("aria-label", c.name);
+  b.setAttribute("aria-pressed", i === state.color ? "true" : "false");
+  b.onclick = function(){ state.color = i; render(); };
+  sw.appendChild(b);
+});
+
+/* gallery */
+var track = document.getElementById("track"),
+    imgs  = [].slice.call(track.querySelectorAll("img")),
+    thumbs= document.getElementById("thumbs");
+imgs.forEach(function(im,i){
+  var t = document.createElement("img");
+  t.src = im.getAttribute("src"); t.alt = ""; if(!i) t.className = "on";
+  t.onclick = function(){ track.scrollTo({left: track.clientWidth*i, behavior:"smooth"}); };
+  thumbs.appendChild(t);
+});
+function syncGal(){
+  var i = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+  i = Math.max(0, Math.min(imgs.length-1, i));
+  document.getElementById("count").textContent = (i+1) + " / " + imgs.length;
+  [].slice.call(thumbs.children).forEach(function(t,j){ t.className = j===i ? "on" : ""; });
+}
+track.addEventListener("scroll", syncGal);
+setInterval(syncGal, 200);
+
+/* tier rows */
+[].slice.call(document.querySelectorAll(".row")).forEach(function(r){
+  r.addEventListener("click", function(){ state.tier = +r.dataset.t; render(); });
+});
+
+function render(){
+  var c = COLORS[state.color], t = TIERS[state.tier];
+
+  /* colour */
+  document.getElementById("cname").textContent = c.name;
+  [].slice.call(sw.children).forEach(function(b,i){ b.setAttribute("aria-pressed", i===state.color ? "true":"false"); });
+  imgs[0].src = c.img;
+  thumbs.children[0].src = c.img;
+
+  /* tier rows */
+  [].slice.call(document.querySelectorAll(".row")).forEach(function(r,i){
+    r.classList.toggle("on", i===state.tier);
+    r.querySelector("input").checked = (i===state.tier);
+  });
+
+  /* price */
+  var was = COMPARE_AT * t.qty;
+  document.getElementById("pnow").textContent = fmt(t.total);
+  document.getElementById("pwas").textContent = fmt(was);
+  document.getElementById("poff").textContent = "−" + Math.round((1 - t.unit/COMPARE_AT)*100) + "%";
+  document.getElementById("pfine").textContent =
+    t.qty === 1 ? "Cena po komadu. PDV uračunat." : fmt(t.unit) + "/kom · PDV uračunat.";
+
+  /* gifts */
+  var unlocked = 0;
+  document.getElementById("gifts").innerHTML = GIFTS.map(function(g){
+    var open = t.qty >= g.at; if(open) unlocked++;
+    return '<div class="dm' + (open ? "" : " locked") + '">' +
+      '<div class="dm__i">' + g.i + '</div>' +
+      '<div class="dm__m"><div class="dm__t">' + g.t + '</div>' +
+      '<div class="dm__s">' + (open ? "Otključano — ide uz tvoj paket" : "Otključava se uz " + g.at + (g.at===2?" boce":" boce")) + '</div></div>' +
+      '<div class="dm__p">' + (open ? "GRATIS" : "") + '<s>' + fmt(g.v) + '</s></div></div>';
+  }).join("");
+  document.getElementById("gc").textContent = unlocked + "/" + GIFTS.length;
+
+  /* CTA */
+  var vid  = t.byColor[c.name];
+  var href = vid ? CHECKOUT + "/cart/" + vid + ":1" : "#";
+  var lab  = "Naruči — " + fmt(t.total) + (t.qty < FREE_SHIP_QTY ? " + " + fmt(SHIP) + " dostava" : "");
+  ["atc","atc2"].forEach(function(id){
+    var a = document.getElementById(id);
+    a.href = href; a.textContent = lab;
+  });
+}
+render();
+</script>
