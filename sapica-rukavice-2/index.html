@@ -360,6 +360,31 @@ try{
     content_name: document.title, currency:'RSD', value: OPTS[sel].total
   });
 }catch(e){}
+
+/* LP behaviour events (generic, LP B). */
+(function(){
+  var SLUG=location.pathname.replace(/\//g,'')||'lp', sent={};
+  function ev(n,x){ if(sent[n])return; sent[n]=1;
+    try{ fbq('trackCustom',n,Object.assign({content_name:SLUG},x||{})); }catch(e){} }
+  var t0=Date.now();
+  setTimeout(function(){ev('LP_Engaged30');},30000);
+  setTimeout(function(){ev('LP_Engaged120');},120000);
+  function depth(){var h=document.documentElement,
+    p=(h.scrollTop+innerHeight)/h.scrollHeight*100;
+    if(p>=50)ev('LP_Scroll50'); if(p>=90)ev('LP_Scroll90');}
+  addEventListener('scroll',depth,{passive:true}); setInterval(depth,500);
+  document.addEventListener('click',function(e){
+    var t=e.target; if(!t||!t.closest)return;
+    if(t.closest('summary,details'))ev('LP_FAQ');
+    if(t.closest('[data-tier],.tier,.opt,.pick,.bundle,label'))ev('LP_TierSwitch');
+    if(t.closest('.sw,.swatch,[data-color],[data-variant]'))ev('LP_VariantPick');
+    if(t.closest('.thumbs,.thumb,[data-slide]'))ev('LP_Gallery');
+  },true);
+  addEventListener('pagehide',function(){
+    try{fbq('trackCustom','LP_Exit',{content_name:SLUG,
+      seconds:Math.round((Date.now()-t0)/1000)});}catch(e){}
+  });
+})();
 </script>
 </body>
 </html>

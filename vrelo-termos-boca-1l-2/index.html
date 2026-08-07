@@ -547,4 +547,50 @@ function render(){
   });
 }
 render();
+
+/* vrelo LP B was built without the shared helper: add the shipping discount code
+   (derived from real cart quantity) and the two pixel commerce events. */
+(function(){
+  function cq(u){var m=u.match(/:(\d+)(?=,|\?|$)/g)||[];
+    return m.reduce(function(a,x){return a+parseInt(x.slice(1))},0);}
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a[href*="/cart/"]'):null;
+    if(!a)return;
+    var u=a.href, q=cq(u);
+    if(u.indexOf('discount=')<0){
+      if(q>=3)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE3_RS_SHIP';
+      else if(q===2)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE2_RS_SHIP';
+      a.href=u;
+    }
+    try{fbq('track','InitiateCheckout',{content_type:'product',num_items:q,
+      content_ids:(u.match(/\/cart\/([^?]+)/)||['',''])[1].split(',').map(function(x){return x.split(':')[0]})});}catch(e2){}
+  },true);
+  try{fbq('track','ViewContent',{content_type:'product',content_ids:['15647896273161'],
+    content_name:document.title,currency:'RSD'});}catch(e){}
+})();
+
+/* LP behaviour events (generic, LP B). */
+(function(){
+  var SLUG=location.pathname.replace(/\//g,'')||'lp', sent={};
+  function ev(n,x){ if(sent[n])return; sent[n]=1;
+    try{ fbq('trackCustom',n,Object.assign({content_name:SLUG},x||{})); }catch(e){} }
+  var t0=Date.now();
+  setTimeout(function(){ev('LP_Engaged30');},30000);
+  setTimeout(function(){ev('LP_Engaged120');},120000);
+  function depth(){var h=document.documentElement,
+    p=(h.scrollTop+innerHeight)/h.scrollHeight*100;
+    if(p>=50)ev('LP_Scroll50'); if(p>=90)ev('LP_Scroll90');}
+  addEventListener('scroll',depth,{passive:true}); setInterval(depth,500);
+  document.addEventListener('click',function(e){
+    var t=e.target; if(!t||!t.closest)return;
+    if(t.closest('summary,details'))ev('LP_FAQ');
+    if(t.closest('[data-tier],.tier,.opt,.pick,.bundle,label'))ev('LP_TierSwitch');
+    if(t.closest('.sw,.swatch,[data-color],[data-variant]'))ev('LP_VariantPick');
+    if(t.closest('.thumbs,.thumb,[data-slide]'))ev('LP_Gallery');
+  },true);
+  addEventListener('pagehide',function(){
+    try{fbq('trackCustom','LP_Exit',{content_name:SLUG,
+      seconds:Math.round((Date.now()-t0)/1000)});}catch(e){}
+  });
+})();
 </script>
