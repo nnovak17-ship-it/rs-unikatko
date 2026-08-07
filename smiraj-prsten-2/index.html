@@ -4,6 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Magnetni prsten podesiv – staje na svaki prst, ne tamni i ne skida se pod tušem ni na treningu | SMIRAJ</title>
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<!-- Meta Pixel — Unikatko RS pixel 1337030437202208 (ad account 1245542096799104) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1337030437202208');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+ src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
+
 <meta name="description" content="Podesivi magnetni prsten od nerđajućeg čelika, bez nikla. Jedna veličina za svaki prst, 4 boje. Plaćanje pouzećem, isporuka 2–4 dana.">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -193,7 +207,7 @@ body > header{display:none!important}
 <!-- 3 — gallery -->
 <div class="gal">
   <div class="stage">
-    <img id="stage" src="assets/color-srebro.jpg" alt="SMIRAJ magnetni prsten — Srebro">
+    <img id="stage" src="assets/color-srebro.jpg" alt="SMIRAJ magnetni prsten — Srebro" loading="lazy" decoding="async">
     <button class="nav p" id="prev" aria-label="Prethodna slika">‹</button>
     <button class="nav n" id="next" aria-label="Sledeća slika">›</button>
   </div>
@@ -265,7 +279,7 @@ body > header{display:none!important}
   <section class="sec">
     <h2>Jedan prsten, svaki prst</h2>
     <p class="lead">Prsten se najčešće ne kupuje zato što ne znaš broj. Merenje koncem, tabele koje se međusobno ne slažu, pa onda vraćanje i čekanje zamene. SMIRAJ je otvoren obruč — blago ga raširiš ili stisneš prstima i legne tamo gde ga staviš.</p>
-    <img class="wide" src="assets/lifestyle.jpg" alt="SMIRAJ prsten na ruci">
+    <img class="wide" src="assets/lifestyle.jpg" alt="SMIRAJ prsten na ruci" loading="lazy" decoding="async">
     <div class="fblocks">
       <div class="fb"><span class="ic">🔧</span><div><b>Podesiv rukama, za petnaest sekundi</b><span>Bez alata i bez odlaska kod juvelira. Otvor okreneš ka dlanu, blago stisneš i proveriš da možeš da ga okreneš oko prsta.</span></div></div>
       <div class="fb"><span class="ic">🛡️</span><div><b>Nerđajući čelik bez nikla</b><span>Ne oksidira i ne ostavlja zelene tragove kao pozlaćen nakit. Pogodan i za osetljivu kožu.</span></div></div>
@@ -280,7 +294,7 @@ body > header{display:none!important}
   <section class="sec">
     <h2>Detalj koji se primeti</h2>
     <p class="lead">Široka satenirana traka sa tankim urezanim linijama uz obe ivice i četiri magneta uglavljena u sam obruč — ne vire i ne kače se za odeću. Dovoljno diskretan za kancelariju, dovoljno upadljiv da ga neko pohvali.</p>
-    <img class="wide" src="assets/detail.jpg" alt="Detalj — otvoreni obruč i četiri magneta">
+    <img class="wide" src="assets/detail.jpg" alt="Detalj — otvoreni obruč i četiri magneta" loading="lazy" decoding="async">
     <p class="lead" style="margin-bottom:0">Nosi se sam ili uz ostali nakit, na kažiprstu, malom prstu ili palcu — muški i ženski, isti komad.</p>
   </section>
 
@@ -295,7 +309,7 @@ body > header{display:none!important}
       <div class="spc"><div class="k">DIMENZIJE</div><b>1,2 mm · 6 g</b><span>Tanak profil i mala težina — posle par sati zaboraviš da ga imaš na prstu.</span></div>
       <div class="spc"><div class="k">VELIČINA</div><b>Jedna, podesiva</b><span>Otvoren obruč koji prilagodiš prstima. Od malog prsta do palca, muški i ženski.</span></div>
     </div>
-    <img class="wide" src="assets/specs.jpg" alt="Specifikacija — materijal, debljina, težina, veličina" style="margin-top:18px">
+    <img class="wide" src="assets/specs.jpg" alt="Specifikacija — materijal, debljina, težina, veličina" style="margin-top:18px" loading="lazy" decoding="async">
   </section>
 
   <div class="dvd"></div>
@@ -415,7 +429,7 @@ function renderThumbs(){
   var h = '';
   for (var i = 0; i < GAL.length; i++) {
     h += '<img src="' + GAL[i].src + '" alt="' + GAL[i].alt + '" class="' + (i === gi ? 'on' : '')
-       + '" onclick="showGal(' + i + ')">';
+       + '" onclick="showGal(' + i + ')" loading="lazy" decoding="async">';
   }
   document.getElementById('thumbs').innerHTML = h;
 }
@@ -442,16 +456,30 @@ function kupi(){
      never :1 — a :1 link now charges one unit for the whole pack. The BUNDLE
      codes need cart quantity >= 2, which this satisfies. */
   var t = TIERS[ti];
-  var url = BASE + '/cart/' + t.v[COLORS[ci].name] + ':' + t.q;
-  if (t.q >= 3) url += '?discount=BUNDLE3_RS_SHIP';
-  else if (t.q === 2) url += '?discount=BUNDLE2_RS_SHIP';
-  location.href = url;
+  __go(BASE + '/cart/' + t.v[COLORS[ci].name] + ':' + t.q);
 }
 
 document.getElementById('prev').onclick = function(){ showGal(gi - 1); };
 document.getElementById('next').onclick = function(){ showGal(gi + 1); };
 
 renderPks(); renderSw(); renderThumbs(); sub();
+</script>
+<script>
+/* Shared checkout helpers (injected 2026-08-06): BUNDLE shipping codes derived
+   from REAL cart quantity + Meta pixel events. */
+function __cq(u){var m=u.match(/:(\d+)(?=,|\?|$)/g)||[];return m.reduce(function(a,x){return a+parseInt(x.slice(1))},0);}
+function __dec(u){var q=__cq(u);
+  if(q>=3)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE3_RS_SHIP';
+  else if(q===2)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE2_RS_SHIP';
+  return u;}
+function __ic(u){try{fbq('track','InitiateCheckout',{content_type:'product',num_items:__cq(u),
+  content_ids:(u.match(/\/cart\/([^?]+)/)||['',''])[1].split(',').map(function(x){return x.split(':')[0]})});}catch(e){}}
+function __go(u){u=__dec(u);__ic(u);location.href=u;}
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[href*="/cart/"]'):null;
+  if(a)__ic(a.href);
+},true);
+try{fbq('track','ViewContent',{content_type:'product',content_ids:['15647029100809'],content_name:document.title,currency:'RSD'});}catch(e){}
 </script>
 </body>
 </html>

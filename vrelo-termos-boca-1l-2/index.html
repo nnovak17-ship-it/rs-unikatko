@@ -1,6 +1,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Termos boca 1L od nerđajućeg čelika – drži toplo 12h i hladno 24h | VRELO</title>
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<!-- Meta Pixel — Unikatko RS pixel 1337030437202208 (ad account 1245542096799104) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1337030437202208');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+ src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
+
 <meta name="description" content="VRELO termos boca 1L od 18/8 nerđajućeg čelika: piće ostaje toplo 12 sati i hladno 24 sata. Poklopac ne curi, sa ručkom za nošenje. Plaćanje pouzećem.">
 <style>
 :root{
@@ -182,11 +196,11 @@ footer nav a{text-decoration:none}
   <div class="gal">
     <div class="gal__badge">BESTSELLER</div>
     <div class="gal__track" id="track">
-      <img src="assets/color-zelena.jpg" alt="VRELO termos boca 1L — Šumsko zelena">
-      <img src="assets/lifestyle.jpg" alt="VRELO termos boca 1L na planinarenju">
-      <img src="assets/benefits.jpg" alt="12 sati toplo, 24 sata hladno, ne curi, čelik 18/8">
-      <img src="assets/pokloni.jpg" alt="VRELO boca sa sportskim čepom, četkom i silikonskom podlogom">
-      <img src="assets/auto.jpg" alt="VRELO termos boca u držaču za čaše u autu">
+      <img src="assets/color-zelena.jpg" alt="VRELO termos boca 1L — Šumsko zelena" loading="lazy" decoding="async">
+      <img src="assets/lifestyle.jpg" alt="VRELO termos boca 1L na planinarenju" loading="lazy" decoding="async">
+      <img src="assets/benefits.jpg" alt="12 sati toplo, 24 sata hladno, ne curi, čelik 18/8" loading="lazy" decoding="async">
+      <img src="assets/pokloni.jpg" alt="VRELO boca sa sportskim čepom, četkom i silikonskom podlogom" loading="lazy" decoding="async">
+      <img src="assets/auto.jpg" alt="VRELO termos boca u držaču za čaše u autu" loading="lazy" decoding="async">
     </div>
     <div class="gal__count" id="count">1 / 5</div>
   </div>
@@ -313,10 +327,10 @@ footer nav a{text-decoration:none}
   <h2 class="sec__h">Izaberi svoju boju</h2>
   <p class="about" style="margin-bottom:18px">Četiri boje, ista boca. U paketu od 2 ili 3 boce biraš boju za svaku bocu posebno — tačno te boje ti i šaljemo.</p>
   <div class="colors">
-    <figure><img src="assets/color-zelena.jpg" alt="Šumsko zelena"><figcaption>Šumsko zelena</figcaption></figure>
-    <figure><img src="assets/color-crna.jpg" alt="Crna"><figcaption>Crna</figcaption></figure>
-    <figure><img src="assets/color-bez.jpg" alt="Peščano bež"><figcaption>Peščano bež</figcaption></figure>
-    <figure><img src="assets/color-tirkiz.jpg" alt="Tirkizno plava"><figcaption>Tirkizno plava</figcaption></figure>
+    <figure><img src="assets/color-zelena.jpg" alt="Šumsko zelena" loading="lazy" decoding="async"><figcaption>Šumsko zelena</figcaption></figure>
+    <figure><img src="assets/color-crna.jpg" alt="Crna" loading="lazy" decoding="async"><figcaption>Crna</figcaption></figure>
+    <figure><img src="assets/color-bez.jpg" alt="Peščano bež" loading="lazy" decoding="async"><figcaption>Peščano bež</figcaption></figure>
+    <figure><img src="assets/color-tirkiz.jpg" alt="Tirkizno plava" loading="lazy" decoding="async"><figcaption>Tirkizno plava</figcaption></figure>
   </div>
 </div></section>
 
@@ -529,7 +543,7 @@ function render(){
   var lab  = "Naruči — " + fmt(t.unit * t.qty) + (t.qty < FREE_SHIP_QTY ? " + " + fmt(SHIP) + " dostava" : "");
   ["atc","atc2"].forEach(function(id){
     var a = document.getElementById(id);
-    a.href = href; a.textContent = lab;
+    a.href = __dec(href); a.textContent = lab;
   });
 }
 render();

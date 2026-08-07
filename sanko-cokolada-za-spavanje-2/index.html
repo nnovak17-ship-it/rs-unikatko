@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Čokolada sa melatoninom, magnezijumom i B6 – večernji ritual bez tableta, 30 čokoladica za mesec dana | SANKO</title>
 <meta name="description" content="SANKO čokolada sa melatoninom, magnezijumom, vitaminom B6 i GABA-om. 30 čokoladica za 30 večeri, bez vode i bez gutanja. Plaćanje pouzećem, 90 dana garancije.">
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<!-- Meta Pixel — Unikatko RS pixel 1337030437202208 (ad account Unikatko RS / 1245542096799104) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1337030437202208');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+ src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
 <style>
 :root{
   --navy:#1e1b3f; --navy2:#332c66; --gold:#d99a2b; --goldDark:#b47c15;
@@ -251,10 +264,10 @@ footer .cp{text-align:center;margin-top:14px;color:#7b769b}
   <div class="wrap">
     <h2 class="center">Šta se krije u pakovanju</h2>
     <div class="slider" id="slider">
-      <div class="sl"><img src="assets/clean.jpg" alt="SANKO pakovanje i pojedinačno upakovane čokoladice" width="1024" height="1024"></div>
-      <div class="sl"><img src="assets/promise.jpg" alt="30 čokoladica za 30 večeri, 90 dana garancije" width="1024" height="1024"></div>
-      <div class="sl"><img src="assets/compare.jpg" alt="SANKO čokolada u poređenju sa dodacima u tabletama" width="1024" height="1024"></div>
-      <div class="sl"><img src="assets/lifestyle.jpg" alt="SANKO pakovanje na noćnom ormariću" width="1024" height="1024"></div>
+      <div class="sl"><img src="assets/clean.jpg" alt="SANKO pakovanje i pojedinačno upakovane čokoladice" width="1024" height="1024" loading="lazy" decoding="async"></div>
+      <div class="sl"><img src="assets/promise.jpg" alt="30 čokoladica za 30 večeri, 90 dana garancije" width="1024" height="1024" loading="lazy" decoding="async"></div>
+      <div class="sl"><img src="assets/compare.jpg" alt="SANKO čokolada u poređenju sa dodacima u tabletama" width="1024" height="1024" loading="lazy" decoding="async"></div>
+      <div class="sl"><img src="assets/lifestyle.jpg" alt="SANKO pakovanje na noćnom ormariću" width="1024" height="1024" loading="lazy" decoding="async"></div>
     </div>
     <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i></div>
     <p class="center" style="margin-top:14px;font-size:14.5px;color:#4a4763">
@@ -327,7 +340,7 @@ footer .cp{text-align:center;margin-top:14px;color:#7b769b}
     <div class="rv"><div class="s">★★★★★</div><b>Ukus je stvarno dobar</b><p>Očekivala sam nešto kao vitaminske bombone, a dobila sam pravu tamnu čokoladu. Pojedem jednu uveče i to mi je sada omiljeni deo dana.</p><div class="who"><i>✓</i>Milica J. · Recenzija kupca</div></div>
     <div class="rv"><div class="s">★★★★★</div><b>Uzela sam tri pakovanja</b><p>Jedno za mene, jedno mami, jedno drugarici. Ispalo je jeftinije nego da sam kupovala jedno po jedno, a pakovanje izgleda skupo.</p><div class="who"><i>✓</i>Jelena M. · Recenzija kupca</div></div>
     <div class="rv"><div class="s">★★★★★</div><b>Stiglo za tri dana</b><p>Platila sam kuriru na vrata, sve kako piše. Čokoladice su pojedinačno upakovane pa mogu da ih nosim i u tašni.</p><div class="who"><i>✓</i>Sanja P. · Recenzija kupca</div></div>
-    <div style="margin-top:16px"><img src="assets/reviews.jpg" alt="Šta kažu naši kupci" style="border-radius:14px" width="1024" height="1024"></div>
+    <div style="margin-top:16px"><img src="assets/reviews.jpg" alt="Šta kažu naši kupci" style="border-radius:14px" width="1024" height="1024" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
@@ -361,7 +374,7 @@ footer .cp{text-align:center;margin-top:14px;color:#7b769b}
 <!-- sticky atc -->
 <div class="satc" id="satc">
   <div class="in">
-    <img src="assets/clean.jpg" alt="">
+    <img src="assets/clean.jpg" alt="" loading="lazy" decoding="async">
     <div class="t"><b>SANKO čokolada</b><span id="satcSub">1 pakovanje · 3.999 RSD</span></div>
     <button class="btn" onclick="goCheckout()">Naruči</button>
   </div>
@@ -427,8 +440,12 @@ function sync(){
 }
 
 function goCheckout(){
+  /* Variants are priced PER UNIT (2026-08-06): send the REAL quantity, never :1 —
+     a :1 link now charges one unit for the whole pack. The BUNDLE shipping codes
+     need cart quantity >= 2, which this satisfies. __go appends the code and
+     fires InitiateCheckout before navigating. */
   var t = CFG.tiers[selected];
-  location.href = CFG.checkoutBase + "/cart/" + t.variantId + ":1";
+  __go(CFG.checkoutBase + "/cart/" + t.variantId + ":" + t.qty);
 }
 
 /* Sticky ATC hides while the on-page ATC is visible.
@@ -458,6 +475,23 @@ setInterval(syncSticky, 200);
 
 renderTiers();
 sync();
+</script>
+<script>
+/* Shared checkout helpers (injected 2026-08-06): BUNDLE shipping codes derived
+   from REAL cart quantity + Meta pixel events. */
+function __cq(u){var m=u.match(/:(\d+)(?=,|\?|$)/g)||[];return m.reduce(function(a,x){return a+parseInt(x.slice(1))},0);}
+function __dec(u){var q=__cq(u);
+  if(q>=3)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE3_RS_SHIP';
+  else if(q===2)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE2_RS_SHIP';
+  return u;}
+function __ic(u){try{fbq('track','InitiateCheckout',{content_type:'product',num_items:__cq(u),
+  content_ids:(u.match(/\/cart\/([^?]+)/)||['',''])[1].split(',').map(function(x){return x.split(':')[0]})});}catch(e){}}
+function __go(u){u=__dec(u);__ic(u);location.href=u;}
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[href*="/cart/"]'):null;
+  if(a)__ic(a.href);
+},true);
+try{fbq('track','ViewContent',{content_type:'product',content_ids:['15647897026825'],content_name:document.title,currency:'RSD'});}catch(e){}
 </script>
 </body>
 </html>

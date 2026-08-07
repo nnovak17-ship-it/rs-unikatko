@@ -4,6 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Rukavice maramice za pse i mačke – očisti ljubimca za dva minuta, bez vode i kade | ŠAPICA</title>
+<!-- Meta Pixel — Unikatko RS pixel 1337030437202208 (ad account Unikatko RS / 1245542096799104) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1337030437202208');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+ src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
 <style>
 /* ŠAPICA LP — sr-Latn-RS. Hand-built, self-contained. */
 :root{
@@ -153,10 +165,10 @@ body > header{display:none!important}
 <section class="gal">
   <div class="slides" id="slides">
     <img src="assets/hero.jpg" alt="ŠAPICA rukavice maramice za pse i mačke">
-    <img src="assets/benefits.jpg" alt="Zašto baš ŠAPICA">
-    <img src="assets/howto.jpg" alt="Kako se koriste">
-    <img src="assets/lifestyle.jpg" alt="Brisanje psa posle šetnje">
-    <img src="assets/pack3.jpg" alt="Komplet od 3 pakovanja">
+    <img src="assets/benefits.jpg" alt="Zašto baš ŠAPICA" loading="lazy" decoding="async">
+    <img src="assets/howto.jpg" alt="Kako se koriste" loading="lazy" decoding="async">
+    <img src="assets/lifestyle.jpg" alt="Brisanje psa posle šetnje" loading="lazy" decoding="async">
+    <img src="assets/pack3.jpg" alt="Komplet od 3 pakovanja" loading="lazy" decoding="async">
   </div>
   <button class="arr p" onclick="sl(-1)" aria-label="Prethodna">‹</button>
   <button class="arr n" onclick="sl(1)" aria-label="Sledeća">›</button>
@@ -258,7 +270,7 @@ body > header{display:none!important}
 
 <div class="satc" id="satc">
   <div class="in">
-    <img src="assets/hero.jpg" alt="">
+    <img src="assets/hero.jpg" alt="" loading="lazy" decoding="async">
     <div class="t"><b>ŠAPICA rukavice</b><span id="satc-sub"></span></div>
     <button class="atc" id="atc2" onclick="kupi()"></button>
   </div>
@@ -266,9 +278,9 @@ body > header{display:none!important}
 
 <script>
 const OPTS = [
-  { title:"1 pakovanje",  sub:"40 rukavica",  total:4599,  per:"4.599 RSD/pak", badge:null,               variantId:"57240036966665", ship:true  },
-  { title:"2 pakovanja",  sub:"80 rukavica",  total:7998,  per:"3.999 RSD/pak", badge:"NAJPOPULARNIJE",   variantId:"57240036999433", ship:false },
-  { title:"3 pakovanja",  sub:"120 rukavica", total:10497, per:"3.499 RSD/pak", badge:"NAJBOLJA PONUDA",  variantId:"57240037032201", ship:false },
+  { title:"1 pakovanje",  sub:"40 rukavica",  qty:1, total:4599,  per:"4.599 RSD/pak", badge:null,               variantId:"57240036966665", ship:true  },
+  { title:"2 pakovanja",  sub:"80 rukavica",  qty:2, total:7998,  per:"3.999 RSD/pak", badge:"NAJPOPULARNIJE",   variantId:"57240036999433", ship:false },
+  { title:"3 pakovanja",  sub:"120 rukavica", qty:3, total:10497, per:"3.499 RSD/pak", badge:"NAJBOLJA PONUDA",  variantId:"57240037032201", ship:false },
 ];
 const BASE = "https://rs.unikatko.eu";
 const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
@@ -291,7 +303,22 @@ function renderOpts(){
     `<s>${fmt(9199)}</s>${fmt(o.total)}${o.ship?' <span style="font-size:14px;font-weight:400">+ 490 RSD dostava</span>':''}`;
 }
 function pickOpt(i){ sel=i; renderOpts(); }
-function kupi(){ location.href = BASE + '/cart/' + OPTS[sel].variantId + ':1'; }
+/* Per-unit line items (variant price = per-unit price, cart quantity = tier qty)
+   so the QUANTITY-gated free-shipping codes actually fire: BUNDLE2_RS_SHIP needs
+   >= 2 items in the cart, BUNDLE3_RS_SHIP >= 3. qty 1 gets no code. */
+function kupi(){
+  const o = OPTS[sel];
+  let url = BASE + '/cart/' + o.variantId + ':' + o.qty;
+  if (o.qty >= 3) url += '?discount=BUNDLE3_RS_SHIP';
+  else if (o.qty === 2) url += '?discount=BUNDLE2_RS_SHIP';
+  try{
+    fbq('track','InitiateCheckout',{
+      content_type:'product', content_ids:[o.variantId],
+      value: o.total, currency:'RSD', num_items: o.qty
+    });
+  }catch(e){}
+  location.href = url;
+}
 
 const slides = document.getElementById('slides');
 function sl(d){ slides.scrollBy({left:d*slides.clientWidth, behavior:'smooth'}); }
@@ -299,7 +326,7 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
 (function(){
   const imgs=[...slides.querySelectorAll('img')];
   document.getElementById('thumbs').innerHTML = imgs
-    .map((im,i)=>`<img src="${im.getAttribute('src')}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="">`).join('');
+    .map((im,i)=>`<img src="${im.getAttribute('src')}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="" loading="lazy" decoding="async">`).join('');
   slides.addEventListener('scroll',()=>{
     const i=Math.round(slides.scrollLeft/slides.clientWidth);
     [...document.querySelectorAll('.thumbs img')].forEach((t,k)=>t.classList.toggle('on',k===i));
@@ -321,6 +348,15 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
 })();
 
 renderOpts();
+
+/* Pixel: product view with the funnel's Shopify product id, so Meta can match
+   it against catalog + purchase events from the store. */
+try{
+  fbq('track','ViewContent',{
+    content_type:'product', content_ids:['15645935239433'],
+    content_name: document.title, currency:'RSD', value: OPTS[sel].total
+  });
+}catch(e){}
 </script>
 </body>
 </html>

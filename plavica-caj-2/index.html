@@ -4,6 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Biljni čaj od leptirovog graška – bez kofeina, menja boju iz plave u ljubičastu uz limun | PLAVICA</title>
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<!-- Meta Pixel — Unikatko RS pixel 1337030437202208 (ad account Unikatko RS / 1245542096799104) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1337030437202208');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+ src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
 <style>
 /* PLAVICA LP — sr-Latn-RS. Hand-built, self-contained. */
 :root{
@@ -153,10 +166,10 @@ body > header{display:none!important}
 <section class="gal">
   <div class="slides" id="slides">
     <img src="assets/hero.jpg" alt="PLAVICA biljni čaj — 120 kesica">
-    <img src="assets/benefits.jpg" alt="Zašto baš PLAVICA">
-    <img src="assets/howto.jpg" alt="Priprema čaja">
-    <img src="assets/lifestyle.jpg" alt="Čaj menja boju uz limun">
-    <img src="assets/pack3.jpg" alt="PLAVICA komplet od 3 pakovanja">
+    <img src="assets/benefits.jpg" alt="Zašto baš PLAVICA" loading="lazy" decoding="async">
+    <img src="assets/howto.jpg" alt="Priprema čaja" loading="lazy" decoding="async">
+    <img src="assets/lifestyle.jpg" alt="Čaj menja boju uz limun" loading="lazy" decoding="async">
+    <img src="assets/pack3.jpg" alt="PLAVICA komplet od 3 pakovanja" loading="lazy" decoding="async">
   </div>
   <button class="arr p" onclick="sl(-1)" aria-label="Prethodna">‹</button>
   <button class="arr n" onclick="sl(1)" aria-label="Sledeća">›</button>
@@ -258,17 +271,20 @@ body > header{display:none!important}
 
 <div class="satc" id="satc">
   <div class="in">
-    <img src="assets/hero.jpg" alt="">
+    <img src="assets/hero.jpg" alt="" loading="lazy" decoding="async">
     <div class="t"><b>PLAVICA čaj</b><span id="satc-sub"></span></div>
     <button class="atc" id="atc2" onclick="kupi()"></button>
   </div>
 </div>
 
 <script>
+/* Variants are priced PER UNIT on Shopify; the cart line carries the real
+   quantity (variantId:qty) so the BUNDLE*_RS_SHIP codes — which count cart
+   QUANTITY — can fire. `total` stays the displayed tier total (unit x qty). */
 const OPTS = [
-  { title:"1 pakovanje",  sub:"120 kesica",  total:2499, per:"2.499 RSD/pak", badge:null,               variantId:"57242394624265", ship:true  },
-  { title:"2 pakovanja",  sub:"240 kesica",  total:4398, per:"2.199 RSD/pak", badge:"NAJPOPULARNIJE",   variantId:"57242394657033", ship:false },
-  { title:"3 pakovanja",  sub:"360 kesica",  total:5997, per:"1.999 RSD/pak", badge:"NAJBOLJA PONUDA",  variantId:"57242394689801", ship:false },
+  { title:"1 pakovanje",  sub:"120 kesica",  qty:1, total:2499, per:"2.499 RSD/pak", badge:null,               variantId:"57242394624265", ship:true  },
+  { title:"2 pakovanja",  sub:"240 kesica",  qty:2, total:4398, per:"2.199 RSD/pak", badge:"NAJPOPULARNIJE",   variantId:"57242394657033", ship:false },
+  { title:"3 pakovanja",  sub:"360 kesica",  qty:3, total:5997, per:"1.999 RSD/pak", badge:"NAJBOLJA PONUDA",  variantId:"57242394689801", ship:false },
 ];
 const BASE = "https://rs.unikatko.eu";
 const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
@@ -291,7 +307,20 @@ function renderOpts(){
     `<s>${fmt(4999)}</s>${fmt(o.total)}${o.ship?' <span style="font-size:14px;font-weight:400">+ 490 RSD dostava</span>':''}`;
 }
 function pickOpt(i){ sel=i; renderOpts(); }
-function kupi(){ location.href = BASE + '/cart/' + OPTS[sel].variantId + ':1'; }
+function kupi(){
+  const o = OPTS[sel];
+  let url = BASE + '/cart/' + o.variantId + ':' + o.qty;
+  if (o.qty >= 3) url += '?discount=BUNDLE3_RS_SHIP';
+  else if (o.qty === 2) url += '?discount=BUNDLE2_RS_SHIP';
+  /* Pixel: checkout intent right before navigation — fbq ships via beacon. */
+  try{
+    fbq('track','InitiateCheckout',{
+      content_type:'product', content_ids:[o.variantId],
+      value: o.total, currency:'RSD', num_items: o.qty
+    });
+  }catch(e){}
+  location.href = url;
+}
 
 const slides = document.getElementById('slides');
 function sl(d){ slides.scrollBy({left:d*slides.clientWidth, behavior:'smooth'}); }
@@ -299,7 +328,7 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
 (function(){
   const imgs=[...slides.querySelectorAll('img')];
   document.getElementById('thumbs').innerHTML = imgs
-    .map((im,i)=>`<img src="${im.getAttribute('src')}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="">`).join('');
+    .map((im,i)=>`<img src="${im.getAttribute('src')}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="" loading="lazy" decoding="async">`).join('');
   slides.addEventListener('scroll',()=>{
     const i=Math.round(slides.scrollLeft/slides.clientWidth);
     [...document.querySelectorAll('.thumbs img')].forEach((t,k)=>t.classList.toggle('on',k===i));
@@ -321,6 +350,16 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
 })();
 
 renderOpts();
+
+/* Pixel: product view with the funnel's Shopify product id, so Meta can match
+   it against catalog + purchase events from the store. */
+try{
+  const o0 = OPTS[sel];
+  fbq('track','ViewContent',{
+    content_type:'product', content_ids:['15646828364041'],
+    content_name: document.title, currency:'RSD', value: o0.total
+  });
+}catch(e){}
 </script>
 </body>
 </html>
