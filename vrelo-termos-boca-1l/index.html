@@ -983,6 +983,50 @@ function tick(){
 
 renderTiers(); renderGifts(); renderTotal(); buildThumbs(); renderColors(); tick(); setInterval(tick,1000);
 
+/* ---- LP behaviour events (owner request 2026-08-07: "how long are people on our
+   LPs, what they click"). Custom event NAMES, because the Meta stats API can break
+   down by event name but not by parameter — so each behaviour must be its own name
+   to be readable back into the dashboard. Every event carries the slug in
+   content_name for per-LP drill-down in Events Manager. Each fires at most once. */
+(function(){
+  var SLUG = location.pathname.replace(/\//g,'') || 'lp';
+  var sent = {};
+  function ev(name, extra){
+    if (sent[name]) return; sent[name] = 1;
+    try{ fbq('trackCustom', name, Object.assign({content_name: SLUG}, extra||{})); }catch(e){}
+  }
+  var t0 = Date.now();
+  setTimeout(function(){ ev('LP_Engaged30'); }, 30000);
+  setTimeout(function(){ ev('LP_Engaged120'); }, 120000);
+
+  function depth(){
+    var h = document.documentElement;
+    var pct = (h.scrollTop + innerHeight) / h.scrollHeight * 100;
+    if (pct >= 50) ev('LP_Scroll50');
+    if (pct >= 90) ev('LP_Scroll90');
+  }
+  addEventListener('scroll', depth, {passive:true});
+  setInterval(depth, 500);          // webviews suppress scroll events (see sticky CTA)
+
+  document.addEventListener('click', function(e){
+    var t = e.target.closest ? e.target : e.target.parentElement;
+    if (!t || !t.closest) return;
+    if (t.closest('.tier'))     ev('LP_TierSwitch');
+    if (t.closest('.sw'))       ev('LP_VariantPick');
+    if (t.closest('summary'))   ev('LP_FAQ');
+    if (t.closest('.thumbs'))   ev('LP_Gallery');
+    if (t.closest('.sticky .cta')) ev('LP_StickyCTA');
+  }, true);
+
+  /* exit ping with the real dwell time — the bucket events above are what the API
+     can count; this carries the exact seconds for Events Manager drill-down. */
+  addEventListener('pagehide', function(){
+    try{ fbq('trackCustom','LP_Exit',{content_name:SLUG,
+      seconds: Math.round((Date.now()-t0)/1000)}); }catch(e){}
+  });
+})();
+
+
 /* Pixel: product view with the funnel's Shopify product id, so Meta can match
    it against catalog + purchase events from the store. */
 try{
