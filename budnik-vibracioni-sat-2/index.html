@@ -4,6 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vibracioni budilnik za ruku – budi te vibracijom umesto zvonom, ne budi partnera | BUDNIK</title>
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<!-- Meta Pixel — Unikatko RS pixel 1337030437202208 (ad account 1245542096799104) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1337030437202208');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+ src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
+
 <meta name="description" content="Narukvica koja te budi vibracijom na zglobu, ne zvukom. Tri jačine, 14+ dana baterije, bez telefona i aplikacije. Plaćanje pouzećem, 30 dana povraćaj.">
 <style>
 /* BUDNIK LP B — sr-Latn-RS. Ručno građen 1:1 klon strukture izvorne stranice. */
@@ -188,14 +202,14 @@ footer .cp{margin-top:14px;font-size:11.5px;color:var(--mut)}
 
   <div class="gal">
     <div class="slides" id="slides">
-      <img src="assets/product-flat.jpg" alt="BUDNIK vibracioni budilnik za ruku — crna silikonska narukvica sa skrivenim LED prikazom vremena">
-      <img src="assets/product.jpg" alt="BUDNIK narukvica iz drugog ugla">
-      <img src="assets/lifestyle.jpg" alt="Narukvica na ruci u mraku — vibracija umesto zvuka">
-      <img src="assets/couple.jpg" alt="Jedan se budi, drugi i dalje spava">
-      <img src="assets/benefits.jpg" alt="Zašto BUDNIK — tri nivoa vibracije, 14+ dana baterije, bez telefona">
-      <img src="assets/compare.jpg" alt="BUDNIK ili telefon — poređenje">
-      <img src="assets/howto.jpg" alt="Kako se koristi BUDNIK — tri koraka">
-      <img src="assets/charging.jpg" alt="Magnetno punjenje i 14+ dana baterije">
+      <img src="assets/product-flat.jpg" alt="BUDNIK vibracioni budilnik za ruku — crna silikonska narukvica sa skrivenim LED prikazom vremena" loading="lazy" decoding="async">
+      <img src="assets/product.jpg" alt="BUDNIK narukvica iz drugog ugla" loading="lazy" decoding="async">
+      <img src="assets/lifestyle.jpg" alt="Narukvica na ruci u mraku — vibracija umesto zvuka" loading="lazy" decoding="async">
+      <img src="assets/couple.jpg" alt="Jedan se budi, drugi i dalje spava" loading="lazy" decoding="async">
+      <img src="assets/benefits.jpg" alt="Zašto BUDNIK — tri nivoa vibracije, 14+ dana baterije, bez telefona" loading="lazy" decoding="async">
+      <img src="assets/compare.jpg" alt="BUDNIK ili telefon — poređenje" loading="lazy" decoding="async">
+      <img src="assets/howto.jpg" alt="Kako se koristi BUDNIK — tri koraka" loading="lazy" decoding="async">
+      <img src="assets/charging.jpg" alt="Magnetno punjenje i 14+ dana baterije" loading="lazy" decoding="async">
     </div>
     <div class="thumbs" id="thumbs"></div>
   </div>
@@ -316,7 +330,7 @@ footer .cp{margin-top:14px;font-size:11.5px;color:var(--mut)}
     <p class="sub">Podesi vreme buđenja na samoj narukvici i ostavi telefon u drugoj sobi.</p>
 
     <div class="fb">
-      <img src="assets/lifestyle.jpg" alt="Vibracija na zglobu u mraku">
+      <img src="assets/lifestyle.jpg" alt="Vibracija na zglobu u mraku" loading="lazy" decoding="async">
       <div class="fc">
         <h3>Vibracija koja se pojačava</h3>
         <p>Kreće blago i prolazi kroz tri nivoa jačine dok te ne digne. Signal dolazi sa tvoje kože, ne iz sobe, pa ne može da se ugasi „u prolazu”.</p>
@@ -328,7 +342,7 @@ footer .cp{margin-top:14px;font-size:11.5px;color:var(--mut)}
     </div>
 
     <div class="fb">
-      <img src="assets/couple.jpg" alt="Partner nastavlja da spava">
+      <img src="assets/couple.jpg" alt="Partner nastavlja da spava" loading="lazy" decoding="async">
       <div class="fc">
         <h3>Buđenje bez svađe ujutru</h3>
         <p>Ti ustaješ u pet, partner u sedam. Bez zvona i bez svetla — vibraciju osećaš samo ti, a druga strana kreveta ostaje netaknuta.</p>
@@ -340,7 +354,7 @@ footer .cp{margin-top:14px;font-size:11.5px;color:var(--mut)}
     </div>
 
     <div class="fb">
-      <img src="assets/charging.jpg" alt="Magnetno punjenje i 14+ dana baterije">
+      <img src="assets/charging.jpg" alt="Magnetno punjenje i 14+ dana baterije" loading="lazy" decoding="async">
       <div class="fc">
         <h3>Podesiš i zaboraviš</h3>
         <p>Jedno punjenje izdrži više od dve nedelje uobičajene noćne upotrebe. Magnetni punjač i USB kabl idu u paketu.</p>
@@ -484,7 +498,7 @@ function pick(i){
 
 function kupi(){
   var t = TIERS[sel];
-  location.href = CHECKOUT + '/cart/' + t.variant + ':1';
+  __go(CHECKOUT + '/cart/' + t.variant + ':' + t.qty);
 }
 
 /* ---- galerija: sličice ---- */
@@ -494,7 +508,7 @@ function kupi(){
   var th     = document.getElementById('thumbs');
   var h = '';
   imgs.forEach(function(im,i){
-    h += '<img src="' + im.getAttribute('src') + '" alt="" class="' + (i===0?'on':'') + '" onclick="goSlide(' + i + ')">';
+    h += '<img src="' + im.getAttribute('src') + '" alt="" class="' + (i===0?'on':'') + '" onclick="goSlide(' + i + ')" loading="lazy" decoding="async">';
   });
   th.innerHTML = h;
   slides.addEventListener('scroll', function(){
@@ -525,6 +539,17 @@ function goSlide(i){
 })();
 
 renderTiers();
+</script>
+<script>
+function __cq(u){var m=u.match(/:(\d+)(?=,|\?|$)/g)||[];return m.reduce(function(a,x){return a+parseInt(x.slice(1))},0);}
+function __dec(u){var q=__cq(u);
+  if(q>=3)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE3_RS_SHIP';
+  else if(q===2)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE2_RS_SHIP';
+  return u;}
+function __ic(u){try{fbq('track','InitiateCheckout',{content_type:'product',num_items:__cq(u),
+  content_ids:(u.match(/\/cart\/([^?]+)/)||['',''])[1].split(',').map(function(x){return x.split(':')[0]})});}catch(e){}}
+function __go(u){u=__dec(u);__ic(u);location.href=u;}
+try{fbq('track','ViewContent',{content_type:'product',content_ids:['15647896830217'],content_name:document.title,currency:'RSD'});}catch(e){}
 </script>
 </body>
 </html>

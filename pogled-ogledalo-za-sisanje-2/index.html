@@ -4,6 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Trokrilno LED ogledalo za šišanje – vidiš potiljak dok se sam šišaš | POGLED</title>
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<!-- Meta Pixel — Unikatko RS pixel 1337030437202208 (ad account 1245542096799104) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1337030437202208');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+ src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
+
 <style>
 /* POGLED LP B — sr-Latn-RS. Hand-built 1:1 klon strukture izvorne stranice. */
 :root{
@@ -282,14 +296,14 @@ body > header{display:none!important}
 <!-- 3. gallery -->
 <section class="gal">
   <div class="slides" id="slides">
-    <img src="assets/hero.jpg" alt="POGLED trokrilno LED ogledalo za šišanje">
-    <img src="assets/product.jpg" alt="POGLED ogledalo — tri panela, kuke i izvlačna polica">
-    <img src="assets/features.jpg" alt="Šta sve dobijaš u setu">
-    <img src="assets/lifestyle.jpg" alt="Muškarac se sam šiša ispred POGLED ogledala">
-    <img src="assets/shelf.jpg" alt="Izvlačna polica za mašinicu i nastavke">
-    <img src="assets/hang.jpg" alt="Kači se preko vrata bez bušenja">
-    <img src="assets/lightmodes.jpg" alt="Tri režima svetla">
-    <img src="assets/compare.jpg" alt="POGLED naspram običnog trokrilnog ogledala">
+    <img src="assets/hero.jpg" alt="POGLED trokrilno LED ogledalo za šišanje" loading="lazy" decoding="async">
+    <img src="assets/product.jpg" alt="POGLED ogledalo — tri panela, kuke i izvlačna polica" loading="lazy" decoding="async">
+    <img src="assets/features.jpg" alt="Šta sve dobijaš u setu" loading="lazy" decoding="async">
+    <img src="assets/lifestyle.jpg" alt="Muškarac se sam šiša ispred POGLED ogledala" loading="lazy" decoding="async">
+    <img src="assets/shelf.jpg" alt="Izvlačna polica za mašinicu i nastavke" loading="lazy" decoding="async">
+    <img src="assets/hang.jpg" alt="Kači se preko vrata bez bušenja" loading="lazy" decoding="async">
+    <img src="assets/lightmodes.jpg" alt="Tri režima svetla" loading="lazy" decoding="async">
+    <img src="assets/compare.jpg" alt="POGLED naspram običnog trokrilnog ogledala" loading="lazy" decoding="async">
   </div>
   <button class="nx" aria-label="Sledeća slika" onclick="document.getElementById('slides').scrollBy({left:document.getElementById('slides').clientWidth,behavior:'smooth'})">›</button>
 </section>
@@ -422,10 +436,10 @@ body > header{display:none!important}
     <h2>Postavka iza svakog urednog domaćeg šišanja.</h2>
     <p>Šišanje, ravnanje brade i sređivanje — ljudi koji gledaju osvetljen potiljak dok sami sebe drže urednim.</p>
     <div class="ugc">
-      <div class="ucard"><img src="assets/lifestyle.jpg" alt=""><div class="b"><div class="st">★★★★★</div><b>Nemanja P.</b><span>Šišanje svake druge nedelje</span></div></div>
-      <div class="ucard"><img src="assets/shelf.jpg" alt=""><div class="b"><div class="st">★★★★★</div><b>Miloš J.</b><span>Ravnanje brade kod kuće</span></div></div>
-      <div class="ucard"><img src="assets/hang.jpg" alt=""><div class="b"><div class="st">★★★★★</div><b>Tijana S.</b><span>Sama plete pozadi</span></div></div>
-      <div class="ucard"><img src="assets/lightmodes.jpg" alt=""><div class="b"><div class="st">★★★★★</div><b>Vladimir R.</b><span>Prvo domaće šišanje</span></div></div>
+      <div class="ucard"><img src="assets/lifestyle.jpg" alt="" loading="lazy" decoding="async"><div class="b"><div class="st">★★★★★</div><b>Nemanja P.</b><span>Šišanje svake druge nedelje</span></div></div>
+      <div class="ucard"><img src="assets/shelf.jpg" alt="" loading="lazy" decoding="async"><div class="b"><div class="st">★★★★★</div><b>Miloš J.</b><span>Ravnanje brade kod kuće</span></div></div>
+      <div class="ucard"><img src="assets/hang.jpg" alt="" loading="lazy" decoding="async"><div class="b"><div class="st">★★★★★</div><b>Tijana S.</b><span>Sama plete pozadi</span></div></div>
+      <div class="ucard"><img src="assets/lightmodes.jpg" alt="" loading="lazy" decoding="async"><div class="b"><div class="st">★★★★★</div><b>Vladimir R.</b><span>Prvo domaće šišanje</span></div></div>
     </div>
   </section>
 
@@ -562,7 +576,7 @@ function renderTiers(){
       ${t.badge?`<span class="tbadge">${t.badge}</span>`:''}
       <div class="tier ${i===sel?'on':''}" onclick="pick(${i})">
         <span class="radio"></span>
-        <img class="th" src="assets/product.jpg" alt="">
+        <img class="th" src="assets/product.jpg" alt="" loading="lazy" decoding="async">
         <div class="bd">
           <div class="lb">${t.label}</div>
           ${t.qty>1?`<div class="pu">${fmt(t.unit)}/kom</div>`:''}
@@ -587,7 +601,7 @@ function renderTiers(){
     t.ship ? '✓ Dostava 2–4 radna dana' : '✓ Besplatna dostava';
 }
 function pick(i){ sel=i; renderTiers(); }
-function kupi(){ location.href = BASE + '/cart/' + TIERS[sel].variantId + ':1'; }
+function kupi(){ __go(BASE + '/cart/' + TIERS[sel].variantId + ':' + TIERS[sel].qty); }
 
 /* tabbed reviews */
 let tab = Object.keys(REV)[0];
@@ -605,7 +619,7 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
 (function(){
   const imgs=[...slides.querySelectorAll('img')];
   document.getElementById('thumbs').innerHTML = imgs
-    .map((im,i)=>`<img src="${im.getAttribute('src')}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="">`).join('');
+    .map((im,i)=>`<img src="${im.getAttribute('src')}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="" loading="lazy" decoding="async">`).join('');
   slides.addEventListener('scroll',()=>{
     const i=Math.round(slides.scrollLeft/slides.clientWidth);
     [...document.querySelectorAll('.thumbs img')].forEach((t,k)=>t.classList.toggle('on',k===i));
@@ -628,6 +642,17 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
 })();
 
 renderTiers(); renderRev();
+</script>
+<script>
+function __cq(u){var m=u.match(/:(\d+)(?=,|\?|$)/g)||[];return m.reduce(function(a,x){return a+parseInt(x.slice(1))},0);}
+function __dec(u){var q=__cq(u);
+  if(q>=3)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE3_RS_SHIP';
+  else if(q===2)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE2_RS_SHIP';
+  return u;}
+function __ic(u){try{fbq('track','InitiateCheckout',{content_type:'product',num_items:__cq(u),
+  content_ids:(u.match(/\/cart\/([^?]+)/)||['',''])[1].split(',').map(function(x){return x.split(':')[0]})});}catch(e){}}
+function __go(u){u=__dec(u);__ic(u);location.href=u;}
+try{fbq('track','ViewContent',{content_type:'product',content_ids:['15647492833545'],content_name:document.title,currency:'RSD'});}catch(e){}
 </script>
 </body>
 </html>
