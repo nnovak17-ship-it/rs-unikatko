@@ -364,6 +364,14 @@ var GAL=[
   {src:'assets/pack4.jpg',     alt:'SUVO komplet od 4 stika'}
 ];
 var sel=0;                                    /* podrazumevano: komplet od 4, kao na LP A */
+/* Ako se kupac vraća sa 2. koraka (dugme „nazad” šalje ?stikovi=N), vrati mu
+   paket koji je već bio izabrao umesto da ga resetujemo na podrazumevani. */
+(function(){
+  var q=parseInt(new URLSearchParams(location.search).get('stikovi')||
+                 new URLSearchParams(location.search).get('sticks')||'',10);
+  var i=TIERS.findIndex(function(t){return t.q===q;});
+  if(i>-1) sel=i;
+})();
 function fmt(n){return n.toLocaleString('de-DE');}
 function stik(n){return n===1?'stik':(n<5?'stika':'stikova');}
 function qty(){return TIERS[sel].q;}

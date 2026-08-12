@@ -56,7 +56,14 @@ button{font:inherit; color:inherit; border:0; background:none; cursor:pointer}
 .tip.on{display:block}
 
 /* ---------- 2. uvodni blok ---------- */
-.intro{padding:14px 0 4px; text-align:center}
+/* Mali „nazad” na 1. korak — gore levo, iznad centriranog uvoda (ne unutar
+   njega, da ga `text-align:center` ne povuče u sredinu). */
+.backrow{padding-top:10px}
+.back{display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px;
+  border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--navy);
+  font-size:21px; font-weight:800; line-height:1; text-decoration:none; padding-bottom:3px}
+.back:active{background:var(--wash); border-color:var(--cta)}
+.intro{padding:8px 0 4px; text-align:center}
 .intro h1{margin:0 0 6px; font-size:17px; line-height:1.3; font-weight:800; color:var(--navy)}
 .intro p{margin:0; font-size:12.5px; color:var(--mut)}
 .ship-note{margin:10px 0 0; font-size:11px; color:var(--mut); text-align:center; line-height:1.4}
@@ -190,6 +197,9 @@ footer a{color:var(--mut); font-size:10.5px; font-weight:700; text-transform:upp
 
 <main>
 <!-- 2 ----------------------------------------------------------------- -->
+<div class="wrap backrow">
+  <a class="back" id="back" href="../" aria-label="Nazad na izbor paketa" title="Nazad na izbor paketa">‹</a>
+</div>
 <section class="wrap intro">
   <h1>Otključao si najveći popust — sad izaberi mirise</h1>
   <p>Rasporedi stikove iz svog kompleta na mirise koje želiš.</p>
@@ -344,6 +354,7 @@ function renderGifts(){
 }
 function sync(){
   var t=target(), c=chosen(), left=t-c, tot=t*TIERS[tierIdx].u;
+  document.getElementById('back').href='../?stikovi='+t;   /* nosi izbor nazad na 1. korak */
   document.getElementById('gridSub').textContent='Rasporedi '+t+' '+stik(t)+' na mirise koje želiš';
   document.querySelectorAll('.tier').forEach(function(el,i){el.classList.toggle('on',i===tierIdx);});
   document.querySelectorAll('.row').forEach(function(row){
@@ -382,6 +393,15 @@ document.addEventListener('click',function(e){
 });
 document.getElementById('infoBtn').addEventListener('click',function(){
   document.getElementById('tip').classList.toggle('on');
+});
+
+/* „Nazad” nosi izabrani paket sa sobom (../?stikovi=N) da se 1. korak ne
+   resetuje na podrazumevani komplet. Obično `history.back()` to NE rešava:
+   vraćanje kroz istoriju vodi na goli URL bez parametra, pa se skripta 1.
+   koraka ponovo izvrši sa podrazumevanim izborom — provereno, kupac koji je
+   izabrao 2 stika vraćao se na izabrana 4. */
+document.getElementById('back').addEventListener('click',function(e){
+  try{fbq('trackCustom','LP_Back',{content_name:'suvo-stik-2-mirisi'});}catch(err){}
 });
 
 /* ---------------- kasa ---------------- */
