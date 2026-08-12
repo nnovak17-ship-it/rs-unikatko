@@ -418,7 +418,7 @@ footer .disc{margin-top:12px;font-size:11px;line-height:1.5;text-align:left}
 
   <!-- ============ COLOUR (only when configured) ============ -->
   <div class="colorwrap" id="colorwrap" style="display:none">
-    <div class="lb">Boja: <b id="colorname"></b></div>
+    <div class="lb">Miris: <b id="colorname"></b></div>
     <div class="swatches" id="swatches"></div>
   </div>
 
@@ -560,6 +560,7 @@ footer .disc{margin-top:12px;font-size:11px;line-height:1.5;text-align:left}
     <details><summary>Da li ostavlja bele tragove?</summary><p>Ne. Formula se upija bez tragova, pa možeš slobodno da nosiš i crno i belo.</p></details>
     <details><summary>Kako plaćam?</summary><p>Pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata. Ne plaćaš ništa unapred.</p></details>
     <details><summary>Koliko traje isporuka?</summary><p>2–4 radna dana na celoj teritoriji Srbije. Dostava je besplatna za komplete od 2 i više stikova.</p></details>
+    <details><summary>Mogu li da izmešam mirise u kompletu?</summary><p>Da. U kompletu od 2, 3 ili 4 stika biraš miris za svaki stik posebno — možeš uzeti sve iste ili svaki drugačiji. Na raspolaganju je 9 mirisa, uključujući i varijantu bez mirisa.</p></details>
     <details><summary>Koliko traje jedan stik?</summary><p>Uz svakodnevnu upotrebu (tanak sloj uveče), jedan stik traje 2–3 meseca. Komplet od 4 — uz gratis peti stik — pokriva i do godinu dana, zato je i najisplativiji.</p></details>
     <details><summary>Da li je bezbedan za svakodnevnu upotrebu?</summary><p>Da, SUVO je kozmetički proizvod namenjen svakodnevnoj upotrebi. Ako imaš veoma osetljivu kožu ili aktivnu iritaciju, sačekaj da se koža smiri pre prve upotrebe.</p></details>
     <details><summary>Šta ako mi se ne svidi?</summary><p>Ako se predomisliš, neotvoren proizvod možeš da vratiš u roku od 30 dana i dobiješ pun povraćaj novca — bez objašnjavanja i bez komplikacija.</p></details>
@@ -597,9 +598,64 @@ const CFG = {
   "defaultTier": 3,
   "freeShippingQty": 2,
   "checkoutBase": "https://rs.unikatko.eu",
-  "perUnitVariants": false,
-  "colors": [],
-  "colorLabel": "Boja:",
+  "perUnitVariants": true,
+  "colors": [
+    {
+      "name": "Bez mirisa",
+      "hex": "#9AA3AA",
+      "img": "assets/scents/bez-mirisa.jpg",
+      "desc": "Nežno · Blago · Neutralno"
+    },
+    {
+      "name": "Ružina voda",
+      "hex": "#E8607F",
+      "img": "assets/scents/ruzina-voda.jpg",
+      "desc": "Cvetno · Nežno · Čisto"
+    },
+    {
+      "name": "Svež puder",
+      "hex": "#2FA8DE",
+      "img": "assets/scents/svez-puder.jpg",
+      "desc": "Meko · Čisto · Puderasto"
+    },
+    {
+      "name": "Sandalovina",
+      "hex": "#6B4A2F",
+      "img": "assets/scents/sandalovina.jpg",
+      "desc": "Drvenasto · Toplo · Duboko"
+    },
+    {
+      "name": "Vanila i breskva",
+      "hex": "#F0A878",
+      "img": "assets/scents/vanila-breskva.jpg",
+      "desc": "Slatko · Lako · Kremasto"
+    },
+    {
+      "name": "Lavanda i limun",
+      "hex": "#9A86D6",
+      "img": "assets/scents/lavanda-limun.jpg",
+      "desc": "Biljno · Cvetno · Smirujuće"
+    },
+    {
+      "name": "Planinski vazduh",
+      "hex": "#55604E",
+      "img": "assets/scents/planinski-vazduh.jpg",
+      "desc": "Sveže · Čisto · Oštro"
+    },
+    {
+      "name": "Sportska svežina",
+      "hex": "#12A79B",
+      "img": "assets/scents/sportska-svezina.jpg",
+      "desc": "Citrusno · Energično · Lako"
+    },
+    {
+      "name": "Morski vetar",
+      "hex": "#1B4F9C",
+      "img": "assets/scents/morski-vetar.jpg",
+      "desc": "Hladno · Slano · Osvežavajuće"
+    }
+  ],
+  "colorLabel": "Miris:",
   "tiers": [
     {
       "qty": 1,
@@ -609,7 +665,18 @@ const CFG = {
       "cls": null,
       "oos": false,
       "variantId": "57237600403721",
-      "cartQty": 1
+      "variantPrice": 1699,
+      "variantsByColor": {
+        "Bez mirisa": "57237600403721",
+        "Ružina voda": "57253072306441",
+        "Svež puder": "57253072339209",
+        "Sandalovina": "57253072371977",
+        "Vanila i breskva": "57253072404745",
+        "Lavanda i limun": "57253072437513",
+        "Planinski vazduh": "57253072470281",
+        "Sportska svežina": "57253072503049",
+        "Morski vetar": "57253072535817"
+      }
     },
     {
       "qty": 2,
@@ -619,7 +686,18 @@ const CFG = {
       "cls": "pop",
       "oos": false,
       "variantId": "57237600436489",
-      "cartQty": 2
+      "variantPrice": 1399,
+      "variantsByColor": {
+        "Bez mirisa": "57237600436489",
+        "Ružina voda": "57253072568585",
+        "Svež puder": "57253072601353",
+        "Sandalovina": "57253072634121",
+        "Vanila i breskva": "57253072666889",
+        "Lavanda i limun": "57253072699657",
+        "Planinski vazduh": "57253072732425",
+        "Sportska svežina": "57253072765193",
+        "Morski vetar": "57253072797961"
+      }
     },
     {
       "qty": 3,
@@ -629,7 +707,18 @@ const CFG = {
       "cls": null,
       "oos": false,
       "variantId": "57237600469257",
-      "cartQty": 3
+      "variantPrice": 1249,
+      "variantsByColor": {
+        "Bez mirisa": "57237600469257",
+        "Ružina voda": "57253072830729",
+        "Svež puder": "57253072863497",
+        "Sandalovina": "57253072896265",
+        "Vanila i breskva": "57253072929033",
+        "Lavanda i limun": "57253072961801",
+        "Planinski vazduh": "57253072994569",
+        "Sportska svežina": "57253073027337",
+        "Morski vetar": "57253073060105"
+      }
     },
     {
       "qty": 4,
@@ -639,7 +728,18 @@ const CFG = {
       "cls": "best",
       "oos": false,
       "variantId": "57237600502025",
-      "cartQty": 4
+      "variantPrice": 1149,
+      "variantsByColor": {
+        "Bez mirisa": "57237600502025",
+        "Ružina voda": "57253073092873",
+        "Svež puder": "57253073125641",
+        "Sandalovina": "57253073158409",
+        "Vanila i breskva": "57253073191177",
+        "Lavanda i limun": "57253073223945",
+        "Planinski vazduh": "57253073256713",
+        "Sportska svežina": "57253073289481",
+        "Morski vetar": "57253073322249"
+      }
     }
   ],
   "gifts": [
