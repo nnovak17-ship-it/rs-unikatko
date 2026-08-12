@@ -126,6 +126,13 @@ h1,h2,h3{margin:0}
 /* text swatch: option entries without a `hex` (e.g. shoe sizes) render their name */
 .sw.txt{width:auto;min-width:66px;height:46px;padding:0 12px;font:800 15px/1 var(--body);color:var(--ink)}
 .sw.txt.on{background:var(--orange-soft)}
+/* Foto-uzorak: kada boja/miris nosi `thumb`, uzorak je prava slika proizvoda
+   umesto tačke u boji. Uključuje se po stranici — stranice bez `thumb` i dalje
+   crtaju tačke. */
+.sw.pic{padding:0;overflow:hidden}
+.sw.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.sw.pic.on{border-color:var(--ink);box-shadow:0 0 0 3px var(--wash)}
+.swatches.pics{gap:6px}
 
 /* ---------- per-unit variant rows (only when page.json sets perUnitVariants) ----------
    One row per unit of the chosen tier, numbered #1..#N, each independently
@@ -147,6 +154,13 @@ h1,h2,h3{margin:0}
 }
 .urow .swatches{gap:5px}
 .urow .sw{width:40px;height:40px;border-radius:10px}
+/* Foto-uzorci u redu po jedinici: 9 komada se na 375px ionako prelama u dva
+   reda (kao i tačke pre njih — 9x40+8x10 daleko premašuje 321px), pa umesto
+   neurednog 7+2 idemo na mrežu koja se sama popunjava. Na 375px to je 5+4 sa
+   uzorkom od ~60px — dovoljno veliko da se miris PREPOZNA sa fotografije i
+   dovoljno veliko za prst. Na širem ekranu mreža sama doda kolone. */
+.urow .swatches.pics{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:5px; max-width:380px}
+.urow .sw.pic{width:auto; height:auto; aspect-ratio:1/1; border-radius:10px}
 .urow .sw i{width:22px;height:22px}
 /* Sized so 5 text options (the widest set in the catalogue — LEDNIK's shoe
    sizes) still fit ONE line inside a 375px viewport. More options, or longer
@@ -722,13 +736,24 @@ function applyColorImage(){
   if (t0) t0.src = c.img;
 }
 
+/* Lice uzorka, po prioritetu: FOTOGRAFIJA (`thumb`) > tačka u boji (`hex`) >
+   tekstualna pilula (npr. veličine). Dve funkcije jer se uzorci crtaju na dva
+   mesta — jedan izbor i red po jedinici — pa moraju da ostanu identični. */
+function swFace(c){
+  if (c.thumb) return `<img src="${c.thumb}" alt="" width="128" height="128" loading="lazy" decoding="async">`;
+  return c.hex ? `<i style="background:${c.hex}"></i>` : c.name;
+}
+function swCls(c){ return c.thumb ? 'pic' : (c.hex ? '' : 'txt'); }
+const PIC_SW = !!(CFG.colors && CFG.colors.length && CFG.colors[0].thumb);
+
 function renderColors(){
   if (!HAS_COLORS) return;
   if (PER_UNIT) { renderUnitRows(); applyColorImage(); return; }
   document.getElementById('colorwrap').style.display = '';
+  document.getElementById('swatches').className = 'swatches' + (PIC_SW ? ' pics' : '');
   document.getElementById('swatches').innerHTML = CFG.colors.map((c,i)=>
-    `<button class="sw ${c.hex?'':'txt'} ${i===colorIdx?'on':''}" onclick="pickColor(${i})" title="${c.name}" aria-label="${c.name}">`
-    + (c.hex ? `<i style="background:${c.hex}"></i>` : c.name) + `</button>`
+    `<button class="sw ${swCls(c)} ${i===colorIdx?'on':''}" onclick="pickColor(${i})" title="${c.name}" aria-label="${c.name}">`
+    + swFace(c) + `</button>`
   ).join('');
   document.getElementById('colorname').textContent = CFG.colors[colorIdx].name;
   applyColorImage();
@@ -745,12 +770,12 @@ function renderUnitRows(){
   let rows = '';
   for (let r = 0; r < n; r++){
     const sw = CFG.colors.map((c,i)=>
-      `<button class="sw ${c.hex?'':'txt'} ${i===picks[r]?'on':''}" onclick="pickUnit(${r},${i})" title="${c.name}" aria-label="#${r+1} ${c.name}">`
-      + (c.hex ? `<i style="background:${c.hex}"></i>` : c.name) + `</button>`
+      `<button class="sw ${swCls(c)} ${i===picks[r]?'on':''}" onclick="pickUnit(${r},${i})" title="${c.name}" aria-label="#${r+1} ${c.name}">`
+      + swFace(c) + `</button>`
     ).join('');
     rows += `<div class="urow" data-unit="${r+1}">
       <div class="uhead"><span class="un">#${r+1}</span><span class="unm">${CFG.colors[picks[r]].name}</span></div>
-      <div class="swatches">${sw}</div>
+      <div class="swatches${PIC_SW?' pics':''}">${sw}</div>
     </div>`;
   }
   const hint = CFG.labels.perUnitHint ? `<p class="uhint">${CFG.labels.perUnitHint}</p>` : '';
