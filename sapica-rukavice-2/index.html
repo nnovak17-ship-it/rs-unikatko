@@ -298,7 +298,7 @@ function renderOpts(){
       <div class="pr"><b>${fmt(o.total)}${o.ship?' + dostava':''}</b><span>${o.per}</span></div>
     </div>`).join('');
   const o = OPTS[sel];
-  const label = 'DODAJ U KORPU — ' + fmt(o.total) + (o.ship ? ' + 490 RSD dostava' : '');
+  const label = 'DODAJ U KORPU — ' + fmt(o.total);
   document.getElementById('atc').textContent = label;
   const a2=document.getElementById('atc2'); if(a2) a2.textContent = fmt(o.total);
   const ss=document.getElementById('satc-sub'); if(ss) ss.textContent = o.sub;
