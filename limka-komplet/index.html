@@ -843,7 +843,12 @@ function renderGifts(){
 function renderTotal(){
   const t = CFG.tiers[selected];
   const total = t.unit * t.qty;
-  const ship = t.qty < CFG.freeShippingQty ? ' ' + CFG.labels.plusShipping : '';
+  /* Per-page opt-out: `labels.ctaShipping: false` keeps the CTA price-only.
+     Shipping is still disclosed on the tier row and in the buy-once label, so
+     it never disappears from the page — it just stops being repeated on the
+     button. Omit the flag and the CTA discloses it, exactly as before. */
+  const ship = (CFG.labels.ctaShipping === false || t.qty >= CFG.freeShippingQty)
+    ? '' : ' ' + CFG.labels.plusShipping;
   /* On-page CTA discloses shipping; the STICKY label is price-only so it can
      never wrap to two lines on mobile (owner rule 2026-08-06). */
   document.getElementById('cta-total').textContent = fmt(total) + ship;
