@@ -970,6 +970,8 @@ slides.addEventListener('scroll', ()=>{
 
 /* ---- countdown: resets at local midnight ---- */
 function tick(){
+  /* `countdown: false` in page.json drops the clock markup entirely. */
+  if (!document.getElementById('hh')) return;
   const now = new Date();
   const end = new Date(now); end.setHours(24,0,0,0);
   let s = Math.max(0, Math.floor((end - now)/1000));

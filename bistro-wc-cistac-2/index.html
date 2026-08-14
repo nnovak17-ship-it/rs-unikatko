@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WC čistač za vodokotlić – čisti šolju pri svakom ispiranju | BISTRO</title>
+<meta name="description" content="Uložak koji stoji u vodokotliću i radi pri svakom ispiranju – bez ribanja četkom i bez sipanja hemije u šolju. Plaćanje pouzećem, isporuka 2–4 dana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero.jpg" fetchpriority="high">
+<!-- Meta Pixel (Unikatko RS, ad account 1245542096799104) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1337030437202208');
+fbq('track','PageView');
+</script>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Assistant,system-ui,-apple-system,"Segoe UI",sans-serif;color:#282828;
+  background:#fff;-webkit-font-smoothing:antialiased;line-height:1.45}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;color:#101010;margin:0;line-height:1.15}
+.wrap{max-width:520px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+
+/* announcement */
+.announce{background:#2a2552;color:#fff;text-align:center;font-weight:700;
+  font-size:11px;letter-spacing:.09em;padding:12px 14px;text-transform:uppercase}
+
+/* gallery */
+.gal{background:linear-gradient(#eaf4f7,#fdf3ea)}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.slides::-webkit-scrollbar{display:none}
+.slides img{min-width:100%;scroll-snap-align:center;aspect-ratio:1/1;object-fit:cover}
+.galwrap{position:relative}
+.nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;
+  font-size:34px;line-height:1;color:#5b5b6b;padding:6px 10px;cursor:pointer;z-index:2}
+.nav.l{left:2px}.nav.r{right:2px}
+.thumbs{display:flex;gap:8px;padding:12px 20px;overflow-x:auto;background:#fdf3ea;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{width:63px;height:49px;object-fit:cover;border-radius:6px;
+  border:2px solid transparent;cursor:pointer;flex:0 0 auto}
+.thumbs img.on{border-color:#2a2552}
+
+/* offer block */
+.offer{background:linear-gradient(#fdf3ea,#fdf3ea 70%,#fff);padding:18px 0 26px}
+.stars{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.stars .s{color:#f5a623;font-size:19px;letter-spacing:1px}
+.stars .t{font-size:15px;font-weight:700;color:#101010}
+h1{font-size:30px;font-weight:800;margin-bottom:10px}
+.sub{font-size:17px;font-weight:700;color:#101010;margin-bottom:20px}
+.bens{list-style:none;margin:0 0 22px;padding:0}
+.bens li{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:16px}
+.bic{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#d7ecf3;
+  display:grid;place-items:center;font-size:20px}
+.pricerow{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.pricerow .big{font-family:Sora,sans-serif;font-weight:800;font-size:30px;color:#101010;white-space:nowrap}
+.savepill{flex:1;background:#fee8d4;border-radius:999px;padding:11px 14px;text-align:center;
+  font-family:Sora,sans-serif;font-weight:700;font-size:15px;color:#101010}
+.savepill.zero{background:#f1ece4;color:#6b6b6b;font-weight:600}
+
+/* tier grid */
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{position:relative;border:1px solid #2a2552;border-radius:6px;overflow:hidden;
+  display:flex;background:#fff;cursor:pointer;min-height:72px;text-align:left;padding:0;
+  font-family:inherit;width:100%}
+.tile img{width:44%;height:100%;object-fit:cover;flex:0 0 44%;align-self:stretch}
+.tile .ti{flex:1;padding:10px 8px;display:flex;flex-direction:column;justify-content:center}
+.tile .tn{font-family:Sora,sans-serif;font-weight:700;font-size:16px;color:#a9a9b4;line-height:1.1}
+.tile .tp{font-size:14px;color:#a9a9b4;margin-top:3px}
+.tile.on{border-width:2px;box-shadow:0 0 0 1px #2a2552}
+.tile.on .ti{background:#fee8d4}
+.tile.on .tn,.tile.on .tp{color:#101010}
+.badge{position:absolute;top:0;left:50%;transform:translateX(-25%);background:#2a2552;color:#fff;
+  font-family:Sora,sans-serif;font-weight:700;font-size:10px;letter-spacing:.06em;
+  padding:5px 12px;border-radius:0 0 10px 10px;z-index:2;white-space:nowrap}
+.more{text-align:center;font-family:Sora,sans-serif;font-weight:700;font-size:17px;
+  margin:20px 0 14px;color:#101010}
+.cta{display:block;width:100%;background:#282828;color:#fff;border:0;border-radius:5px;
+  font-family:Assistant,sans-serif;font-weight:700;font-size:20px;padding:15px 12px;
+  cursor:pointer;text-align:center}
+.cta:active{background:#101010}
+.codline{font-size:13px;color:#6b6b6b;text-align:center;margin:14px 0 0;line-height:1.5}
+.refund{text-align:center;font-family:Sora,sans-serif;font-weight:700;font-size:16px;
+  margin-top:16px;color:#101010}
+
+/* quote carousel */
+.sec{padding:34px 0}
+h2{font-size:23px;font-weight:700;text-align:center;margin-bottom:18px}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:6px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.qcard{flex:0 0 82%;scroll-snap-align:center;background:#fdf3ea;border-radius:14px;padding:18px}
+.qcard p{margin:0 0 10px;font-size:16px;font-style:italic}
+.qcard .who{font-weight:700;font-size:14px;color:#5b5b6b}
+.dots{display:flex;justify-content:center;gap:7px;margin-top:14px}
+.dots i{width:8px;height:8px;border-radius:50%;background:#d5cec4;display:block}
+.dots i.on{background:#2a2552}
+
+/* accordion */
+details{border-bottom:1px solid #e6ded3}
+summary{list-style:none;cursor:pointer;padding:16px 26px 16px 0;position:relative;
+  font-family:Sora,sans-serif;font-weight:600;font-size:15px;text-transform:uppercase;
+  letter-spacing:.01em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:2px;top:14px;font-size:22px;font-weight:400;color:#101010}
+details[open] summary::after{content:"−"}
+details .ans{padding:0 0 16px;font-size:15px;color:#4a4a55}
+
+/* testimonial card */
+.tcard{background:#fdf3ea;border-radius:14px;padding:18px;position:relative;margin-top:16px}
+.tcard .hd{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.tcard .av{width:46px;height:46px;border-radius:50%;background:#d7ecf3;display:grid;
+  place-items:center;font-size:20px;flex:0 0 auto}
+.tcard .nm{font-family:Sora,sans-serif;font-weight:700;font-size:16px}
+.tcard .rl{font-size:14px;color:#6b6b6b}
+.tcard q{font-size:16px}
+.tcard .mark{position:absolute;top:12px;right:16px;font-size:44px;color:#e2d8cb;
+  line-height:1;font-family:Sora,sans-serif}
+
+/* badge cards */
+.cards3{display:grid;gap:12px}
+.bcard{background:#fdf3ea;border-radius:14px;padding:18px;text-align:center}
+.bcard .ic{font-size:26px;margin-bottom:6px}
+.bcard h3{font-size:17px;margin-bottom:6px}
+.bcard p{margin:0;font-size:14px;color:#5b5b6b}
+
+/* marquee */
+.mq{background:#2a2552;color:#fff;overflow:hidden;padding:11px 0}
+.mqi{display:flex;gap:26px;width:max-content;animation:mv 26s linear infinite}
+.mqi span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+@keyframes mv{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.mqi{animation:none}}
+
+/* autopilot */
+.auto{background:#eaf4f7;padding:34px 0}
+.auto q{display:block;font-family:Sora,sans-serif;font-weight:700;font-size:19px;
+  text-align:center;margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chips b{background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700}
+
+/* steps */
+.step{background:#fdf3ea;border-radius:14px;padding:18px;margin-bottom:12px}
+.step .n{width:32px;height:32px;border-radius:50%;background:#2a2552;color:#fff;
+  display:grid;place-items:center;font-family:Sora,sans-serif;font-weight:700;margin-bottom:10px}
+.step h3{font-size:17px;margin-bottom:6px}
+.step p{margin:0;font-size:15px;color:#4a4a55}
+
+/* compare */
+.cmp{width:100%;border-collapse:collapse;font-size:13px}
+.cmp th,.cmp td{padding:11px 6px;border-bottom:1px solid #ece4d9;text-align:center}
+.cmp th{font-family:Sora,sans-serif;font-size:12px;font-weight:700}
+.cmp th:first-child,.cmp td:first-child{text-align:left;font-size:13px;width:44%}
+.cmp thead th:nth-child(2){background:#2a2552;color:#fff;border-radius:8px 8px 0 0}
+.cmp tbody td:nth-child(2){background:#f4f1fa}
+.yes{color:#3cb54a;font-weight:700;font-size:16px}
+.no{color:#c9c2b8;font-weight:700;font-size:16px}
+
+/* mission */
+.mis{background:#2a2552;color:#fff;padding:34px 0;text-align:center}
+.mis h2{color:#fff}
+.mis p{font-size:15px;color:#d6d2e6;margin:0 auto;max-width:400px}
+
+/* footer */
+footer{background:#f7f2ec;padding:26px 0 34px;font-size:13px;color:#6b6b6b}
+footer .fl{display:flex;flex-wrap:wrap;gap:10px 16px;justify-content:center;margin-bottom:14px}
+footer .fl a{color:#2a2552;font-weight:600;text-decoration:none}
+footer .dis{font-size:11px;line-height:1.6;color:#8a8a8a;margin-top:12px}
+.ph{display:inline-block;background:#ffe9a8;color:#6b5300;font-size:10px;font-weight:700;
+  padding:1px 6px;border-radius:4px;letter-spacing:.04em;vertical-align:middle}
+</style>
+</head>
+<body>
+
+<div class="announce">Plaćanje pouzećem &nbsp;|&nbsp; 30 dana za povraćaj</div>
+
+<!-- GALLERY -->
+<section class="gal">
+  <div class="galwrap">
+    <button class="nav l" onclick="slide(-1)" aria-label="Prethodna">‹</button>
+    <div class="slides" id="slides">
+      <img src="assets/hero.jpg" width="1024" height="1024" alt="BISTRO WC čistač za vodokotlić" fetchpriority="high">
+      <img src="assets/pack4.jpg" width="1024" height="1024" alt="BISTRO komplet od 4 komada" loading="lazy" decoding="async">
+      <img src="assets/lifestyle.jpg" width="1024" height="1024" alt="Postavljanje BISTRO uloška u vodokotlić" loading="lazy" decoding="async">
+      <img src="assets/bathroom.jpg" width="1024" height="1024" alt="BISTRO u kupatilu" loading="lazy" decoding="async">
+      <img src="assets/benefits.jpg" width="1024" height="1024" alt="Zašto BISTRO" loading="lazy" decoding="async">
+      <img src="assets/howto.jpg" width="1024" height="1024" alt="Kako se koristi BISTRO" loading="lazy" decoding="async">
+    </div>
+    <button class="nav r" onclick="slide(1)" aria-label="Sledeća">›</button>
+  </div>
+  <div class="thumbs" id="thumbs"></div>
+</section>
+
+<!-- OFFER -->
+<section class="offer">
+  <div class="wrap">
+    <div class="stars">
+      <span class="s">★★★★★</span>
+      <span class="t">4,8 &nbsp;(ocene kupaca)</span>
+      <span class="ph">PLACEHOLDER</span>
+    </div>
+
+    <h1>BISTRO WC čistač</h1>
+    <p class="sub">Uložak koji spustiš u vodokotlić i zaboraviš — radi pri svakom ispiranju.</p>
+
+    <ul class="bens">
+      <li><span class="bic">💧</span><span>Radi pri svakom ispiranju</span></li>
+      <li><span class="bic">🚫</span><span>Bez sipanja hemije u šolju</span></li>
+      <li><span class="bic">🙈</span><span>Skriven u vodokotliću, ne vidi se</span></li>
+      <li><span class="bic">🔌</span><span>Bez struje, baterija i pokretnih delova</span></li>
+    </ul>
+
+    <div class="pricerow">
+      <span class="big" id="total">—</span>
+      <span class="savepill" id="save">—</span>
+    </div>
+
+    <div class="tiers" id="tiers"></div>
+
+    <p class="more">Što više uzmeš, to je po komadu jeftinije!</p>
+
+    <button class="cta" id="atc" onclick="go()">Naruči — <span id="ctatotal"></span></button>
+
+    <p class="codline" id="shipnote"></p>
+    <p class="refund">Povraćaj novca uz našu garanciju od 30 dana</p>
+  </div>
+</section>
+
+<!-- QUOTES -->
+<section class="sec">
+  <div class="wrap">
+    <h2>Šta kažu kupci <span class="ph">PLACEHOLDER</span></h2>
+    <div class="rail" id="q1">
+      <div class="qcard"><p>„Spustila sam ga u vodokotlić i vratila poklopac. Toliko o mom delu posla.”</p><div class="who">— Milica</div></div>
+      <div class="qcard"><p>„Nema više plastičnog držača na obodu ni mirisa hlora u kupatilu.”</p><div class="who">— Nenad</div></div>
+      <div class="qcard"><p>„Uzeo sam za oba kupatila. Postavljanje je bukvalno minut po WC-u.”</p><div class="who">— Dejan</div></div>
+    </div>
+    <div class="dots"><i class="on"></i><i></i><i></i></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS + TESTIMONIAL -->
+<section class="sec" style="background:#fff">
+  <div class="wrap">
+    <details>
+      <summary>Kako radi</summary>
+      <div class="ans">BISTRO stoji uspravno na dnu vodokotlića, na svojim nožicama. Voda pri svakom ispiranju
+      prolazi pored njega i tek onda ulazi u šolju. Ti ne sipaš nikakvu tečnost u šolju i ništa ne
+      uključuješ — nema struje, baterija ni pokretnih delova, i ništa se ne rastvara u vodi.</div>
+    </details>
+    <details>
+      <summary>Da li odgovara mom vodokotliću</summary>
+      <div class="ans">Odgovara standardnim vodokotlićima sa dovoljno prostora na dnu. Postavlja se uspravno
+      i ne treba da dodiruje plovak ni ventil. Ako ti je vodokotlić veoma plitak ili uzak, izmeri prostor
+      pre poručivanja.</div>
+    </details>
+
+    <div class="tcard">
+      <span class="mark">”</span>
+      <div class="hd">
+        <span class="av">🧽</span>
+        <div><div class="nm">Tara M.</div><div class="rl">kupac BISTRO <span class="ph">PLACEHOLDER</span></div></div>
+      </div>
+      <q>Ribala sam WC svake nedelje. Sada spustim BISTRO u vodokotlić i to je cela rutina.</q>
+    </div>
+  </div>
+</section>
+
+<!-- BADGE CARDS -->
+<section class="sec" style="background:#fff;padding-top:0">
+  <div class="wrap cards3">
+    <div class="bcard"><div class="ic">🛡️</div><h3>Garancija 30 dana</h3>
+      <p>Ako se predomisliš, proizvod u nekorišćenom stanju vraćaš u roku od 30 dana uz pun povraćaj novca.</p></div>
+    <div class="bcard"><div class="ic">🚚</div><h3>Dostava po celoj Srbiji</h3>
+      <p>Isporuka za 2–4 radna dana. Dostava je besplatna već od 2 komada.</p></div>
+    <div class="bcard"><div class="ic">💵</div><h3>Plaćanje pouzećem</h3>
+      <p>Plaćaš kuriru na vratima, gotovinom ili karticom. Ne plaćaš ništa unapred.</p></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq"><div class="mqi" id="mqi"></div></div>
+
+<!-- AUTOPILOT -->
+<section class="auto">
+  <div class="wrap">
+    <h2>WC čistač na autopilotu</h2>
+    <q>Spustiš ga jednom u vodokotlić — dalje radi sam, pri svakom ispiranju.</q>
+    <div class="chips"><b>Bez ribanja svake nedelje</b><b>Bez sipanja hemije</b><b>Bez mirisa hlora</b></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec">
+  <div class="wrap">
+    <h2>Recenzije kupaca <span class="ph">PLACEHOLDER</span></h2>
+    <div class="rail" id="q2">
+      <div class="qcard">
+        <h3 style="font-size:18px;margin-bottom:8px">„Kraj gelovima na obodu”</h3>
+        <p>Nemam više onaj plastični držač zakačen za šolju, ni miris hlora u kupatilu. Spustila sam ga
+        u vodokotlić i tu stoji — ne vidi se i ne smeta nikome.</p>
+        <div class="who">Milica J. · Recenzija kupca</div>
+      </div>
+      <div class="qcard">
+        <h3 style="font-size:18px;margin-bottom:8px">„Uzeo sam za oba kupatila”</h3>
+        <p>Imamo dva WC-a pa mi se komplet isplatio. Postavljanje je bukvalno minut — podigneš poklopac,
+        spustiš ga unutra i vratiš poklopac. Ništa se ne zavrće i ništa ne curi.</p>
+        <div class="who">Nenad P. · Recenzija kupca</div>
+      </div>
+    </div>
+    <div class="dots"><i class="on"></i><i></i></div>
+  </div>
+</section>
+
+<!-- HOW DOES IT WORK -->
+<section class="sec" style="background:#fdf3ea">
+  <div class="wrap">
+    <h2>Kako se koristi?</h2>
+    <div class="step"><div class="n">1</div><h3>Otvori vodokotlić</h3>
+      <p>Podigni keramički poklopac i skloni ga sa strane.</p></div>
+    <div class="step"><div class="n">2</div><h3>Spusti BISTRO unutra</h3>
+      <p>Postavi ga uspravno na dno, na nožice. Bez alata i bez zavrtanja.</p></div>
+    <div class="step"><div class="n">3</div><h3>Zatvori i pusti vodu</h3>
+      <p>Vrati poklopac, pusti vodu jednom — i to je cela rutina.</p></div>
+    <img src="assets/howto.jpg" width="1024" height="1024" alt="Kako se koristi BISTRO"
+      style="border-radius:14px;margin-top:6px" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="sec" style="background:#fff">
+  <div class="wrap">
+    <h2>Zašto BISTRO</h2>
+    <div style="overflow-x:auto">
+    <table class="cmp">
+      <thead><tr><th></th><th>BISTRO</th><th>Gel za šolju</th><th>Ribanje četkom</th></tr></thead>
+      <tbody>
+        <tr><td>Radi bez tebe, pri svakom ispiranju</td><td class="yes">✓</td><td class="no">✕</td><td class="no">✕</td></tr>
+        <tr><td>Ništa ne sipaš u šolju</td><td class="yes">✓</td><td class="no">✕</td><td class="no">✕</td></tr>
+        <tr><td>Bez mirisa hlora u kupatilu</td><td class="yes">✓</td><td class="no">✕</td><td class="no">✕</td></tr>
+        <tr><td>Ne dokupljuješ ga svakog meseca</td><td class="yes">✓</td><td class="no">✕</td><td class="yes">✓</td></tr>
+        <tr><td>Ne stoji na vidiku</td><td class="yes">✓</td><td class="no">✕</td><td class="no">✕</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mis">
+  <div class="wrap">
+    <h2>Jedno ispiranje za drugim</h2>
+    <p>Svaka bočica gela koju ne kupiš je jedna plastična bočica manje — i jedna hemikalija manje
+    koja završi u vodi. Zato smo BISTRO napravili tako da ga staviš jednom i zaboraviš.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+  <div class="wrap">
+    <h2>Česta pitanja</h2>
+    <details><summary>Kako BISTRO radi?</summary><div class="ans">BISTRO je uložak koji stoji na dnu vodokotlića, pa voda pri svakom ispiranju prolazi pored njega i tek onda ulazi u šolju. Ti ne sipaš nikakvu tečnost u šolju i ništa ne uključuješ — nema struje, baterija ni pokretnih delova.</div></details>
+    <details><summary>Šta tačno dobijam u paketu?</summary><div class="ans">Svaki komad je jedan BISTRO uložak, pakovan pojedinačno. Uz komplet od 2 i više komada dobijaš i poklone iz ponude iznad.</div></details>
+    <details><summary>Da li menja boju ili ukus vode?</summary><div class="ans">Ne. BISTRO se ne rastvara i ne otpušta tečnost u vodu — zato u šolji nema plavog traga ni mirisa hlora.</div></details>
+    <details><summary>Koliko dugo traje jedan uložak?</summary><div class="ans">Nema potrošni deo koji se rastvara, pa ga ne dokupljuješ svakog meseca kao gel. Tačan vek trajanja naveden je na pakovanju proizvođača.</div></details>
+    <details><summary>Kako plaćam?</summary><div class="ans">Pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata. Ne plaćaš ništa unapred.</div></details>
+    <details><summary>Koliko traje isporuka?</summary><div class="ans">Isporuka je 2–4 radna dana na celoj teritoriji Srbije. Dostava je besplatna već od 2 komada.</div></details>
+    <details><summary>Šta ako mi se ne svidi?</summary><div class="ans">Ako se predomisliš, proizvod u nekorišćenom stanju možeš da vratiš u roku od 30 dana i dobijaš pun povraćaj novca — bez objašnjavanja.</div></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>
+      <a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>
+      <a href="https://rs.unikatko.eu/policies/shipping-policy">Dostava</a>
+      <a href="https://rs.unikatko.eu/policies/refund-policy">Povraćaj novca</a>
+      <a href="https://rs.unikatko.eu/policies/terms-of-service">Uslovi korišćenja</a>
+    </div>
+    <div style="text-align:center">© 2026 Unikatko d.o.o.</div>
+    <div class="dis">
+      ‡ Garancija povraćaja novca važi 30 dana od datuma prijema pošiljke i odnosi se na proizvod u nekorišćenom stanju.<br>
+      * BISTRO je proizvod za održavanje higijene sanitarija. Nije sredstvo za dezinfekciju, nije medicinsko sredstvo
+      i ne zamenjuje redovno čišćenje kupatila.
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------------- offer ---------------- */
+var BASE='https://rs.unikatko.eu', COMPARE=4990, PRODUCT_ID='15652870816009';
+var TIERS=[
+  {qty:4,unit:3190,name:'4 KOMADA',v:'57256841117961',img:'assets/pack4.jpg',badge:'NAJBOLJA PONUDA'},
+  {qty:3,unit:3390,name:'3 KOMADA',v:'57256841085193',img:'assets/pack3.jpg',badge:null},
+  {qty:2,unit:3490,name:'2 KOMADA',v:'57256841052425',img:'assets/pack2.jpg',badge:null},
+  {qty:1,unit:4990,name:'1 KOMAD', v:'57256841019657',img:'assets/hero.jpg', badge:null}
+];
+var GIFTS=[{at:1,cap:'PDF vodič: kupatilo bez ribanja'},{at:2,cap:'Besplatna dostava'},
+           {at:3,cap:'Rukavice za čišćenje'},{at:4,cap:'Poklon iznenađenja'}];
+/* mirrors the source page's own preselection (?variant=43295203131555 = the 4-pack) */
+var sel=0;
+
+function fmt(n){return n.toLocaleString('de-DE');}
+
+function renderTiers(){
+  document.getElementById('tiers').innerHTML=TIERS.map(function(t,i){
+    return '<button class="tile'+(i===sel?' on':'')+'" data-tier="'+i+'" onclick="pick('+i+')">'+
+      (t.badge?'<span class="badge">'+t.badge+'</span>':'')+
+      '<img src="'+t.img+'" width="1024" height="1024" alt="" loading="lazy" decoding="async">'+
+      '<span class="ti"><span class="tn">'+t.name+'</span>'+
+      '<span class="tp">'+fmt(t.unit)+' RSD/kom</span></span></button>';
+  }).join('');
+}
+
+function pick(i){
+  sel=i; renderTiers();
+  var t=TIERS[i], total=t.qty*t.unit, save=COMPARE*t.qty-total;
+  document.getElementById('total').textContent=fmt(total)+' RSD';
+  var sp=document.getElementById('save');
+  if(save>0){sp.className='savepill';sp.textContent='Ušteda '+fmt(save)+' RSD';}
+  else{sp.className='savepill zero';sp.textContent='Osnovna cena';}
+  document.getElementById('ctatotal').textContent=fmt(total)+' RSD'+(t.qty>=2?'':' + dostava');
+  document.getElementById('shipnote').innerHTML = t.qty>=2
+    ? 'Besplatna dostava je uključena u ovu ponudu. Plaćaš pouzećem kada ti kurir donese paket.'
+    : 'Dostava 490 RSD. Već od 2 komada dostava je besplatna. Plaćaš pouzećem kada ti kurir donese paket.';
+}
+
+/* Free shipping rides the store's discount CODES, which count cart QUANTITY —
+   that is why the cart line carries the real quantity (<variant>:<qty>). */
+function shipCode(q){ return q>=3?'BUNDLE3_RS_SHIP':(q===2?'BUNDLE2_RS_SHIP':''); }
+
+function go(){
+  var t=TIERS[sel];
+  var caps=GIFTS.filter(function(g){return t.qty>=g.at;}).map(function(g){return g.cap;});
+  var url=BASE+'/cart/'+t.v+':'+t.qty+
+    '?attributes%5B'+encodeURIComponent('Pokloni')+'%5D='+
+    encodeURIComponent('1x po porudžbini: '+caps.join(' + '));
+  var c=shipCode(t.qty); if(c) url+='&discount='+c;
+  try{fbq('track','InitiateCheckout',{content_type:'product',content_ids:[t.v],
+    value:t.qty*t.unit,currency:'RSD',num_items:t.qty});}catch(e){}
+  location.href=url;
+}
+
+/* ---------------- gallery ---------------- */
+var slides=document.getElementById('slides');
+function slide(d){slides.scrollBy({left:d*slides.clientWidth,behavior:'smooth'});}
+function jump(i){slides.scrollTo({left:i*slides.clientWidth,behavior:'smooth'});}
+(function(){
+  var imgs=[].slice.call(slides.querySelectorAll('img'));
+  document.getElementById('thumbs').innerHTML=imgs.map(function(im,i){
+    var full=im.getAttribute('src'), t=full.replace('assets/','assets/thumbs/');
+    return '<img src="'+t+'" onerror="this.onerror=null;this.src=\''+full+'\'" class="'+
+      (i===0?'on':'')+'" onclick="jump('+i+')" alt="" loading="lazy" decoding="async">';
+  }).join('');
+  slides.addEventListener('scroll',function(){
+    var i=Math.round(slides.scrollLeft/slides.clientWidth);
+    [].forEach.call(document.querySelectorAll('#thumbs img'),function(t,j){
+      t.className=(j===i?'on':'');});
+  },{passive:true});
+})();
+
+/* carousel dots */
+[['q1',3],['q2',2]].forEach(function(p){
+  var el=document.getElementById(p[0]); if(!el) return;
+  var dots=el.parentNode.querySelector('.dots');
+  el.addEventListener('scroll',function(){
+    var i=Math.round(el.scrollLeft/(el.scrollWidth/p[1]));
+    [].forEach.call(dots.children,function(d,j){d.className=(j===i?'on':'');});
+  },{passive:true});
+});
+
+/* marquee (duplicated once so the -50% translate loops seamlessly) */
+(function(){
+  var chips=['Plaćanje pouzećem','Bez sipanja hemije u šolju','Bez struje i baterija',
+    'Ne rastvara se u vodi','Ne vidi se u kupatilu','30 dana za povraćaj','Isporuka 2–4 dana'];
+  var one=chips.map(function(c){return '<span>'+c+'</span>';}).join('');
+  document.getElementById('mqi').innerHTML=one+one;
+})();
+
+renderTiers(); pick(sel);
+
+/* ---------------- pixel ---------------- */
+try{fbq('track','ViewContent',{content_type:'product',content_ids:[PRODUCT_ID],
+  content_name:document.title,currency:'RSD'});}catch(e){}
+
+/* LP behaviour events — generic version for the hand-written LP B pages. */
+(function(){
+  var SLUG=location.pathname.replace(/\//g,'')||'lp', sent={};
+  function ev(n,x){ if(sent[n])return; sent[n]=1;
+    try{ fbq('trackCustom',n,Object.assign({content_name:SLUG},x||{})); }catch(e){} }
+  var t0=Date.now();
+  setTimeout(function(){ev('LP_Engaged30');},30000);
+  setTimeout(function(){ev('LP_Engaged120');},120000);
+  function depth(){var h=document.documentElement,
+    p=(h.scrollTop+innerHeight)/h.scrollHeight*100;
+    if(p>=50)ev('LP_Scroll50'); if(p>=90)ev('LP_Scroll90');}
+  addEventListener('scroll',depth,{passive:true}); setInterval(depth,500);
+  document.addEventListener('click',function(e){
+    var t=e.target; if(!t||!t.closest)return;
+    if(t.closest('summary,details'))ev('LP_FAQ');
+    if(t.closest('[data-tier],.tile'))ev('LP_TierSwitch');
+    if(t.closest('.thumbs,.nav'))ev('LP_Gallery');
+  },true);
+  addEventListener('pagehide',function(){
+    try{fbq('trackCustom','LP_Exit',{content_name:SLUG,
+      seconds:Math.round((Date.now()-t0)/1000)});}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

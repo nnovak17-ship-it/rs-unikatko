@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LEDNIK | 4D rashlađujući ulošci za patike i cipele</title>
+<link rel="preload" as="image" href="assets/hero.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<!-- Meta Pixel — Unikatko RS pixel 1337030437202208 (ad account Unikatko RS / 1245542096799104) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1337030437202208');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+ src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
+<style>
+/* ==========================================================================
+   LP B — 1:1 structural replica of stepease.eu/es/stepease/t1/v1/lp1
+   Hand-built (NOT from template/skeleton.html). Shares the LEDNIK Shopify
+   product + the same per-unit cart permalink logic as LP A.
+   Font: system stack approximating the source's Mulish (no external request —
+   these pages carry paid traffic and every blocking request costs conversions).
+   ========================================================================== */
+:root{
+  --o:#ff5b00; --o-d:#e04f00;
+  --o-soft:#fde8de;      /* selected tier card */
+  --o-pill:#ffd4b8;      /* "+ besplatna dostava" pill */
+  --card:#fffcfa;        /* unselected tier card */
+  --bd:#f5d9cb;          /* card border */
+  --ink:#0b0b0b; --muted:#585858; --line:#e6e6e6;
+  --f:'Nunito Sans','Avenir Next','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--f);color:var(--ink);background:#fff;line-height:1.5;
+  -webkit-font-smoothing:antialiased;padding-bottom:86px}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{margin:0}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px}
+.center{text-align:center}
+button{font-family:inherit}
+
+/* ---------- marquee ---------- */
+.mq{overflow:hidden;white-space:nowrap;background:#000;color:#fff}
+.mq .t{display:inline-block;padding:9px 0;font-weight:800;font-size:13px;
+  letter-spacing:.02em;animation:mv 22s linear infinite}
+.mq .t span{padding:0 22px}
+.mq.light{background:var(--o-soft);color:#7a2e00}
+.mq.o{background:var(--o);color:#fff}
+@keyframes mv{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.mq .t{animation:none}}
+
+/* ---------- header ---------- */
+header.hd{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+.logo{background:var(--o);color:#fff;font-weight:900;font-size:22px;letter-spacing:-.02em;
+  padding:8px 16px;border-radius:9px;text-decoration:none}
+.cart{width:30px;height:30px;color:#111}
+
+/* ---------- gallery ---------- */
+.gal{position:relative;background:#eef4f8}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.slides::-webkit-scrollbar{display:none}
+.slides img{min-width:100%;aspect-ratio:1/1;object-fit:cover;scroll-snap-align:center}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{width:62px;height:62px;object-fit:cover;border-radius:9px;flex:none;
+  border:2px solid transparent;cursor:pointer}
+.thumbs img.on{border-color:var(--o)}
+
+/* ---------- title block ---------- */
+.stars{color:var(--o);font-size:19px;letter-spacing:1px}
+.rate{display:flex;align-items:center;gap:9px;padding:14px 0 6px;font-size:15px}
+h1{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin:4px 0 12px}
+.prow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.p-now{color:var(--o);font-size:28px;font-weight:900}
+.p-was{font-size:22px;font-weight:800;text-decoration:line-through;color:#111}
+.p-badge{background:var(--o);color:#fff;font-weight:800;font-size:14px;border-radius:20px;padding:4px 12px}
+.ticks{margin:14px 0 0;padding:0;list-style:none}
+.ticks li{font-weight:800;font-size:16px;margin:5px 0}
+.guide{display:inline-block;margin:14px 0 0;font-size:15px;font-weight:700;
+  color:#111;text-decoration:underline;text-underline-offset:3px;background:none;border:0;cursor:pointer;padding:0}
+.endsoon{margin:18px 0 12px;text-align:center;font-weight:900;font-size:15px;letter-spacing:.03em}
+
+/* ---------- tiers ---------- */
+.tier{position:relative;border:1px solid var(--bd);background:var(--card);border-radius:14px;
+  padding:14px 14px;margin:24px 0 0;cursor:pointer}
+.tier.on{border:2px solid var(--o);background:var(--o-soft);padding:13px 13px}
+.tier .top{display:flex;align-items:flex-start;gap:10px}
+.radio{width:22px;height:22px;border-radius:50%;border:2px solid #f0b48c;background:#fff;flex:none;margin-top:3px}
+.tier.on .radio{border-color:var(--o);box-shadow:inset 0 0 0 4px #fff;background:var(--o)}
+.tier .l{flex:1;min-width:0}
+.tier .nm{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tier .nm b{font-size:21px;font-weight:900}
+.save-b{background:var(--o);color:#fff;font-size:11.5px;font-weight:900;letter-spacing:.02em;
+  border-radius:6px;padding:4px 8px;text-transform:uppercase}
+.tier .sv{font-size:15px;margin-top:2px}
+.ship-pill{display:inline-block;margin-top:7px;background:var(--o-pill);color:#8a3a00;
+  font-size:13px;font-weight:800;border-radius:20px;padding:4px 12px}
+.tier .r{text-align:right;flex:none}
+.tier .r .u{color:var(--o);font-size:20px;font-weight:900}
+.tier .r .u i{color:#111;font-style:normal;font-size:15px;font-weight:700}
+.tier .r .w{font-size:16px;font-weight:800;text-decoration:line-through;color:#111}
+.corner{position:absolute;top:-13px;right:10px;background:#000;color:#fff;font-size:12.5px;
+  font-weight:800;border-radius:8px;padding:5px 11px;white-space:nowrap}
+/* per-unit size rows, revealed inside the selected card */
+.units{margin-top:12px}
+.units .uh{font-size:14px;font-weight:800;padding-left:52px}
+.units .uhint{margin:2px 0 8px;font-size:12.5px;color:#7a4a2c;padding-left:52px}
+.urow{display:flex;align-items:center;gap:10px;margin-top:8px}
+.urow .n{font-weight:900;font-size:17px;width:34px;flex:none}
+.urow select{flex:1;min-width:0;font-family:inherit;font-size:16px;font-weight:600;
+  padding:11px 12px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:#111}
+
+/* ---------- CTA ---------- */
+.cta{display:block;width:100%;background:var(--o);color:#fff;border:0;border-radius:10px;
+  font-size:19px;font-weight:900;letter-spacing:.02em;text-transform:uppercase;
+  padding:24px 16px;margin:22px 0 0;cursor:pointer}
+.cta:active{background:var(--o-d)}
+
+/* ---------- order bump ---------- */
+.bump-h{margin:22px 0 8px;font-size:17px}
+.bump{border:2px solid var(--o);border-radius:14px;background:#fff;padding:12px;display:flex;gap:12px}
+.bump img{width:118px;height:118px;object-fit:cover;border-radius:10px;flex:none}
+.bump .b{min-width:0}
+.bump h4{font-size:17px;font-weight:900;line-height:1.2}
+.bump p{margin:6px 0 8px;font-size:14.5px;color:var(--muted)}
+.bump .pp{display:flex;align-items:center;gap:8px}
+.bump .pp b{background:var(--o);color:#fff;font-size:16px;font-weight:900;border-radius:8px;padding:4px 10px}
+.bump .pp s{font-size:15px;font-weight:800}
+.bump label{display:flex;align-items:center;gap:9px;margin-top:9px;font-weight:800;font-size:15px;cursor:pointer}
+.bump input{width:24px;height:24px;accent-color:var(--o)}
+
+/* ---------- delivery / trust ---------- */
+.deliv{margin-top:18px;text-align:center;font-size:16.5px;font-weight:800}
+.pays{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0;
+  font-size:11px;font-weight:900;color:#3b3b3b}
+.pays span{border:1px solid var(--line);border-radius:6px;padding:5px 9px;background:#fff}
+.rowline{border-top:1px solid var(--line);padding:9px 0;text-align:center;font-size:15.5px}
+.rowline b{font-weight:800}
+.stock{margin:6px 0 0;text-align:center;font-weight:800;font-size:15.5px}
+.badges{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:18px 0 4px;text-align:center}
+.badges .ic{font-size:26px}
+.badges b{display:block;font-size:14px;font-weight:800;margin-top:4px;line-height:1.25}
+
+/* ---------- FAQ ---------- */
+.faq{margin-top:18px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-of-type{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:16px 34px 16px 34px;position:relative;
+  font-size:16px;font-weight:800}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .fi{position:absolute;left:0;top:14px;font-size:18px}
+.faq summary::after{content:"+";position:absolute;right:4px;top:11px;font-size:26px;font-weight:400}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin:0 0 16px;font-size:15px;color:#2b2b2b}
+
+/* ---------- countdown ---------- */
+.cdwrap{margin:26px 0 8px;text-align:center}
+.cdwrap h3{font-size:18px;font-weight:900;letter-spacing:.01em}
+.cd{display:flex;gap:12px;justify-content:center;margin-top:12px}
+.cd div{text-align:center}
+.cd b{display:block;background:var(--o);color:#fff;font-size:32px;font-weight:900;
+  border-radius:10px;padding:8px 14px;min-width:74px}
+.cd i{font-style:normal;font-size:14px;color:#333}
+
+/* ---------- testimonials ---------- */
+.tst{background:var(--o-soft);border-radius:14px;padding:16px;margin-top:14px;display:flex;gap:12px}
+.tst .av{width:52px;height:52px;border-radius:50%;background:var(--o);color:#fff;flex:none;
+  display:grid;place-items:center;font-weight:900;font-size:19px}
+.tst p{margin:0;font-size:15px}
+.tst .who{margin-top:6px;font-weight:800;font-size:14px}
+
+/* ---------- tiles / bands ---------- */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.tile{border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.tile .ic{font-size:28px}
+.tile b{display:block;margin-top:6px;font-size:15px}
+.band{margin-top:28px}
+.band h2{font-size:26px;font-weight:900;letter-spacing:-.01em}
+.band p{font-size:16px;color:#2b2b2b}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.act{border:1px solid var(--line);border-radius:12px;padding:12px;font-weight:700;font-size:14.5px}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.vs .c{border-radius:14px;padding:14px;border:1px solid var(--line)}
+.vs .c.me{border:2px solid var(--o);background:var(--o-soft)}
+.vs .c h4{font-size:15px;font-weight:900;margin-bottom:8px}
+.vs .c ul{margin:0;padding-left:18px;font-size:14px}
+.vs .c li{margin:5px 0}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;text-align:center}
+.facts b{display:block;color:var(--o);font-size:26px;font-weight:900}
+.facts span{font-size:13.5px}
+table.cmp{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
+table.cmp th,table.cmp td{padding:11px 6px;border-bottom:1px solid var(--line);text-align:center}
+table.cmp td:first-child,table.cmp th:first-child{text-align:left}
+table.cmp th.me{background:var(--o);color:#fff;border-radius:8px 8px 0 0}
+td.me{background:var(--o-soft)}
+.yes{color:#1a9e3f;font-weight:900} .no{color:#c0c0c0;font-weight:900}
+.rev{border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:12px}
+.rev .hd{display:flex;justify-content:space-between;font-weight:800;font-size:14px}
+.rev p{margin:8px 0 0;font-size:14.5px;color:#2b2b2b}
+footer{background:#f6f6f6;margin-top:30px;padding:22px 16px 30px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);margin:0 6px}
+footer .fb{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-weight:800;
+  color:#111;font-size:14px;margin-bottom:14px}
+
+/* ---------- sticky bottom bar ---------- */
+.satc{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;
+  border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(0,0,0,.10);
+  padding:9px 14px;display:flex;align-items:center;gap:12px}
+.satc .i{min-width:0;flex:1}
+.satc .i .t{font-size:12.5px;font-weight:700;color:#333;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.satc .i .p{font-size:16px;font-weight:900}
+.satc .i .p s{color:#777;font-weight:700;font-size:13px;margin-left:5px}
+.satc button{background:var(--o);color:#fff;border:0;border-radius:9px;font-size:16px;
+  font-weight:900;padding:13px 20px;white-space:nowrap;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div class="mq"><div class="t" id="mq1"></div></div>
+
+<header class="hd">
+  <a class="logo" href="#top">lednik.</a>
+  <svg class="cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+    <path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+</header>
+
+<main id="top">
+
+<div class="gal">
+  <div class="slides" id="slides">
+    <img src="assets/hero.jpg" alt="LEDNIK 4D ulošci — sveže i suvo ceo dan" fetchpriority="high" decoding="async" width="1024" height="1024">
+    <img src="assets/product.jpg" alt="LEDNIK ulošci — par, gornja i donja strana" loading="lazy" decoding="async" width="1024" height="1024">
+    <img src="assets/lifestyle.jpg" alt="LEDNIK uložak se ubacuje u patiku" loading="lazy" decoding="async" width="1024" height="1024">
+    <img src="assets/benefits.jpg" alt="Zašto baš LEDNIK ulošci" loading="lazy" decoding="async" width="1024" height="1024">
+    <img src="assets/sizes.jpg" alt="LEDNIK ulošci — veličine od 35-36 do 43-44" loading="lazy" decoding="async" width="1024" height="1024">
+    <img src="assets/howto.jpg" alt="Kako se ubacuju LEDNIK ulošci" loading="lazy" decoding="async" width="1024" height="1024">
+  </div>
+</div>
+<div class="thumbs" id="thumbs"></div>
+
+<div class="wrap">
+  <!-- PLACEHOLDER: rating + review count are invented — replace with real numbers before ads. -->
+  <div class="rate"><span class="stars">★★★★★</span><span>Odlično <b>4,8</b> | 1.169 recenzija</span></div>
+
+  <h1>LEDNIK | 4D rashlađujući ulošci</h1>
+
+  <div class="prow">
+    <span class="p-now" id="pNow">1.390 RSD</span>
+    <span class="p-was" id="pWas">2.350 RSD</span>
+    <span class="p-badge" id="pBadge">41%</span>
+  </div>
+
+  <ul class="ticks">
+    <li>✔ Vazduh kruži pri svakom koraku</li>
+    <li>✔ Neutrališe neprijatan miris</li>
+    <li>✔ Amortizuje svaki korak</li>
+  </ul>
+
+  <button class="guide" id="guideBtn" type="button">Vodič za veličine</button>
+
+  <div class="endsoon">PONUDA USKORO ISTIČE</div>
+
+  <div id="tiers"></div>
+
+  <button class="cta" id="atc" onclick="goCheckout()">Dodaj u korpu</button>
+
+  <div class="bump-h">Kupi zajedno i uštedi:</div>
+  <div class="bump">
+    <img src="assets/product.jpg" alt="Dodatni par LEDNIK uložaka" loading="lazy" decoding="async" width="1024" height="1024">
+    <div class="b">
+      <h4>+1 dodatni par LEDNIK</h4>
+      <p>Jedan par u patike, drugi u radne cipele — ne moraš da ih prebacuješ iz obuće u obuću.</p>
+      <div class="pp"><b>1.390 RSD</b><s>2.350 RSD</s></div>
+      <label><input type="checkbox" id="bump" onchange="onBump()"> Dodaj u porudžbinu</label>
+    </div>
+  </div>
+
+  <div class="deliv">🚚 Poruči danas, stiže ti <span id="eta">u utorak</span>!</div>
+  <div class="pays"><span>POUZEĆEM</span><span>VISA</span><span>MASTERCARD</span><span>MAESTRO</span><span>DINA</span></div>
+  <div class="rowline">📦 Roba <b>na stanju u Srbiji</b></div>
+  <div class="rowline">🚚 <b>Isporuka 2–4 radna dana</b></div>
+  <div class="rowline">💵 <b>Plaćanje pouzećem</b> — kod kurira</div>
+  <!-- PLACEHOLDER: stock number is invented — set a real one or remove before ads. -->
+  <div class="stock">🟠 Ostalo je još <b>19</b> kompleta na stanju!</div>
+
+  <div class="badges">
+    <div><div class="ic">🚚</div><b>Sigurna isporuka sa praćenjem</b></div>
+    <div><div class="ic">😊</div><b>30 dana za povraćaj</b></div>
+    <div><div class="ic">🎧</div><b>Podrška na srpskom</b></div>
+  </div>
+
+  <div class="faq" id="faq">
+    <details id="faqSize"><summary><span class="fi">📏</span>Koju veličinu da izaberem?</summary>
+      <p>Biraš po broju obuće koji inače nosiš — dostupne su 35-36, 37-38, 39-40, 41-42 i 43-44. Ako si između dva broja, uzmi veći: uložak lako skratiš makazama po liniji na peti.</p></details>
+    <details><summary><span class="fi">👟</span>Da li LEDNIK staje u moju obuću?</summary>
+      <p>Najbolje legnu u patikama i sportskoj obući koja ima vadljiv uložak. Debljina je oko 8 mm, pa uvek izvadi fabrički uložak i stavi LEDNIK na njegovo mesto — ne stavljaj ga preko. U vrlo uskim cipelama ili salonkama bez vadljivog uloška nisu najbolji izbor.</p></details>
+    <details><summary><span class="fi">💨</span>Kako mreža hladi i suši?</summary>
+      <p>Osnova je otvorena 4D mreža od elastičnih ćelija. Pri svakom koraku se skuplja i vraća, pa kroz nju struji vazduh i vlaga se ne zadržava u obući. Zbog toga stopala ostaju suva, a obuća sveža.</p></details>
+    <details><summary><span class="fi">🧼</span>Mogu li da ih perem?</summary>
+      <p>Možeš da ih ispereš mlakom vodom i ostaviš da se ocede i osuše na vazduhu, van direktnog sunca — mreža se brzo suši. Ne idu u veš mašinu i ne suše se na radijatoru.</p></details>
+    <details><summary><span class="fi">⏳</span>Koliko traju?</summary>
+      <p>Uz svakodnevno nošenje jedan par lepo izdrži oko mesec do dva. Zato većina kupaca i uzima komplet — imaš rezervu i ne moraš da poručuješ ponovo.</p></details>
+    <details><summary><span class="fi">🏷️</span>Mogu li različite veličine u kompletu?</summary>
+      <p>Možeš. Kada izabereš komplet, za svaki par posebno biraš veličinu — jedan par za tebe, drugi za nekog u kući.</p></details>
+    <details><summary><span class="fi">📦</span>Isporuka i plaćanje</summary>
+      <p>Isporuka 2–4 radna dana na celoj teritoriji Srbije. Plaćaš pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata. Dostava je besplatna za komplete od 2 i više pari.</p></details>
+    <details><summary><span class="fi">↩️</span>Povraćaj novca</summary>
+      <p>Ako se predomisliš, proizvod u nekorišćenom stanju možeš da vratiš u roku od 30 dana i dobiješ pun povraćaj novca — bez objašnjavanja i bez komplikacija.</p></details>
+  </div>
+
+  <div class="cdwrap">
+    <h3>EKSKLUZIVNA PONUDA — POSLEDNJA PRILIKA!</h3>
+    <div class="cd">
+      <div><b id="cdH">02</b><i>Sati</i></div>
+      <div><b id="cdM">24</b><i>Minuta</i></div>
+      <div><b id="cdS">05</b><i>Sekundi</i></div>
+    </div>
+  </div>
+
+  <!-- PLACEHOLDER: testimonials are illustrative, not collected from real customers. -->
+  <div class="tst"><div class="av">N</div><div><p>Osam sati u radnim cipelama i leti je to bilo neizdrživo. Ubacio sam ih u ponedeljak i prvi put mi čarape uveče nisu bile mokre.</p><div class="who">— Nenad</div></div></div>
+  <div class="tst"><div class="av">D</div><div><p>Jedan par u patike za teretanu, jedan u cipele, ostalo mužu. Kao da hodaš po jastuku, a obuća posle ne miriše.</p><div class="who">— Dragana</div></div></div>
+  <div class="tst"><div class="av">M</div><div><p>Platio kuriru na vrata, sve kako piše. Veličina 41-42 legla savršeno u patike, nisam morao ništa da doterujem.</p><div class="who">— Miloš</div></div></div>
+
+  <div class="tiles">
+    <div class="tile"><div class="ic">💨</div><b>Vazduh kruži</b></div>
+    <div class="tile"><div class="ic">💧</div><b>Suvo ceo dan</b></div>
+    <div class="tile"><div class="ic">🌿</div><b>Bez neprijatnog mirisa</b></div>
+    <div class="tile"><div class="ic">🫧</div><b>Mekan korak</b></div>
+  </div>
+
+  <section class="band center">
+    <h2>Suva i sveža stopala, ceo dan</h2>
+    <p>Otvorena 4D mreža umesto ravnog uloška: vazduh struji pri svakom koraku, vlaga se ne zadržava, a mreža se skuplja i vraća kao mali jastuk pod stopalom.</p>
+  </section>
+</div>
+
+<div class="mq light"><div class="t" id="mq2"></div></div>
+
+<div class="wrap">
+  <section class="band">
+    <h2 class="center">LEDNIK razlika</h2>
+    <div class="vs">
+      <div class="c"><h4>Običan ravan uložak</h4><ul>
+        <li>Zatvorena pena</li><li>Vlaga se zadržava</li><li>Sabije se za par nedelja</li><li>Teško se suši</li></ul></div>
+      <div class="c me"><h4>LEDNIK 4D mreža</h4><ul>
+        <li>Otvorena mreža, 8 mm</li><li>Vazduh struji pri koraku</li><li>Vraća se u oblik</li><li>Ispereš i brzo se osuši</li></ul></div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="ic">💨</div><b>Bolja cirkulacija vazduha</b></div>
+      <div class="tile"><div class="ic">🫧</div><b>Mekši doskok</b></div>
+      <div class="tile"><div class="ic">✂️</div><b>Skratiš po liniji</b></div>
+      <div class="tile"><div class="ic">🧼</div><b>Lako se pere</b></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <h2 class="center">Za sve što radiš u toku dana</h2>
+    <div class="acts">
+      <div class="act">👷 Posao u smenama</div>
+      <div class="act">🏃 Trening i trčanje</div>
+      <div class="act">🐕 Šetnja sa psom</div>
+      <div class="act">🛍️ Grad i kupovina</div>
+      <div class="act">⛰️ Planinarenje</div>
+      <div class="act">✈️ Putovanja</div>
+      <div class="act">🥾 Radna i zaštitna obuća</div>
+      <div class="act">🧍 Ceo dan na nogama</div>
+    </div>
+  </section>
+</div>
+
+<div class="mq o"><div class="t" id="mq3"></div></div>
+
+<div class="wrap">
+  <section class="band">
+    <h2 class="center">Zašto baš LEDNIK</h2>
+    <div class="facts">
+      <div><b>8 mm</b><span>otvorena 4D mreža</span></div>
+      <div><b>5</b><span>veličina (35–44)</span></div>
+      <div><b>2–4</b><span>dana do isporuke</span></div>
+    </div>
+    <table class="cmp">
+      <thead><tr><th></th><th class="me">LEDNIK</th><th>Obični ulošci</th></tr></thead>
+      <tbody>
+        <tr><td>Prozračna 4D mreža</td><td class="me"><span class="yes">✓</span></td><td><span class="no">✕</span></td></tr>
+        <tr><td>Amortizuje korak</td><td class="me"><span class="yes">✓</span></td><td><span class="no">✕</span></td></tr>
+        <tr><td>Neutrališe miris</td><td class="me"><span class="yes">✓</span></td><td><span class="no">✕</span></td></tr>
+        <tr><td>Perivo i brzo se suši</td><td class="me"><span class="yes">✓</span></td><td><span class="no">✕</span></td></tr>
+        <tr><td>Skratiš na svoj broj</td><td class="me"><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Plaćaš pouzećem</td><td class="me"><span class="yes">✓</span></td><td><span class="no">✕</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="band">
+    <h2 class="center">Kako radi 4D mreža</h2>
+    <p>Umesto pune pene, osnova uloška je mreža od elastičnih ćelija otvorenih sa svih strana. Kada spustiš stopalo, ćelije se skupe i istisnu topao vazduh; kada podigneš nogu, vraćaju se u oblik i uvuku svež. Tako obuća „diše" pri svakom koraku, a vlaga — glavni razlog neprijatnog mirisa — nema gde da se zadrži. Gornja strana je meka teksturisana tkanina, prijatna direktno pod stopalom ili preko čarape.</p>
+  </section>
+
+  <!-- PLACEHOLDER: customer reviews below are illustrative, not collected. -->
+  <section class="band">
+    <h2 class="center">Šta kažu kupci</h2>
+    <div class="rev"><div class="hd"><span>N*** S*</span><span class="stars">★★★★★</span></div>
+      <p>Radim u zaštitnoj obući, betonski pod, 8–10 sati dnevno. Uzeo sam komplet od 3 para i menjam ih na svaka dva dana. Razlika se najviše oseti uveče — noge nisu onako „kuvane" kao pre.</p></div>
+    <div class="rev"><div class="hd"><span>D***** M*</span><span class="stars">★★★★★</span></div>
+      <p>Kupila sam za sebe i muža, različite veličine u istoj porudžbini. Stiglo za tri dana, plaćeno kuriru. Meke su, a u patikama se ne oseti da je nešto dodato osim što je udobnije.</p></div>
+    <div class="rev"><div class="hd"><span>M**** J*</span><span class="stars">★★★★★</span></div>
+      <p>Trčim tri puta nedeljno. Izvadio sam fabričke uloške i ubacio ove — patika je ostala ista po broju. Posle trčanja ih isperem i do sutra su suvi.</p></div>
+  </section>
+
+  <section class="band center">
+    <h2>Daj svojim stopalima ono što zaslužuju</h2>
+    <p>Bilo da si ceo dan na nogama ili treniraš — LEDNIK 4D ulošci drže stopala suvim, sveže i sa mekim korakom. Plaćaš tek kada ti paket stigne na vrata.</p>
+    <button class="cta" onclick="scrollToOffer()">Preuzmi ponudu</button>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="fb"><span>🚚 Isporuka 2–4 dana</span><span>💵 Plaćanje pouzećem</span><span>📦 Roba u Srbiji</span></div>
+  <div>
+    <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>·
+    <a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>·
+    <a href="https://rs.unikatko.eu/policies/shipping-policy">Dostava</a>·
+    <a href="https://rs.unikatko.eu/policies/refund-policy">Povraćaj novca</a>·
+    <a href="https://rs.unikatko.eu/policies/terms-of-service">Uslovi korišćenja</a>
+  </div>
+  <p>© 2026 Unikatko d.o.o.</p>
+  <p style="font-size:12px;line-height:1.45">‡ Garancija povraćaja novca važi 30 dana od datuma prijema pošiljke i odnosi se na proizvod u nekorišćenom stanju.<br>
+  * LEDNIK ulošci su proizvod za svakodnevnu udobnost i higijenu obuće i nisu medicinsko sredstvo. Ne služe za lečenje, dijagnostikovanje niti sprečavanje bilo koje bolesti i ne zamenjuju savet lekara. Ako imaš zdravstvenih tegoba sa stopalima, obrati se lekaru.</p>
+</footer>
+
+<section class="satc" id="satc" style="display:none">
+  <div class="i">
+    <div class="t">LEDNIK | 4D rashlađujući ulošci</div>
+    <div class="p"><span id="sPrice">1.390 RSD</span><s id="sWas">2.350 RSD</s></div>
+  </div>
+  <button onclick="goCheckout()">Poruči odmah</button>
+</section>
+
+<script>
+/* CFG mirrors pages/lednik-ulosci/page.json — LP A and LP B MUST sell the same
+   offer, so the tier ladder, sizes and variant ids are copied verbatim and the
+   cart-permalink logic below is the same code LP A's template generates. */
+const CFG = {
+  currency:"RSD", numberLocale:"de-DE",
+  compareAt:2350, defaultTier:0, freeShippingQty:2,
+  checkoutBase:"https://rs.unikatko.eu",
+  perUnitVariants:true,
+  colorLabel:"Veličina:",
+  colors:[{name:"35-36"},{name:"37-38"},{name:"39-40"},{name:"41-42"},{name:"43-44"}],
+  tiers:[
+    {qty:1,unit:1390,name:"1 par",badge:null,variantId:"57244391407881",
+     variantsByColor:{"35-36":"57244391407881","37-38":"57244391440649","39-40":"57244391473417","41-42":"57244391506185","43-44":"57244391538953"}},
+    {qty:2,unit:995,name:"2 para",badge:"🔥 Najpopularnije",variantId:"57244391571721",
+     variantsByColor:{"35-36":"57244391571721","37-38":"57244391604489","39-40":"57244391637257","41-42":"57244391670025","43-44":"57244391702793"}},
+    {qty:3,unit:830,name:"3 para",badge:null,variantId:"57244391735561",
+     variantsByColor:{"35-36":"57244391735561","37-38":"57244391768329","39-40":"57244391801097","41-42":"57244391833865","43-44":"57244391866633"}},
+    {qty:4,unit:740,name:"4 para",badge:"Najbolja ponuda",variantId:"57244391899401",
+     variantsByColor:{"35-36":"57244391899401","37-38":"57244391932169","39-40":"57244391964937","41-42":"57244391997705","43-44":"57244392030473"}}
+  ],
+  gifts:[
+    /* Quote style copied byte-for-byte from page.json so LP A and LP B write an
+       IDENTICAL `Pokloni` cart attribute — ops reads one string, not two. */
+    {at:1,cap:"PDF vodič „Suva stopala\""},
+    {at:2,cap:"Besplatna dostava"},
+    {at:3,cap:"Putna kesica za obuću"},
+    {at:4,cap:"Poklon iznenađenja"}
+  ],
+  labels:{
+    notConnected:"Pregled — kasa još nije povezana.",
+    giftAttrKey:"Pokloni", giftAttrPrefix:"1x po porudžbini: "
+  }
+};
+const BUMP_PRICE = 1390;   /* one extra pair, at the single-pair price */
+
+const fmt = n => new Intl.NumberFormat(CFG.numberLocale).format(n) + ' ' + CFG.currency;
+let selected = CFG.defaultTier;
+let picks = [0];              /* size index chosen per unit */
+const pickTouched = [];
+let colorIdx = 0;
+
+function syncPicks(){
+  const n = CFG.tiers[selected].qty || 1;
+  if (picks[0] === undefined) picks[0] = 0;
+  for (let i = 1; i < n; i++){
+    if (!pickTouched[i] || picks[i] === undefined) picks[i] = picks[0];
+  }
+  colorIdx = picks[0];
+}
+function variantFor(t, ci){
+  const c = CFG.colors[ci] || CFG.colors[0];
+  return (t.variantsByColor && t.variantsByColor[c.name]) || t.variantId;
+}
+
+/* --- cart: one line per distinct variant, quantity-collapsed (same as LP A) --- */
+function cartLines(){
+  const t = CFG.tiers[selected];
+  syncPicks();
+  const order = [], n = {};
+  for (let i = 0; i < (t.qty || 1); i++){
+    const vid = variantFor(t, picks[i]);
+    if (!vid) return [];
+    if (n[vid] === undefined){ n[vid] = 0; order.push(vid); }
+    n[vid]++;
+  }
+  if (document.getElementById('bump').checked){
+    const bv = variantFor(CFG.tiers[0], picks[0]);   /* +1 pair, single-pair variant */
+    if (bv){ if (n[bv] === undefined){ n[bv] = 0; order.push(bv); } n[bv]++; }
+  }
+  return order.map(v => v + ':' + n[v]);
+}
+/* Gift obligation rides on a cart ATTRIBUTE so ops sees it once per order,
+   never once per line (a 4-line cart must not trigger 4x the gifts). */
+function giftAttr(){
+  const key = CFG.labels.giftAttrKey;
+  if (!key) return '';
+  const qty = CFG.tiers[selected].qty;
+  const caps = CFG.gifts.filter(g => qty >= g.at).map(g => g.cap);
+  if (!caps.length) return '';
+  const val = (CFG.labels.giftAttrPrefix || '') + caps.join(' + ');
+  return '?attributes%5B' + encodeURIComponent(key) + '%5D=' + encodeURIComponent(val);
+}
+/* Free shipping is a discount CODE on the permalink (store rule), counting cart
+   quantity — which per-unit line items satisfy. qty 1 gets no code. */
+function shipCode(){
+  const qty = CFG.tiers[selected].qty + (document.getElementById('bump').checked ? 1 : 0);
+  if (qty >= 3) return 'BUNDLE3_RS_SHIP';
+  if (qty === 2) return 'BUNDLE2_RS_SHIP';
+  return '';
+}
+function checkoutUrl(){
+  const lines = cartLines();
+  if (!CFG.checkoutBase || !lines.length) return '';
+  let url = CFG.checkoutBase.replace(/\/+$/,'') + '/cart/' + lines.join(',') + giftAttr();
+  const code = shipCode();
+  if (code) url += (url.includes('?') ? '&' : '?') + 'discount=' + code;
+  return url;
+}
+function goCheckout(){
+  const url = checkoutUrl();
+  if (url){
+    try{
+      const t = CFG.tiers[selected];
+      fbq('track','InitiateCheckout',{content_type:'product',
+        content_ids: cartLines().map(l => l.split(':')[0]),
+        value: total(), currency:'RSD', num_items: t.qty + (document.getElementById('bump').checked?1:0)});
+    }catch(e){}
+    location.href = url; return;
+  }
+  alert(CFG.labels.notConnected + '\n\n' + CFG.tiers[selected].name);
+}
+function total(){
+  return CFG.tiers[selected].qty * CFG.tiers[selected].unit
+       + (document.getElementById('bump').checked ? BUMP_PRICE : 0);
+}
+
+/* ---- tiers ---- */
+function renderTiers(){
+  syncPicks();
+  const html = CFG.tiers.map((t,i)=>{
+    const save = Math.round((1 - t.unit / CFG.compareAt) * 100);
+    const saved = (CFG.compareAt - t.unit) * t.qty;
+    const on = i === selected;
+    const corner = t.badge ? `<span class="corner">${t.badge}</span>` : '';
+    const ship = t.qty >= CFG.freeShippingQty
+      ? `<span class="ship-pill">+ besplatna dostava</span>` : '';
+    let units = '';
+    if (on && t.qty > 1){
+      const rows = [];
+      for (let u = 0; u < t.qty; u++){
+        const opts = CFG.colors.map((c,ci)=>
+          `<option value="${ci}" ${picks[u]===ci?'selected':''}>${c.name}</option>`).join('');
+        rows.push(`<div class="urow"><span class="n">#${u+1}</span>
+          <select onchange="setPick(${u},this.value)" aria-label="Veličina za par ${u+1}">${opts}</select></div>`);
+      }
+      units = `<div class="units"><div class="uh">${CFG.colorLabel}</div>
+        <p class="uhint">Za svaki par biraš veličinu posebno — slobodno kombinuj brojeve.</p>
+        ${rows.join('')}</div>`;
+    } else if (on){
+      const opts = CFG.colors.map((c,ci)=>
+        `<option value="${ci}" ${picks[0]===ci?'selected':''}>${c.name}</option>`).join('');
+      units = `<div class="units"><div class="uh">${CFG.colorLabel}</div>
+        <div class="urow"><span class="n">#1</span>
+        <select onchange="setPick(0,this.value)" aria-label="Veličina">${opts}</select></div></div>`;
+    }
+    return `<div class="tier ${on?'on':''}" onclick="pick(${i})">
+      ${corner}
+      <div class="top">
+        <div class="radio"></div>
+        <div class="l">
+          <div class="nm"><b>${t.name}</b><span class="save-b">Uštedi ${save}%</span></div>
+          <div class="sv">uštediš ${fmt(saved)}</div>
+          ${ship}
+        </div>
+        <div class="r"><div class="u">${fmt(t.unit)}<i>/par</i></div><div class="w">${fmt(CFG.compareAt)}</div></div>
+      </div>
+      ${units}
+    </div>`;
+  }).join('');
+  document.getElementById('tiers').innerHTML = html;
+  renderPrice();
+}
+function pick(i){ if (i===selected) return; selected = i; renderTiers(); }
+function setPick(u, v){
+  picks[u] = +v; pickTouched[u] = true;
+  if (u === 0){ colorIdx = +v; }
+  renderPrice();
+}
+function onBump(){ renderPrice(); }
+
+function renderPrice(){
+  const t = CFG.tiers[selected];
+  const save = Math.round((1 - t.unit / CFG.compareAt) * 100);
+  document.getElementById('pNow').textContent = fmt(t.unit);
+  document.getElementById('pWas').textContent = fmt(CFG.compareAt);
+  document.getElementById('pBadge').textContent = save + '%';
+  document.getElementById('sPrice').textContent = fmt(total());
+  document.getElementById('sWas').textContent = fmt(CFG.compareAt * t.qty);
+  document.getElementById('atc').textContent = 'Dodaj u korpu — ' + fmt(total());
+}
+
+/* ---- gallery thumbs ---- */
+const slides = document.getElementById('slides');
+(function(){
+  const imgs = [...slides.querySelectorAll('img')];
+  document.getElementById('thumbs').innerHTML = imgs.map((im,i)=>
+    `<img src="${im.getAttribute('src')}" alt="" class="${i===0?'on':''}" loading="lazy"
+      decoding="async" width="62" height="62" onclick="jump(${i})">`).join('');
+})();
+function jump(i){ slides.scrollTo({left: i*slides.clientWidth, behavior:'smooth'}); }
+slides.addEventListener('scroll', ()=>{
+  const i = Math.round(slides.scrollLeft / slides.clientWidth);
+  document.querySelectorAll('#thumbs img').forEach((t,k)=>t.classList.toggle('on',k===i));
+});
+
+/* ---- size guide link ---- */
+document.getElementById('guideBtn').onclick = ()=>{
+  const d = document.getElementById('faqSize');
+  d.open = true; d.scrollIntoView({behavior:'smooth', block:'center'});
+};
+function scrollToOffer(){
+  document.getElementById('tiers').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* ---- marquees ---- */
+function mq(el, items){
+  const one = items.map(t=>`<span>${t}</span>`).join('');
+  document.getElementById(el).innerHTML = one + one;   /* duplicated for the -50% loop */
+}
+mq('mq1',['☀️ LETNJA RASPRODAJA','💥 NAJVEĆI POPUST DO SADA','⌛ PONUDA USKORO ISTIČE','🔥 UŠTEDI DO 68%']);
+mq('mq2',['💨 Vazduh kruži pri svakom koraku','🌿 Bez neprijatnog mirisa','🫧 Mekan korak','💧 Suvo ceo dan']);
+mq('mq3',['🚚 Isporuka 2–4 radna dana','💵 Plaćanje pouzećem','↩️ 30 dana za povraćaj','📦 Roba u Srbiji']);
+
+/* ---- delivery ETA (2 working days ahead, Serbian weekday) ---- */
+(function(){
+  const dn=['u nedelju','u ponedeljak','u utorak','u sredu','u četvrtak','u petak','u subotu'];
+  const d=new Date(); let added=0;
+  while(added<3){ d.setDate(d.getDate()+1); if(d.getDay()!==0 && d.getDay()!==6) added++; }
+  document.getElementById('eta').textContent = dn[d.getDay()] + ', ' +
+    d.getDate() + '.' + (d.getMonth()+1) + '.';
+})();
+
+/* ---- countdown: rolling 3h window, persisted so a reload doesn't reset it ---- */
+(function(){
+  const K='lednik2_cd';
+  let end = +localStorage.getItem(K);
+  if (!end || end < Date.now()) { end = Date.now() + 3*3600*1000; localStorage.setItem(K, end); }
+  const p = n => String(n).padStart(2,'0');
+  function tick(){
+    let s = Math.max(0, Math.floor((end - Date.now())/1000));
+    document.getElementById('cdH').textContent = p(Math.floor(s/3600));
+    document.getElementById('cdM').textContent = p(Math.floor(s%3600/60));
+    document.getElementById('cdS').textContent = p(s%60);
+    if (s === 0){ end = Date.now() + 3*3600*1000; localStorage.setItem(K, end); }
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* ---- sticky ATC: hidden whenever the on-page CTA is in view ----
+   Paired listeners + interval on purpose: IntersectionObserver never fires in
+   the preview pane or under headless --virtual-time-budget, so an IO-only
+   implementation is both fragile and unverifiable. */
+(function(){
+  const bar = document.getElementById('satc'), atc = document.getElementById('atc');
+  function sync(){
+    const r = atc.getBoundingClientRect();
+    const visible = r.bottom > 0 && r.top < window.innerHeight;
+    bar.style.display = visible ? 'none' : 'flex';
+  }
+  addEventListener('scroll', sync, {passive:true});
+  addEventListener('resize', sync);
+  setInterval(sync, 200);
+  sync();
+})();
+
+renderTiers();
+</script>
+</body>
+</html>
