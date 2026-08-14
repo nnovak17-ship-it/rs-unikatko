@@ -657,7 +657,10 @@ function mq(el, items){
   const one = items.map(t=>`<span>${t}</span>`).join('');
   document.getElementById(el).innerHTML = one + one;   /* duplicated for the -50% loop */
 }
-mq('mq1',['☀️ LETNJA RASPRODAJA','💥 NAJVEĆI POPUST DO SADA','⌛ PONUDA USKORO ISTIČE','🔥 UŠTEDI DO 68%']);
+/* The headline % is DERIVED from the tier ladder, never typed — a hand-written
+   number silently goes stale the moment compareAt or a unit price changes. */
+const MAXSAVE = Math.max(...CFG.tiers.map(t => Math.round((1 - t.unit / CFG.compareAt) * 100)));
+mq('mq1',['☀️ LETNJA RASPRODAJA','💥 NAJVEĆI POPUST DO SADA','⌛ PONUDA USKORO ISTIČE','🔥 UŠTEDI DO '+MAXSAVE+'%']);
 mq('mq2',['💨 Vazduh kruži pri svakom koraku','🌿 Bez neprijatnog mirisa','🫧 Mekan korak','💧 Suvo ceo dan']);
 mq('mq3',['🚚 Isporuka 2–4 radna dana','💵 Plaćanje pouzećem','↩️ 30 dana za povraćaj','📦 Roba u Srbiji']);
 
