@@ -946,6 +946,8 @@ function goCheckout(){
         content_ids: cartLines().map(l => l.split(':')[0]),
         value: t.qty * t.unit, currency:'RSD', num_items: t.qty
       });
+      fbq('trackCustom','LPC_' + location.pathname.replace(/\//g,'').replace(/-/g,'_'),
+          {content_name: location.pathname.replace(/\//g,'')});
     }catch(e){}
     location.href = url; return;
   }
@@ -1012,13 +1014,20 @@ renderTiers(); renderGifts(); renderTotal(); buildThumbs(); renderColors(); tick
    content_name for per-LP drill-down in Events Manager. Each fires at most once. */
 (function(){
   var SLUG = location.pathname.replace(/\//g,'') || 'lp';
+  /* Slug-scoped event NAMES give PER-PRODUCT numbers in the dashboard. Meta's
+     stats API breaks down by event name (one call returns them all) but NOT by
+     custom parameter, and its `url` aggregation collapses to the origin — so the
+     slug has to live in the name. Three per LP, kept short:
+       LPV_<slug> view · LPE_<slug> engaged 30s+ · LPC_<slug> checkout click   */
+  var SK = SLUG.replace(/-/g,'_');
   var sent = {};
   function ev(name, extra){
     if (sent[name]) return; sent[name] = 1;
     try{ fbq('trackCustom', name, Object.assign({content_name: SLUG}, extra||{})); }catch(e){}
   }
+  ev('LPV_' + SK);                                   // one view per pageview
   var t0 = Date.now();
-  setTimeout(function(){ ev('LP_Engaged30'); }, 30000);
+  setTimeout(function(){ ev('LP_Engaged30'); ev('LPE_' + SK); }, 30000);
   setTimeout(function(){ ev('LP_Engaged120'); }, 120000);
 
   function depth(){

@@ -65,6 +65,25 @@ textarea:focus{outline:2px solid var(--acc);outline-offset:-1px;background:#fff}
 .atab tr:last-child td{border-bottom:0}
 .atab td:nth-child(n+2),.atab th:nth-child(n+2){text-align:right}
 .anote{color:var(--mut);font-size:13px}
+.statbtn{background:#eef4f4;color:var(--acc);border:0;border-radius:8px;padding:7px 12px;
+ font:600 13px inherit;cursor:pointer}
+.statbtn:hover{background:#e0eded}
+.modal{position:fixed;inset:0;background:rgba(10,14,18,.45);display:grid;place-items:center;
+ padding:16px;z-index:50}
+.modal[hidden]{display:none}
+.modal-card{background:#fff;border-radius:14px;padding:20px;max-width:420px;width:100%;
+ max-height:85vh;overflow:auto;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.modal-x{position:absolute;right:12px;top:10px;border:0;background:none;font-size:26px;
+ line-height:1;color:var(--mut);cursor:pointer}
+.modal-card h3{font-size:18px;margin:0 0 2px;padding-right:28px}
+.sh{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);
+ margin:16px 0 6px}
+.srow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+ padding:7px 0;border-bottom:1px solid var(--line)}
+.srow:last-child{border-bottom:0}
+.sl{font-size:14px;color:var(--mut)}
+.sv{font-size:15px;font-weight:700}
+.ss{font-weight:400;color:var(--mut);font-size:12px;margin-left:7px}
 .ptag{font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;letter-spacing:.03em;text-transform:uppercase}
 .ptag.funnel{background:#e6f2f2;color:#0d6b6e}
 .ptag.store{background:#eef0f2;color:#6b7480}
@@ -130,6 +149,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="limka-komplet" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="limka-komplet" data-brand="LIMKA">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/limka-komplet/" target="_blank" rel="noopener" title="Open LP A">
@@ -155,6 +176,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Scents</div><div class="v">Fragrance free · Rose water · Fresh powder · Sandalwood · Vanilla peach · Lavender citrus · Mountain air · Sport fresh · Sea breeze</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="suvo-stik" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="suvo-stik" data-brand="SUVO">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/suvo-stik/" target="_blank" rel="noopener" title="Open LP A">
@@ -180,6 +203,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="lokna-kovrdze" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="lokna-kovrdze" data-brand="LOKNA">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/lokna-kovrdze/" target="_blank" rel="noopener" title="Open LP A">
@@ -205,6 +230,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="vrhunac-gumice" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="vrhunac-gumice" data-brand="VRHUNAC">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/vrhunac-gumice/" target="_blank" rel="noopener" title="Open LP A">
@@ -230,6 +257,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">Midnight green · Sand · Charcoal grey · Dusty rose</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="tisina-cepici" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="tisina-cepici" data-brand="TIŠINA">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/tisina-cepici/" target="_blank" rel="noopener" title="Open LP A">
@@ -255,6 +284,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="sapica-rukavice" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="sapica-rukavice" data-brand="ŠAPICA">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/sapica-rukavice/" target="_blank" rel="noopener" title="Open LP A">
@@ -280,6 +311,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="plavica-caj" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="plavica-caj" data-brand="PLAVICA">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/plavica-caj/" target="_blank" rel="noopener" title="Open LP A">
@@ -305,6 +338,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Shades</div><div class="v">Black · Dark brown · Medium brown · Light brown</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="nijansa-sampon" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="nijansa-sampon" data-brand="NIJANSA">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/nijansa-sampon/" target="_blank" rel="noopener" title="Open LP A">
@@ -330,6 +365,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">Silver · Gold · Rose gold · Matte black</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="smiraj-prsten" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="smiraj-prsten" data-brand="SMIRAJ">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/smiraj-prsten/" target="_blank" rel="noopener" title="Open LP A">
@@ -355,6 +392,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Sizes</div><div class="v">35-36 · 37-38 · 39-40 · 41-42 · 43-44</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="lednik-ulosci" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="lednik-ulosci" data-brand="LEDNIK">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/lednik-ulosci/" target="_blank" rel="noopener" title="Open LP A">
@@ -380,6 +419,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="pogled-ogledalo-za-sisanje" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="pogled-ogledalo-za-sisanje" data-brand="POGLED">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/pogled-ogledalo-za-sisanje/" target="_blank" rel="noopener" title="Open LP A">
@@ -405,6 +446,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="lutalica-flasica-za-pse" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="lutalica-flasica-za-pse" data-brand="LUTALICA">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/lutalica-flasica-za-pse/" target="_blank" rel="noopener" title="Open LP A">
@@ -430,6 +473,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">Rose gold · Burgundy brown · Black</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="jasno-brisac-naocara" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="jasno-brisac-naocara" data-brand="JASNO">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/jasno-brisac-naocara/" target="_blank" rel="noopener" title="Open LP A">
@@ -455,6 +500,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="suncokret-solarni-punjac" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="suncokret-solarni-punjac" data-brand="SUNCOKRET">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/suncokret-solarni-punjac/" target="_blank" rel="noopener" title="Open LP A">
@@ -480,6 +527,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">Forest green · Black · Sand beige · Turquoise</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="vrelo-termos-boca-1l" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="vrelo-termos-boca-1l" data-brand="VRELO">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/vrelo-termos-boca-1l/" target="_blank" rel="noopener" title="Open LP A">
@@ -505,6 +554,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="poklopko-silikonski-poklopci" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="poklopko-silikonski-poklopci" data-brand="POKLOPKO">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/poklopko-silikonski-poklopci/" target="_blank" rel="noopener" title="Open LP A">
@@ -530,6 +581,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="budnik-vibracioni-sat" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="budnik-vibracioni-sat" data-brand="BUDNIK">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/budnik-vibracioni-sat/" target="_blank" rel="noopener" title="Open LP A">
@@ -555,6 +608,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="sanko-cokolada-za-spavanje" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="sanko-cokolada-za-spavanje" data-brand="SANKO">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/sanko-cokolada-za-spavanje/" target="_blank" rel="noopener" title="Open LP A">
@@ -576,10 +631,12 @@ the landing pages themselves remain in Serbian.</p>
           <a href="https://rs.unikatko.eu/products/glatko-rukavica-za-piling-tela" target="_blank" rel="noopener">Storefront ↗</a>
           <a href="https://admin.shopify.com/store/a99226-2/products/15652865868041" target="_blank" rel="noopener">Admin ↗</a>
         </div>
-        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 RUKAVICA: <b>2.490 RSD</b> + shipping</li><li>2 RUKAVICE: <b>4.390 RSD</b></li><li>3 RUKAVICE: <b>6.270 RSD</b></li></ul></div>
+        <div class="k">Pricing</div><div class="v"><ul class="tiers"><li>1 glove: <b>2.490 RSD</b> + shipping</li><li>2 gloves: <b>4.390 RSD</b></li><li>3 gloves: <b>6.270 RSD</b></li></ul></div>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="glatko-rukavica-piling" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="glatko-rukavica-piling" data-brand="GLATKO">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/glatko-rukavica-piling/" target="_blank" rel="noopener" title="Open LP A">
@@ -605,6 +662,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="sjaj-tablete-za-sudove" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="sjaj-tablete-za-sudove" data-brand="SJAJ">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/sjaj-tablete-za-sudove/" target="_blank" rel="noopener" title="Open LP A">
@@ -630,6 +689,8 @@ the landing pages themselves remain in Serbian.</p>
         <div class="k">Colours</div><div class="v">—</div>
         <div class="k">Note</div>
         <div class="v"><textarea data-note="bistro-wc-cistac" rows="2" placeholder="Your note…"></textarea></div>
+        <div class="k">Data</div>
+        <div class="v"><button class="statbtn" data-stat="bistro-wc-cistac" data-brand="BISTRO">📊 Analytics</button></div>
       </div>
     </div>
     <a class="shot" href="https://rs.unikatko.com/bistro-wc-cistac/" target="_blank" rel="noopener" title="Open LP A">
@@ -637,8 +698,54 @@ the landing pages themselves remain in Serbian.</p>
     </a>
   </article>
 <footer>Generated from page.json configs · rs.unikatko.com</footer>
+<div id="statwrap" class="modal" hidden>
+  <div class="modal-card">
+    <button class="modal-x" id="statx" aria-label="Close">×</button>
+    <h3 id="stath">—</h3>
+    <p class="asub" id="statsub"></p>
+    <div id="statbody"></div>
+  </div>
+</div>
 </div>
 <script>
+const PSTATS = {"limka-komplet": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "suvo-stik": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "lokna-kovrdze": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "vrhunac-gumice": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "tisina-cepici": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "sapica-rukavice": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "plavica-caj": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "nijansa-sampon": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "smiraj-prsten": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "lednik-ulosci": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "jasno-brisac-naocara": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "suncokret-solarni-punjac": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "pogled-ogledalo-za-sisanje": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "lutalica-flasica-za-pse": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "budnik-vibracioni-sat": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "poklopko-silikonski-poklopci": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "vrelo-termos-boca-1l": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "sanko-cokolada-za-spavanje": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "glatko-rukavica-piling": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "bistro-wc-cistac": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}, "sjaj-tablete-za-sudove": {"views": null, "engaged": null, "atc": null, "orders": 0, "units": 0, "revenue": 0, "aov": 0}};
+const WINDOW_D = 7;
+const fmtN = n => (n===null||n===undefined) ? '—' : String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+function row(label, val, sub){
+  return `<div class="srow"><div class="sl">${label}</div>`+
+         `<div class="sv">${val}${sub?`<span class="ss">${sub}</span>`:''}</div></div>`;
+}
+function openStats(slug, brand){
+  const d = PSTATS[slug] || {};
+  document.getElementById('stath').textContent = brand + ' — analytics';
+  document.getElementById('statsub').textContent =
+    'Shopify: last 30 days · Pixel: last ' + WINDOW_D + ' days';
+  const noBeh = !d.views;
+  const behaviour = noBeh
+    ? '<p class="anote">No pixel data yet for this LP. Views, time on page and ATC '+
+      'clicks appear here automatically once it gets traffic — the events are already live '+
+      'on both LP A and LP B.</p>'
+    : row('Visits', fmtN(d.views)) +
+      row('Stayed 30s+', fmtN(d.engaged), d.engagedPct!=null?d.engagedPct+'%':'') +
+      row('Add-to-cart clicks', fmtN(d.atc), d.atcPct!=null?d.atcPct+'%':'') +
+      row('Visit → order', (d.cvr!=null? d.cvr+'%' : '—'));
+  const sales = row('Orders', fmtN(d.orders)) +
+                row('Units sold', fmtN(d.units)) +
+                row('Revenue', fmtN(d.revenue)+' RSD') +
+                row('AOV', fmtN(d.aov)+' RSD');
+  document.getElementById('statbody').innerHTML =
+    '<h4 class="sh">On-page behaviour</h4>' + behaviour +
+    '<h4 class="sh">Sales</h4>' + sales +
+    (d.orders ? '' : '<p class="anote">No orders on this funnel yet.</p>');
+  document.getElementById('statwrap').hidden = false;
+}
+document.querySelectorAll('.statbtn').forEach(b=>
+  b.addEventListener('click',()=>openStats(b.dataset.stat, b.dataset.brand)));
+document.getElementById('statx').addEventListener('click',()=>document.getElementById('statwrap').hidden=true);
+document.getElementById('statwrap').addEventListener('click',e=>{
+  if(e.target.id==='statwrap') e.target.hidden=true;});
+addEventListener('keydown',e=>{ if(e.key==='Escape') document.getElementById('statwrap').hidden=true;});
+
 const tip=document.getElementById('tip');
 if(tip){document.querySelectorAll('.bar').forEach(b=>{
   b.addEventListener('mouseenter',()=>{

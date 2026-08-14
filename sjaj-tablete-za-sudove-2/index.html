@@ -456,6 +456,21 @@ footer .dis{line-height:1.55;margin-top:9px}
       seconds:Math.round((Date.now()-t0)/1000)});}catch(e){}
   });
 })();
+
+/* Per-product events (LPV_/LPE_/LPC_) so the dashboard can show numbers PER LP.
+   Meta's stats API breaks down by event NAME only — not by parameter, and its
+   url aggregation collapses to the origin — so the slug lives in the name. */
+(function(){
+  var SLUG=location.pathname.replace(/\//g,'')||'lp', SK=SLUG.replace(/-/g,'_'), done={};
+  function pev(n){ if(done[n])return; done[n]=1;
+    try{ fbq('trackCustom',n,{content_name:SLUG}); }catch(e){} }
+  pev('LPV_'+SK);
+  setTimeout(function(){ pev('LPE_'+SK); },30000);
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a[href*="/cart/"],.cta,#atc,#atc2'):null;
+    if(a) pev('LPC_'+SK);
+  },true);
+})();
 </script>
 </body>
 </html>
