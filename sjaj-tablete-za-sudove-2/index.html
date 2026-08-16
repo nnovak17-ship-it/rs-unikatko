@@ -331,7 +331,9 @@ footer .dis{line-height:1.55;margin-top:9px}
     {at:3,cap:'Poklon iznenađenja',value:1290,emo:'🎁'},
     {at:4,cap:'Platnena torba',value:1490,emo:'👜'}
   ];
-  var sel=0; /* source preselects the 4-pack */
+  var sel=3; /* owner rule 2026-08-14: ALWAYS preselect 1 piece on both LPs.
+              This page lists tiers DESCENDING (index 0 = 4 PAKA), so the
+              qty-1 tier is index 3 — not 0. */
 
   function fmt(n){ return n.toLocaleString('de-DE'); }
 

@@ -406,7 +406,8 @@ var TIERS=[
 var GIFTS=[{at:1,cap:'PDF vodič: kupatilo bez ribanja'},{at:2,cap:'Besplatna dostava'},
            {at:3,cap:'Rukavice za čišćenje'},{at:4,cap:'Poklon iznenađenja'}];
 /* mirrors the source page's own preselection (?variant=43295203131555 = the 4-pack) */
-var sel=0;
+var sel=3; /* owner rule 2026-08-14: ALWAYS preselect 1 piece on both LPs.
+              This page lists tiers DESCENDING, so the qty-1 tier is the LAST index. */
 
 function fmt(n){return n.toLocaleString('de-DE');}
 

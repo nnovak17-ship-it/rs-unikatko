@@ -363,7 +363,8 @@ var GAL=[
   {src:'assets/howto.jpg',     alt:'Rutina od 5 sekundi'},
   {src:'assets/pack4.jpg',     alt:'SUVO komplet od 4 stika'}
 ];
-var sel=0;                                    /* podrazumevano: komplet od 4, kao na LP A */
+var sel=3;   /* vlasnik 2026-08-14: OBA LP-a uvek pretselektuju 1 komad.
+                Ova stranica lista pakete OPADAJUCE, pa je 1 STIK indeks 3. */
 /* Ako se kupac vraća sa 2. koraka (dugme „nazad” šalje ?stikovi=N), vrati mu
    paket koji je već bio izabrao umesto da ga resetujemo na podrazumevani. */
 (function(){
