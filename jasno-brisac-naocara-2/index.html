@@ -512,7 +512,8 @@ const COLORS = [
 ];
 const BASE = "https://rs.unikatko.eu";
 const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
-let sel = 1;   // izvorna stranica pretselektuje paket od 2 komada
+let sel = 0;   // vlasnik 2026-08-14: LP B kreće od 1 komada (LP A ostaje na 2 —
+               // to je A/B test pretselekcije, namerno odstupanje od izvorne stranice)
 let col = 0;   // boja komada #1 — vodi galeriju, sličice paketa i sticky traku
 
 /* Izbor boje ZA SVAKI KOMAD posebno. picks[0] je ujedno i `col`, pa galerija i
