@@ -18,17 +18,16 @@ fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
  src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
 <style>
-/* VRHUNAC LP C — sr-Latn-RS. Hand-built structural clone of the TastyDose
-   starter-pack funnel (tastydose.com), with VRHUNAC product/prices/copy.
-   Palette from the source: cream #FEF9F1, warm-brown ink #39302E,
-   orange CTA #F46600, gold badge #AA9458. Self-contained, mobile-first. */
+/* VRHUNAC LP C — structural clone of tastydose.com starter-pack funnel (mobile),
+   VRHUNAC product/prices/copy. Serif display headings w/ gold accent word, cream
+   #FEF9F1, ink #39302E, orange CTA #F46600, gold #AA9458. Self-contained. */
 :root{
   --ink:#39302E; --mut:#775E4D;
-  --cream:#FEF9F1; --line:#EADFCE;
-  --orange:#F46600; --orange2:#D95B00;
+  --cream:#FEF9F1; --cream2:#F5EDDE; --line:#EADFCE;
+  --orange:#F46600; --orange2:#D95B00; --orangetint:#FFF4EC;
   --gold:#AA9458; --goldsoft:#F2E9D4;
-  --ok:#2E9E4F; --strike:#B04A4A;
-  --dark:#2B211C;
+  --brown:#4A3B33; --dark:#3F312B; --dark2:#2B211C;
+  --tp:#00B67A; --bad:#D63A2F;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -36,226 +35,358 @@ body{font-family:-apple-system,'Segoe UI','IBM Plex Sans',Roboto,'Helvetica Neue
   color:var(--ink);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block;height:auto}
 .wrap{max-width:600px;margin:0 auto;padding:0 16px}
-h1,h2,h3,h4{margin:0;line-height:1.12;letter-spacing:-.01em}
-h2{font-size:24px;font-weight:800}
+h1,h2,h3{margin:0;line-height:1.12}
+.sf{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.01em}
+h2.sf{font-size:29px}
+.au{color:var(--gold)}
 .center{text-align:center}
 
-/* 1. announcement bar */
-.annbar{background:var(--dark);color:#fff;text-align:center;font-size:13px;font-weight:700;
-  letter-spacing:.03em;padding:9px 12px}
-.annbar b{color:#FFC98A}
+/* 1. announcement — brown bar with arrows + underlined link, like the source */
+.annbar{background:var(--dark2);color:#fff;display:flex;align-items:center;justify-content:space-between;
+  font-size:12.5px;font-weight:700;padding:11px 12px;gap:8px}
+.annbar .aarr{opacity:.6;flex:none}
+.annbar a{color:#fff;text-decoration:underline;text-underline-offset:3px;text-align:center;flex:1}
 
-/* 2. gallery — slider with dots (source uses dots, no thumb strip) */
-.gal{position:relative;background:var(--cream)}
+/* 2. gallery — INSET rounded slider, dots inside image, thumb strip below */
+.galwrap{padding:14px 16px 0;background:#fff}
+.gal{position:relative;border-radius:12px;overflow:hidden;background:#0d0d0d}
 .gal .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .gal .slides::-webkit-scrollbar{display:none}
-.gal .slides img{min-width:100%;scroll-snap-align:center;aspect-ratio:1/1;object-fit:cover}
-.gal .arr{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;
-  border-radius:50%;border:0;background:rgba(255,255,255,.9);color:var(--ink);font-size:19px;cursor:pointer;z-index:2}
+.gal .slides img,.gal .slides .slide{min-width:100%;scroll-snap-align:center;aspect-ratio:1/1;object-fit:cover}
+.gal .arr{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;
+  border-radius:50%;border:0;background:rgba(254,249,241,.92);color:var(--ink);font-size:18px;cursor:pointer;z-index:3}
 .gal .arr.p{left:10px}.gal .arr.n{right:10px}
-.dots{display:flex;justify-content:center;gap:7px;padding:12px 0 4px;background:#fff}
-.dots span{width:8px;height:8px;border-radius:50%;background:#D9CBB4;cursor:pointer}
-.dots span.on{background:var(--ink)}
+.gal .dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:6px;z-index:3}
+.gal .dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer}
+.gal .dots span.on{background:#fff}
+/* slide 1 = CSS collage over the real product photo: headline + GRATIS callouts */
+.slide{position:relative}
+.slide>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.s1head{position:absolute;top:14px;left:12px;right:12px;text-align:center;color:#F3E7D2;
+  font-size:24px;z-index:2;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.tag{position:absolute;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.tag .fr{background:var(--gold);color:#fff;font-size:9.5px;font-weight:900;letter-spacing:.06em;
+  padding:2.5px 7px;border-radius:4px}
+.tag .cap{background:rgba(254,249,241,.94);color:var(--ink);font-size:11px;font-weight:800;
+  padding:3px 7px;border-radius:4px;line-height:1.25}
+.tag .cap s{color:var(--bad);font-weight:600;font-size:10px}
+.seal1{position:absolute;z-index:2;right:10px;top:52px;width:84px;height:84px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#E8C87B,var(--gold));color:#3A2E1B;display:grid;place-items:center;
+  text-align:center;font-size:9.5px;font-weight:900;letter-spacing:.04em;line-height:1.35;
+  box-shadow:0 3px 10px rgba(0,0,0,.35);transform:rotate(8deg)}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 16px 0;scrollbar-width:none;background:#fff}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{width:78px;height:78px;object-fit:cover;border-radius:10px;border:2px solid transparent;cursor:pointer;flex:none}
+.thumbs img.on{border-color:var(--brown)}
 
-/* 4. rating strip (PLACEHOLDER numbers) */
-.rate{display:flex;align-items:center;gap:8px;padding:14px 0 2px;font-size:14px}
-.rate .st{color:var(--ok);font-size:16px;letter-spacing:1.5px}
+/* 3. rating strip (PLACEHOLDER) — green star tiles, no third-party branding */
+.rate{display:flex;align-items:center;gap:8px;padding:14px 0 2px;font-size:14px;font-weight:600}
+.rate .tiles{display:flex;gap:2px}
+.rate .tiles i{width:19px;height:19px;background:var(--tp);color:#fff;display:grid;place-items:center;
+  font-style:normal;font-size:12px}
+.eyebrow{font-size:13.5px;font-weight:700;letter-spacing:.02em;margin-top:8px;color:var(--ink)}
 
-/* 5. eyebrow + h1 + chips + bullets */
-.eyebrow{font-size:13px;font-weight:800;letter-spacing:.06em;margin-top:8px}
-.ph1{font-size:31px;font-weight:800;margin:6px 0 4px;text-transform:none}
-.subline{font-size:16px;font-weight:600;color:var(--mut);margin:0 0 12px}
+/* 4. h1 + chips + bullets + info pills */
+.ph1{font-size:31px;margin:4px 0 4px}
+.subline{font-size:16.5px;font-weight:700;margin:0 0 12px}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
-.chips span{background:#4A3B33;color:#fff;font-size:12.5px;font-weight:800;letter-spacing:.05em;
-  padding:9px 14px;border-radius:6px}
-.blts{list-style:none;margin:0 0 6px;padding:0}
-.blts li{display:flex;gap:10px;padding:5px 0;align-items:flex-start;font-size:15px}
-.blts .c{width:24px;height:24px;flex:none;border-radius:50%;border:1.6px solid var(--gold);
-  color:var(--gold);display:grid;place-items:center;font-size:13px;font-weight:900;margin-top:1px}
-.formlabel{font-size:12.5px;color:var(--mut);margin:8px 0 16px}
+.chips span{background:var(--brown);color:#fff;font-size:12px;font-weight:800;letter-spacing:.05em;
+  padding:9px 13px;border-radius:5px}
+.blts{list-style:none;margin:0 0 12px;padding:0}
+.blts li{display:flex;gap:10px;padding:4.5px 0;align-items:flex-start;font-size:15px}
+.blts .c{width:23px;height:23px;flex:none;border-radius:50%;background:var(--goldsoft);border:1.4px solid var(--gold);
+  color:var(--gold);display:grid;place-items:center;font-size:12px;font-weight:900;margin-top:1px}
+.ipills{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 12px}
+.ipills span{border:1.4px solid var(--brown);border-radius:8px;padding:8px 11px;font-size:12.5px;font-weight:700}
+.suplink{font-size:14.5px;font-weight:700;color:var(--ink)}
+.formlabel{font-size:13px;color:var(--gold);margin:10px 0 18px;font-weight:600}
 
-/* 6. offer: anchor price block */
-.anchor{background:var(--cream);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;margin:4px 0 14px}
-.anchor .row1{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.anchor .now{font-size:26px;font-weight:800}
-.anchor s{font-size:16px;color:var(--strike)}
-.anchor .save{background:var(--gold);color:#fff;font-size:12px;font-weight:800;
-  padding:4px 10px;border-radius:5px;letter-spacing:.03em}
-.anchor .sub{font-size:13.5px;color:var(--mut);margin-top:6px}
+/* 5. anchor price — plain, dark AHORRA chip */
+.anchor{margin:2px 0 6px}
+.anchor .ttl{font-size:19px}
+.anchor .row1{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:2px}
+.anchor .now{font-size:25px;font-weight:800}
+.anchor s{font-size:16px;color:var(--mut)}
+.anchor .save{background:var(--dark);color:#fff;font-size:12.5px;font-weight:800;
+  padding:5px 10px;border-radius:5px;letter-spacing:.02em}
+.anchor .sub{font-size:13.5px;color:var(--ink);margin-top:6px}
 
-/* 7. tier selector — per-unit prices like the source (1x / 2x / 4x) */
-.thead{font-weight:800;font-size:15px;margin:14px 0 8px}
-.tier{position:relative;display:flex;align-items:center;gap:12px;border:1.6px solid var(--line);
-  border-radius:10px;padding:14px;margin-bottom:11px;cursor:pointer;background:#fff}
-.tier.on{border-color:var(--orange);box-shadow:0 0 0 1.5px var(--orange);background:#FFF9F3}
-.tier .rad{width:19px;height:19px;flex:none;border-radius:50%;border:2px solid #C9BBA6;background:#fff}
-.tier.on .rad{border-color:var(--orange);background:var(--orange);box-shadow:inset 0 0 0 3.5px #fff}
-.tier .t b{display:block;font-size:15.5px}
-.tier .t span{font-size:13px;color:var(--mut)}
-.tier .pr{margin-left:auto;text-align:right}
-.tier .pr b{display:block;font-size:15.5px}
-.tier .pr span{font-size:12px;color:var(--mut)}
-.tier .bdg{position:absolute;top:-10px;right:12px;background:var(--gold);color:#fff;
-  font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
-  padding:3px 10px;border-radius:5px}
+/* 6. tier cards — 3-column grid with pouch imagery + badge header bars */
+.tgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:16px 0 6px;align-items:end}
+.tcard{position:relative;border:1.6px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;
+  padding:10px 6px 12px;text-align:center}
+.tcard.on{border-color:var(--orange);box-shadow:0 0 0 1.4px var(--orange);background:var(--orangetint)}
+.tcard .bar{margin:-10px -6px 8px;border-radius:8px 8px 0 0;color:#fff;font-size:10px;font-weight:800;
+  letter-spacing:.05em;text-transform:uppercase;padding:5px 2px}
+.tcard .bar.g{background:var(--gold)}
+.tcard .bar.d{background:var(--dark)}
+.tcard .imgs{display:flex;justify-content:center;margin:2px 0 6px;height:64px;align-items:flex-end}
+.tcard .imgs img{width:52px;height:52px;object-fit:cover;border-radius:6px;flex:none}
+.tcard .imgs img+img{margin-left:-34px;transform:translateY(-5px)}
+.tcard .imgs img+img+img{transform:translateY(-10px)}
+.tcard .imgs img+img+img+img{transform:translateY(-15px)}
+.tcard .nm{font-size:12.5px;font-weight:800}
+.tcard .pchip{display:inline-block;margin-top:5px;font-size:12px;font-weight:800;border-radius:5px;padding:3.5px 8px}
+.tcard .pchip.plain{color:var(--ink)}
+.tcard .pchip.g{background:var(--gold);color:#fff}
+.tcard .pchip.d{background:var(--dark);color:#fff}
+.tcard .tot{font-size:10.5px;color:var(--mut);margin-top:4px}
 
-/* 8. gift stack — source's "regalos GRATIS" list, with our qty gates */
-.ghead{font-weight:800;font-size:15.5px;margin:16px 0 8px}
-.gift{display:flex;align-items:center;gap:12px;border:1.5px dashed var(--gold);border-radius:10px;
-  padding:10px 12px;margin-bottom:9px;background:var(--goldsoft)}
-.gift.locked{border-color:var(--line);background:#FAF7F0;opacity:.62}
-.gift .fr{background:var(--gold);color:#fff;font-size:10.5px;font-weight:900;letter-spacing:.06em;
-  padding:4px 8px;border-radius:5px;flex:none}
-.gift.locked .fr{background:#C9BBA6}
-.gift .t b{display:block;font-size:14px}
-.gift .t span{font-size:12px;color:var(--mut)}
-.gift .val{margin-left:auto;font-size:13px;color:var(--strike);text-decoration:line-through;flex:none}
+/* 7. gift block — brown header bar + 4-col dashed gift cards */
+.gblock{margin:16px 0 4px}
+.ghead{background:linear-gradient(90deg,var(--dark2),var(--brown));color:#fff;font-size:14px;font-weight:800;
+  padding:10px 14px;border-radius:9px 9px 0 0;text-align:center}
+.ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;background:#fff;padding:12px 2px 4px}
+.gcard{position:relative;border:1.4px dashed var(--gold);border-radius:9px;background:var(--cream);
+  padding:16px 4px 8px;text-align:center;min-height:108px}
+.gcard.locked{border-color:#CBBFAA;opacity:.55}
+.gcard .fr{position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;
+  font-size:9px;font-weight:900;letter-spacing:.07em;padding:2.5px 7px;border-radius:4px}
+.gcard.locked .fr{background:#A99A82}
+.gcard .em{font-size:25px;line-height:1;margin:2px 0 5px}
+.gcard .em img{width:44px;height:44px;object-fit:cover;border-radius:7px;margin:0 auto}
+.gcard .nm{font-size:10.5px;font-weight:800;color:var(--brown);line-height:1.25}
+.gcard .sub{font-size:9px;color:var(--mut);margin-top:2px}
+.gcard s{display:block;font-size:10.5px;color:var(--bad);margin-top:3px}
 
-/* 9. delivery + ATC + guarantee */
-.deliv{display:flex;justify-content:center;gap:16px;font-size:13px;color:var(--mut);
-  padding:6px 0 12px;flex-wrap:wrap}
-.atc{display:block;width:100%;border:0;border-radius:6px;background:var(--orange);
-  color:#fff;font-size:17px;font-weight:800;letter-spacing:.01em;
-  padding:17px 20px;cursor:pointer;text-align:center}
+/* 8. delivery + ATC + guarantee + omnibus + stamps */
+.deliv{display:flex;justify-content:center;gap:8px;font-size:14px;padding:8px 0 12px;align-items:center}
+.atc{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;border:0;border-radius:9px;
+  background:var(--orange);color:#fff;font-size:16.5px;font-weight:800;padding:17px 18px;cursor:pointer;text-align:center}
 .atc:active{background:var(--orange2)}
-.guar{background:var(--cream);border-radius:8px;text-align:center;font-size:12.5px;font-weight:800;
-  letter-spacing:.02em;color:var(--ink);padding:12px 14px;margin:12px 0 6px}
-.omnibus{font-size:11.5px;color:var(--mut);text-align:center;margin:4px 0 18px}
+.atc .ar{font-size:19px;font-weight:900}
+.guar{border:1.6px dashed var(--brown);border-radius:9px;background:var(--cream);display:flex;gap:12px;
+  align-items:center;font-size:12px;font-weight:800;letter-spacing:.01em;padding:12px 14px;margin:14px 0 6px;text-align:left}
+.guar .seal{font-size:26px;flex:none}
+.omnibus{font-size:11.5px;color:var(--mut);text-align:center;margin:6px 0 16px}
+.stamps{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding:4px 0 18px;justify-content:space-between}
+.stamps::-webkit-scrollbar{display:none}
+.stamp{width:92px;height:92px;flex:none;border-radius:50%;border:2px solid var(--brown);position:relative;
+  display:grid;place-items:center;text-align:center;font-size:9.5px;font-weight:900;letter-spacing:.05em;
+  color:var(--brown);line-height:1.3;padding:10px}
+.stamp::after{content:"";position:absolute;inset:4px;border:1px solid var(--brown);border-radius:50%}
 
-/* 10. accordions */
-.accs{margin:10px 0 22px}
-details{border-top:1px solid var(--line)}
-details:last-child{border-bottom:1px solid var(--line)}
-summary{padding:15px 2px;font-weight:800;font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;
+/* 9. accordions — chevron, uppercase, cream full-bleed */
+.accband{background:var(--cream);margin-top:8px}
+.accs details{border-bottom:1px solid var(--line)}
+.accs details:first-child{border-top:1px solid var(--line)}
+.accs summary{padding:17px 2px;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
   cursor:pointer;list-style:none;position:relative}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:6px;top:12px;font-size:19px;color:var(--mut)}
-details[open] summary::after{content:"–"}
-details .bd{padding:0 2px 15px;font-size:14px;color:#4A3F38}
-details .bd p{margin:0 0 8px}
+.accs summary::-webkit-details-marker{display:none}
+.accs summary::after{content:"⌄";position:absolute;right:6px;top:13px;font-size:18px;color:var(--ink)}
+.accs details[open] summary::after{content:"⌃"}
+.accs .bd{padding:0 2px 16px;font-size:14px;color:#4A3F38}
+.accs .bd p{margin:0 0 8px}
 
-/* 11. reviews */
-.rev{background:var(--cream);padding:26px 0}
-.rev h2{text-align:center;margin-bottom:16px}
-.rcard{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px}
-.rcard .st{color:var(--ok);letter-spacing:1.5px;font-size:14px}
-.rcard p{margin:8px 0;font-size:14px}
-.rcard .who{font-size:12.5px;font-weight:800;letter-spacing:.08em;color:var(--mut)}
+/* 10. upsell (source cross-sell slot) */
+.upsell{padding:30px 0 8px;text-align:center}
+.upsell h2{font-size:27px;margin-bottom:10px}
+.upsell .lead{font-size:14.5px;margin:0 auto 16px;max-width:480px}
+.upcard{position:relative;border-radius:12px;overflow:hidden;background:#0d0d0d}
+.upcard img{width:100%;aspect-ratio:16/10;object-fit:cover;opacity:.96}
+.upcard .chip{position:absolute;top:10px;left:10px;background:var(--bad);color:#fff;font-size:12px;
+  font-weight:800;padding:5px 10px;border-radius:5px}
+.upmeta{text-align:left;padding:10px 2px 12px;font-size:14px}
+.upmeta b{display:block;font-size:15px}
+.upmeta .pr{margin-top:2px;font-size:17px;font-weight:800;color:var(--orange2)}
+.upmeta .pr s{color:var(--mut);font-weight:600;font-size:14px;margin-left:8px}
 
-/* 12. benefits grid */
-.bene{padding:26px 0 10px}
-.bene h2{text-align:center;margin-bottom:6px}
-.bene .lead{text-align:center;font-size:14.5px;color:var(--mut);margin:0 0 18px}
-.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px}
-.bgrid .ic{width:42px;height:42px;margin-bottom:8px;border-radius:50%;background:var(--goldsoft);
-  display:grid;place-items:center;font-size:19px}
-.bgrid h3{font-size:14.5px;margin-bottom:4px}
-.bgrid p{margin:0;font-size:13px;color:var(--mut)}
+/* 11. testimonials — photo-top scroll cards, green stars */
+.testi{background:var(--cream);padding:28px 0 24px;margin-top:20px}
+.testi h2{font-size:27px;margin-bottom:16px}
+.trow{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
+.trow::-webkit-scrollbar{display:none}
+.tstc{flex:none;width:80%;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.tstc img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.tstc .b{padding:13px 14px}
+.tstc .st{display:flex;gap:2px;margin-bottom:8px}
+.tstc .st i{width:17px;height:17px;background:var(--tp);color:#fff;display:grid;place-items:center;font-style:normal;font-size:11px}
+.tstc p{margin:0 0 10px;font-size:13.5px}
+.tstc .who{font-family:Georgia,serif;font-size:12.5px;letter-spacing:.09em;color:var(--mut)}
 
-/* 13. dosing section (dark) */
-.dose{background:var(--dark);color:#fff;padding:30px 0;margin-top:20px}
-.dose h2{text-align:center;color:#fff;margin-bottom:10px}
-.dose .lead{text-align:center;font-size:14.5px;color:#D9CBB4;margin:0 0 18px}
-.dstat{border:1.5px solid var(--gold);border-radius:12px;background:#372B24;
-  display:flex;gap:16px;align-items:center;padding:16px;margin:12px 0}
-.dstat b{font-size:32px;color:#E8C87B;font-weight:900;flex:none}
-.dstat span{font-size:14px;color:#EFE6D6}
-.dose .atc{margin-top:14px}
-.dose .guar{background:#372B24;color:#D9CBB4}
+/* 12. benefit rows — full-width cream rows with photo sliver */
+.bene{padding:28px 0 10px}
+.bene h2{text-align:center;margin-bottom:10px}
+.bene .lead{text-align:center;font-size:14.5px;margin:0 0 18px}
+.brow{display:flex;margin-bottom:14px}
+.brow .ph{width:64px;flex:none;border-radius:10px 0 0 10px;background-size:cover;background-position:center}
+.brow .tx{flex:1;background:var(--cream2);border-radius:0 10px 10px 0;padding:16px}
+.brow h3{font-size:19.5px;margin-bottom:5px}
+.brow p{margin:0;font-size:13.5px;color:#4A3F38}
 
-/* 14. formulation */
-.form{padding:26px 0 8px}
-.form h2{text-align:center;margin-bottom:6px}
-.form .lead{text-align:center;font-size:14.5px;color:var(--mut);margin:0 0 16px}
-.ingr{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
-.ingr::-webkit-scrollbar{display:none}
-.icard{flex:none;width:72%;background:var(--cream);border-radius:10px;padding:16px}
-.icard .em{font-size:30px;margin-bottom:6px}
-.icard h3{font-size:16px;margin-bottom:4px}
-.icard p{margin:0;font-size:13.5px;color:#4A3F38}
-.labline{text-align:center;font-size:13px;font-weight:700;color:var(--mut);margin:12px 0 0}
+/* 13. proof: chart + big stats */
+.proof{padding:28px 0 8px}
+.proof h2{font-size:31px;margin-bottom:12px}
+.proof p{font-size:14.5px;margin:0 0 12px}
+.chart{margin:22px 0 8px}
+.chart .ct{font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--mut);margin-bottom:10px}
+.cplot{display:flex;align-items:flex-end;gap:14px;height:200px;border-left:1.4px solid var(--ink);
+  padding-left:10px;background:repeating-linear-gradient(to top,transparent,transparent 39px,var(--line) 39px,var(--line) 40px)}
+.cbar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.cbar .v{font-size:12.5px;font-weight:800;margin-bottom:5px}
+.cbar .b{width:100%;border-radius:3px 3px 0 0;background:var(--brown)}
+.cbar.hero .b{background:var(--orange)}
+.claxis{display:flex;gap:14px;padding-left:10px;margin-top:6px}
+.claxis span{flex:1;text-align:center;font-size:11px;color:var(--ink);line-height:1.3}
+.bigstats{display:flex;gap:10px;margin:22px 0 6px;text-align:center}
+.bigstats div{flex:1}
+.bigstats b{font-family:Georgia,serif;font-size:46px;font-weight:700;color:var(--brown);display:block;line-height:1}
+.bigstats span{font-size:12.5px;color:var(--mut);display:block;margin-top:6px}
 
-/* 15. compare table */
-.cmp{padding:24px 0 8px}
-.cmp h2{text-align:center;margin-bottom:14px}
-.cmp table{width:100%;border-collapse:collapse;font-size:12.5px}
-.cmp th,.cmp td{padding:10px 6px;border-bottom:1px solid var(--line);text-align:center}
-.cmp th{font-size:12px;letter-spacing:.03em}
-.cmp td:first-child,.cmp th:first-child{text-align:left;font-weight:600}
-.cmp .us{background:var(--goldsoft);font-weight:800}
-.cmp .y{color:var(--ok);font-weight:900}
-.cmp .x{color:var(--strike);font-weight:900}
+/* 14. ingredients — tab pills + tile grid + dark sub-banner */
+.ingsec{background:var(--cream);padding:28px 0 0;margin-top:22px}
+.ingsec h2{font-size:29px;margin-bottom:10px}
+.ingsec .pp{font-size:14.5px;margin:0 0 12px}
+.tabs{display:flex;gap:8px;margin:14px 0 16px;flex-wrap:wrap}
+.tab{border:1.4px solid var(--line);background:#fff;border-radius:8px;padding:10px 12px;font-family:Georgia,serif;
+  font-size:13.5px;cursor:pointer;color:var(--ink)}
+.tab.on{border-color:var(--orange);box-shadow:0 0 0 1.2px var(--orange);background:var(--orangetint)}
+.igrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding-bottom:24px}
+.itile{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 8px;text-align:center;cursor:pointer}
+.itile .em{font-size:30px;line-height:1;margin-bottom:8px}
+.itile .nm{font-size:12px;font-weight:700;display:flex;justify-content:center;gap:5px;align-items:center}
+.itile .nm i{font-style:normal;color:var(--mut);font-weight:400}
+.itile .dd{display:none;font-size:11.5px;color:var(--mut);margin-top:7px;text-align:left}
+.itile.open .dd{display:block}
+.formband{background:var(--dark2);color:#fff;padding:26px 0 30px}
+.formband h3{font-size:21px;margin-bottom:8px}
+.formband p{font-size:14px;color:#D9CBB4;margin:0 0 14px}
+.goldbtn{display:inline-block;background:var(--gold);color:#2B211C;font-weight:800;font-size:14px;
+  border-radius:7px;padding:12px 18px;text-decoration:none}
 
-/* 16. how-to steps */
-.steps{background:var(--cream);padding:26px 0;margin-top:20px}
-.steps h2{text-align:center;margin-bottom:16px}
-.step{display:flex;gap:14px;align-items:flex-start;margin:14px 0}
-.step .n{width:34px;height:34px;flex:none;border-radius:50%;background:var(--gold);color:#fff;
-  display:grid;place-items:center;font-weight:900;font-size:15px}
-.step b{display:block;font-size:15px}
-.step span{font-size:13.5px;color:var(--mut)}
+/* 15. vs-them — tab pills + white table with image headers */
+.vs{padding:30px 0 0}
+.vs h2{font-size:30px;margin-bottom:12px}
+.vs .lead{font-size:14.5px;margin:0 0 16px;padding-left:14px}
+.vstabs{display:flex;gap:8px;margin-bottom:0}
+.vstab{flex:1;border:1.4px solid var(--line);background:#fff;border-radius:8px;padding:12px 8px;font-family:Georgia,serif;
+  font-size:14px;cursor:pointer;text-align:center}
+.vstab.on{border-color:var(--orange);box-shadow:0 0 0 1.2px var(--orange);background:var(--orangetint)}
+.vsband{background:#fff;margin-top:18px}
+.vst{width:100%;border-collapse:collapse;font-family:Georgia,serif;font-size:14px}
+.vst td,.vst th{border-bottom:1px solid var(--line);padding:14px 6px;text-align:center;vertical-align:middle}
+.vst th{font-weight:400}
+.vst .q{font-style:italic;font-size:17px;text-align:left;font-weight:700}
+.vst .himg{width:74px;height:74px;object-fit:cover;border-radius:8px;margin:0 auto 6px}
+.vst .hem{font-size:38px;line-height:74px}
+.vst .y{color:var(--tp);font-weight:900;font-size:17px}
+.vst .x{color:var(--bad);font-weight:900;font-size:17px}
+.vst td:first-child{text-align:left}
 
-/* 17. timeline */
-.tl{padding:26px 0 8px}
-.tl h2{text-align:center;margin-bottom:16px}
-.ph{margin:16px 0 6px}
-.ph .lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--gold);text-transform:uppercase}
-.ph h3{font-size:17px;margin-top:2px}
-.tl p{margin:6px 0 0;font-size:14px;color:#4A3F38}
+/* 16. how-to — dark 2x2 */
+.howto{background:var(--brown);color:#fff;padding:28px 0;margin-top:26px}
+.howto h2{text-align:center;color:#fff;margin-bottom:16px;font-size:26px}
+.howto .big{border-radius:12px;margin-bottom:16px}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
+.hgrid b{display:block;font-size:15px;margin-bottom:4px}
+.hgrid span{font-size:12.5px;color:#E5DACB}
+.hgrid .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;
+  background:var(--gold);color:#fff;font-weight:900;font-size:13px;margin-bottom:7px}
 
-/* 18. value stack */
-.val{background:var(--cream);padding:26px 0;margin-top:20px}
-.val h2{text-align:center;margin-bottom:6px}
-.val .lead{text-align:center;font-size:14.5px;color:var(--mut);margin:0 0 16px}
-.vrow{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);
-  padding:10px 2px;font-size:14px;align-items:baseline}
-.vrow .sub{display:block;font-size:11px;color:var(--mut);letter-spacing:.04em}
-.vrow b.price{flex:none}
-.vtotal{display:flex;justify-content:space-between;padding:12px 2px;font-size:15.5px;font-weight:800}
-.vpunch{text-align:center;font-size:15px;font-weight:700;margin-top:12px}
+/* 17. timeline — vertical line, dots, colored chips */
+.tl{padding:30px 0 10px}
+.tl h2{font-size:30px;margin-bottom:20px}
+.tlrow{position:relative;padding-left:26px;margin-bottom:22px}
+.tlrow::before{content:"";position:absolute;left:6px;top:6px;bottom:-22px;width:2px;background:var(--line)}
+.tlrow:last-child::before{display:none}
+.tlrow .dot{position:absolute;left:0;top:4px;width:14px;height:14px;border-radius:50%;border:2px solid var(--brown);
+  background:#fff;display:grid;place-items:center}
+.tlrow .dot::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--brown)}
+.tlrow .chip{display:inline-block;color:#fff;font-size:11px;font-weight:800;letter-spacing:.06em;
+  border-radius:5px;padding:4px 10px;margin-bottom:7px}
+.tlrow .chip.c1{background:var(--brown)} .tlrow .chip.c2{background:#6B5744}
+.tlrow .chip.c3{background:var(--gold)} .tlrow .chip.c4{background:var(--orange)}
+.tlrow h3{font-size:21px;margin-bottom:7px}
+.tlrow.last h3{color:var(--orange)}
+.tlrow .card{background:var(--cream2);border-radius:9px;padding:13px 15px;font-size:13.5px;color:#4A3F38}
+
+/* 18. hero banner — full-bleed dark statement */
+.banner{position:relative;margin-top:24px;min-height:420px;display:grid;place-items:center;overflow:hidden}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,16,12,.72),rgba(23,16,12,.5))}
+.banner h2{position:relative;z-index:2;color:#F6EEDF;text-align:center;font-size:28px;padding:0 26px;max-width:520px}
+
+/* 19. cost — photo-sliver rows + dark total bar */
+.cost{padding:30px 0 8px}
+.cost h2{font-size:30px;margin-bottom:12px}
+.cost p{font-size:14.5px;margin:0 0 10px}
+.crow{display:flex;margin-bottom:10px}
+.crow .ph{width:56px;flex:none;border-radius:9px 0 0 9px;background-size:cover;background-position:center}
+.crow .tx{flex:1;background:var(--cream2);border-radius:0 9px 9px 0;padding:13px 14px}
+.crow .l1{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.crow .l1 b{font-family:Georgia,serif;font-size:17px;font-weight:700}
+.crow .l1 .pr{font-family:Georgia,serif;font-size:16px;flex:none}
+.crow .subl{font-size:10.5px;letter-spacing:.05em;color:var(--mut);margin-top:4px;text-transform:uppercase}
+.ctotal{display:flex;justify-content:space-between;background:var(--brown);color:#fff;border-radius:9px;
+  padding:15px 16px;font-size:15px;font-weight:800;margin-top:14px}
+.vpunch{text-align:center;font-size:15px;font-weight:700;margin-top:16px}
 .vnote{font-size:11px;color:var(--mut);text-align:center;margin-top:8px}
 
-/* 19. gift recap */
-.grecap{padding:26px 0 8px}
-.grecap h2{text-align:center;margin-bottom:14px}
-.grow{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:10px;
+/* 20. gift recap — image w/ seal + rows */
+.grecap{background:var(--cream);padding:28px 0;margin-top:24px}
+.grecap h2{text-align:center;font-size:28px;margin-bottom:16px}
+.gimg{position:relative;border-radius:12px;overflow:hidden;margin-bottom:14px}
+.gseal{position:absolute;top:12px;right:12px;width:96px;height:96px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#E8C87B,var(--gold));color:#3A2E1B;display:grid;place-items:center;
+  text-align:center;font-size:10.5px;font-weight:900;line-height:1.35;transform:rotate(8deg);box-shadow:0 3px 10px rgba(0,0,0,.3)}
+.grow{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:10px;
   padding:12px 14px;margin-bottom:10px}
-.grow img{width:52px;height:52px;object-fit:cover;border-radius:8px;flex:none}
+.grow img{width:50px;height:50px;object-fit:cover;border-radius:8px;flex:none}
+.grow .gem{width:50px;height:50px;flex:none;display:grid;place-items:center;font-size:27px;background:var(--goldsoft);border-radius:8px}
 .grow .t b{display:block;font-size:14.5px}
 .grow .t span{font-size:12px;color:var(--mut)}
 .grow .pr{margin-left:auto;text-align:right;font-size:13px;flex:none}
-.grow .pr .fr{display:block;color:var(--ok);font-weight:900;font-size:12.5px}
-.grow .pr s{color:var(--strike)}
+.grow .pr .fr{display:block;color:var(--tp);font-weight:900;font-size:12.5px}
+.grow .pr s{color:var(--bad)}
 
-/* 20. quality block */
-.qual{background:var(--cream);padding:24px 0;margin-top:20px}
-.qual .card{background:#fff;border:1.5px solid var(--gold);border-radius:12px;padding:18px;text-align:center}
-.qual .em{font-size:30px;margin-bottom:6px}
-.qual h2{font-size:20px;margin-bottom:8px}
-.qual p{margin:0;font-size:14px;color:#4A3F38}
+/* 21. quality (science slot) */
+.qual{padding:28px 0 8px}
+.qual h2{font-size:29px;margin-bottom:12px}
+.qual p{font-size:14.5px;margin:0 0 10px}
+.qualcard{border:1.6px solid var(--gold);border-radius:12px;background:var(--cream);padding:18px;margin-top:14px;
+  display:flex;gap:14px;align-items:flex-start}
+.qualcard .em{font-size:30px;flex:none}
+.qualcard b{display:block;margin-bottom:4px;font-size:15px}
+.qualcard span{font-size:13.5px;color:#4A3F38}
 
-/* 21. FAQ */
-.faq{padding:26px 0 10px}
-.faq h2{text-align:center;margin-bottom:14px}
-.faq .grp{font-size:13px;font-weight:800;letter-spacing:.08em;color:var(--mut);
-  text-transform:uppercase;margin:18px 0 6px}
+/* 22. review wall (PLACEHOLDER) */
+.rwall{background:var(--cream);padding:28px 0;margin-top:24px}
+.rwall h2{text-align:center;font-size:27px;margin-bottom:16px}
+.rcols{columns:2;column-gap:12px}
+.rmini{break-inside:avoid;background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px;margin-bottom:12px}
+.rmini .st{display:flex;gap:2px;margin-bottom:7px}
+.rmini .st i{width:15px;height:15px;background:var(--tp);color:#fff;display:grid;place-items:center;font-style:normal;font-size:10px}
+.rmini p{margin:0 0 8px;font-size:12.5px}
+.rmini .who{font-family:Georgia,serif;font-size:11px;letter-spacing:.08em;color:var(--mut)}
 
-/* footer */
-footer{background:var(--dark);color:#C9BBA4;padding:26px 0;font-size:13px;text-align:center;margin-top:26px}
+/* 23. FAQ */
+.faq{padding:28px 0 14px}
+.faq h2{text-align:center;font-size:29px;margin-bottom:12px}
+.faq .grp{font-size:13px;font-weight:800;letter-spacing:.08em;color:var(--mut);text-transform:uppercase;margin:20px 0 4px}
+
+footer{background:var(--dark2);color:#C9BBA4;padding:26px 0;font-size:13px;text-align:center;margin-top:28px}
 footer a{color:#E8DCC8;margin:0 7px}
 footer .disc{margin-top:14px;font-size:11px;line-height:1.5;text-align:left;color:#9A8B78}
 </style>
 </head>
 <body>
 
-<!-- 1. announcement (source: "+300K CLIENTES" bar → we use the true discount hook, invented counts stay out of the bar) -->
-<div class="annbar">PORUČI DANAS — DO <b>76% POPUSTA</b> + POKLONI GRATIS</div>
+<!-- 1. announcement — arrows + underlined link like the source -->
+<div class="annbar"><span class="aarr">‹</span><a href="#ponuda">NOVO: paket od 4 kutije — najniža cena po kutiji! →</a><span class="aarr">›</span></div>
 
-<!-- 2. gallery: dots slider like the source; clean product shot leads -->
+<!-- 2. gallery: inset rounded slider; slide 1 is a CSS collage (headline + GRATIS callouts) over the real photo -->
+<div class="galwrap">
 <section class="gal">
   <div class="slides" id="slides">
-    <img src="assets/product.jpg" alt="VRHUNAC kutija — 30 bombona" width="1024" height="1024" fetchpriority="high">
-    <img src="assets/hero.jpg" alt="VRHUNAC gumeni bomboni za muškarce — 6 sastojaka u 1 bombonu" width="1024" height="1024" loading="lazy" decoding="async">
+    <div class="slide">
+      <img src="assets/product.jpg" alt="VRHUNAC kutija — 30 bombona" width="1024" height="1024" fetchpriority="high">
+      <div class="s1head sf">Šest sastojaka u jednom bombonu</div>
+      <div class="seal1">6-U-1<br>30 BOMBONA<br>1 DNEVNO</div>
+      <div class="tag" style="left:10px;top:23%"><span class="fr">GRATIS</span><span class="cap">PDF vodič <s>990 RSD</s></span></div>
+      <div class="tag" style="left:10px;bottom:15%"><span class="fr">GRATIS</span><span class="cap">Dostava <s>490 RSD</s></span></div>
+      <div class="tag" style="right:10px;bottom:22%"><span class="fr">GRATIS</span><span class="cap">Poklon iznenađenja <s>1.490 RSD</s></span></div>
+    </div>
+    <img src="assets/hero.jpg" alt="VRHUNAC — 6 sastojaka u 1 bombonu" width="1024" height="1024" loading="lazy" decoding="async">
     <img src="assets/benefits.jpg" alt="Zašto baš VRHUNAC" width="1024" height="1024" loading="lazy" decoding="async">
     <img src="assets/howto.jpg" alt="Rutina od 5 sekundi" width="1024" height="1024" loading="lazy" decoding="async">
     <img src="assets/holding.jpg" alt="VRHUNAC u ruci" width="1024" height="1024" loading="lazy" decoding="async">
@@ -263,217 +394,276 @@ footer .disc{margin-top:14px;font-size:11px;line-height:1.5;text-align:left;colo
   </div>
   <button class="arr p" onclick="sl(-1)" aria-label="Prethodna">‹</button>
   <button class="arr n" onclick="sl(1)" aria-label="Sledeća">›</button>
+  <div class="dots" id="dots"></div>
 </section>
-<div class="dots" id="dots"></div>
+</div>
+<div class="thumbs" id="thumbs"></div>
 
 <div class="wrap">
-  <!-- 3. rating strip (PLACEHOLDER until real numbers exist) -->
-  <div class="rate"><span class="st">★★★★★</span><span>Ocena <b>4,5/5</b> — 3.000+ zadovoljnih kupaca</span></div>
+  <!-- 3. rating strip (PLACEHOLDER numbers; styled like a review-platform strip but unbranded) -->
+  <div class="rate"><span>Odlično</span><span class="tiles"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span><span>4,5/5</span></div>
+  <div class="eyebrow">3.000+ ZADOVOLJNIH KUPACA!</div>
 
-  <!-- 4. eyebrow + h1 + subline (source: "+300K…" / "Coffee 2.0 - Starter Pack" / "7 hongos | 7 adaptógenos | colágeno") -->
-  <h1 class="ph1">VRHUNAC — gumeni bomboni za muškarce</h1>
+  <!-- 4. h1 + sub + chips + bullets + info pills -->
+  <h1 class="ph1 sf">VRHUNAC — gumeni bomboni za muškarce</h1>
   <p class="subline">6 sastojaka | 1 bombon dnevno | 30 bombona</p>
-
-  <!-- 5. chips (source chips are function claims — ours are format facts) -->
   <div class="chips"><span>6-U-1 FORMULA</span><span>30 BOMBONA</span><span>1 DNEVNO</span></div>
-
-  <!-- 6. check bullets -->
   <ul class="blts">
     <li><span class="c">✓</span>Šilajit — 2000mg po dnevnoj dozi</li>
     <li><span class="c">✓</span>Ašvaganda u standardizovanoj KSM-66 formi — 450mg</li>
     <li><span class="c">✓</span>Prijatan ukus — bez tableta, praškova i šejkera</li>
-    <li><span class="c">✓</span>30 bombona — tačno mesec dana rutine</li>
-    <li><span class="c">✓</span>Ispod 135 RSD dnevno</li>
+    <li><span class="c">✓</span>Jedan bombon umesto šest bočica na polici</li>
     <li><span class="c">✓</span>Laboratorijski testirana svaka serija</li>
   </ul>
+  <div class="ipills"><span>🍬 30 bombona</span><span>💰 &lt;135 RSD / dan!</span><span>🧪 GMP proizvodnja</span></div>
+  <a class="suplink" href="#sastav">Kompletan sastav →</a>
   <p class="formlabel">Dodatak ishrani — gumeni bomboni za muškarce</p>
 
-  <!-- 7. anchor price block (source: 1x 39,90 / crossed 109,50 / AHORRA 69,60 / 30 días | 1,33€ día) -->
-  <div class="anchor">
+  <!-- 5. anchor price (plain, dark savings chip, like the source) -->
+  <div class="anchor" id="ponuda">
+    <div class="ttl sf" id="anchor-ttl">1x VRHUNAC</div>
     <div class="row1"><span class="now" id="anchor-now">3.999 RSD</span><s id="anchor-was">9.999 RSD</s><span class="save" id="anchor-save">UŠTEDIŠ 6.000 RSD</span></div>
-    <div class="sub">Zaliha za 30 dana | manje od 135 RSD dnevno</div>
+    <div class="sub" id="anchor-sub">Zaliha za 30 dana | manje od 135 RSD dnevno</div>
   </div>
 
-  <!-- 8. tier selector — per-unit prices, source ladder 1x / 2x / 4x -->
-  <div class="thead" id="ponuda">Izaberi svoj paket:</div>
-  <div id="tiers"></div>
+  <!-- 6. tier cards — 3-col grid, pouch imagery, badge header bars -->
+  <div class="tgrid" id="tiers"></div>
 
-  <!-- 9. gift stack (source: "¡4 regalos GRATIS!" — ours keeps the real qty gates visible) -->
-  <div class="ghead">Pokloni GRATIS uz porudžbinu:</div>
-  <div id="gifts"></div>
+  <!-- 7. gift block — brown header + 4 dashed gift cards (locked/unlocked by tier) -->
+  <div class="gblock">
+    <div class="ghead">Pokloni GRATIS uz tvoju porudžbinu!</div>
+    <div class="ggrid" id="gifts"></div>
+  </div>
 
-  <!-- 10. delivery + ATC + guarantee + omnibus -->
-  <div class="deliv"><span>🚚 Isporuka za 1–2 radna dana</span><span>💵 Plaćanje pouzećem</span></div>
-  <button class="atc" id="atc" onclick="kupi()">Dodaj u korpu · 3.999 RSD + dostava</button>
-  <div class="guar">GARANCIJA POVRAĆAJA NOVCA 30 DANA — NEOTVOREN PROIZVOD, PUN POVRAĆAJ.<sup>‡</sup></div>
+  <!-- 8. delivery + ATC + guarantee + omnibus + stamps -->
+  <div class="deliv"><span>🚚</span><span>Isporuka za <b>1–2 radna dana</b></span></div>
+  <button class="atc" id="atc" onclick="kupi()"><span id="atc-label">Dodaj u korpu · 3.999 RSD + dostava</span><span class="ar">→</span></button>
+  <div class="guar"><span class="seal">🏅</span><span>GARANCIJA POVRAĆAJA NOVCA 30 DANA — NEOTVOREN PROIZVOD, PUN POVRAĆAJ.<sup>‡</sup></span></div>
   <div class="omnibus">*Najniža cena u poslednjih 30 dana: 3.999 RSD za 1 kutiju, odnosno 2.399 RSD po kutiji u paketu.</div>
-
-  <!-- 11. accordions (source has 5) -->
-  <div class="accs" id="sastav">
-    <details>
-      <summary>Opis proizvoda</summary>
-      <div class="bd"><p>VRHUNAC gumeni bomboni za muškarce — napredna 6-u-1 formula u obliku gumenih bombona prijatnog ukusa. Šest sastojaka u jednom bombonu, umesto šest različitih bočica na polici. 30 bombona po kutiji — mesec dana rutine uz 1 bombon dnevno.</p><p>Bez veštačkih boja. Dodatak ishrani — nije zamena za raznovrsnu ishranu.</p></div>
-    </details>
-    <details>
-      <summary>Sastav</summary>
-      <div class="bd"><p>Šilajit (2000mg po dnevnoj dozi), ašvaganda KSM-66 (450mg), maka, gokšura (tribulus), L-arginin, đumbir.</p><p>Svaka serija je laboratorijski testirana na čistoću i sastav. GMP proizvodnja.</p></div>
-    </details>
-    <details>
-      <summary>Kako se koristi</summary>
-      <div class="bd"><p>Jedan bombon dnevno, najbolje ujutru uz doručak ili kafu. Bez gutanja tableta, bez merenja i bez šejkera — rutina od pet sekundi.</p></div>
-    </details>
-    <details>
-      <summary>Dostava i plaćanje</summary>
-      <div class="bd"><p>Isporuka 1–2 radna dana na celoj teritoriji Srbije. Plaćanje pouzećem — gotovinom ili karticom kod kurira, ništa unapred. Dostava je besplatna za pakete od 2 i više kutija.</p></div>
-    </details>
-    <details>
-      <summary>Povraćaj novca</summary>
-      <div class="bd"><p>Ako se predomisliš, neotvoren proizvod vraćaš u roku od 30 dana uz pun povraćaj novca — bez objašnjavanja i bez komplikacija.</p></div>
-    </details>
+  <div class="stamps">
+    <div class="stamp">GMP<br>PROIZVODNJA</div>
+    <div class="stamp">LABORATORIJSKI<br>TESTIRANO</div>
+    <div class="stamp">ŠILAJIT<br>2000 mg</div>
+    <div class="stamp">KSM-66<br>450 mg</div>
+    <div class="stamp">30<br>BOMBONA</div>
   </div>
 </div>
 
-<!-- 12. reviews (source: 5 long reviews / "250,000 clientes" — WRITTEN PLACEHOLDERS, replace with real verified reviews before ads) -->
-<section class="rev">
+<!-- 9. accordions -->
+<div class="accband"><div class="wrap"><div class="accs" id="sastav">
+  <details>
+    <summary>Opis proizvoda</summary>
+    <div class="bd"><p>VRHUNAC gumeni bomboni za muškarce — napredna 6-u-1 formula u obliku gumenih bombona prijatnog ukusa. Šest sastojaka u jednom bombonu, umesto šest različitih bočica na polici. 30 bombona po kutiji — mesec dana rutine uz 1 bombon dnevno.</p><p>Bez veštačkih boja. Dodatak ishrani — nije zamena za raznovrsnu ishranu.</p></div>
+  </details>
+  <details>
+    <summary>Sastav</summary>
+    <div class="bd"><p>Šilajit (2000mg po dnevnoj dozi), ašvaganda KSM-66 (450mg), maka, gokšura (tribulus), L-arginin, đumbir.</p><p>Svaka serija je laboratorijski testirana na čistoću i sastav. GMP proizvodnja.</p></div>
+  </details>
+  <details>
+    <summary>Kako se koristi</summary>
+    <div class="bd"><p>Jedan bombon dnevno, najbolje ujutru uz doručak ili kafu. Bez gutanja tableta, bez merenja i bez šejkera — rutina od pet sekundi.</p></div>
+  </details>
+  <details>
+    <summary>Dostava i plaćanje</summary>
+    <div class="bd"><p>Isporuka 1–2 radna dana na celoj teritoriji Srbije. Plaćanje pouzećem — gotovinom ili karticom kod kurira, ništa unapred. Dostava je besplatna za pakete od 2 i više kutija.</p></div>
+  </details>
+  <details>
+    <summary>Povraćaj novca</summary>
+    <div class="bd"><p>Ako se predomisliš, neotvoren proizvod vraćaš u roku od 30 dana uz pun povraćaj novca — bez objašnjavanja i bez komplikacija.</p></div>
+  </details>
+</div></div></div>
+
+<!-- 10. upsell (source cross-sell slot; ours = the 4-box pack, honest 4×3.999 anchor) -->
+<section class="upsell">
   <div class="wrap">
-    <h2>Šta kažu kupci</h2>
-    <div class="rcard"><span class="st">★★★★★</span><p>Poručio sam prvu kutiju čisto da probam. Ukus me iznenadio — očekivao sam „suplement", a dobio bombon koji stvarno jedem sa zadovoljstvom svako jutro.</p><div class="who">MILOŠ D.</div></div>
-    <div class="rcard"><span class="st">★★★★★</span><p>Imao sam pet bočica na polici i nijednu rutinu. Sad imam jednu kutiju pored aparata za kafu i to je to — bombon uz prvu kafu, gotovo za pet sekundi.</p><div class="who">PETAR S.</div></div>
-    <div class="rcard"><span class="st">★★★★★</span><p>Prvi suplement koji nisam zaboravio posle nedelju dana. Nema gutanja, nema merenja, nema šejkera — zato se i držim.</p><div class="who">NEMANJA V.</div></div>
-    <div class="rcard"><span class="st">★★★★★</span><p>Uzeo sam paket od 4 kutije — računica je prosta, ispadne najjeftinije po kutiji, a ja imam mira do kraja kvartala.</p><div class="who">IVAN K.</div></div>
-    <div class="rcard"><span class="st">★★★★★</span><p>Kurir doneo za dva dana, platio sam pouzećem. Sve kao što piše — a bomboni su, moram priznati, predobri.</p><div class="who">ĐORĐE M.</div></div>
+    <h2 class="sf">Najpametnija kupovina: <span class="au">paket od 4 kutije.</span></h2>
+    <p class="lead">120 dana rutine bez ponovnog naručivanja — najniža cena po kutiji i svi pokloni uključeni!</p>
+    <div class="upcard"><img src="assets/hero.jpg" alt="VRHUNAC — 4 kutije" width="1024" height="1024" loading="lazy" decoding="async"><span class="chip">UŠTEDA 40%</span></div>
+    <div class="upmeta"><b>4x VRHUNAC — 120 dana</b><div class="pr">9.596 RSD <s>15.996 RSD</s></div></div>
+    <button class="atc" onclick="buyTier(2)"><span>Dodaj u korpu</span><span class="ar">→</span></button>
   </div>
 </section>
 
-<!-- 13. benefits grid (source: "Como el café pero con benefits" — 6 function cards → ours are format facts) -->
+<!-- 11. testimonials — photo-top cards (WRITTEN PLACEHOLDERS — replace with real verified reviews + real photos before ads) -->
+<section class="testi">
+  <div class="wrap">
+    <div class="rate" style="padding-top:0"><span>Odlično</span><span class="tiles"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span><span>4,5/5</span></div>
+    <h2 class="sf">Rezultati pravih kupaca</h2>
+    <div class="trow">
+      <div class="tstc"><img src="assets/holding.jpg" alt="" width="1024" height="1024" loading="lazy" decoding="async"><div class="b"><div class="st"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Poručio sam prvu kutiju čisto da probam. Ukus me iznenadio — očekivao sam „suplement", a dobio bombon koji stvarno jedem sa zadovoljstvom svako jutro.</p><div class="who">MILOŠ D.</div></div></div>
+      <div class="tstc"><img src="assets/product.jpg" alt="" width="1024" height="1024" loading="lazy" decoding="async"><div class="b"><div class="st"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Imao sam pet bočica na polici i nijednu rutinu. Sad imam jednu kutiju pored aparata za kafu i to je to — bombon uz prvu kafu, gotovo za pet sekundi.</p><div class="who">PETAR S.</div></div></div>
+      <div class="tstc"><img src="assets/lifestyle.jpg" alt="" width="1024" height="1024" loading="lazy" decoding="async"><div class="b"><div class="st"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Prvi suplement koji nisam zaboravio posle nedelju dana. Nema gutanja, nema merenja, nema šejkera — zato se i držim.</p><div class="who">NEMANJA V.</div></div></div>
+      <div class="tstc"><img src="assets/gift.jpg" alt="" width="1024" height="1024" loading="lazy" decoding="async"><div class="b"><div class="st"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Uzeo sam paket od 4 kutije — računica je prosta, ispadne najjeftinije po kutiji, a ja imam mira do kraja kvartala.</p><div class="who">IVAN K.</div></div></div>
+      <div class="tstc"><img src="assets/hero.jpg" alt="" width="1024" height="1024" loading="lazy" decoding="async"><div class="b"><div class="st"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Kurir doneo za dva dana, platio sam pouzećem. Sve kao što piše — a bomboni su, moram priznati, predobri.</p><div class="who">ĐORĐE M.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. benefit rows (photo sliver + serif heading, format facts only) -->
 <section class="bene">
   <div class="wrap">
-    <h2>Kao bombon — ali sa razlogom</h2>
+    <h2 class="sf">Kao bombon — ali sa <span class="au">razlogom</span></h2>
     <p class="lead">Većina muškaraca odustane od suplemenata zbog komplikacija. Zato je VRHUNAC sve spakovao u jedan bombon.</p>
-    <div class="bgrid">
-      <div><span class="ic">⚗️</span><h3>6 sastojaka u 1 bombonu</h3><p>Jedna rutina umesto šest bočica na polici.</p></div>
-      <div><span class="ic">🌄</span><h3>Šilajit 2000mg po dozi</h3><p>Planinska smola sa vekovnom tradicijom.</p></div>
-      <div><span class="ic">🧘</span><h3>Ašvaganda KSM-66</h3><p>Standardizovana forma, 450mg po dozi.</p></div>
-      <div><span class="ic">⚡</span><h3>Rutina od 5 sekundi</h3><p>Jedan bombon ujutru, uz doručak ili kafu.</p></div>
-      <div><span class="ic">🍬</span><h3>Prijatan ukus</h3><p>Bez tableta, praškova i šejkera.</p></div>
-      <div><span class="ic">🧪</span><h3>Laboratorijski testirano</h3><p>Svaka serija — GMP proizvodnja.</p></div>
+    <div class="brow"><div class="ph" style="background-image:url(assets/product.jpg)"></div><div class="tx"><h3 class="sf">6 sastojaka u 1 bombonu</h3><p>Šilajit, ašvaganda KSM-66, maka, gokšura, L-arginin i đumbir — jedna rutina umesto šest bočica.</p></div></div>
+    <div class="brow"><div class="ph" style="background-image:url(assets/hero.jpg)"></div><div class="tx"><h3 class="sf">Šilajit 2000mg po dozi</h3><p>Planinska smola sa vekovnom tradicijom — doza jasno napisana na kutiji.</p></div></div>
+    <div class="brow"><div class="ph" style="background-image:url(assets/benefits.jpg)"></div><div class="tx"><h3 class="sf">Ašvaganda KSM-66 — 450mg</h3><p>Biljka sa dugom ajurvedskom tradicijom, u standardizovanoj KSM-66 formi.</p></div></div>
+    <div class="brow"><div class="ph" style="background-image:url(assets/howto.jpg)"></div><div class="tx"><h3 class="sf">Rutina od 5 sekundi</h3><p>Jedan bombon ujutru, uz doručak ili kafu — bez merenja i bez šejkera.</p></div></div>
+    <div class="brow"><div class="ph" style="background-image:url(assets/holding.jpg)"></div><div class="tx"><h3 class="sf">Prijatan ukus</h3><p>Bez gutanja tableta i bez praškova — rutina koja se ne preskače.</p></div></div>
+    <div class="brow"><div class="ph" style="background-image:url(assets/lifestyle.jpg)"></div><div class="tx"><h3 class="sf">Laboratorijski testirano</h3><p>Svaka serija testirana na čistoću i sastav — GMP proizvodnja.</p></div></div>
+  </div>
+</section>
+
+<!-- 13. proof — chart (factual ingredient counts) + big serif stats + CTA -->
+<section class="proof">
+  <div class="wrap">
+    <h2 class="sf">Doza koja se ne krije — <span class="au">i piše na kutiji</span></h2>
+    <p><b>Mnogi suplementi za muškarce su poddozirani</b> — etiketa obećava, sastav ćuti. I skoro svi pokrivaju samo JEDAN sastojak po bočici.</p>
+    <p>VRHUNAC? <b>Šest sastojaka u jednoj dnevnoj dozi</b> — sa dozama koje stoje krupno na kutiji: 2000mg šilajita i 450mg ašvagande KSM-66.</p>
+    <div class="chart">
+      <div class="ct">SASTOJAKA U JEDNOJ DNEVNOJ DOZI</div>
+      <div class="cplot">
+        <div class="cbar"><span class="v">1</span><div class="b" style="height:17%"></div></div>
+        <div class="cbar"><span class="v">1</span><div class="b" style="height:17%"></div></div>
+        <div class="cbar"><span class="v">1</span><div class="b" style="height:17%"></div></div>
+        <div class="cbar hero"><span class="v">6</span><div class="b" style="height:100%"></div></div>
+      </div>
+      <div class="claxis"><span>Šilajit kapsule</span><span>Ašvaganda kapsule</span><span>Maka kapsule</span><span><b>VRHUNAC</b></span></div>
+    </div>
+    <div class="bigstats">
+      <div><b>6-u-1</b><span>šest sastojaka, jedan bombon</span></div>
+      <div><b>2000<small style="font-size:22px">mg</small></b><span>šilajita po dnevnoj dozi</span></div>
+    </div>
+    <button class="atc" onclick="kupi()" style="margin-top:10px"><span>Poruči odmah</span><span class="ar">→</span></button>
+    <div class="guar"><span class="seal">🏅</span><span>GARANCIJA POVRAĆAJA NOVCA 30 DANA — NEOTVOREN PROIZVOD, PUN POVRAĆAJ.</span></div>
+  </div>
+</section>
+
+<!-- 14. ingredients — tabs + tile grid + dark formulation band -->
+<section class="ingsec">
+  <div class="wrap">
+    <h2 class="sf">Jedan bombon. <span class="au">Šest sastojaka.</span></h2>
+    <p class="pp">Nismo hteli još jednu bočicu na polici. Hteli smo jednu prostu rutinu koja pokriva sve.</p>
+    <p class="pp">Zato smo spojili <b>planinsku smolu, četiri biljke i aminokiselinu</b> — pažljivo odabrane i tačno dozirane. Ne da lepo izgleda na etiketi, nego da sve stane u jedan bombon.</p>
+    <div class="tabs" id="itabs"></div>
+    <div class="igrid" id="igrid"></div>
+  </div>
+  <div class="formband">
+    <div class="wrap">
+      <h3 class="sf">Više o našoj formulaciji</h3>
+      <p>Svaka serija je laboratorijski testirana na čistoću i sastav, uz GMP proizvodnju — da tačno znaš šta uzimaš.</p>
+      <a class="goldbtn" href="#sastav" onclick="document.querySelector('#sastav details:nth-child(2)').open=true">Kompletan sastav →</a>
     </div>
   </div>
 </section>
 
-<!-- 14. dosing section (source: "el más fuerte de Europa / competidores subdosificados / 15.000mg" → our real label doses, no invented superlatives) -->
-<section class="dose">
+<!-- 15. vs-them — tab pills + serif table with image column headers -->
+<section class="vs">
   <div class="wrap">
-    <h2>Doza koja se ne krije</h2>
-    <p class="lead">Mnogi suplementi za muškarce su poddozirani — etiketa obećava, sastav ćuti. VRHUNAC doze piše krupno, jer stoje na kutiji.</p>
-    <div class="dstat"><b>2000<small style="font-size:15px">mg</small></b><span>šilajita po dnevnoj dozi</span></div>
-    <div class="dstat"><b>450<small style="font-size:15px">mg</small></b><span>ašvagande u standardizovanoj KSM-66 formi</span></div>
-    <div class="dstat"><b>6</b><span>sastojaka koji se dopunjuju — u jednom bombonu</span></div>
-    <button class="atc" onclick="kupi()">Poruči odmah</button>
-    <div class="guar">GARANCIJA POVRAĆAJA NOVCA 30 DANA — NEOTVOREN PROIZVOD, PUN POVRAĆAJ.</div>
-  </div>
-</section>
-
-<!-- 15. formulation (source: "Una porción. 18 ingredientes" + tabs → our 6 ingredient cards, tradition-framed) -->
-<section class="form">
-  <div class="wrap">
-    <h2>Jedan bombon. Šest sastojaka.</h2>
-    <p class="lead">Pažljivo odabrani i tačno dozirani — bez punila i bez veštačkih boja.</p>
-    <div class="ingr">
-      <div class="icard"><div class="em">🌄</div><h3>Šilajit</h3><p>Planinska smola, vekovima cenjena u tradiciji Himalaja — 2000mg po dnevnoj dozi.</p></div>
-      <div class="icard"><div class="em">🧘</div><h3>Ašvaganda KSM-66</h3><p>Biljka sa dugom ajurvedskom tradicijom — u standardizovanoj KSM-66 formi, 450mg.</p></div>
-      <div class="icard"><div class="em">🌱</div><h3>Maka</h3><p>Koren iz Anda, vekovima deo svakodnevne ishrane u Peruu.</p></div>
-      <div class="icard"><div class="em">🌿</div><h3>Gokšura</h3><p>Tribulus terrestris — biljka sa dugom tradicijom u muškim formulama.</p></div>
-      <div class="icard"><div class="em">💪</div><h3>L-arginin</h3><p>Aminokiselina dobro poznata svakome ko je kročio u teretanu.</p></div>
-      <div class="icard"><div class="em">🫚</div><h3>Đumbir</h3><p>Koren koji se hiljadama godina koristi u tradicionalnoj ishrani.</p></div>
+    <h2 class="sf">Zašto bombon, a ne još jedna bočica?</h2>
+    <p class="lead">Tablete stoje u fioci, praškovi traže šejker, a energetska pića nisu suplement. Jedan bombon prijatnog ukusa — to je rutina koja preživi.</p>
+    <div class="vstabs">
+      <button class="vstab on" onclick="vsPick(0)">Obične tablete</button>
+      <button class="vstab" onclick="vsPick(1)">Energetska pića</button>
     </div>
-    <p class="labline">🧪 Svaka serija je laboratorijski testirana na čistoću i sastav · GMP proizvodnja</p>
   </div>
-</section>
-
-<!-- 16. compare table (source: Original 2.0 vs café regular → ours: VRHUNAC vs tablete vs energetska pića, format rows) -->
-<section class="cmp">
-  <div class="wrap">
-    <h2>Kako se poredimo</h2>
-    <table>
-      <tr><th></th><th class="us">VRHUNAC</th><th>Obične tablete</th><th>Energetska pića</th></tr>
-      <tr><td>6 sastojaka u jednom</td><td class="us y">✓</td><td class="x">✕</td><td class="x">✕</td></tr>
-      <tr><td>Bez gutanja tableta</td><td class="us y">✓</td><td class="x">✕</td><td class="y">✓</td></tr>
-      <tr><td>Jedan bombon umesto šest bočica</td><td class="us y">✓</td><td class="x">✕</td><td class="x">✕</td></tr>
-      <tr><td>Laboratorijski testirano</td><td class="us y">✓</td><td class="x">✕</td><td class="x">✕</td></tr>
-      <tr><td>Rutina od 5 sekundi</td><td class="us y">✓</td><td class="y">✓</td><td class="x">✕</td></tr>
+  <div class="vsband"><div class="wrap">
+    <table class="vst">
+      <tr><th class="q sf">U čemu je razlika?</th>
+          <th><img class="himg" src="assets/product.jpg" alt="VRHUNAC" width="1024" height="1024" loading="lazy" decoding="async">VRHUNAC</th>
+          <th><span class="hem" id="vs-em">💊</span><br><span id="vs-nm">Obične tablete</span></th></tr>
+      <tbody id="vs-rows"></tbody>
     </table>
-  </div>
+  </div></div>
 </section>
 
-<!-- 17. how-to (source: 4 pasos) -->
-<section class="steps">
+<!-- 16. how-to — dark band, image + 2x2 numbered steps -->
+<section class="howto">
   <div class="wrap">
-    <h2>Super jednostavno, super ukusno</h2>
-    <div class="step"><span class="n">1</span><div><b>Uzmi 1 bombon ujutru</b><span>Prijatan ukus — kao bombona, ali sa razlogom.</span></div></div>
-    <div class="step"><span class="n">2</span><div><b>Uz doručak ili kafu</b><span>Uklopi se u rutinu koju već imaš.</span></div></div>
-    <div class="step"><span class="n">3</span><div><b>Budi dosledan svaki dan</b><span>Jedna kutija od 30 bombona pokriva ceo mesec.</span></div></div>
-    <div class="step"><span class="n">4</span><div><b>Prati kako se osećaš</b><span>Navika se gradi iz nedelje u nedelju — doslednost je poenta.</span></div></div>
+    <h2 class="sf">Super jednostavno, super ukusno</h2>
+    <img class="big" src="assets/howto.jpg" alt="Rutina od 5 sekundi — koraci" width="1024" height="1024" loading="lazy" decoding="async">
+    <div class="hgrid">
+      <div><span class="n">1</span><b>Uzmi 1 bombon ujutru</b><span>Prijatan ukus — kao bombona, ali sa razlogom.</span></div>
+      <div><span class="n">2</span><b>Uz doručak ili kafu</b><span>Uklopi se u rutinu koju već imaš.</span></div>
+      <div><span class="n">3</span><b>Budi dosledan</b><span>Jedna kutija od 30 bombona pokriva ceo mesec.</span></div>
+      <div><span class="n">4</span><b>Prati kako se osećaš</b><span>Navika se gradi iz nedelje u nedelju.</span></div>
+    </div>
   </div>
 </section>
 
-<!-- 18. timeline (source: "Transfórmate en 90 días" function phases → routine framing, no body-function claims) -->
+<!-- 17. timeline — dotted line, colored chips, routine framing (no body-function claims) -->
 <section class="tl">
   <div class="wrap">
-    <h2>Prvih 90 dana rutine</h2>
-    <div class="ph"><div class="lbl">Dan 1</div><h3>Prvi bombon uz kafu</h3></div>
-    <p>Pet sekundi — bez merenja, bez rastvaranja, bez gutanja tableta. To je cela filozofija.</p>
-    <div class="ph"><div class="lbl">Nedelja 1</div><h3>Rutina se lepi uz jutro</h3></div>
-    <p>Bombon stoji pored aparata za kafu, pa se ne zaboravlja — za razliku od bočica u fioci.</p>
-    <div class="ph"><div class="lbl">Mesec 1</div><h3>Kutija taman istekne</h3></div>
-    <p>30 bombona, 30 dana. Navika je automatska — kao pranje zuba. Sledeća kutija je već spremna ako si uzeo paket.</p>
-    <div class="ph"><div class="lbl">Mesec 3</div><h3>Tvoj novi standard</h3></div>
-    <p>Paket od 4 kutije pokriva ceo kvartal bez ponovnog naručivanja — najniža cena po kutiji, nula razmišljanja.</p>
+    <h2 class="sf">Prvih 90 dana <span class="au">rutine</span></h2>
+    <div class="tlrow"><span class="dot"></span><span class="chip c1">DAN 1</span><h3 class="sf">Prvi bombon uz kafu</h3><div class="card">Pet sekundi — bez merenja, bez rastvaranja, bez gutanja tableta. To je cela filozofija.</div></div>
+    <div class="tlrow"><span class="dot"></span><span class="chip c2">NEDELJA 1</span><h3 class="sf">Rutina se lepi uz jutro</h3><div class="card">Bombon stoji pored aparata za kafu, pa se ne zaboravlja — za razliku od bočica u fioci.</div></div>
+    <div class="tlrow"><span class="dot"></span><span class="chip c3">MESEC 1</span><h3 class="sf">Kutija taman istekne</h3><div class="card">30 bombona, 30 dana. Navika je automatska — kao pranje zuba. Sledeća kutija je već spremna ako si uzeo paket.</div></div>
+    <div class="tlrow last"><span class="dot"></span><span class="chip c4">MESEC 3</span><h3 class="sf">Tvoj novi standard</h3><div class="card">Paket od 4 kutije pokriva ceo kvartal bez ponovnog naručivanja — najniža cena po kutiji, nula razmišljanja.</div></div>
   </div>
 </section>
 
-<!-- 19. value stack (source: "¿Por qué pagaría 40€?" ingredient math — amounts are PLACEHOLDER estimates, operator to verify) -->
-<section class="val">
+<!-- 18. hero banner — full-bleed dark statement over the lifestyle photo -->
+<section class="banner">
+  <img src="assets/lifestyle.jpg" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+  <h2 class="sf">Prava doza pravih sastojaka — u bombonu koji stvarno prija.</h2>
+</section>
+
+<!-- 19. cost — photo-sliver rows, dark total bar (amounts are PLACEHOLDER estimates, operator to verify) -->
+<section class="cost">
   <div class="wrap">
-    <h2>Zašto 3.999 RSD za bombone?</h2>
-    <p class="lead">Zato što jedan bombon menja celu policu. Koliko bi koštalo da šest sastojaka kupiš odvojeno?</p>
-    <div class="vrow"><span>Šilajit kapsule<span class="sub">2000MG DNEVNO</span></span><b class="price">~1.800 RSD</b></div>
-    <div class="vrow"><span>Ašvaganda KSM-66<span class="sub">STANDARDIZOVANA FORMA</span></span><b class="price">~1.500 RSD</b></div>
-    <div class="vrow"><span>Maka + gokšura<span class="sub">DVA ODVOJENA PROIZVODA</span></span><b class="price">~1.600 RSD</b></div>
-    <div class="vrow"><span>L-arginin + đumbir<span class="sub">IZ SPORTSKE PRODAVNICE</span></span><b class="price">~1.300 RSD</b></div>
-    <div class="vtotal"><span>Ukupno, mesečno</span><span>preko 6.000 RSD</span></div>
+    <h2 class="sf">Zašto 3.999 RSD <span class="au">za bombone?</span></h2>
+    <p>VRHUNAC nije običan bombon. Jedan bombon nosi šest sastojaka — <b>i menja celu policu suplemenata.</b></p>
+    <p>Koliko bi koštalo da svih šest kupiš odvojeno?</p>
+    <div class="crow"><div class="ph" style="background-image:url(assets/hero.jpg)"></div><div class="tx"><div class="l1"><b>Šilajit kapsule</b><span class="pr">~1.800 RSD</span></div><div class="subl">2000MG DNEVNO</div></div></div>
+    <div class="crow"><div class="ph" style="background-image:url(assets/benefits.jpg)"></div><div class="tx"><div class="l1"><b>Ašvaganda KSM-66</b><span class="pr">~1.500 RSD</span></div><div class="subl">STANDARDIZOVANA FORMA</div></div></div>
+    <div class="crow"><div class="ph" style="background-image:url(assets/product.jpg)"></div><div class="tx"><div class="l1"><b>Maka + gokšura</b><span class="pr">~1.600 RSD</span></div><div class="subl">DVA ODVOJENA PROIZVODA</div></div></div>
+    <div class="crow"><div class="ph" style="background-image:url(assets/holding.jpg)"></div><div class="tx"><div class="l1"><b>L-arginin + đumbir</b><span class="pr">~1.300 RSD</span></div><div class="subl">JOŠ DVE BOČICE NA POLICI</div></div></div>
+    <div class="ctotal"><span>Ukupno</span><span>preko 6.000 RSD /mes</span></div>
     <div class="vpunch">VRHUNAC: 3.999 RSD — a u paketu od 4 kutije samo 2.399 RSD po kutiji.</div>
     <p class="vnote">Okvirne maloprodajne cene pojedinačnih suplemenata u Srbiji; variraju po brendu i apoteci.</p>
   </div>
 </section>
 
-<!-- 20. gift recap (source: "Obtén 4 regalos de bienvenida gratis") -->
+<!-- 20. gift recap — image with value seal + rows + CTA -->
 <section class="grecap">
   <div class="wrap">
-    <h2>Pokloni dobrodošlice</h2>
+    <h2 class="sf">Pokloni dobrodošlice</h2>
+    <div class="gimg"><img src="assets/gift.jpg" alt="VRHUNAC pokloni" width="1024" height="1024" loading="lazy" decoding="async"><span class="gseal">POKLONI<br>VREDNI<br>2.970 RSD</span></div>
     <div class="grow"><img src="assets/product.jpg" alt="" width="1024" height="1024" loading="lazy" decoding="async"><div class="t"><b>VRHUNAC — kutija 30 bombona</b><span>mesec dana rutine</span></div><div class="pr"><b id="recap-price">3.999 RSD</b></div></div>
-    <div class="grow"><img src="assets/gift.jpg" alt="" width="1024" height="1024" loading="lazy" decoding="async"><div class="t"><b>PDF vodič za mušku formu</b><span>uz svaku porudžbinu</span></div><div class="pr"><span class="fr">GRATIS</span><s>990 RSD</s></div></div>
-    <div class="grow"><img src="assets/holding.jpg" alt="" width="1024" height="1024" loading="lazy" decoding="async"><div class="t"><b>Besplatna dostava</b><span>za 2 i više kutija</span></div><div class="pr"><span class="fr">GRATIS</span><s>490 RSD</s></div></div>
-    <div class="grow"><img src="assets/lifestyle.jpg" alt="" width="1024" height="1024" loading="lazy" decoding="async"><div class="t"><b>Poklon iznenađenja</b><span>za 4 kutije</span></div><div class="pr"><span class="fr">GRATIS</span><s>1.490 RSD</s></div></div>
-    <button class="atc" onclick="kupi()" style="margin-top:8px">Poruči odmah</button>
+    <div class="grow"><span class="gem">📘</span><div class="t"><b>PDF vodič za mušku formu</b><span>uz svaku porudžbinu</span></div><div class="pr"><span class="fr">GRATIS</span><s>990 RSD</s></div></div>
+    <div class="grow"><span class="gem">🚚</span><div class="t"><b>Besplatna dostava</b><span>za 2 i više kutija</span></div><div class="pr"><span class="fr">GRATIS</span><s>490 RSD</s></div></div>
+    <div class="grow"><img src="assets/gift.jpg" alt="" width="1024" height="1024" loading="lazy" decoding="async"><div class="t"><b>Poklon iznenađenja</b><span>za 4 kutije</span></div><div class="pr"><span class="fr">GRATIS</span><s>1.490 RSD</s></div></div>
+    <button class="atc" onclick="kupi()" style="margin-top:8px"><span id="atc2-label">Poruči odmah</span><span class="ar">→</span></button>
+    <div class="guar"><span class="seal">🏅</span><span>GARANCIJA POVRAĆAJA NOVCA 30 DANA — NEOTVOREN PROIZVOD, PUN POVRAĆAJ.</span></div>
   </div>
 </section>
 
-<!-- 21. quality block (source: "Respaldado por la ciencia" efficacy chart → our substantiated quality statement) -->
+<!-- 21. quality (source "science" slot → substantiated quality claims only) -->
 <section class="qual">
   <div class="wrap">
-    <div class="card">
-      <div class="em">🧪</div>
-      <h2>Kontrola kvaliteta</h2>
-      <p>Svaka serija VRHUNAC bombona prolazi laboratorijsko testiranje na čistoću i sastav. GMP proizvodnja, bez veštačkih boja i punila — jer rutina vredi samo ako joj veruješ.</p>
+    <h2 class="sf">Kontrola <span class="au">kvaliteta</span></h2>
+    <p>Kod suplemenata je najvažnije da tačno znaš šta uzimaš — i da svaka kutija sadrži ono što etiketa kaže.</p>
+    <div class="qualcard"><span class="em">🧪</span><div><b>Laboratorijski testirano · GMP proizvodnja</b><span>Svaka serija VRHUNAC bombona prolazi laboratorijsko testiranje na čistoću i sastav. Bez veštačkih boja i punila — jer rutina vredi samo ako joj veruješ.</span></div></div>
+  </div>
+</section>
+
+<!-- 22. review wall (WRITTEN PLACEHOLDERS — same 5 reviews, wall layout) -->
+<section class="rwall">
+  <div class="wrap">
+    <h2 class="sf">Muškarci širom Srbije biraju <span class="au">VRHUNAC</span></h2>
+    <div class="rcols">
+      <div class="rmini"><div class="st"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Ukus me iznenadio — očekivao sam „suplement", a dobio bombon koji stvarno jedem sa zadovoljstvom.</p><div class="who">MILOŠ D.</div></div>
+      <div class="rmini"><div class="st"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Pet bočica na polici, nijedna rutina. Sad — jedna kutija pored aparata za kafu i to je to.</p><div class="who">PETAR S.</div></div>
+      <div class="rmini"><div class="st"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Prvi suplement koji nisam zaboravio posle nedelju dana. Nema gutanja, nema merenja.</p><div class="who">NEMANJA V.</div></div>
+      <div class="rmini"><div class="st"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Paket od 4 kutije — najjeftinije po kutiji, a ja imam mira do kraja kvartala.</p><div class="who">IVAN K.</div></div>
+      <div class="rmini"><div class="st"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Kurir doneo za dva dana, platio pouzećem. Sve kao što piše — a bomboni su predobri.</p><div class="who">ĐORĐE M.</div></div>
     </div>
   </div>
 </section>
 
-<!-- 22. FAQ — two groups like the source -->
+<!-- 23. FAQ -->
 <section class="faq">
   <div class="wrap">
-    <h2>Česta pitanja</h2>
+    <h2 class="sf">Česta pitanja</h2>
     <div class="grp">VRHUNAC</div>
     <div class="accs">
       <details><summary>Šta se nalazi u bombonima?</summary><div class="bd"><p>Šest sastojaka: šilajit (2000mg po dnevnoj dozi), ašvaganda u standardizovanoj KSM-66 formi (450mg), maka, gokšura, L-arginin i đumbir. Bez veštačkih boja, svaka serija je laboratorijski testirana.</p></div></details>
@@ -504,20 +694,20 @@ footer .disc{margin-top:14px;font-size:11px;line-height:1.5;text-align:left;colo
 </footer>
 
 <script>
-/* Offer: source's 1x/2x/4x ladder with our per-unit price points. The Shopify
-   variants are priced PER UNIT, so cart quantity N at the right variant gives
-   the advertised total, and the BUNDLE shipping codes (quantity-gated) fire. */
+/* Offer: source's 1x/2x/4x card grid with our per-unit price points. Shopify
+   variants are PER-UNIT priced, so cart quantity N gives the advertised total
+   and the quantity-gated BUNDLE shipping codes fire. */
 const TIERS = [
-  { qty:1, unit:3999, name:"1 kutija",  sub:"30 dana",              badge:null,             variantId:"57237796684041", ship:true  },
-  { qty:2, unit:2666, name:"2 kutije",  sub:"60 dana · −33%",       badge:"NAJPOPULARNIJE", variantId:"57237796716809", ship:false },
-  { qty:4, unit:2399, name:"4 kutije",  sub:"120 dana · −40%",      badge:"NAJVEĆA UŠTEDA", variantId:"57237796749577", ship:false },
+  { qty:1, unit:3999, badge:null,             chip:'plain', variantId:"57237796684041", ship:true  },
+  { qty:2, unit:2666, badge:"NAJPOPULARNIJE", chip:'g',     variantId:"57237796716809", ship:false },
+  { qty:4, unit:2399, badge:"NAJVEĆA UŠTEDA", chip:'d',     variantId:"57237796749577", ship:false },
 ];
 const COMPARE_AT = 9999;
-/* Gift ladder — same order-level cart attribute as LP A/B; obligation once per ORDER. */
+/* Gift ladder — order-level cart attribute, obligation once per ORDER. */
 const GIFTS = [
-  {at:1, cap:"PDF vodič za mušku formu", val:"990 RSD",  sub:"uz svaku porudžbinu"},
-  {at:2, cap:"Besplatna dostava",        val:"490 RSD",  sub:"za 2 i više kutija"},
-  {at:4, cap:"Poklon iznenađenja",       val:"1.490 RSD", sub:"za 4 kutije"}
+  {at:1, cap:"PDF vodič za mušku formu", nm:"PDF vodič za mušku formu", em:"📘", val:"990 RSD",   sub:"uz svaku porudžbinu"},
+  {at:2, cap:"Besplatna dostava",        nm:"Besplatna dostava",        em:"🚚", val:"490 RSD",   sub:"od 2 kutije"},
+  {at:4, cap:"Poklon iznenađenja",       nm:"Poklon iznenađenja",       em:"🎁", val:"1.490 RSD", sub:"od 4 kutije"}
 ];
 const GIFT_ATTR_KEY = "Pokloni", GIFT_ATTR_PREFIX = "1x po porudžbini: ";
 function giftAttr(qty){
@@ -533,49 +723,113 @@ let sel = 0; /* ALWAYS preselect the 1-piece tier (owner rule 2026-08-14) */
 function render(){
   const t = TIERS[sel];
   document.getElementById('tiers').innerHTML = TIERS.map((o,i)=>`
-    <div class="tier ${i===sel?'on':''}" onclick="pickTier(${i})">
-      ${o.badge?`<span class="bdg">${o.badge}</span>`:''}
-      <span class="rad"></span>
-      <div class="t"><b>${o.qty}x VRHUNAC</b><span>${o.sub}</span></div>
-      <div class="pr"><b>${fmt(o.unit)}${o.qty>1?' / kutija':''}</b><span>${o.qty>1?('ukupno '+fmt(o.unit*o.qty)):'30 bombona'}</span></div>
+    <div class="tcard ${i===sel?'on':''}" onclick="pickTier(${i})">
+      ${o.badge?`<div class="bar ${o.chip}">${o.badge}</div>`:''}
+      <div class="imgs">${Array.from({length:o.qty},()=>`<img src="assets/product.jpg" alt="" loading="lazy" decoding="async">`).join('')}</div>
+      <div class="nm">${o.qty}x VRHUNAC</div>
+      <span class="pchip ${o.chip}">${fmt(o.unit)}${o.qty>1?'/kut':''}</span>
+      <div class="tot">${o.qty>1?('ukupno '+fmt(o.unit*o.qty)):'30 bombona'}</div>
     </div>`).join('');
   document.getElementById('gifts').innerHTML = GIFTS.map(g=>`
-    <div class="gift ${t.qty>=g.at?'':'locked'}">
-      <span class="fr">${t.qty>=g.at?'GRATIS':'🔒'}</span>
-      <div class="t"><b>${g.cap}</b><span>${g.sub}</span></div>
-      <span class="val">${g.val}</span>
-    </div>`).join('');
+    <div class="gcard ${t.qty>=g.at?'':'locked'}">
+      <span class="fr">${t.qty>=g.at?'FREE':'🔒'}</span>
+      <div class="em">${g.em}</div>
+      <div class="nm">${g.nm}</div>
+      <s>${g.val}</s>
+      <div class="sub">${g.sub}</div>
+    </div>`).join('') + `
+    <div class="gcard">
+      <span class="fr">1–2 DANA</span>
+      <div class="em">📦</div>
+      <div class="nm">Brza isporuka</div>
+      <div class="sub">cela Srbija</div>
+    </div>`;
   const total = t.unit*t.qty;
+  document.getElementById('anchor-ttl').textContent = t.qty+'x VRHUNAC';
   document.getElementById('anchor-now').textContent = fmt(t.unit) + (t.qty>1?' / kutija':'');
   document.getElementById('anchor-was').textContent = fmt(COMPARE_AT);
   document.getElementById('anchor-save').textContent = 'UŠTEDIŠ ' + fmt((COMPARE_AT-t.unit)*t.qty);
-  document.getElementById('atc').textContent = 'Dodaj u korpu · ' + fmt(total) + (t.ship?' + dostava':'');
+  document.getElementById('anchor-sub').textContent = 'Zaliha za '+(30*t.qty)+' dana | manje od 135 RSD dnevno';
+  document.getElementById('atc-label').textContent = 'Dodaj u korpu · ' + fmt(total) + (t.ship?' + dostava':'');
   const rp = document.getElementById('recap-price'); if(rp) rp.textContent = fmt(total);
 }
 function pickTier(i){ sel = i; render(); }
+function buyTier(i){ sel = i; render(); kupi(); }
 function kupi(){
   const t = TIERS[sel];
   __go(BASE + '/cart/' + t.variantId + ':' + t.qty + giftAttr(t.qty));
 }
 
-/* gallery slider + dots */
+/* ingredients tabs + tiles */
+const ING = [
+  {tab:"Biljke i koreni", items:[
+    {em:"🧘", nm:"Ašvaganda KSM-66", dd:"Biljka sa dugom ajurvedskom tradicijom — u standardizovanoj KSM-66 formi, 450mg po dozi."},
+    {em:"🌱", nm:"Maka", dd:"Koren iz Anda, vekovima deo svakodnevne ishrane u Peruu."},
+    {em:"🌿", nm:"Gokšura", dd:"Tribulus terrestris — biljka sa dugom tradicijom u muškim formulama."},
+    {em:"🫚", nm:"Đumbir", dd:"Koren koji se hiljadama godina koristi u tradicionalnoj ishrani."}]},
+  {tab:"Planinska smola", items:[
+    {em:"🌄", nm:"Šilajit", dd:"Planinska smola, vekovima cenjena u tradiciji Himalaja — 2000mg po dnevnoj dozi."}]},
+  {tab:"Aminokiselina", items:[
+    {em:"💪", nm:"L-arginin", dd:"Aminokiselina dobro poznata svakome ko je kročio u teretanu."}]}
+];
+let itab = 0;
+function renderIng(){
+  document.getElementById('itabs').innerHTML = ING.map((g,i)=>`<button class="tab ${i===itab?'on':''}" onclick="pickItab(${i})">${g.tab}</button>`).join('');
+  document.getElementById('igrid').innerHTML = ING[itab].items.map((x,k)=>`
+    <div class="itile" id="it${k}" onclick="this.classList.toggle('open')">
+      <div class="em">${x.em}</div>
+      <div class="nm">${x.nm} <i>+</i></div>
+      <div class="dd">${x.dd}</div>
+    </div>`).join('');
+}
+function pickItab(i){ itab = i; renderIng(); }
+
+/* vs-them tabs — switch the competitor column */
+const VS = [
+  {em:"💊", nm:"Obične tablete", rows:[
+    ["Format","Bombon prijatnog ukusa","Tableta za gutanje"],
+    ["Sastojaka u dnevnoj dozi","6","1"],
+    ["Bez gutanja tableta","y","x"],
+    ["Laboratorijski testirano","y","x"],
+    ["Jedna kutija = ceo mesec","y","y"]]},
+  {em:"⚡", nm:"Energetska pića", rows:[
+    ["Format","Bombon prijatnog ukusa","Gazirano piće iz limenke"],
+    ["Sastojaka u dnevnoj dozi","6","2–3"],
+    ["Deo svakodnevne rutine","y","x"],
+    ["Laboratorijski testirano","y","x"],
+    ["Jedna kutija = ceo mesec","y","x"]]}
+];
+let vsi = 0;
+function renderVs(){
+  document.querySelectorAll('.vstab').forEach((b,i)=>b.classList.toggle('on', i===vsi));
+  document.getElementById('vs-em').textContent = VS[vsi].em;
+  document.getElementById('vs-nm').textContent = VS[vsi].nm;
+  const mark = v => v==='y' ? '<span class="y">✓</span>' : v==='x' ? '<span class="x">✕</span>' : v;
+  document.getElementById('vs-rows').innerHTML = VS[vsi].rows.map(r=>
+    `<tr><td>${r[0]}</td><td>${mark(r[1])}</td><td>${mark(r[2])}</td></tr>`).join('');
+}
+function vsPick(i){ vsi = i; renderVs(); }
+
+/* gallery slider + dots + thumbs */
 const slides = document.getElementById('slides');
 function sl(d){ slides.scrollBy({left: d*slides.clientWidth, behavior:'smooth'}); }
 function jmp(i){ slides.scrollTo({left: i*slides.clientWidth, behavior:'smooth'}); }
 (function(){
-  const n = slides.querySelectorAll('img').length;
-  document.getElementById('dots').innerHTML = Array.from({length:n},(_,i)=>`<span class="${i===0?'on':''}" onclick="jmp(${i})"></span>`).join('');
+  const items=[...slides.children];
+  document.getElementById('dots').innerHTML = items.map((_,i)=>`<span class="${i===0?'on':''}" onclick="jmp(${i})"></span>`).join('');
+  const srcs = items.map(el => el.tagName==='IMG' ? el.getAttribute('src') : el.querySelector('img').getAttribute('src'));
+  document.getElementById('thumbs').innerHTML = srcs.map((s,i)=>`<img src="${s}" class="${i===0?'on':''}" onclick="jmp(${i})" alt="" loading="lazy" decoding="async">`).join('');
   slides.addEventListener('scroll',()=>{
     const i=Math.round(slides.scrollLeft/slides.clientWidth);
-    [...document.querySelectorAll('.dots span')].forEach((d,k)=>d.classList.toggle('on',k===i));
+    [...document.querySelectorAll('.gal .dots span')].forEach((d,k)=>d.classList.toggle('on',k===i));
+    [...document.querySelectorAll('.thumbs img')].forEach((t,k)=>t.classList.toggle('on',k===i));
   });
 })();
 
-render();
+render(); renderIng(); renderVs();
 </script>
 <script>
-/* Shared checkout helpers (same block as the other LP B/C pages): BUNDLE shipping
-   codes derived from REAL cart quantity + Meta pixel events. */
+/* Shared checkout helpers: BUNDLE shipping codes from REAL cart quantity + pixel events. */
 function __cq(u){var m=u.match(/:(\d+)(?=,|\?|$)/g)||[];return m.reduce(function(a,x){return a+parseInt(x.slice(1))},0);}
 function __dec(u){var q=__cq(u);
   if(q>=3)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE3_RS_SHIP';
@@ -605,7 +859,7 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156451565079
   document.addEventListener('click',function(e){
     var t=e.target; if(!t||!t.closest)return;
     if(t.closest('summary,details'))ev('LP_FAQ');
-    if(t.closest('[data-tier],.tier,.opt,.pick,.bundle,label'))ev('LP_TierSwitch');
+    if(t.closest('[data-tier],.tier,.tcard,.opt,.pick,.bundle,label'))ev('LP_TierSwitch');
     if(t.closest('.sw,.swatch,[data-color],[data-variant]'))ev('LP_VariantPick');
     if(t.closest('.dots,.thumbs,.thumb,[data-slide]'))ev('LP_Gallery');
   },true);
@@ -615,8 +869,7 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156451565079
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) — slug lives in the event NAME because
-   Meta's stats API only breaks down by name, and url collapses to the origin. */
+/* Per-product events (LPV_/LPE_/LPC_) — slug lives in the event NAME. */
 (function(){
   var SLUG=location.pathname.replace(/\//g,'')||'lp', SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;
