@@ -286,7 +286,7 @@ footer .fb{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-weig
   <div class="deliv">🚚 Poruči danas, stiže ti <span id="eta">u utorak</span>!</div>
   <div class="pays"><span>POUZEĆEM</span><span>VISA</span><span>MASTERCARD</span><span>MAESTRO</span><span>DINA</span></div>
   <div class="rowline">📦 Roba <b>na stanju u Srbiji</b></div>
-  <div class="rowline">🚚 <b>Isporuka 2–4 radna dana</b></div>
+  <div class="rowline">🚚 <b>Isporuka 1–2 radna dana</b></div>
   <div class="rowline">💵 <b>Plaćanje pouzećem</b> — kod kurira</div>
   <!-- PLACEHOLDER: stock number is invented — set a real one or remove before ads. -->
   <div class="stock">🟠 Ostalo je još <b>19</b> kompleta na stanju!</div>
@@ -311,7 +311,7 @@ footer .fb{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-weig
     <details><summary><span class="fi">🏷️</span>Mogu li različite veličine u kompletu?</summary>
       <p>Možeš. Kada izabereš komplet, za svaki par posebno biraš veličinu — jedan par za tebe, drugi za nekog u kući.</p></details>
     <details><summary><span class="fi">📦</span>Isporuka i plaćanje</summary>
-      <p>Isporuka 2–4 radna dana na celoj teritoriji Srbije. Plaćaš pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata. Dostava je besplatna za komplete od 2 i više pari.</p></details>
+      <p>Isporuka 1–2 radna dana na celoj teritoriji Srbije. Plaćaš pouzećem — gotovinom ili karticom kod kurira, tek kada ti paket stigne na vrata. Dostava je besplatna za komplete od 2 i više pari.</p></details>
     <details><summary><span class="fi">↩️</span>Povraćaj novca</summary>
       <p>Ako se predomisliš, proizvod u nekorišćenom stanju možeš da vratiš u roku od 30 dana i dobiješ pun povraćaj novca — bez objašnjavanja i bez komplikacija.</p></details>
   </div>
@@ -385,7 +385,7 @@ footer .fb{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-weig
     <div class="facts">
       <div><b>8 mm</b><span>otvorena 4D mreža</span></div>
       <div><b>5</b><span>veličina (35–44)</span></div>
-      <div><b>2–4</b><span>dana do isporuke</span></div>
+      <div><b>1–2</b><span>dana do isporuke</span></div>
     </div>
     <table class="cmp">
       <thead><tr><th></th><th class="me">LEDNIK</th><th>Obični ulošci</th></tr></thead>
@@ -426,7 +426,7 @@ footer .fb{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-weig
 </main>
 
 <footer>
-  <div class="fb"><span>🚚 Isporuka 2–4 dana</span><span>💵 Plaćanje pouzećem</span><span>📦 Roba u Srbiji</span></div>
+  <div class="fb"><span>🚚 Isporuka 1–2 dana</span><span>💵 Plaćanje pouzećem</span><span>📦 Roba u Srbiji</span></div>
   <div>
     <a href="https://rs.unikatko.eu/pages/contact">Kontakt</a>·
     <a href="https://rs.unikatko.eu/policies/privacy-policy">Politika privatnosti</a>·
@@ -662,13 +662,13 @@ function mq(el, items){
 const MAXSAVE = Math.max(...CFG.tiers.map(t => Math.round((1 - t.unit / CFG.compareAt) * 100)));
 mq('mq1',['☀️ LETNJA RASPRODAJA','💥 NAJVEĆI POPUST DO SADA','⌛ PONUDA USKORO ISTIČE','🔥 UŠTEDI DO '+MAXSAVE+'%']);
 mq('mq2',['💨 Vazduh kruži pri svakom koraku','🌿 Bez neprijatnog mirisa','🫧 Mekan korak','💧 Suvo ceo dan']);
-mq('mq3',['🚚 Isporuka 2–4 radna dana','💵 Plaćanje pouzećem','↩️ 30 dana za povraćaj','📦 Roba u Srbiji']);
+mq('mq3',['🚚 Isporuka 1–2 radna dana','💵 Plaćanje pouzećem','↩️ 30 dana za povraćaj','📦 Roba u Srbiji']);
 
 /* ---- delivery ETA (2 working days ahead, Serbian weekday) ---- */
 (function(){
   const dn=['u nedelju','u ponedeljak','u utorak','u sredu','u četvrtak','u petak','u subotu'];
   const d=new Date(); let added=0;
-  while(added<3){ d.setDate(d.getDate()+1); if(d.getDay()!==0 && d.getDay()!==6) added++; }
+  while(added<2){ d.setDate(d.getDate()+1); if(d.getDay()!==0 && d.getDay()!==6) added++; }
   document.getElementById('eta').textContent = dn[d.getDay()] + ', ' +
     d.getDate() + '.' + (d.getMonth()+1) + '.';
 })();
