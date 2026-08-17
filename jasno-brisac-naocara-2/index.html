@@ -707,7 +707,7 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156475065961
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;
     try{ fbq('trackCustom',n,{content_name:SLUG}); }catch(e){} }
-  if(SLUG) pev('LPV_'+SK);
+  if(SLUG) if(SLUG) pev('LPV_'+SK);
   setTimeout(function(){ if(SLUG) pev('LPE_'+SK); },30000);
   document.addEventListener('click',function(e){
     var a=e.target&&e.target.closest?e.target.closest('a[href*="/cart/"],.cta,#atc,#atc2'):null;
