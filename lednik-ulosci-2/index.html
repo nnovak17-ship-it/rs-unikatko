@@ -221,6 +221,20 @@ footer .fb{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-weig
 .satc button{background:var(--o);color:#fff;border:0;border-radius:9px;font-size:16px;
   font-weight:900;padding:13px 20px;white-space:nowrap;cursor:pointer}
 </style>
+<script>
+/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
+   Returns our slug, or '' when the document was not served from a normal https
+   URL under a slug path. Meta blocked a real event named
+   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
+   it `location.pathname` straight from a `data:` URL. */
+window.lpSlug = function(){
+  try{
+    if (!/^https?:$/.test(location.protocol)) return '';
+    var s = location.pathname.replace(/^\/+|\/+$/g, '');
+    return /^[a-z0-9][a-z0-9-]{0,39}$/.test(s) ? s : '';
+  }catch(e){ return ''; }
+};
+</script>
 </head>
 <body>
 
@@ -712,14 +726,14 @@ renderTiers();
    Meta's stats API breaks down by event NAME only — not by parameter, and its
    url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
-  var SLUG=location.pathname.replace(/\//g,'')||'lp', SK=SLUG.replace(/-/g,'_'), done={};
+  var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;
     try{ fbq('trackCustom',n,{content_name:SLUG}); }catch(e){} }
-  pev('LPV_'+SK);
-  setTimeout(function(){ pev('LPE_'+SK); },30000);
+  if(SLUG) pev('LPV_'+SK);
+  setTimeout(function(){ if(SLUG) pev('LPE_'+SK); },30000);
   document.addEventListener('click',function(e){
     var a=e.target&&e.target.closest?e.target.closest('a[href*="/cart/"],.cta,#atc,#atc2'):null;
-    if(a) pev('LPC_'+SK);
+    if(a && SLUG) pev('LPC_'+SK);
   },true);
 })();
 </script>

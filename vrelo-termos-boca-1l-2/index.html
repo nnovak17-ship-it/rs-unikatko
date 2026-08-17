@@ -16,6 +16,20 @@ fbq('track','PageView');
  src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
 
 <meta name="description" content="VRELO termos boca 1L od 18/8 nerđajućeg čelika: piće ostaje toplo 12 sati i hladno 24 sata. Poklopac ne curi, sa ručkom za nošenje. Plaćanje pouzećem.">
+<script>
+/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
+   Returns our slug, or '' when the document was not served from a normal https
+   URL under a slug path. Meta blocked a real event named
+   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
+   it `location.pathname` straight from a `data:` URL. */
+window.lpSlug = function(){
+  try{
+    if (!/^https?:$/.test(location.protocol)) return '';
+    var s = location.pathname.replace(/^\/+|\/+$/g, '');
+    return /^[a-z0-9][a-z0-9-]{0,39}$/.test(s) ? s : '';
+  }catch(e){ return ''; }
+};
+</script>
 <style>
 :root{
   --bg:#F4F1EE; --ink:#151515; --muted:#6b6b66; --line:#dcd6cf;
@@ -571,7 +585,7 @@ render();
 
 /* LP behaviour events (generic, LP B). */
 (function(){
-  var SLUG=location.pathname.replace(/\//g,'')||'lp', sent={};
+  var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
     try{ fbq('trackCustom',n,Object.assign({content_name:SLUG},x||{})); }catch(e){} }
   var t0=Date.now();
@@ -598,14 +612,14 @@ render();
    Meta's stats API breaks down by event NAME only — not by parameter, and its
    url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
-  var SLUG=location.pathname.replace(/\//g,'')||'lp', SK=SLUG.replace(/-/g,'_'), done={};
+  var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;
     try{ fbq('trackCustom',n,{content_name:SLUG}); }catch(e){} }
-  pev('LPV_'+SK);
-  setTimeout(function(){ pev('LPE_'+SK); },30000);
+  if(SLUG) pev('LPV_'+SK);
+  setTimeout(function(){ if(SLUG) pev('LPE_'+SK); },30000);
   document.addEventListener('click',function(e){
     var a=e.target&&e.target.closest?e.target.closest('a[href*="/cart/"],.cta,#atc,#atc2'):null;
-    if(a) pev('LPC_'+SK);
+    if(a && SLUG) pev('LPC_'+SK);
   },true);
 })();
 </script>

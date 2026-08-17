@@ -143,6 +143,20 @@ footer a{color:#cdd4d1;text-decoration:none;display:inline-block;margin:0 11px 9
 footer small{display:block;color:#8b9793;font-size:11px;line-height:1.6;margin-top:13px}
 .ph{font-size:10px;color:#b9c1bd}
 </style>
+<script>
+/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
+   Returns our slug, or '' when the document was not served from a normal https
+   URL under a slug path. Meta blocked a real event named
+   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
+   it `location.pathname` straight from a `data:` URL. */
+window.lpSlug = function(){
+  try{
+    if (!/^https?:$/.test(location.protocol)) return '';
+    var s = location.pathname.replace(/^\/+|\/+$/g, '');
+    return /^[a-z0-9][a-z0-9-]{0,39}$/.test(s) ? s : '';
+  }catch(e){ return ''; }
+};
+</script>
 </head>
 <body>
 
@@ -371,7 +385,7 @@ function goCheckout(){
   var t=TIERS[sel];
   try{fbq('track','InitiateCheckout',{content_type:'product',content_ids:[t.variant],
     value:t.qty*t.unit,currency:'RSD',num_items:t.qty});}catch(e){}
-  try{fbq('trackCustom','LP_StickyCTA',{content_name:location.pathname.replace(/\//g,'')});}catch(e){}
+  try{var _s=window.lpSlug();fbq('trackCustom','LP_StickyCTA',_s?{content_name:_s}:{});}catch(e){}
   location.href=checkoutUrl();
 }
 
@@ -401,7 +415,7 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156528658680
 
 /* LP behaviour events — generic version for the hand-written LP B pages. */
 (function(){
-  var SLUG=location.pathname.replace(/\//g,'')||'lp', sent={};
+  var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
     try{ fbq('trackCustom',n,Object.assign({content_name:SLUG},x||{})); }catch(e){} }
   var t0=Date.now();
@@ -428,14 +442,14 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156528658680
    Meta's stats API breaks down by event NAME only — not by parameter, and its
    url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
-  var SLUG=location.pathname.replace(/\//g,'')||'lp', SK=SLUG.replace(/-/g,'_'), done={};
+  var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;
     try{ fbq('trackCustom',n,{content_name:SLUG}); }catch(e){} }
-  pev('LPV_'+SK);
-  setTimeout(function(){ pev('LPE_'+SK); },30000);
+  if(SLUG) pev('LPV_'+SK);
+  setTimeout(function(){ if(SLUG) pev('LPE_'+SK); },30000);
   document.addEventListener('click',function(e){
     var a=e.target&&e.target.closest?e.target.closest('a[href*="/cart/"],.cta,#atc,#atc2'):null;
-    if(a) pev('LPC_'+SK);
+    if(a && SLUG) pev('LPC_'+SK);
   },true);
 })();
 </script>

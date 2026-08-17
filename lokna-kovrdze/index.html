@@ -18,6 +18,20 @@ fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" alt=""
  src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
+<script>
+/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
+   Returns our slug, or '' when the document was not served from a normal
+   https URL under a slug path. Meta blocked a real event named
+   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version
+   fed it `location.pathname` straight from a `data:` URL. */
+window.lpSlug = function(){
+  try{
+    if (!/^https?:$/.test(location.protocol)) return '';
+    var s = location.pathname.replace(/^\/+|\/+$/g, '');
+    return /^[a-z0-9][a-z0-9-]{0,39}$/.test(s) ? s : '';
+  }catch(e){ return ''; }
+};
+</script>
 <style>
 /* ============================================================
    PAGE-DUPLICATOR TEMPLATE — bundle-builder funnel
@@ -931,8 +945,8 @@ function goCheckout(){
         content_ids: cartLines().map(l => l.split(':')[0]),
         value: t.qty * t.unit, currency:'RSD', num_items: t.qty
       });
-      fbq('trackCustom','LPC_' + location.pathname.replace(/\//g,'').replace(/-/g,'_'),
-          {content_name: location.pathname.replace(/\//g,'')});
+      var _s = window.lpSlug();                      // sanitised — see lpSlug()
+      if (_s) fbq('trackCustom','LPC_' + _s.replace(/-/g,'_'), {content_name:_s});
     }catch(e){}
     location.href = url; return;
   }
@@ -998,21 +1012,30 @@ renderTiers(); renderGifts(); renderTotal(); buildThumbs(); renderColors(); tick
    to be readable back into the dashboard. Every event carries the slug in
    content_name for per-LP drill-down in Events Manager. Each fires at most once. */
 (function(){
-  var SLUG = location.pathname.replace(/\//g,'') || 'lp';
   /* Slug-scoped event NAMES give PER-PRODUCT numbers in the dashboard. Meta's
      stats API breaks down by event name (one call returns them all) but NOT by
      custom parameter, and its `url` aggregation collapses to the origin — so the
      slug has to live in the name. Three per LP, kept short:
-       LPV_<slug> view · LPE_<slug> engaged 30s+ · LPC_<slug> checkout click   */
+       LPV_<slug> view · LPE_<slug> engaged 30s+ · LPC_<slug> checkout click
+
+     SANITISE THE PATH BEFORE IT BECOMES AN EVENT NAME (fixed 2026-08-17).
+     `location.pathname` is NOT guaranteed to be a slug: when the document is
+     rendered from a `data:` URL (preview tool, scraper, renderer) it is the whole
+     payload, which produced the real event name
+     `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` — Meta blocked it. Only emit
+     per-product events when the path really looks like one of our slugs. */
+  var SLUG = window.lpSlug();
   var SK = SLUG.replace(/-/g,'_');
   var sent = {};
   function ev(name, extra){
     if (sent[name]) return; sent[name] = 1;
-    try{ fbq('trackCustom', name, Object.assign({content_name: SLUG}, extra||{})); }catch(e){}
+    var p = extra || {};
+    if (SLUG) p.content_name = SLUG;   // never send a junk value as a parameter either
+    try{ fbq('trackCustom', name, p); }catch(e){}
   }
-  ev('LPV_' + SK);                                   // one view per pageview
+  if (SLUG) ev('LPV_' + SK);                         // one view per pageview
   var t0 = Date.now();
-  setTimeout(function(){ ev('LP_Engaged30'); ev('LPE_' + SK); }, 30000);
+  setTimeout(function(){ ev('LP_Engaged30'); if (SLUG) ev('LPE_' + SK); }, 30000);
   setTimeout(function(){ ev('LP_Engaged120'); }, 120000);
 
   function depth(){
