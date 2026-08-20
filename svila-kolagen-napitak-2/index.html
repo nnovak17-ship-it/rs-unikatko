@@ -200,6 +200,78 @@ footer .dis p{margin:0 0 7px}
   .claims{grid-template-columns:repeat(3,1fr)}
   h2{font-size:28px}
 }
+
+/* ---- top badge strip (source has one above the gallery) ---- */
+.badges{background:var(--wash);border-bottom:1px solid var(--line)}
+.badges .wrap{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:11px 16px}
+.badges span{font-size:11.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;
+  color:var(--ink2);display:flex;align-items:center;gap:6px}
+.badges b{color:var(--gold);font-size:14px}
+
+/* ---- image banner section ---- */
+.banner img{border-radius:8px;margin-top:16px}
+.banner .bul{margin-top:16px}
+
+/* ---- 6 benefit cards (source layout) ---- */
+.bens{display:grid;gap:12px;margin-top:18px}
+.ben{background:#fff;border:1px solid var(--line);border-radius:8px;padding:15px}
+.ben .ic{width:38px;height:38px;border-radius:50%;background:var(--lav);display:flex;
+  align-items:center;justify-content:center;font-size:19px;margin-bottom:9px}
+/* NO text-transform here. `uppercase` maps µ (U+00B5) to Greek capital Mu, which
+   renders as a Latin M — it silently turned "7,5 µg" of biotin into "7,5 MG",
+   a 1000x error on a nutrition declaration. Titles are typed in the case we want. */
+.ben b{display:block;font-size:14px;letter-spacing:.3px;margin-bottom:4px}
+.ben span{font-size:13.5px;color:var(--ink2)}
+.ben.auth{border-left:4px solid var(--gold)}
+
+/* ---- timeline ---- */
+.tl img{border-radius:8px;margin-top:14px}
+.tl .note{font-size:12px;color:var(--ink2);margin-top:12px;font-style:italic}
+
+/* ---- 5 alternating feature blocks ---- */
+.feat{display:grid;gap:14px;margin-top:18px}
+.frow{display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.frow img{width:104px;height:104px;object-fit:cover;border-radius:8px}
+.frow b{display:block;font-size:13.5px;text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px}
+.frow span{font-size:13.5px;color:var(--ink2)}
+
+/* ---- compare, two-panel like the source ---- */
+.cmp2{display:grid;gap:14px;margin-top:18px}
+.pan{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;text-align:center}
+.pan.us{border:2px solid var(--o)}
+.pan img{width:150px;margin:0 auto 12px;border-radius:8px}
+.pan h3{font-size:15px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+.pan ul{list-style:none;margin:0;padding:0;text-align:left}
+.pan li{position:relative;padding:0 0 9px 25px;font-size:13.5px}
+.pan.us li:before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:800}
+.pan.them li:before{content:'✕';position:absolute;left:0;color:#c9bcc3;font-weight:800}
+.pan.them{background:var(--wash)}
+.pan.them li{color:var(--ink2)}
+
+/* ---- usage image ---- */
+.usei{border-radius:8px;margin-top:16px}
+
+/* ---- review avatars ---- */
+.rev .hd{display:flex;align-items:center;gap:10px}
+.rev .av{flex:0 0 36px;height:36px;border-radius:50%;background:var(--lav);color:var(--ink);
+  font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+
+/* ---- review summary widget (source runs one at the bottom) ---- */
+.rsum{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px;margin-top:16px}
+.rsum .big{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.rsum .score{font-size:40px;font-weight:800;line-height:1}
+.rsum .of{font-size:13px;color:var(--ink2)}
+.rsum .bars{margin-top:14px;display:grid;gap:6px}
+.rsum .bar{display:grid;grid-template-columns:44px 1fr 38px;gap:9px;align-items:center;font-size:12px}
+.rsum .track{height:8px;border-radius:500px;background:var(--line);overflow:hidden}
+.rsum .fill{height:100%;background:var(--gold)}
+@media(min-width:620px){
+  .bens{grid-template-columns:repeat(3,1fr)}
+  .cmp2{grid-template-columns:1fr 1fr;align-items:start}
+  .badges .wrap{gap:26px}
+}
+
 </style>
 <script>
 /* lpSlug() — the ONLY place a page path may become part of a Meta event name.
@@ -219,6 +291,13 @@ window.lpSlug = function(){
 <body>
 
 <div class="mq"><div class="t">NOVO · SVILA KOLAGEN NAPITAK — ŠUMSKO VOĆE &nbsp;·&nbsp; BESPLATNA DOSTAVA OD 2 PAKOVANJA &nbsp;·&nbsp; PLAĆANJE POUZEĆEM &nbsp;·&nbsp; 50 PORCIJA U PAKOVANJU &nbsp;·&nbsp; NOVO · SVILA KOLAGEN NAPITAK — ŠUMSKO VOĆE &nbsp;·&nbsp; BESPLATNA DOSTAVA OD 2 PAKOVANJA &nbsp;·&nbsp;</div></div>
+
+<!-- top badge strip (source runs one here) -->
+<section class="badges"><div class="wrap">
+  <span><b>◆</b> 50 porcija u pakovanju</span>
+  <span><b>◆</b> Sirovine iz Evropske unije</span>
+  <span><b>◆</b> Plaćanje pouzećem</span>
+</div></section>
 
 <!-- quote (source opens with a celebrity endorsement + testimonial; the endorsement is
      theirs and is deliberately NOT reproduced — this is an unfilled placeholder slot) -->
@@ -325,49 +404,105 @@ window.lpSlug = function(){
   </div>
 </div></section>
 
-<!-- authorised-claims section (replaces the source's "zbog čega je kolagen važan"
-     block and its ❌ symptom list — those are unauthorised as worded) -->
-<section class="sec lav"><div class="wrap">
-  <h2>ŠTA JE U MERICI OD 5 g</h2>
-  <p class="sub" style="margin-top:8px">Tri hranljive materije u ovoj formuli nose odobrene tvrdnje. Navodimo ih tačno onako kako glase.</p>
-  <div class="claims">
-    <div class="claim"><b>Vitamin C — 80 mg (100% NRV)</b><span>Vitamin C doprinosi normalnom stvaranju kolagena za normalnu funkciju kože.</span></div>
-    <div class="claim"><b>Cink — 1,5 mg (15% NRV)</b><span>Cink doprinosi očuvanju normalne kože, kose i noktiju.</span></div>
-    <div class="claim"><b>Biotin — 7,5 µg (15% NRV)</b><span>Biotin doprinosi očuvanju normalne kose i kože.</span></div>
-  </div>
-  <p style="font-size:13px;color:var(--ink2);margin-top:16px">Za sam kolagen, MSM, L-lizin i hijaluronsku kiselinu ne postoje odobrene zdravstvene tvrdnje, pa ih ovde ne iznosimo.</p>
+<!-- "why powder" banner — the source runs a big image banner here titled
+     "ZBOG ČEGA JE KOLAGEN TOLIKO VAŽAN?" whose whole list (bore, celulit, gubitak
+     kose, bolovi u zglobovima) is unauthorised. Same slot, same shape, FORMAT
+     question instead of a symptom list, and the polarity is flipped to ✓. -->
+<section class="sec lav banner"><div class="wrap">
+  <h2>ZAŠTO PRAH, A NE TABLETA?</h2>
+  <img src="assets/banner-ritual.jpg" width="1024" height="688" loading="lazy" decoding="async"
+       alt="Ruke mešaju čašu SVILA napitka na kuhinjskom pultu, pored stoji pakovanje">
+  <p class="sub" style="margin-top:14px">Kolagen se u tableti meri u miligramima, a u merici u gramima. Zato je SVILA prah — jedna merica nosi <b>3,2 g</b> hidrolizovanog kolagena, i popiješ je kao sok.</p>
+  <ul class="bul">
+    <li>Jedna merica umesto šake tableta</li>
+    <li><b>3,2 g</b> hidrolizovanog goveđeg kolagena u porciji od 5 g</li>
+    <li>Rastvara se bez grudvica i bez taloga</li>
+    <li>Ukus šumskog voća, bez dodatog šećera</li>
+  </ul>
   <button class="cta" onclick="jumpTop()">PORUČI ODMAH! →</button>
 </div></section>
 
-<!-- fact cards (source has 6 benefit cards; all six were unauthorised claims) -->
+<!-- 6 cards — the source's 6 benefit cards were all unauthorised claims
+     (koža, nokti, glow, kosa, celulit, zglobovi). Same 6-card slot: the first
+     three carry the ONLY authorised wording, the last three are plain fact. -->
 <section class="sec"><div class="wrap">
-  <h2 class="center">JEDNA MERICA, JEDAN RITUAL</h2>
-  <div class="facts">
-    <div class="fact"><div class="ic">🥤</div><b>Bez grudvica</b><span>Aglomerisan prah, rastvara se za dvadesetak sekundi</span></div>
-    <div class="fact"><div class="ic">🫐</div><b>Šumsko voće</b><span>Bez ukusa želatina, bez veštačke gorčine</span></div>
-    <div class="fact"><div class="ic">🚫</div><b>Bez šećera</b><span>Zaslađeno steviol glikozidima</span></div>
-    <div class="fact"><div class="ic">📅</div><b>50 porcija</b><span>Jedno pakovanje pokriva 50 dana</span></div>
+  <h2 class="center">ŠTA JE U MERICI OD 5 g</h2>
+  <p class="sub center" style="margin-top:8px">Tri hranljive materije u ovoj formuli nose odobrene tvrdnje. Navodimo ih tačno onako kako glase.<sup>†</sup></p>
+  <div class="bens">
+    <div class="ben auth"><div class="ic">🍊</div><b>Vitamin C — 80 mg (100% NRV)</b><span>Vitamin C doprinosi normalnom stvaranju kolagena za normalnu funkciju kože.</span></div>
+    <div class="ben auth"><div class="ic">🔩</div><b>Cink — 1,5 mg (15% NRV)</b><span>Cink doprinosi očuvanju normalne kože, kose i noktiju.</span></div>
+    <div class="ben auth"><div class="ic">💧</div><b>Biotin — 7,5 µg (15% NRV)</b><span>Biotin doprinosi očuvanju normalne kose i kože.</span></div>
+    <div class="ben"><div class="ic">🥄</div><b>3,2 g kolagena</b><span>Hidrolizovani goveđi kolagen, tip 1, 2 i 3, u svakoj porciji od 5 g.</span></div>
+    <div class="ben"><div class="ic">🥤</div><b>Bez grudvica</b><span>Aglomerisan prah se rastvara u vodi za dvadesetak sekundi.</span></div>
+    <div class="ben"><div class="ic">📅</div><b>50 porcija</b><span>Jedno pakovanje pokriva 50 dana, po jednu mericu dnevno.</span></div>
+  </div>
+  <p style="font-size:13px;color:var(--ink2);margin-top:16px">Za sam kolagen, MSM, L-lizin i hijaluronsku kiselinu ne postoje odobrene zdravstvene tvrdnje, pa ih ovde ne iznosimo.</p>
+</div></section>
+
+<!-- timeline — the source's equivalent ("Kako deluje Rejuva kompleks formula?")
+     is a RESULTS timeline with a small-print disclaimer. We keep the slot and the
+     visual, but ours is a RITUAL timeline: we promise nothing over time. -->
+<section class="sec alt tl"><div class="wrap">
+  <h2 class="center">KAKO SE UKLAPA U DAN</h2>
+  <img src="assets/timeline.jpg" width="1024" height="688" loading="lazy" decoding="async"
+       alt="Ritual koji traje 20 sekundi: ujutru merica u čašu vode, promešaj, svaki dan">
+  <p class="note">Ovo je raspored korišćenja, a ne obećanje rezultata. SVILA je dodatak ishrani i ne navodimo nikakav vremenski okvir za bilo kakav efekat.</p>
+</div></section>
+
+<!-- 5 feature blocks (source has 5: apsorpcija / ukus / Nemačka / turbo mešavina /
+     50 dana). Ours drops the absorption claim and the German-manufacture claim —
+     we cannot document either — and keeps five FORMAT facts. -->
+<section class="sec"><div class="wrap">
+  <h2 class="center">SITNICE KOJE SE OSETE</h2>
+  <div class="feat">
+    <div class="frow"><img src="assets/feat-merica.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="Merica sa 5 g praha">
+      <div><b>1 merica = 5 g</b><span>Praktična porcija, jednom dnevno. Merica je u pakovanju, ne moraš da meriš kašikom.</span></div></div>
+    <div class="frow"><img src="assets/feat-ukus.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="Čaša napitka sa šumskim voćem">
+      <div><b>Primetno dobar ukus</b><span>Prah sa ukusom šumskog voća, bez dodatog šećera — zaslađeno steviol glikozidima.</span></div></div>
+    <div class="frow"><img src="assets/feat-rastvara.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="Prah se rastvara u vodi bez grudvica">
+      <div><b>Bez grudvica</b><span>Prah je aglomerisan, pa se rastvara u vodi bez grudvica i bez taloga na dnu čaše.</span></div></div>
+    <div class="frow"><img src="assets/feat-kesica.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="Kesica sa zip zatvaranjem i mericom unutra">
+      <div><b>Kesica sa zip zatvaranjem</b><span>Zatvori je posle svake porcije — prah ostaje suv do poslednjeg dana.</span></div></div>
+    <div class="frow"><img src="assets/dana50.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="Jedno pakovanje dovoljno je za 50 dana">
+      <div><b>Dovoljno za 50 dana</b><span>50 porcija od 5 g u jednom pakovanju — 250 g praha.</span></div></div>
   </div>
 </div></section>
 
-<!-- comparison (source compares itself to "ostali kolageni"; ours compares FORMAT only) -->
+<!-- compare — source runs a two-panel us-vs-them block with a product photo on
+     each side. Same layout; ours compares FORMAT only, and the "others" panel
+     shows unbranded generic tablets, never a named competitor. -->
 <section class="sec alt"><div class="wrap">
-  <h2 class="center">ZAŠTO SVILA</h2>
-  <table class="cmp">
-    <thead><tr><th></th><th class="us">SVILA</th><th>Kolagen u tabletama</th><th>Kolagen bomboni</th></tr></thead>
-    <tbody>
-      <tr><td>Jedna merica dnevno, bez gutanja</td><td class="yes">✓</td><td class="no">✕</td><td class="no">✕</td></tr>
-      <tr><td>Ukus šumskog voća</td><td class="yes">✓</td><td class="no">✕</td><td class="yes">✓</td></tr>
-      <tr><td>3,2 g kolagena po porciji</td><td class="yes">✓</td><td class="no">✕</td><td class="no">✕</td></tr>
-      <tr><td>Bez dodatog šećera</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td></tr>
-      <tr><td>50 porcija u jednom pakovanju</td><td class="yes">✓</td><td class="no">✕</td><td class="no">✕</td></tr>
-    </tbody>
-  </table>
+  <h2 class="center">SVILA I OSTALI</h2>
+  <div class="cmp2">
+    <div class="pan us">
+      <img src="assets/compare-svila.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="SVILA kolagen napitak u prahu">
+      <h3>SVILA prah</h3>
+      <ul>
+        <li>Jedna merica dnevno, bez gutanja</li>
+        <li>3,2 g kolagena po porciji</li>
+        <li>Ukus šumskog voća</li>
+        <li>Bez dodatog šećera</li>
+        <li>50 porcija u jednom pakovanju</li>
+      </ul>
+    </div>
+    <div class="pan them">
+      <img src="assets/compare-drugi.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="Obične tablete i kapsule">
+      <h3>Tablete i kapsule</h3>
+      <ul>
+        <li>Nekoliko tableta dnevno, uz gutanje</li>
+        <li>Doza se meri u miligramima</li>
+        <li>Bez ukusa ili sa ukusom omotača</li>
+        <li>Bombonima se najčešće dodaje šećer</li>
+        <li>Pakovanje obično traje kraće</li>
+      </ul>
+    </div>
+  </div>
 </div></section>
 
 <!-- usage -->
 <section class="sec"><div class="wrap">
   <h2 class="center">KAKO SE KORISTI</h2>
+  <img class="usei" src="assets/upotreba-steps.jpg" width="1024" height="829" loading="lazy" decoding="async" alt="Kako se koristi: 1 merica od 5 g, 150 ml vode, promešaj i popij">
   <div class="steps">
     <div class="step"><div class="n">1</div><div><b>Uzmi jednu mericu (5 g)</b><span>Merica se nalazi u pakovanju.</span></div></div>
     <div class="step"><div class="n">2</div><div><b>Sipaj u 150 ml vode</b><span>Hladna ili mlaka voda, kako više voliš.</span></div></div>
@@ -381,10 +516,10 @@ window.lpSlug = function(){
   <h2 class="center">ŠTA KAŽU KUPCI</h2>
   <div class="center"><span class="ph">Placeholder — sve recenzije se zamenjuju pravim pre oglašavanja</span></div>
   <div class="revs">
-    <div class="rev"><div class="st">★★★★★</div><b>Ukus je stvarno pitak</b><q>Probala sam ranije kolagen koji je mirisao na želatin. Ovaj ima ukus šumskog voća i popijem ga bez razmišljanja.</q><div class="who">Ivana R.</div></div>
-    <div class="rev"><div class="st">★★★★★</div><b>Ne pravi grudvice</b><q>Sipam mericu u čašu hladne vode, promešam kašičicom i za dvadesetak sekundi je bistro. Nema onog taloga na dnu.</q><div class="who">Milica S.</div></div>
-    <div class="rev"><div class="st">★★★★★</div><b>Uzela sam dva pakovanja</b><q>Jedno za mene, jedno za sestru. Ispalo je povoljnije po pakovanju, a platila sam kuriru na vrata kao što piše.</q><div class="who">Jelena T.</div></div>
-    <div class="rev"><div class="st">★★★★☆</div><b>Stiglo za dva dana</b><q>Poručila u ponedeljak, u sredu je bilo kod mene. Kesica ima zip zatvaranje pa prah ostaje suv.</q><div class="who">Sanja P.</div></div>
+    <div class="rev"><div class="st">★★★★★</div><b>Ukus je stvarno pitak</b><q>Probala sam ranije kolagen koji je mirisao na želatin. Ovaj ima ukus šumskog voća i popijem ga bez razmišljanja.</q><div class="hd"><div class="av">I</div><div class="who" style="margin:0">Ivana R.</div></div></div>
+    <div class="rev"><div class="st">★★★★★</div><b>Ne pravi grudvice</b><q>Sipam mericu u čašu hladne vode, promešam kašičicom i za dvadesetak sekundi je bistro. Nema onog taloga na dnu.</q><div class="hd"><div class="av">M</div><div class="who" style="margin:0">Milica S.</div></div></div>
+    <div class="rev"><div class="st">★★★★★</div><b>Uzela sam dva pakovanja</b><q>Jedno za mene, jedno za sestru. Ispalo je povoljnije po pakovanju, a platila sam kuriru na vrata kao što piše.</q><div class="hd"><div class="av">J</div><div class="who" style="margin:0">Jelena T.</div></div></div>
+    <div class="rev"><div class="st">★★★★☆</div><b>Stiglo za dva dana</b><q>Poručila u ponedeljak, u sredu je bilo kod mene. Kesica ima zip zatvaranje pa prah ostaje suv.</q><div class="hd"><div class="av">S</div><div class="who" style="margin:0">Sanja P.</div></div></div>
   </div>
 </div></section>
 
@@ -409,6 +544,26 @@ window.lpSlug = function(){
   <details><summary>Ko ne bi trebalo da koristi SVILA kolagen?</summary><p>Proizvod <b>nije namenjen osobama mlađim od 18 godina, trudnicama i dojiljama</b>. Kolagen je goveđeg porekla, pa nije pogodan za vegetarijance i vegane. Ako uzimaš terapiju ili imaš zdravstvenih tegoba, posavetuj se sa lekarom pre upotrebe. Dodatak ishrani nije zamena za raznovrsnu i uravnoteženu ishranu i zdrav način života.</p></details>
   <details><summary>Kako plaćam i koliko čeka isporuka?</summary><p>Plaćaš <b>pouzećem</b>, kuriru, kada ti paket stigne na vrata. Isporuka traje 1–2 radna dana na celoj teritoriji Srbije. Dostava je besplatna od 2 pakovanja; za 1 pakovanje se naplaćuje standardna dostava.</p></details>
   <details><summary>Šta ako mi se ne dopadne?</summary><p>Imaš <b>30 dana garancije</b> od prijema pošiljke. Javi nam se i dobijaš pun povraćaj novca.<sup>‡</sup></p></details>
+</div></section>
+
+<!-- review summary — the source ends on a Judge.me widget (4.80/5, 1449 reviews,
+     a 5-bar breakdown). Same slot and same shape, all numbers PLACEHOLDER. -->
+<section class="sec"><div class="wrap">
+  <h2 class="center">RECENZIJE KUPACA</h2>
+  <div class="center"><span class="ph">Placeholder — widget se povezuje sa pravim recenzijama pre oglašavanja</span></div>
+  <div class="rsum">
+    <div class="big">
+      <div><div class="score">4,8</div><div class="of">od 5</div></div>
+      <div><div class="stars">★★★★★</div><div class="of">Na osnovu 812 recenzija</div></div>
+    </div>
+    <div class="bars">
+      <div class="bar"><span>5 ★</span><div class="track"><div class="fill" style="width:88%"></div></div><span>88%</span></div>
+      <div class="bar"><span>4 ★</span><div class="track"><div class="fill" style="width:7%"></div></div><span>7%</span></div>
+      <div class="bar"><span>3 ★</span><div class="track"><div class="fill" style="width:3%"></div></div><span>3%</span></div>
+      <div class="bar"><span>2 ★</span><div class="track"><div class="fill" style="width:1%"></div></div><span>1%</span></div>
+      <div class="bar"><span>1 ★</span><div class="track"><div class="fill" style="width:1%"></div></div><span>1%</span></div>
+    </div>
+  </div>
 </div></section>
 </main>
 

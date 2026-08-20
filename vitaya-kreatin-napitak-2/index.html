@@ -37,12 +37,12 @@ window.lpSlug = function(){
 /* ==========================================================================
    LP B — VITAYA. Hand-built (NOT from template/skeleton.html).
    1:1 structural replica of the SOURCE funnel
-   https://myequa.com/sl/products/recharge-tonic-creatine read at mobile width:
-   announcement ticker -> gallery -> title/price/rating -> bullet claims ->
-   tier selector -> ATC -> ETA -> accordions -> guarantee -> badge row ->
-   lifestyle block -> nutrient table -> banner -> "za koga" triad -> banner ->
-   benefit cards -> bullets -> comparison table -> testimonials -> FAQ ->
-   reviews -> footer.
+   https://myequa.com/sl/products/recharge-tonic-creatine read at mobile width.
+   Section-for-section against the source (mobile): announcement ticker, product
+   block, shoppable media strip, badge row, media+text, nutrient table, SIX
+   full-bleed promo banners interleaved exactly where the source puts them, the
+   three-column icon row, benefit cards, bullet list, comparison table, four
+   testimonials, community grid, FAQ, and the rating-breakdown review widget.
    Deliberate divergences from the source, all recorded in PAGES.md:
      * NO <body> > <header> (owner rule, 2026-08-06) — no site chrome.
      * NO subscription. The source runs Shopify selling plans (3/6/9-week,
@@ -50,12 +50,16 @@ window.lpSlug = function(){
      * NO sticky ATC — the source has none on mobile (fixed/sticky DOM probe at
        scroll 6000 found only its cookie dialog), so this page does not invent
        one; in-flow CTAs repeat instead.
-     * NO social-feed section (we have no feed to show) and no video sections —
-       the source's videos are competitor-branded, and fabricating video is
-       forbidden. Those slots carry real product stills instead.
+     * The source's two VIDEO sections keep their slot and rhythm but carry our
+       own stills — its clips are competitor-branded and fabricating video is
+       forbidden. No fake play button: a ▶ that plays nothing lies to the
+       visitor. The operator's real clips drop straight into those cards.
+     * The community grid is OUR photography, labelled as such — we have no real
+       customer posts yet, and presenting invented UGC as real is not allowed.
      * The source's women-physiology triad ("lower creatine stores / less muscle
-       mass / hormonal changes") is DROPPED: it is an unauthorised health-state
-       claim. Replaced with a factual "za koga je" triad.
+       mass / hormonal changes") keeps its three-column rhythm but the content is
+       replaced: those are unauthorised health-state claims.
+     * Ratings, review counts and the star distribution are PLACEHOLDERS.
    Shares the VITAYA Shopify product + the same per-unit cart-permalink logic
    as LP A. Fonts: system serif/sans pair echoing the source's
    Playfair Display + Open Sans without loading a webfont.
@@ -230,14 +234,60 @@ footer .fl{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
 footer a{color:inherit;text-decoration:none}
 footer .disc{font-size:11px;line-height:1.5;text-align:left;margin-top:14px;color:#8a7a82}
 footer .disc p{margin:0 0 7px}
+
+/* ---------- full-bleed promo banners (source has SIX of these, 500px each) ---------- */
+.banner{width:100%;margin:34px 0 0;overflow:hidden}
+.banner img{width:100%;height:440px;object-fit:cover;display:block}
+
+/* ---------- shoppable media strip (source: video_shopping, 3 videos) ---------- */
+.strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 16px 4px}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 60%;margin:0;scroll-snap-align:center;border-radius:12px;
+  overflow:hidden;background:var(--blush);position:relative}
+.strip img{width:100%;aspect-ratio:9/16;object-fit:cover}
+.strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 11px 11px;
+  color:#fff;font-size:12.5px;font-weight:700;line-height:1.3;
+  background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,0))}
+
+/* ---------- media + text (source: video_with_text) ---------- */
+.mwt{display:grid;grid-template-columns:1fr;gap:14px;align-items:center}
+.mwt img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;max-height:520px}
+
+/* ---------- 3-icon column row (source: multicolumn_RJpR4g) ---------- */
+.icons3{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
+.icons3 div{text-align:center;padding:16px 12px;border:1px solid var(--line);
+  border-radius:12px;background:#fff}
+.icons3 .ic{font-size:30px;display:block;margin-bottom:8px}
+.icons3 b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--plum);margin-bottom:5px}
+.icons3 p{margin:0;font-size:13.5px;color:var(--muted)}
+
+/* ---------- social / UGC grid (source: social_feeds) ---------- */
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:14px}
+.sgrid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px}
+
+/* ---------- reviews widget (source: Judge.me block with score + bars) ---------- */
+.rwrap{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff;margin-top:14px}
+.rtop{display:flex;gap:16px;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.rscore{text-align:center;flex:0 0 auto}
+.rscore .n{font-size:34px;font-weight:800;line-height:1;font-family:Georgia,serif}
+.rscore .s{color:#f5a623;font-size:13px;letter-spacing:1px;margin-top:3px}
+.rscore .c{font-size:11.5px;color:var(--muted);margin-top:3px}
+.rbars{flex:1;min-width:0}
+.rbar{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--muted);margin:2px 0}
+.rbar .lab{flex:0 0 26px}
+.rbar .t{flex:1;height:6px;background:var(--blush2);border-radius:100px;overflow:hidden}
+.rbar .t i{display:block;height:100%;background:#f5a623;border-radius:100px}
+.rbar .pc{flex:0 0 30px;text-align:right}
 </style>
 </head>
 <body>
 
-<!-- ===== announcement ticker (source section 1) ===== -->
+<!-- ===== 1. announcement ticker (source section 1) ===== -->
 <div class="ann"><div class="track" id="ann"></div></div>
 
-<!-- ===== main product block (source section 3) ===== -->
+<!-- ===== 2. main product block (source section 3) ===== -->
 <div class="wrap">
   <div class="gal">
     <div class="slides" id="slides">
@@ -275,7 +325,7 @@ footer .disc p{margin:0 0 7px}
   </ul>
   <p class="sub">U pakovanju je 20 pojedinačno pakovanih kesica (20 × 7 g).</p>
 
-  <div class="selfd selhd">Uštedi uz pakete</div>
+  <div class="selhd">Uštedi uz pakete</div>
   <div id="tiers"></div>
 
   <button class="cta" id="atc" onclick="goCheckout()">Dodaj u korpu — 2.490 RSD</button>
@@ -303,8 +353,27 @@ footer .disc p{margin:0 0 7px}
     <div class="seal">30 DANA<br>GARANCIJE</div>
     <div>Poruči bez rizika. Ako nisi zadovoljna, javi nam se u roku od <b>30 dana</b> od prijema pošiljke i dobijaš pun povraćaj novca.<sup>‡</sup></div>
   </div>
+</div>
 
-  <!-- ===== badge row (source section 5) ===== -->
+<!-- ===== 3. shoppable media strip (source section 4: video_shopping, 3 videos) =====
+     The source runs three shoppable VIDEOS here. We do not fabricate video and its
+     clips are competitor-branded, so this slot carries our own stills in the same
+     horizontal card rhythm — and deliberately WITHOUT a ▶ overlay, because a play
+     button that plays nothing is a lie to the visitor. Operator's real clips drop
+     straight into these four cards. -->
+<section style="margin-top:30px">
+  <div class="wrap"><h2 class="center">VITAYA izbliza</h2>
+  <p class="lead center">Kako izgleda kad se kesica nađe u čaši.</p></div>
+  <div class="strip">
+    <figure><img src="assets/vid1.jpg" width="560" height="1001" loading="lazy" decoding="async" alt="Otvaranje VITAYA kesice iznad čaše vode"><figcaption>Jedna kesica, 400 ml vode</figcaption></figure>
+    <figure><img src="assets/vid2.jpg" width="560" height="1001" loading="lazy" decoding="async" alt="Žena drži VITAYA pakovanje u teretani"><figcaption>Staje u svaku torbu</figcaption></figure>
+    <figure><img src="assets/vid3.jpg" width="560" height="1001" loading="lazy" decoding="async" alt="Mešanje VITAYA napitka sa ledom"><figcaption>Rastvara se bez grudvica</figcaption></figure>
+    <figure><img src="assets/vid4.jpg" width="560" height="1001" loading="lazy" decoding="async" alt="Žena pije VITAYA napitak posle vežbanja"><figcaption>Posle treninga ili uz doručak</figcaption></figure>
+  </div>
+</section>
+
+<!-- ===== 4. badge row (source section 5) ===== -->
+<div class="wrap">
   <div class="badges">
     <div><span class="ic">💪</span>Kreatin<br>monohidrat</div>
     <div><span class="ic">🚫</span>Bez<br>šećera</div>
@@ -313,13 +382,19 @@ footer .disc p{margin:0 0 7px}
   </div>
 </div>
 
-<!-- ===== lifestyle block (source's video slot — real still, no fake ▶) ===== -->
+<!-- ===== 5. media + text (source section 6: video_with_text) ===== -->
 <section class="wrap">
-  <img src="assets/zene.jpg" width="1024" height="1024" loading="lazy" decoding="async"
-       style="border-radius:14px" alt="VITAYA — napravljeno za žene">
+  <div class="mwt">
+    <img src="assets/vid2.jpg" width="560" height="1001" loading="lazy" decoding="async" alt="Žena drži VITAYA pakovanje">
+    <div>
+      <h2>Kreatin koji staje u torbu</h2>
+      <p class="lead">Kreatin je dugo bio muška priča: velike kante, kašičice i doze računate za muško telo. Zato ga većina nas ili nikad ne počne, ili ga kupi jednom pa zaboravi na policu.</p>
+      <p class="lead" style="margin-bottom:0">VITAYA je <b>jedna kesica dnevno</b> — doza je već odmerena, staje u torbu i meša se u običnoj vodi. Ukus svežeg grejpfruta, bez šećera i bez kofeina.</p>
+    </div>
+  </div>
 </section>
 
-<!-- ===== nutrient table (source section 8: "Kaj vsebuje?") ===== -->
+<!-- ===== 6. nutrient table (source section 8: "Kaj vsebuje?") ===== -->
 <div class="band"><div class="wrap"><section>
   <h2 class="center">Šta sadrži jedna kesica?</h2>
   <p class="lead center">Jedna kesica dnevno — kreatin, elektroliti i vitamini.</p>
@@ -334,23 +409,27 @@ footer .disc p{margin:0 0 7px}
   </div>
 </section></div></div>
 
-<!-- ===== "za koga je" triad (replaces the source's physiology triad) ===== -->
+<!-- ===== 7. promo banner 1 (source: promotion_banner_83gWG4) ===== -->
+<div class="banner"><img src="assets/ban1.jpg" width="800" height="1062" loading="lazy" decoding="async" alt="Žena trči"></div>
+
+<!-- ===== 8. three-column icon row (source: multicolumn_RJpR4g) =====
+     The source's three columns are "LOWER CREATINE STORES / LESS MUSCLE MASS /
+     HORMONAL CHANGES" — unauthorised health-state claims about women's physiology.
+     The column RHYTHM is reproduced; the content is replaced with the three facts
+     that are actually permitted. -->
 <section class="wrap">
-  <h2 class="center">Za koga je VITAYA</h2>
-  <p class="lead center">Napravljen za žene koje treniraju — i za dane kada se trening ne preskače.</p>
-  <div class="triad">
-    <div><b>🏋️ Treniraš intenzivno</b><p>Tvrdnja o kreatinu odnosi se na odrasle koji se bave vežbanjem visokog intenziteta — serije, intervali, snaga.</p></div>
-    <div><b>👜 Nemaš vremena za merenje</b><p>Doza je već odmerena u kesici. Bez kante, bez kašičice, bez prosipanja po kuhinji.</p></div>
-    <div><b>💧 Ne voliš prah bez ukusa</b><p>Ukus svežeg grejpfruta, bez šećera i bez kofeina — možeš ga popiti i uveče.</p></div>
+  <h2 class="center">Tri stvari u jednoj kesici</h2>
+  <div class="icons3">
+    <div><span class="ic">💪</span><b>3 g kreatina</b><p>Tačno ona dnevna količina uz koju kreatin povećava fizički učinak pri uzastopnim serijama kratkotrajnih vežbi visokog intenziteta.<sup>§</sup></p></div>
+    <div><span class="ic">🧂</span><b>Elektroliti</b><p>Natrijum, kalijum i magnezijum — tri elektrolita koja se gube znojenjem, u istoj kesici.</p></div>
+    <div><span class="ic">⚡</span><b>Vitamini C, B6 i B12</b><p>Doprinose smanjenju umora i iscrpljenosti i normalnom energetskom metabolizmu.<sup>§</sup></p></div>
   </div>
 </section>
 
-<section class="wrap">
-  <img src="assets/stik.jpg" width="1024" height="1024" loading="lazy" decoding="async"
-       style="border-radius:14px" alt="VITAYA kesica i čaša napitka">
-</section>
+<!-- ===== 9. promo banner 2 (source: promotion_banner_PKG4aJ) ===== -->
+<div class="banner"><img src="assets/ban2.jpg" width="800" height="1062" loading="lazy" decoding="async" alt="Žena sa čašom napitka ispred ogledala"></div>
 
-<!-- ===== benefit cards (source section 12) ===== -->
+<!-- ===== 10. benefit cards (source section 12: faq_GiBpyA) ===== -->
 <div class="band"><div class="wrap"><section>
   <h2 class="center">Šta ti donosi jedna kesica</h2>
   <p class="lead center">Sve dole je zvanično dozvoljena tvrdnja za sastojak u navedenoj količini.<sup>§</sup></p>
@@ -362,7 +441,10 @@ footer .disc p{margin:0 0 7px}
   </div>
 </section></div></div>
 
-<!-- ===== bullets (source section 14) ===== -->
+<!-- ===== 11. promo banner 3 (source: promotion_banner_7PEQzh) ===== -->
+<div class="banner"><img src="assets/ban3.jpg" width="800" height="1062" loading="lazy" decoding="async" alt="Kesica se sipa u flašicu vode, pored grejpfrut"></div>
+
+<!-- ===== 12. bullets (source section 14: multicolumn_hJfiww) ===== -->
 <section class="wrap">
   <h2 class="center">Za tvoje telo. Za tvoju snagu. Svaki dan.</h2>
   <ul class="bul" style="max-width:380px;margin:14px auto 0">
@@ -375,7 +457,10 @@ footer .disc p{margin:0 0 7px}
   <button class="cta alt" style="margin-top:20px" onclick="scrollToOffer()">Poruči — od 1.890 RSD po pakovanju</button>
 </section>
 
-<!-- ===== comparison table (source section 16) ===== -->
+<!-- ===== 13. promo banner 4 (source: promotion_banner_CUyLXU) ===== -->
+<div class="banner"><img src="assets/ban4.jpg" width="800" height="1062" loading="lazy" decoding="async" alt="Žena pije napitak u teretani"></div>
+
+<!-- ===== 14. comparison table (source section 16) ===== -->
 <div class="band"><div class="wrap"><section>
   <h2 class="center">Jedan napitak umesto tri kutije</h2>
   <p class="lead center">Kreatin, elektroliti i vitamini — u istoj kesici.</p>
@@ -392,22 +477,46 @@ footer .disc p{margin:0 0 7px}
   </table></div>
 </section></div></div>
 
-<!-- ===== testimonials (source section 18) ===== -->
+<!-- ===== 15. promo banner 5 (source: promotion_banner_FfWpEN) ===== -->
+<div class="banner"><img src="assets/ban5.jpg" width="800" height="1062" loading="lazy" decoding="async" alt="Žena sipa kesicu u flašicu vode"></div>
+
+<!-- ===== 16. testimonials (source section 18 — four of them) ===== -->
 <section class="wrap">
   <h2 class="center">Šta kažu žene koje su ga probale</h2>
   <div class="rev"><div class="hd"><b>Ukus je stvarno dobar</b><span class="s">★★★★★</span></div>
     <p>Grejpfrut, nije preslatko i nema onaj veštački ukus. Popijem ga posle treninga umesto obične vode.</p>
-    <div class="who">Jelena M. · Recenzija kupca</div></div>
+    <div class="who">Jelena M., 31 · Recenzija kupca</div></div>
   <div class="rev"><div class="hd"><b>Kesice su mi rešile stvar</b><span class="s">★★★★★</span></div>
     <p>Ranije mi je kanta stajala u ormanu i stalno sam zaboravljala. Sada mi jedna kesica stoji u torbi i to je to.</p>
-    <div class="who">Ana P. · Recenzija kupca</div></div>
+    <div class="who">Ana P., 28 · Recenzija kupca</div></div>
+  <div class="rev"><div class="hd"><b>Rastvara se bez grudvica</b><span class="s">★★★★★</span></div>
+    <p>Sipam u flašicu, promućkam i gotovo. Nema taloga na dnu kao kod praha koji sam ranije kupovala.</p>
+    <div class="who">Tijana K., 37 · Recenzija kupca</div></div>
   <div class="rev"><div class="hd"><b>Uzela sam tri pakovanja</b><span class="s">★★★★★</span></div>
     <p>Ispalo je jeftinije po pakovanju, a dostava je bila besplatna. Traje mi mesecima.</p>
-    <div class="who">Milica S. · Recenzija kupca</div></div>
+    <div class="who">Milica S., 42 · Recenzija kupca</div></div>
   <p class="ph">Ocene i recenzije su PRIMER dok se ne prikupe prve prave — zameniti pre pokretanja oglasa.</p>
 </section>
 
-<!-- ===== FAQ (source section 20) ===== -->
+<!-- ===== 17. promo banner 6 (source: promotion_banner_pXVdKU) ===== -->
+<div class="banner"><img src="assets/soc5.jpg" width="520" height="520" loading="lazy" decoding="async" alt="Dve žene posle treninga sa VITAYA napitkom"></div>
+
+<!-- ===== 18. community grid (source section 19: social_feeds) ===== -->
+<section class="wrap">
+  <h2 class="center">Pridruži se našoj zajednici</h2>
+  <p class="lead center">Kako VITAYA izgleda u stvarnom danu.</p>
+  <div class="sgrid">
+    <img src="assets/soc1.jpg" width="520" height="520" loading="lazy" decoding="async" alt="VITAYA pakovanje i kesice sa grejpfrutom">
+    <img src="assets/soc2.jpg" width="520" height="520" loading="lazy" decoding="async" alt="Žena meša VITAYA napitak u kuhinji">
+    <img src="assets/soc3.jpg" width="520" height="520" loading="lazy" decoding="async" alt="VITAYA pakovanje u torbi za teretanu">
+    <img src="assets/soc4.jpg" width="520" height="520" loading="lazy" decoding="async" alt="Ruka drži VITAYA kesicu">
+    <img src="assets/soc5.jpg" width="520" height="520" loading="lazy" decoding="async" alt="Dve žene posle treninga">
+    <img src="assets/stik.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="VITAYA kesica i čaša napitka">
+  </div>
+  <p class="ph">Fotografije su naše — prave objave kupaca dolaze ovde kada se prikupe.</p>
+</section>
+
+<!-- ===== 19. FAQ (source section 20) ===== -->
 <div class="band"><div class="wrap"><section>
   <h2 class="center">Česta pitanja</h2>
   <div style="margin-top:14px">
@@ -415,15 +524,50 @@ footer .disc p{margin:0 0 7px}
     <details class="acc"><summary>Koliko kreatina ima u jednoj kesici?</summary><div class="body"><p><b>3 g kreatin monohidrata.</b> Kreatin povećava fizički učinak pri uzastopnim serijama kratkotrajnih vežbi visokog intenziteta; povoljan učinak se postiže uz dnevni unos od 3 g. Kesica sadrži i natrijum (292,5 mg), kalijum (356 mg), magnezijum (180 mg) i vitamine C (80 mg), B6 (0,86 mg) i B12 (1 µg).</p></div></details>
     <details class="acc"><summary>Kako se priprema?</summary><div class="body"><p>Otvoriš jednu kesicu, sipaš je u <b>400 ml hladne vode</b>, promešaš i popiješ — najbolje posle treninga ili uz doručak.</p></div></details>
     <details class="acc"><summary>Mogu li da ga pijem svaki dan?</summary><div class="body"><p>Da — <b>jedna kesica dnevno</b>. Nemoj prekoračivati preporučenu dnevnu dozu. Uz upotrebu kreatina pij dovoljno tečnosti.</p></div></details>
+    <details class="acc"><summary>Kada je najbolje da ga popijem?</summary><div class="body"><p>Najbolje <b>posle treninga</b>, a u danima kada ne treniraš uz doručak. Nema kofeina, pa ga možeš popiti i uveče.</p></div></details>
     <details class="acc"><summary>Moram li da treniram da bih ga koristila?</summary><div class="body"><p>Tvrdnja o kreatinu odnosi se na <b>odrasle koji se bave vežbanjem visokog intenziteta</b>. Napitak možeš piti i u danima bez treninga, ali je formulisan kao dodatak uz vežbanje.</p></div></details>
     <details class="acc"><summary>Kakav je ukus i da li sadrži šećer ili kofein?</summary><div class="body"><p>Ukus je <b>sveži grejpfrut</b>. Napitak je <b>bez šećera</b> (sa zaslađivačima — sukraloza i steviol-glikozidi) i <b>bez kofeina</b>.</p></div></details>
     <details class="acc"><summary>Ko ne bi trebalo da ga koristi?</summary><div class="body"><p>Proizvod je dodatak ishrani namenjen odraslima. <b>Nije namenjen osobama mlađim od 18 godina, trudnicama i dojiljama.</b> Ako si na terapiji ili imaš zdravstvenih tegoba, posavetuj se sa lekarom pre upotrebe.</p></div></details>
+    <details class="acc"><summary>Mogu li da ga kombinujem sa drugim dodacima?</summary><div class="body"><p>Možeš, ali vodi računa o ukupnom dnevnom unosu istih sastojaka i <b>ne prekoračuj preporučene dnevne doze</b>. Ako si na terapiji, posavetuj se sa lekarom.</p></div></details>
     <details class="acc"><summary>Kako plaćam i koliko traje isporuka?</summary><div class="body"><p>Plaćaš <b>pouzećem</b> — gotovinom ili karticom kuriru, tek kada ti paket stigne na vrata. Isporuka traje 2–4 radna dana na celoj teritoriji Srbije. Uz 2 i više pakovanja <b>dostava je besplatna</b>.</p></div></details>
     <details class="acc"><summary>Da li me nešto obavezuje na dalje kupovine?</summary><div class="body"><p>Ne. Ovo je <b>jednokratna kupovina bez pretplate</b> — ništa se ne obnavlja automatski i ništa ti se ne naplaćuje kasnije.</p></div></details>
     <details class="acc"><summary>Šta ako nisam zadovoljna?</summary><div class="body"><p>Javi nam se u roku od <b>30 dana</b> od prijema pošiljke i dobijaš pun povraćaj novca. Uslove i način vraćanja pogledaj u Politici povraćaja.</p></div></details>
   </div>
   <button class="cta" style="margin-top:20px" onclick="scrollToOffer()">Naruči sada</button>
 </section></div></div>
+
+<!-- ===== 20. reviews widget (source section 21: Judge.me score + distribution) ===== -->
+<section class="wrap">
+  <h2 class="center">Ocene kupaca</h2>
+  <div class="rwrap">
+    <div class="rtop">
+      <div class="rscore">
+        <div class="n">4,8</div>
+        <div class="s">★★★★★</div>
+        <div class="c">700+ ocena</div>
+      </div>
+      <div class="rbars">
+        <div class="rbar"><span class="lab">5 ★</span><span class="t"><i style="width:84%"></i></span><span class="pc">84%</span></div>
+        <div class="rbar"><span class="lab">4 ★</span><span class="t"><i style="width:12%"></i></span><span class="pc">12%</span></div>
+        <div class="rbar"><span class="lab">3 ★</span><span class="t"><i style="width:3%"></i></span><span class="pc">3%</span></div>
+        <div class="rbar"><span class="lab">2 ★</span><span class="t"><i style="width:1%"></i></span><span class="pc">1%</span></div>
+        <div class="rbar"><span class="lab">1 ★</span><span class="t"><i style="width:0%"></i></span><span class="pc">0%</span></div>
+      </div>
+    </div>
+    <div class="rev" style="border:0;padding:12px 0 0;margin:0">
+      <div class="hd"><b>Stiže brzo</b><span class="s">★★★★★</span></div>
+      <p>Poručila u utorak, stiglo u četvrtak. Platila kuriru, sve uredno.</p>
+      <div class="who">Sanja V. · Recenzija kupca</div>
+    </div>
+    <div class="rev" style="border:0;border-top:1px solid var(--line);padding:12px 0 0;margin:12px 0 0">
+      <div class="hd"><b>Kesica staje u džep</b><span class="s">★★★★☆</span></div>
+      <p>Nosim je na posao i popijem posle treninga. Jedina zamerka — volela bih još neki ukus.</p>
+      <div class="who">Dragana I. · Recenzija kupca</div>
+    </div>
+  </div>
+  <p class="ph">Ocena 4,8 i broj ocena su PRIMER — zameniti stvarnim podacima pre pokretanja oglasa.</p>
+  <button class="cta" style="margin-top:18px" onclick="scrollToOffer()">Naruči — od 1.890 RSD po pakovanju</button>
+</section>
 
 <footer>
   <div class="fl">
