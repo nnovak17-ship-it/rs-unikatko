@@ -32,7 +32,6 @@ body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-ser
 img{max-width:100%;display:block}
 .wrap{max-width:600px;margin:0 auto;padding:0 16px}
 
-/* 1 — announcement marquee */
 .mq{background:#000;color:#fff;overflow:hidden;white-space:nowrap;padding:11px 0;
   font-size:13px;font-weight:800;letter-spacing:.02em}
 .mq .tk{display:inline-block;padding-left:100%;animation:mq 22s linear infinite}
@@ -40,13 +39,11 @@ img{max-width:100%;display:block}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-100%)}}
 @media (prefers-reduced-motion:reduce){.mq .tk{animation:none;padding-left:16px}}
 
-/* 2 — sticky header */
 .hdr{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
 .hdr .in{max-width:600px;margin:0 auto;padding:13px 16px;display:flex;align-items:center;gap:12px}
 .hdr .logo{flex:1;text-align:center;font-size:22px;font-weight:900;letter-spacing:.06em}
 .hdr .ic{width:22px;height:22px;flex:none;opacity:.85}
 
-/* 3 — gallery */
 .gal{background:var(--wash)}
 .gal .stage{position:relative;aspect-ratio:1/1;overflow:hidden}
 .gal .stage img{width:100%;height:100%;object-fit:cover}
@@ -60,13 +57,11 @@ img{max-width:100%;display:block}
   border-radius:4px;cursor:pointer;background:#fff}
 .thumbs img.on{border-color:var(--ink)}
 
-/* 4 — pink offer banner */
 .pbn{background:var(--pink);color:var(--pinkT);text-align:center;font-weight:800;
   padding:11px 14px;border-radius:8px;margin:16px 0 14px;font-size:15px;line-height:1.45}
 
 h1{font-size:31px;line-height:1.15;font-weight:900;letter-spacing:-.01em;margin-bottom:11px}
 
-/* 6 — rating */
 .rate{display:flex;align-items:center;gap:9px;margin-bottom:18px;flex-wrap:wrap}
 .rate .st{display:flex;gap:2px}
 .rate .st i{width:19px;height:19px;background:var(--green);display:block;border-radius:2px;
@@ -76,18 +71,15 @@ h1{font-size:31px;line-height:1.15;font-weight:900;letter-spacing:-.01em;margin-
 .rate .st i.h{background:linear-gradient(90deg,var(--green) 50%,#dcdcdc 50%)}
 .rate .lb{font-size:14px;color:#3d3d3d}
 
-/* 7 — benefit lines */
 .blines{display:grid;gap:11px;margin-bottom:20px}
 .bline{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.5}
 .bline .ic{font-size:19px;line-height:1.3;flex:none;width:24px;text-align:center}
 
-/* 8 — cream dashed banner */
 .wbn{background:var(--wash);border:1px dashed var(--copper);border-radius:10px;
   padding:14px 15px;margin-bottom:18px;text-align:center}
 .wbn>b{display:block;font-size:15px;font-weight:900;letter-spacing:.03em;margin-bottom:5px}
 .wbn p{font-size:14px;color:#4a4a4a;line-height:1.5}
 
-/* 9 — offer card */
 .oc{border:2px solid var(--ink);border-radius:12px;padding:14px;margin-bottom:16px}
 .oc .step{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--mut);
   margin:4px 0 9px}
@@ -117,7 +109,6 @@ h1{font-size:31px;line-height:1.15;font-weight:900;letter-spacing:-.01em;margin-
 .sw .nm{font-size:11px;line-height:1.2;text-align:center;color:#4a4a4a}
 .sw button.on .nm{font-weight:800;color:var(--ink)}
 
-/* 10 — CTA */
 .cta{display:block;width:100%;background:var(--cta);color:#fff;border:0;border-radius:8px;
   padding:17px 14px;font:inherit;font-size:17px;font-weight:800;letter-spacing:.02em;
   cursor:pointer;text-align:center;line-height:1.3}
@@ -126,7 +117,6 @@ h1{font-size:31px;line-height:1.15;font-weight:900;letter-spacing:-.01em;margin-
   letter-spacing:0}
 .paynote{text-align:center;font-size:12.5px;color:var(--mut);margin:9px 0 20px}
 
-/* 11 — accordions */
 .acc{border-top:1px solid var(--line)}
 .acc:last-of-type{border-bottom:1px solid var(--line)}
 .acc summary{display:flex;align-items:center;gap:10px;padding:15px 0;cursor:pointer;
@@ -141,7 +131,6 @@ h1{font-size:31px;line-height:1.15;font-weight:900;letter-spacing:-.01em;margin-
 
 .dvd{height:1px;background:var(--line);margin:30px 0}
 
-/* 13/15 — content sections */
 .sec{padding:6px 0}
 .sec h2{font-size:26px;line-height:1.2;font-weight:900;margin-bottom:11px;letter-spacing:-.01em}
 .sec p.lead{font-size:15px;color:#3f3f3f;line-height:1.6;margin-bottom:16px}
@@ -152,7 +141,6 @@ h1{font-size:31px;line-height:1.15;font-weight:900;letter-spacing:-.01em;margin-
 .fb b{display:block;font-size:15.5px;font-weight:800;margin-bottom:3px;line-height:1.3}
 .fb span{font-size:14px;color:#4a4a4a;line-height:1.55}
 
-/* 17 — spec cards (replaces the source's study bars) */
 .specs{display:grid;gap:12px;margin-top:4px}
 .spc{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--wash)}
 .spc .k{font-size:11px;font-weight:900;letter-spacing:.1em;color:var(--copper);
@@ -160,7 +148,6 @@ h1{font-size:31px;line-height:1.15;font-weight:900;letter-spacing:-.01em;margin-
 .spc b{display:block;font-size:18px;font-weight:900;margin-bottom:4px}
 .spc span{font-size:14px;color:#4a4a4a;line-height:1.55}
 
-/* 19 — reviews */
 .rv{border:1px solid var(--line);border-radius:12px;padding:15px;margin-bottom:11px}
 .rv .top{display:flex;align-items:center;gap:8px;margin-bottom:7px}
 .rv .top .s{color:#f5a623;font-size:13px;letter-spacing:1px}
@@ -172,7 +159,6 @@ h1{font-size:31px;line-height:1.15;font-weight:900;letter-spacing:-.01em;margin-
 .rvhead .big{font-size:30px;font-weight:900}
 .rvhead .cnt{font-size:13px;color:var(--mut)}
 
-/* footer */
 footer{background:var(--wash);margin-top:34px;padding:26px 0 34px;border-top:1px solid var(--line)}
 footer .lk{display:flex;flex-wrap:wrap;gap:9px 16px;justify-content:center;margin-bottom:14px}
 footer .lk a{font-size:13px;color:#3f3f3f;text-decoration:underline}
@@ -180,20 +166,12 @@ footer .cp{text-align:center;font-size:12.5px;color:var(--mut);margin-bottom:12p
 footer .ds{font-size:11.5px;color:#7a7a7a;line-height:1.55}
 footer .ds p{margin-bottom:7px}
 
-/* Top header (hamburger / logo / cart) hidden — owner rule 2026-08-06: the LP B
-   replicas do not need the source's site chrome. Markup is kept so re-enabling is
-   just deleting this rule. Announcement bars/marquees stay: they carry offer copy. */
 body > header{display:none!important}
 
-/* width/height attrs need height:auto or images render as tall columns */
 img{height:auto}
 </style>
 <script>
-/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
-   Returns our slug, or '' when the document was not served from a normal https
-   URL under a slug path. Meta blocked a real event named
-   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
-   it `location.pathname` straight from a `data:` URL. */
+
 window.lpSlug = function(){
   try{
     if (!/^https?:$/.test(location.protocol)) return '';
@@ -384,7 +362,7 @@ window.lpSlug = function(){
 
 <script>
 var BASE = 'https://rs.unikatko.eu';
-/* variantId per (paket, boja) — Shopify RS product 15647029100809 */
+
 var TIERS = [
   {q:1, label:'1 prsten',  sub:'Pojedinačan prsten',      total:3499, cmp:6990,  per:3499, ship:true,  badge:null,
    v:{'Srebro':'57243245379849','Zlato':'57243245412617','Roze zlato':'57243245445385','Mat crna':'57243245478153'}},
@@ -410,8 +388,7 @@ var GAL = [
   {src:'assets/specs.jpg',        alt:'Specifikacija — materijal, debljina, težina'}
 ];
 
-var ti = 0;   /* owner rule 2026-08-14: BOTH LPs always preselect 1 piece,
-                 even when the source page preselects a bundle */
+var ti = 0;   
 var ci = 0;
 var gi = 0;
 
@@ -462,14 +439,12 @@ function sub(){
 function pick(i){ ti = i; renderPks(); sub(); }
 function pickColor(i){
   ci = i; renderSw(); sub();
-  /* selecting a colour swaps the first gallery slot and shows it */
+  
   GAL[0] = {src: COLORS[ci].img, alt: 'SMIRAJ magnetni prsten — ' + COLORS[ci].name};
   showGal(0);
 }
 function kupi(){
-  /* Per-unit Shopify prices: send REAL quantity (q lines of the chosen colour),
-     never :1 — a :1 link now charges one unit for the whole pack. The BUNDLE
-     codes need cart quantity >= 2, which this satisfies. */
+  
   var t = TIERS[ti];
   __go(BASE + '/cart/' + t.v[COLORS[ci].name] + ':' + t.q);
 }
@@ -480,8 +455,7 @@ document.getElementById('next').onclick = function(){ showGal(gi + 1); };
 renderPks(); renderSw(); renderThumbs(); sub();
 </script>
 <script>
-/* Shared checkout helpers (injected 2026-08-06): BUNDLE shipping codes derived
-   from REAL cart quantity + Meta pixel events. */
+
 function __cq(u){var m=u.match(/:(\d+)(?=,|\?|$)/g)||[];return m.reduce(function(a,x){return a+parseInt(x.slice(1))},0);}
 function __dec(u){var q=__cq(u);
   if(q>=3)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE3_RS_SHIP';
@@ -496,9 +470,6 @@ document.addEventListener('click',function(e){
 },true);
 try{fbq('track','ViewContent',{content_type:'product',content_ids:['15647029100809'],content_name:document.title,currency:'RSD'});}catch(e){}
 
-/* LP behaviour events — generic version for the hand-written LP B pages (the LP A
-   template has its own, keyed to template class names). Scroll depth + dwell work
-   anywhere; clicks are matched on structure rather than template classes. */
 (function(){
   var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
@@ -523,9 +494,6 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156470291008
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) so the dashboard can show numbers PER LP.
-   Meta's stats API breaks down by event NAME only — not by parameter, and its
-   url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;

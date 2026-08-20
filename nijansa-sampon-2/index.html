@@ -19,7 +19,7 @@ fbq('track','PageView');
  src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
 
 <style>
-/* NIJANSA LP B — sr-Latn-RS. Hand-built 1:1 structural replica. Self-contained. */
+
 :root{
   --navy:#2c3452; --navy2:#1b2138; --ink:#1e2123; --mut:#6b7280;
   --line:#e5e7eb; --wash:#f4f4f4; --soft:#dddee2;
@@ -35,7 +35,6 @@ img{max-width:100%;display:block}
 h1,h2,h3,h4,p{margin:0}
 .wrap{max-width:600px;margin:0 auto;padding:0 16px}
 
-/* --- bars + header --- */
 .ann1{background:var(--ink);color:rgba(244,244,244,.82);text-align:center;
   font-size:13.5px;font-weight:700;letter-spacing:.09em;padding:11px 12px;text-transform:uppercase}
 header{display:flex;align-items:center;justify-content:space-between;
@@ -46,7 +45,6 @@ header .ico{font-size:21px;text-decoration:none;color:var(--ink);line-height:1}
 .ann2{background:var(--navy);color:#fff;text-align:center;font-size:13.5px;font-weight:700;
   letter-spacing:.05em;padding:13px 12px;text-transform:uppercase}
 
-/* --- gallery --- */
 .gal{padding:16px 16px 0;max-width:600px;margin:0 auto}
 .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
   border-radius:10px;background:var(--wash)}
@@ -56,7 +54,6 @@ header .ico{font-size:21px;text-decoration:none;color:var(--ink);line-height:1}
 .dots i{width:28px;height:4px;border-radius:3px;background:#d4d4d4;display:block;cursor:pointer}
 .dots i.on{background:var(--ink)}
 
-/* --- headline block --- */
 .rate{display:flex;align-items:center;gap:9px;padding:6px 0 2px;font-size:15px}
 .rate .st{color:var(--gold);font-size:19px;letter-spacing:1px}
 .rate b{font-weight:800}
@@ -70,7 +67,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
   padding:8px 13px;border-radius:999px;letter-spacing:.02em;white-space:nowrap}
 .shipnote{font-size:13px;color:var(--mut);margin-top:6px}
 
-/* --- bullets card --- */
 .bcard{border:1px solid var(--line);border-radius:12px;padding:16px 12px;margin:18px 0 4px;
   display:grid;grid-template-columns:1fr 1fr;gap:16px 10px}
 .bcard div{display:flex;gap:9px;align-items:flex-start;font-size:14.5px;line-height:1.28}
@@ -78,7 +74,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
   display:grid;place-items:center;font-size:11px;font-weight:900;margin-top:1px}
 .bcard b{display:block;font-weight:800}
 
-/* --- colour swatches --- */
 .opth{font-size:17px;font-weight:800;margin:24px 0 10px}
 .opth span{font-weight:400}
 .swrow{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
@@ -91,7 +86,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
 .sw span{display:block;font-size:12.5px;margin-top:6px;line-height:1.2;color:#2b3344}
 .sw.on span{font-weight:800}
 
-/* --- per-unit shade rows (owner rule 2026-08-06: one selector per unit) --- */
 .uhint{font-size:12.5px;color:var(--mut);margin:-4px 0 10px}
 .urow{border:1px solid var(--line);border-radius:12px;background:#fff;padding:9px 10px;margin-bottom:8px}
 .urow .uhead{display:flex;align-items:center;gap:8px;margin-bottom:7px;min-width:0}
@@ -103,7 +97,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
 .urow .sw .im{width:58px;height:58px}
 .urow .sw span{font-size:11.5px;margin-top:5px}
 
-/* --- quantity grid --- */
 .qgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
 .qcol{display:flex;flex-direction:column;gap:8px;align-items:center}
 .qbox{position:relative;width:100%;border:1px solid var(--line);border-radius:8px;background:#fafafa;
@@ -117,7 +110,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
 .ribbon.g{border-color:var(--grnline);background:var(--grnsoft);color:#047857}
 .qper{font-size:13.5px;font-weight:800;color:var(--navy)}
 
-/* --- exclusive gift --- */
 .excl{width:100%;border:1px solid #d1d5db;border-radius:12px;overflow:hidden;margin:22px 0 16px}
 .excl .hd{background:var(--navy);color:#fff;font-size:14px;font-weight:800;
   letter-spacing:.04em;padding:9px 14px;text-transform:uppercase}
@@ -133,7 +125,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
   font-weight:800;color:var(--bad);background:var(--redsoft);border:1px solid var(--redline);
   padding:4px 9px;border-radius:999px}
 
-/* --- ATC --- */
 .atc{display:block;width:100%;border:0;border-radius:8px;cursor:pointer;
   background:linear-gradient(120deg,var(--navy2),#3a3f6b 45%,var(--navy2));
   color:#fff;font-family:inherit;font-size:18px;font-weight:700;letter-spacing:.04em;
@@ -143,7 +134,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
 .mbg b{display:block;font-weight:800}
 .mbg span{color:#3f4650}
 
-/* --- low stock --- */
 .warn{border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0}
 .warn h4{font-size:18px;font-weight:500;display:flex;gap:10px;align-items:center;margin-bottom:6px}
 .warn h4 i{width:22px;height:22px;flex:none;border:1.5px solid var(--ink);border-radius:50%;
@@ -151,7 +141,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
 .warn p{font-size:14.5px;color:#2b3344;margin-bottom:8px}
 .warn u{text-underline-offset:3px}
 
-/* --- accordions --- */
 .acc details{border-bottom:1px solid var(--line)}
 .acc summary{list-style:none;cursor:pointer;padding:17px 30px 17px 0;position:relative;
   font-size:17px;font-weight:800}
@@ -163,14 +152,12 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
 .acc .body ul{margin:0 0 9px;padding-left:18px}
 .acc .body li{margin-bottom:5px}
 
-/* --- trust grid --- */
 .tgrid{border:1px solid var(--line);border-radius:12px;padding:20px 12px;margin:20px 0;
   display:grid;grid-template-columns:1fr 1fr;gap:22px 8px;text-align:center}
 .tgrid .ic{font-size:24px;line-height:1}
 .tgrid b{display:block;font-size:14.5px;font-weight:800;margin:8px 0 3px}
 .tgrid span{font-size:13.5px;color:#3f4650}
 
-/* --- ugc carousel --- */
 .ugc{padding:8px 0 24px}
 .ugc h2{text-align:center;font-size:26px;font-weight:800;line-height:1.15;margin-bottom:16px}
 .ugcrow{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
@@ -187,7 +174,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
 .arrs{display:flex;gap:26px;justify-content:center;padding-top:14px}
 .arrs button{width:34px;height:34px;border:0;background:none;font-size:26px;color:#2b3344;cursor:pointer;line-height:1}
 
-/* --- marquee band --- */
 .mq{background:linear-gradient(90deg,var(--navy2),var(--navy));color:#fff;padding:16px 0 18px;overflow:hidden}
 .mq .h{text-align:center;font-size:14px;font-weight:700;letter-spacing:.16em;
   text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:12px}
@@ -196,7 +182,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
   text-transform:uppercase;opacity:.92}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* --- feature list --- */
 .feat{background:var(--wash);padding:28px 0}
 .feat h2{text-align:center;font-size:17px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
 .feat h2 b{display:block;font-size:27px;font-weight:800;letter-spacing:-.01em;text-transform:uppercase}
@@ -208,7 +193,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
 .frow b{display:block;font-size:14.5px;font-weight:800;text-transform:uppercase;letter-spacing:.02em}
 .frow span{font-size:14px;color:#3f4650}
 
-/* --- results carousel --- */
 .res{padding:30px 0 26px}
 .res .stars{text-align:center;color:var(--gold);font-size:22px;letter-spacing:2px}
 .res h2{text-align:center;font-size:27px;font-weight:800;line-height:1.14;margin:10px 0 16px;
@@ -236,7 +220,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
 .rcard .vb i{width:16px;height:16px;border-radius:50%;background:var(--ink);color:#fff;
   display:grid;place-items:center;font-style:normal;font-size:9px}
 
-/* --- 4 reasons --- */
 .four{padding:30px 0 8px}
 .four .kick{text-align:center;font-size:13px;font-weight:800;letter-spacing:.2em;color:var(--navy);
   text-transform:uppercase}
@@ -248,7 +231,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
   letter-spacing:.02em;margin-bottom:4px}
 .fcard span{font-size:14.5px;color:#3f4650}
 
-/* --- comparison --- */
 .cmp{padding:26px 0 30px}
 .cmp h2{text-align:center;font-size:28px;font-weight:800;letter-spacing:-.01em}
 .cmp .lead{text-align:center;font-size:15px;color:#3f4650;margin:12px 0 22px}
@@ -269,7 +251,6 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
   font-size:11px;font-weight:900;color:#fff}
 .crow .m.y{background:var(--ok)} .crow .m.n{background:var(--bad)}
 
-/* --- guarantee --- */
 .gar{background:var(--wash);padding:30px 0;text-align:center}
 .gar .seal{width:118px;height:118px;margin:0 auto 16px;border-radius:50%;
   border:3px solid var(--navy);color:var(--navy);display:grid;place-items:center;
@@ -277,12 +258,10 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:16px 0}
 .gar h2{font-size:26px;font-weight:800;line-height:1.14;text-transform:uppercase}
 .gar p{font-size:15px;color:#3f4650;margin-top:12px}
 
-/* --- faq --- */
 .faq{padding:30px 0 26px}
 .faq h2{text-align:center;font-size:26px;font-weight:800;line-height:1.14;
   text-transform:uppercase;margin-bottom:14px}
 
-/* --- footer --- */
 footer{background:var(--ink);color:#a3a7ab;padding:26px 0;font-size:13.5px}
 footer .ab{font-size:14px;color:#c8cccf;margin-bottom:14px}
 footer .lk{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:center;margin:14px 0}
@@ -290,7 +269,6 @@ footer a{color:#e2e5e7;text-decoration:none}
 footer .cp{text-align:center;font-size:12.5px;margin-top:6px}
 footer .disc{margin-top:14px;font-size:11px;line-height:1.55;color:#83888c}
 
-/* --- sticky ATC --- */
 .satc{position:fixed;left:0;right:0;bottom:0;z-index:80;background:#fff;
   border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.09);
   padding:9px 16px calc(10px + env(safe-area-inset-bottom))}
@@ -305,20 +283,12 @@ footer .disc{margin-top:14px;font-size:11px;line-height:1.55;color:#83888c}
 
 @media(min-width:768px){ .gal{padding-left:0;padding-right:0} }
 
-/* Top header (hamburger / logo / cart) hidden — owner rule 2026-08-06: the LP B
-   replicas do not need the source's site chrome. Markup is kept so re-enabling is
-   just deleting this rule. Announcement bars/marquees stay: they carry offer copy. */
 body > header{display:none!important}
 
-/* width/height attrs need height:auto or images render as tall columns */
 img{height:auto}
 </style>
 <script>
-/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
-   Returns our slug, or '' when the document was not served from a normal https
-   URL under a slug path. Meta blocked a real event named
-   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
-   it `location.pathname` straight from a `data:` URL. */
+
 window.lpSlug = function(){
   try{
     if (!/^https?:$/.test(location.protocol)) return '';
@@ -611,9 +581,6 @@ const COLORS = [
   { name:"Svetlo smeđa",  img:"assets/color-svetlo.jpg"  },
 ];
 
-/* variantId per (paket, nijansa) — Shopify RS product 15646853857545.
-   `per` is the PER-UNIT price and is exactly what the Shopify variant costs:
-   the cart now carries ONE LINE PER BOTTLE, so the cart total is per x qty. */
 const TIERS = [
   { qty:1, label:"1 bočica", per:3590, ribbon:null,
     v:{ "Crna":"57242565083401","Tamno smeđa":"57242565181705","Srednje smeđa":"57242565280009","Svetlo smeđa":"57242565378313" } },
@@ -623,9 +590,6 @@ const TIERS = [
     v:{ "Crna":"57242565148937","Tamno smeđa":"57242565247241","Srednje smeđa":"57242565345545","Svetlo smeđa":"57242565443849" } },
 ];
 
-/* Gift ladder. Shipping is free on every package (the RS store's automatic
-   discount clears at 2.990 RSD and the cheapest package is 3.590), so the
-   shipping gift sits on tier 1 — it is never advertised as a bundle unlock. */
 const GIFTS = [
   { at:1, cap:"Besplatna dostava" },
   { at:2, cap:"PDF vodič za negu boje" },
@@ -641,13 +605,9 @@ const REVIEWS = [
     { img:"assets/pack3.jpg", t:"Naručili smo tri odjednom jer po komadu ispadne znatno jeftinije, a i dostava je besplatna.", who:"Vladimir S., Zrenjanin" } ],
 ];
 
-let ti = 0;   /* source preselects 1 bottle */
+let ti = 0;   
 let tabi = 0;
 
-/* One shade per BOTTLE (owner rule 2026-08-06). picks[r] is the colour index
-   chosen for unit #r+1; picks[0] also drives the gallery + sticky thumb.
-   Rows the shopper never touched follow row #1, so switching package keeps
-   the choices instead of resetting them. */
 let picks = [0];
 const touched = [];
 
@@ -697,7 +657,6 @@ function renderTiers(){
     </div>`).join('');
 }
 
-/* distinct shades in the current selection, in the order they were picked */
 function shades(){
   syncPicks();
   const out = [];
@@ -745,9 +704,6 @@ function tab(i){
   document.getElementById('rrow').scrollTo({left:0});
 }
 
-/* ---- checkout: one cart line PER BOTTLE ----
-   Each variant is priced per unit, so N lines of the tier's variants add up to
-   the tier total the page advertises. Identical picks collapse (`<v>:2`). */
 function cartLines(){
   syncPicks();
   const t = TIERS[ti], order = [], n = {};
@@ -760,9 +716,6 @@ function cartLines(){
   return order.map(v => v + ':' + n[v]);
 }
 
-/* The gift obligation rides on an ORDER-level cart attribute, never on the
-   line items: three lines each reading "(+3 poklona)" would get ops to pack
-   nine gifts. One order, one gift list. */
 function giftAttr(){
   const qty = TIERS[ti].qty;
   const caps = GIFTS.filter(g => qty >= g.at).map(g => g.cap);
@@ -778,7 +731,6 @@ function checkoutUrl(){
 
 function kupi(){ const u = checkoutUrl(); if (u) __go(u); }
 
-/* gallery dots */
 const slides = document.getElementById('slides');
 function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'}); }
 (function(){
@@ -792,11 +744,9 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
   }, {passive:true});
 })();
 
-/* ugc carousel arrows */
 const ugcrow = document.getElementById('ugcrow');
 function ug(d){ ugcrow.scrollBy({left:d*ugcrow.clientWidth*0.85, behavior:'smooth'}); }
 
-/* sticky ATC hides while the on-page ATC is visible */
 (function(){
   const bar=document.getElementById('satc'), main=document.getElementById('atc');
   if(!bar||!main) return;
@@ -813,8 +763,7 @@ function ug(d){ ugcrow.scrollBy({left:d*ugcrow.clientWidth*0.85, behavior:'smoot
 renderTiers(); renderUnits(); renderPrice(); renderReviews();
 </script>
 <script>
-/* Shared checkout helpers (injected 2026-08-06): BUNDLE shipping codes derived
-   from REAL cart quantity + Meta pixel events. */
+
 function __cq(u){var m=u.match(/:(\d+)(?=,|\?|$)/g)||[];return m.reduce(function(a,x){return a+parseInt(x.slice(1))},0);}
 function __dec(u){var q=__cq(u);
   if(q>=3)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE3_RS_SHIP';
@@ -829,9 +778,6 @@ document.addEventListener('click',function(e){
 },true);
 try{fbq('track','ViewContent',{content_type:'product',content_ids:['15646853857545'],content_name:document.title,currency:'RSD'});}catch(e){}
 
-/* LP behaviour events — generic version for the hand-written LP B pages (the LP A
-   template has its own, keyed to template class names). Scroll depth + dwell work
-   anywhere; clicks are matched on structure rather than template classes. */
 (function(){
   var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
@@ -856,9 +802,6 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156468538575
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) so the dashboard can show numbers PER LP.
-   Meta's stats API breaks down by event NAME only — not by parameter, and its
-   url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;

@@ -19,7 +19,7 @@ fbq('track','PageView');
  src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
 
 <style>
-/* TIŠINA LP — sr-Latn-RS. Hand-built, self-contained. */
+
 :root{
   --ink:#0f0f0f; --mut:#6b6b6b; --line:#e6e3dd;
   --teal:#123c3f; --teal2:#1c5257; --tealsoft:#eef4f3;
@@ -35,27 +35,23 @@ img{max-width:100%;display:block}
 .wrap{max-width:600px;margin:0 auto;padding:0 16px}
 h1,h2,h3{margin:0;line-height:1.15}
 
-/* 1. announcement bar */
 .annbar{background:linear-gradient(90deg,var(--teal),var(--teal2) 55%,var(--sand));
   color:#fff;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.03em;
   padding:9px 34px;position:relative;text-transform:uppercase}
 .annbar .ar{position:absolute;top:50%;transform:translateY(-50%);opacity:.85;font-size:15px}
 .annbar .ar.l{left:12px}.annbar .ar.r{right:12px}
 
-/* 2. header */
 header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;
   border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:50}
 header .ico{font-size:19px;color:var(--ink);text-decoration:none}
 .logo{display:flex;align-items:center;gap:7px;font-weight:700;font-size:21px;letter-spacing:.04em}
 .logo .m{color:var(--sand);font-size:19px}
 
-/* 3. badges */
 .tags{display:flex;gap:8px;padding:12px 16px 0}
 .tag{font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:20px;letter-spacing:.02em}
 .tag.grey{background:#6f6f6f;color:#fff}
 .tag.dark{background:#111;color:#fff}
 
-/* 4. gallery */
 .gal{position:relative;background:var(--sandsoft);margin-top:10px}
 .gal .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .gal .slides::-webkit-scrollbar{display:none}
@@ -68,20 +64,16 @@ header .ico{font-size:19px;color:var(--ink);text-decoration:none}
   border:2px solid transparent;cursor:pointer}
 .thumbs img.on{border-color:var(--teal)}
 
-/* 5. title + rating */
 .ph1{font-size:31px;font-weight:700;letter-spacing:-.02em;margin:14px 0 8px}
 .rate{display:flex;align-items:center;gap:9px;font-size:14px;margin-bottom:14px}
 .rate .st{color:var(--sand);font-size:17px;letter-spacing:1px}
 .rate a{color:var(--mut);text-decoration:underline}
 
-/* 6. bullets */
 .blts{list-style:none;margin:0 0 18px;padding:0}
 .blts li{display:flex;gap:11px;padding:6px 0;font-size:14.5px;align-items:flex-start}
 .blts .c{width:19px;height:19px;flex:none;border-radius:50%;background:var(--teal);color:#fff;
   display:grid;place-items:center;font-size:10px;font-weight:900;margin-top:2px}
 
-/* 7. per-unit colour rows — one row per set in the chosen package (#1..#N),
-   each independently selectable. Swatches wrap instead of overflowing 375px. */
 .colorrow{font-size:14px;margin-bottom:8px}
 .colorrow b{font-weight:700}
 .swatches{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px}
@@ -102,7 +94,6 @@ header .ico{font-size:19px;color:var(--ink);text-decoration:none}
 .urow .sw{width:40px;height:40px;border-radius:10px}
 .urow .sw i{width:22px;height:22px}
 
-/* 8. bundle options */
 .opt{position:relative;border:1.5px solid var(--line);border-radius:14px;padding:16px;
   margin-bottom:12px;cursor:pointer;background:#fafafa}
 .opt.on{border-color:var(--teal);background:#fff;box-shadow:0 0 0 1.5px var(--teal)}
@@ -121,7 +112,6 @@ header .ico{font-size:19px;color:var(--ink);text-decoration:none}
   padding:11px 16px;display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600}
 .opt .strip .amt{margin-left:auto;font-weight:700}
 
-/* 9. stock + ATC */
 .stock{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ok);
   font-weight:600;margin:14px 0 10px}
 .atc{display:block;width:100%;border:0;border-radius:60px;background:var(--dark);color:#fff;
@@ -131,11 +121,9 @@ header .ico{font-size:19px;color:var(--ink);text-decoration:none}
 .gtee{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13.5px;
   padding:13px 0 6px;color:#333}
 
-/* 10. description */
 .desc{font-size:15px;margin:16px 0 22px}
 .desc b{display:block;margin-bottom:6px}
 
-/* 11. accordions */
 details{border-top:1px solid var(--line)}
 details:last-of-type{border-bottom:1px solid var(--line)}
 summary{padding:16px 28px 16px 0;font-weight:600;font-size:15px;cursor:pointer;
@@ -146,7 +134,6 @@ details[open] summary::after{content:"⌃"}
 details .bd{padding:0 0 16px;font-size:14px;color:#3a3a3a}
 details .bd p{margin:0 0 8px}
 
-/* 12. add-on */
 .addon{background:#f7f7f5;border-radius:14px;padding:16px;margin:20px 0}
 .addon h3{font-size:16px;font-weight:700;margin-bottom:4px}
 .addon .sub{font-size:13.5px;color:var(--mut);margin-bottom:12px}
@@ -161,7 +148,6 @@ details .bd p{margin:0 0 8px}
 .addon .card button{margin-left:auto;border:0;background:var(--dark);color:#fff;font-size:12px;
   font-weight:700;padding:9px 16px;border-radius:20px;cursor:pointer}
 
-/* 13. video row */
 .vh{font-size:17px;font-weight:700;margin:22px 0 10px}
 .vrow{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
 .vrow::-webkit-scrollbar{display:none}
@@ -172,13 +158,11 @@ details .bd p{margin:0 0 8px}
   text-shadow:0 2px 10px rgba(0,0,0,.45)}
 .vbar{height:3px;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--sand) 60%,#ddd 60%)}
 
-/* 14. trust marquee */
 .marq{display:flex;gap:26px;overflow-x:auto;scrollbar-width:none;padding:16px 0;
   font-size:14px;font-weight:600;color:var(--teal);white-space:nowrap}
 .marq::-webkit-scrollbar{display:none}
 .marq span{display:flex;align-items:center;gap:7px}
 
-/* 15. big feature block */
 .feat{border-radius:16px;overflow:hidden;border:1px solid var(--line);margin:22px 0}
 .feat img{width:100%;aspect-ratio:1/1;object-fit:cover}
 .feat .b{padding:20px 16px}
@@ -189,7 +173,6 @@ details .bd p{margin:0 0 8px}
 .feat .it b{display:block;font-size:15px}
 .feat .it span{font-size:13.5px;color:var(--mut)}
 
-/* 16. fact cards */
 .facts{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
 .facts::-webkit-scrollbar{display:none}
 .fcard{flex:none;width:78%;border:1px solid var(--line);border-radius:16px;overflow:hidden}
@@ -200,7 +183,6 @@ details .bd p{margin:0 0 8px}
 .fcard .stat b{font-size:20px;color:var(--teal);flex:none}
 .fcard .stat span{font-size:13px;color:#3a3a3a}
 
-/* 17. comparison */
 .cmp{margin:28px 0}
 .cmp h2{text-align:center;font-size:25px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px}
 .cmp h2 em{font-style:normal;color:var(--teal)}
@@ -217,13 +199,11 @@ details .bd p{margin:0 0 8px}
 .ctab .x{color:#c9c9c9;font-weight:900}
 .ctab .rowbg{background:#fafafa}
 
-/* 18. press */
 .press{text-align:center;padding:22px 0}
 .press .lb{font-size:11.5px;letter-spacing:.14em;color:var(--mut);margin-bottom:14px}
 .press .row{display:flex;justify-content:space-around;gap:14px;filter:grayscale(1);opacity:.6;
   font-weight:700;font-size:13px;flex-wrap:wrap}
 
-/* 19. reviews */
 .rev{padding:8px 0 26px}
 .rev h2{text-align:center;font-size:25px;font-weight:700;letter-spacing:-.02em;margin-bottom:16px}
 .rrow{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
@@ -237,7 +217,6 @@ details .bd p{margin:0 0 8px}
 .rcard h4{font-size:15px;margin:6px 0 4px}
 .rcard p{margin:0;font-size:13.5px;color:#3a3a3a}
 
-/* 20. FAQ */
 .faq{background:var(--tealsoft);border-radius:16px;padding:6px 16px;margin:10px 0 26px}
 .faq h2{text-align:center;font-size:25px;font-weight:700;padding:18px 0 2px}
 .faq .sub{text-align:center;font-size:14px;color:var(--mut);margin-bottom:8px}
@@ -245,7 +224,6 @@ details .bd p{margin:0 0 8px}
 .faq details:first-of-type{border-top:0}
 .faq details:last-of-type{border-bottom:0}
 
-/* 21. rating summary */
 .sum{text-align:center;padding:14px 0 26px}
 .sum .big{display:flex;align-items:center;justify-content:center;gap:10px;font-size:22px;font-weight:700}
 .sum .big .st{color:var(--sand);font-size:20px;letter-spacing:2px}
@@ -259,7 +237,6 @@ details .bd p{margin:0 0 8px}
 .rec{margin-top:14px;font-size:19px;font-weight:700}
 .rec span{display:block;font-size:13px;font-weight:400;color:var(--mut)}
 
-/* 22. sticky ATC */
 .satc{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;
   border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.08);
   padding:9px 16px calc(11px + env(safe-area-inset-bottom))}
@@ -278,20 +255,12 @@ footer .disc{margin-top:14px;font-size:11px;line-height:1.55;text-align:left;col
   .gal,.thumbs{max-width:560px;margin-left:auto;margin-right:auto}
 }
 
-/* Top header (hamburger / logo / cart) hidden — owner rule 2026-08-06: the LP B
-   replicas do not need the source's site chrome. Markup is kept so re-enabling is
-   just deleting this rule. Announcement bars/marquees stay: they carry offer copy. */
 body > header{display:none!important}
 
-/* width/height attrs need height:auto or images render as tall columns */
 img{height:auto}
 </style>
 <script>
-/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
-   Returns our slug, or '' when the document was not served from a normal https
-   URL under a slug path. Meta blocked a real event named
-   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
-   it `location.pathname` straight from a `data:` URL. */
+
 window.lpSlug = function(){
   try{
     if (!/^https?:$/.test(location.protocol)) return '';
@@ -506,9 +475,7 @@ window.lpSlug = function(){
 </div>
 
 <script>
-/* `unit` is the PER-UNIT price = the price on the Shopify variant. The cart gets
-   one line per set, so total = unit x qty. `gifts` is the obligation for the
-   WHOLE order (see giftAttr) — never per line. */
+
 const OPTS = [
   { title:"1 set",  sub:"1 set čepića", qty:1, unit:3990, total:3990, was:7990,
     per:"3.990 RSD po setu", badge:null, save:null, strip:null, ship:false,
@@ -533,8 +500,7 @@ const COLORS = [
 const BASE = "https://rs.unikatko.eu";
 const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
 let sel = 0;   // source preselects the Buy-2-Get-1 bundle
-/* One colour pick per set. picks[0] also drives the gallery + sticky thumbnail.
-   Rows the shopper never touched follow row #1, so switching package keeps picks. */
+
 let picks = [0];
 const pickTouched = [];
 function syncPicks(){
@@ -564,7 +530,6 @@ function renderOpts(){
 }
 function pickOpt(i){ sel=i; renderOpts(); renderColors(); }
 
-/* ---- per-unit colour rows ---- */
 function renderColors(){
   syncPicks();
   const n = OPTS[sel].qty || 1;
@@ -590,9 +555,6 @@ function applyColorImage(){
   const s0 = document.querySelector('.satc img'); if(s0) s0.src = c.img;
 }
 
-/* ---- checkout ----
-   ONE cart line per set, identical picks collapsed (`<v>:2,<v2>:1`). Each variant
-   is priced PER SET, so the cart total is unit x qty = the advertised package price. */
 function cartLines(){
   syncPicks();
   const o = OPTS[sel], order = [], n = {};
@@ -604,8 +566,7 @@ function cartLines(){
   }
   return order.map(v => v + ':' + n[v]);
 }
-/* The gift obligation reaches ops ONCE PER ORDER: it rides on a cart ATTRIBUTE,
-   not on the line items. Three lines must never be read as three sets of gifts. */
+
 function giftAttr(){
   const g = OPTS[sel].gifts || [];
   if (!g.length) return '';
@@ -618,7 +579,6 @@ function checkoutUrl(){
 }
 function kupi(){ const u = checkoutUrl(); if (u) __go(u); }
 
-/* gallery */
 const slides = document.getElementById('slides');
 function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'}); }
 (function(){
@@ -631,8 +591,6 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
   });
 })();
 
-/* sticky ATC hides while the on-page ATC is visible (owner rule).
-   Plain rect check + interval — scroll events are unreliable in some webviews. */
 (function(){
   const bar=document.getElementById('satc'), main=document.getElementById('atc');
   if(!bar||!main) return;
@@ -649,8 +607,7 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
 renderColors(); renderOpts();
 </script>
 <script>
-/* Shared checkout helpers (injected 2026-08-06): BUNDLE shipping codes derived
-   from REAL cart quantity + Meta pixel events. */
+
 function __cq(u){var m=u.match(/:(\d+)(?=,|\?|$)/g)||[];return m.reduce(function(a,x){return a+parseInt(x.slice(1))},0);}
 function __dec(u){var q=__cq(u);
   if(q>=3)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE3_RS_SHIP';
@@ -665,9 +622,6 @@ document.addEventListener('click',function(e){
 },true);
 try{fbq('track','ViewContent',{content_type:'product',content_ids:['15645287022857'],content_name:document.title,currency:'RSD'});}catch(e){}
 
-/* LP behaviour events — generic version for the hand-written LP B pages (the LP A
-   template has its own, keyed to template class names). Scroll depth + dwell work
-   anywhere; clicks are matched on structure rather than template classes. */
 (function(){
   var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
@@ -692,9 +646,6 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156452870228
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) so the dashboard can show numbers PER LP.
-   Meta's stats API breaks down by event NAME only — not by parameter, and its
-   url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;

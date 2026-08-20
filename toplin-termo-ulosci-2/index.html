@@ -19,23 +19,13 @@ fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
  src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
 <style>
-/* ==========================================================================
-   LP B — TOPLIN. Hand-built (NOT from template/skeleton.html).
-   Structure is our own LEDNIK LP B chassis, reskinned for winter: the source
-   here is an eBay LISTING, so there is no competitor funnel to replicate —
-   nothing of eBay's chrome is reproduced. Shares the TOPLIN Shopify product
-   and the same per-unit cart-permalink logic as LP A.
-   No <body> > <header>: site chrome is non-functional on a landing page and
-   eats the first mobile screen (owner rule, 2026-08-06).
-   Font: system stack — these pages carry paid traffic and every blocking
-   request costs conversions.
-   ========================================================================== */
+
 :root{
   --o:#e2571e; --o-d:#b8410f;
-  --o-soft:#fdece0;      /* selected tier card */
-  --o-pill:#ffdcc0;      /* "+ besplatna dostava" pill */
-  --card:#fffbf6;        /* unselected tier card */
-  --bd:#f0dcc8;          /* card border */
+  --o-soft:#fdece0;      
+  --o-pill:#ffdcc0;      
+  --card:#fffbf6;        
+  --bd:#f0dcc8;          
   --ink:#191410; --muted:#5d5147; --line:#eae0d6;
   --f:'Nunito Sans','Avenir Next','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
 }
@@ -49,7 +39,6 @@ h1,h2,h3,h4{margin:0}
 .center{text-align:center}
 button{font-family:inherit}
 
-/* ---------- marquee ---------- */
 .mq{overflow:hidden;white-space:nowrap;background:#2b1c12;color:#fff}
 .mq .t{display:inline-block;padding:9px 0;font-weight:800;font-size:13px;
   letter-spacing:.02em;animation:mv 22s linear infinite}
@@ -59,7 +48,6 @@ button{font-family:inherit}
 @keyframes mv{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.mq .t{animation:none}}
 
-/* ---------- gallery ---------- */
 .gal{position:relative;background:#fbf1e3}
 .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .slides::-webkit-scrollbar{display:none}
@@ -70,7 +58,6 @@ button{font-family:inherit}
   border:2px solid transparent;cursor:pointer}
 .thumbs img.on{border-color:var(--o)}
 
-/* ---------- title block ---------- */
 .stars{color:var(--o);font-size:19px;letter-spacing:1px}
 .rate{display:flex;align-items:center;gap:9px;padding:14px 0 6px;font-size:15px}
 h1{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin:4px 0 12px}
@@ -84,7 +71,6 @@ h1{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin:4
   color:#111;text-decoration:underline;text-underline-offset:3px;background:none;border:0;cursor:pointer;padding:0}
 .endsoon{margin:18px 0 12px;text-align:center;font-weight:900;font-size:15px;letter-spacing:.03em}
 
-/* ---------- tiers ---------- */
 .tier{position:relative;border:1px solid var(--bd);background:var(--card);border-radius:14px;
   padding:14px 14px;margin:24px 0 0;cursor:pointer}
 .tier.on{border:2px solid var(--o);background:var(--o-soft);padding:13px 13px}
@@ -105,7 +91,7 @@ h1{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin:4
 .tier .r .w{font-size:16px;font-weight:800;text-decoration:line-through;color:#111}
 .corner{position:absolute;top:-13px;right:10px;background:#2b1c12;color:#fff;font-size:12.5px;
   font-weight:800;border-radius:8px;padding:5px 11px;white-space:nowrap}
-/* per-unit size rows, revealed inside the selected card */
+
 .units{margin-top:12px}
 .units .uh{font-size:14px;font-weight:800;padding-left:52px}
 .units .uhint{margin:2px 0 8px;font-size:12.5px;color:#7a4a2c;padding-left:52px}
@@ -114,13 +100,11 @@ h1{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin:4
 .urow select{flex:1;min-width:0;font-family:inherit;font-size:16px;font-weight:600;
   padding:11px 12px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:#111}
 
-/* ---------- CTA ---------- */
 .cta{display:block;width:100%;background:var(--o);color:#fff;border:0;border-radius:10px;
   font-size:19px;font-weight:900;letter-spacing:.02em;text-transform:uppercase;
   padding:24px 16px;margin:22px 0 0;cursor:pointer}
 .cta:active{background:var(--o-d)}
 
-/* ---------- order bump ---------- */
 .bump-h{margin:22px 0 8px;font-size:17px}
 .bump{border:2px solid var(--o);border-radius:14px;background:#fff;padding:12px;display:flex;gap:12px}
 .bump img{width:118px;height:118px;object-fit:cover;border-radius:10px;flex:none}
@@ -133,7 +117,6 @@ h1{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin:4
 .bump label{display:flex;align-items:center;gap:9px;margin-top:9px;font-weight:800;font-size:15px;cursor:pointer}
 .bump input{width:24px;height:24px;accent-color:var(--o)}
 
-/* ---------- delivery / trust ---------- */
 .deliv{margin-top:18px;text-align:center;font-size:16.5px;font-weight:800}
 .pays{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0;
   font-size:11px;font-weight:900;color:#3b3b3b}
@@ -145,7 +128,6 @@ h1{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin:4
 .badges .ic{font-size:26px}
 .badges b{display:block;font-size:14px;font-weight:800;margin-top:4px;line-height:1.25}
 
-/* ---------- FAQ ---------- */
 .faq{margin-top:18px}
 .faq details{border-top:1px solid var(--line)}
 .faq details:last-of-type{border-bottom:1px solid var(--line)}
@@ -157,7 +139,6 @@ h1{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin:4
 .faq details[open] summary::after{content:"−"}
 .faq p{margin:0 0 16px;font-size:15px;color:#2b2b2b}
 
-/* ---------- countdown ---------- */
 .cdwrap{margin:26px 0 8px;text-align:center}
 .cdwrap h3{font-size:18px;font-weight:900;letter-spacing:.01em}
 .cd{display:flex;gap:12px;justify-content:center;margin-top:12px}
@@ -166,14 +147,12 @@ h1{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin:4
   border-radius:10px;padding:8px 14px;min-width:74px}
 .cd i{font-style:normal;font-size:14px;color:#333}
 
-/* ---------- testimonials ---------- */
 .tst{background:var(--o-soft);border-radius:14px;padding:16px;margin-top:14px;display:flex;gap:12px}
 .tst .av{width:52px;height:52px;border-radius:50%;background:var(--o);color:#fff;flex:none;
   display:grid;place-items:center;font-weight:900;font-size:19px}
 .tst p{margin:0;font-size:15px}
 .tst .who{margin-top:6px;font-weight:800;font-size:14px}
 
-/* ---------- tiles / bands ---------- */
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
 .tile{border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
 .tile .ic{font-size:28px}
@@ -206,7 +185,6 @@ footer a{color:var(--muted);margin:0 6px}
 footer .fb{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-weight:800;
   color:#111;font-size:14px;margin-bottom:14px}
 
-/* ---------- sticky bottom bar ---------- */
 .satc{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;
   border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(0,0,0,.10);
   padding:9px 14px;display:flex;align-items:center;gap:12px}
@@ -219,11 +197,7 @@ footer .fb{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-weig
   font-weight:900;padding:13px 20px;white-space:nowrap;cursor:pointer}
 </style>
 <script>
-/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
-   Returns our slug, or '' when the document was not served from a normal https
-   URL under a slug path. Meta blocked a real event named
-   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
-   it `location.pathname` straight from a `data:` URL. */
+
 window.lpSlug = function(){
   try{
     if (!/^https?:$/.test(location.protocol)) return '';
@@ -453,9 +427,7 @@ window.lpSlug = function(){
 </section>
 
 <script>
-/* CFG mirrors pages/toplin-termo-ulosci/page.json — LP A and LP B MUST sell the
-   same offer, so the tier ladder, sizes and variant ids are copied verbatim and
-   the cart-permalink logic below is the same code LP A's template generates. */
+
 const CFG = {
   currency:"RSD", numberLocale:"de-DE",
   compareAt:2350, defaultTier:0, freeShippingQty:2,
@@ -474,8 +446,7 @@ const CFG = {
      variantsByColor:{"35-36":"57257596223753","37-38":"57257596256521","39-40":"57257596289289","41-42":"57257596322057","43-44":"57257596354825"}}
   ],
   gifts:[
-    /* Quote style copied byte-for-byte from page.json so LP A and LP B write an
-       IDENTICAL `Pokloni` cart attribute — ops reads one string, not two. */
+    
     {at:1,cap:"PDF vodič „Topla stopala zimi\""},
     {at:2,cap:"Besplatna dostava"},
     {at:3,cap:"Putna kesica za obuću"},
@@ -486,11 +457,11 @@ const CFG = {
     giftAttrKey:"Pokloni", giftAttrPrefix:"1x po porudžbini: "
   }
 };
-const BUMP_PRICE = 1390;   /* one extra pair, at the single-pair price */
+const BUMP_PRICE = 1390;   
 
 const fmt = n => new Intl.NumberFormat(CFG.numberLocale).format(n) + ' ' + CFG.currency;
 let selected = CFG.defaultTier;
-let picks = [0];              /* size index chosen per unit */
+let picks = [0];              
 const pickTouched = [];
 let colorIdx = 0;
 
@@ -507,7 +478,6 @@ function variantFor(t, ci){
   return (t.variantsByColor && t.variantsByColor[c.name]) || t.variantId;
 }
 
-/* --- cart: one line per distinct variant, quantity-collapsed (same as LP A) --- */
 function cartLines(){
   const t = CFG.tiers[selected];
   syncPicks();
@@ -519,13 +489,12 @@ function cartLines(){
     n[vid]++;
   }
   if (document.getElementById('bump').checked){
-    const bv = variantFor(CFG.tiers[0], picks[0]);   /* +1 pair, single-pair variant */
+    const bv = variantFor(CFG.tiers[0], picks[0]);   
     if (bv){ if (n[bv] === undefined){ n[bv] = 0; order.push(bv); } n[bv]++; }
   }
   return order.map(v => v + ':' + n[v]);
 }
-/* Gift obligation rides on a cart ATTRIBUTE so ops sees it once per order,
-   never once per line (a 4-line cart must not trigger 4x the gifts). */
+
 function giftAttr(){
   const key = CFG.labels.giftAttrKey;
   if (!key) return '';
@@ -535,8 +504,7 @@ function giftAttr(){
   const val = (CFG.labels.giftAttrPrefix || '') + caps.join(' + ');
   return '?attributes%5B' + encodeURIComponent(key) + '%5D=' + encodeURIComponent(val);
 }
-/* Free shipping is a discount CODE on the permalink (store rule), counting cart
-   quantity — which per-unit line items satisfy. qty 1 gets no code. */
+
 function shipCode(){
   const qty = CFG.tiers[selected].qty + (document.getElementById('bump').checked ? 1 : 0);
   if (qty >= 3) return 'BUNDLE3_RS_SHIP';
@@ -569,7 +537,6 @@ function total(){
        + (document.getElementById('bump').checked ? BUMP_PRICE : 0);
 }
 
-/* ---- tiers ---- */
 function renderTiers(){
   syncPicks();
   const html = CFG.tiers.map((t,i)=>{
@@ -634,10 +601,6 @@ function renderPrice(){
   document.getElementById('atc').textContent = 'Dodaj u korpu — ' + fmt(total());
 }
 
-/* ---- gallery thumbs ----
-   Point at the 128px thumbs generated for LP A, with an onerror fallback to the
-   full file: without this the strip pulls ~2 MB of full-size gallery images on
-   load and defeats the lazy-loading above it. */
 const slides = document.getElementById('slides');
 (function(){
   const imgs = [...slides.querySelectorAll('img')];
@@ -655,7 +618,6 @@ slides.addEventListener('scroll', ()=>{
   document.querySelectorAll('#thumbs img').forEach((t,k)=>t.classList.toggle('on',k===i));
 });
 
-/* ---- size guide link ---- */
 document.getElementById('guideBtn').onclick = ()=>{
   const d = document.getElementById('faqSize');
   d.open = true; d.scrollIntoView({behavior:'smooth', block:'center'});
@@ -664,19 +626,16 @@ function scrollToOffer(){
   document.getElementById('tiers').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-/* ---- marquees ---- */
 function mq(el, items){
   const one = items.map(t=>`<span>${t}</span>`).join('');
-  document.getElementById(el).innerHTML = one + one;   /* duplicated for the -50% loop */
+  document.getElementById(el).innerHTML = one + one;   
 }
-/* The headline % is DERIVED from the tier ladder, never typed — a hand-written
-   number silently goes stale the moment compareAt or a unit price changes. */
+
 const MAXSAVE = Math.max(...CFG.tiers.map(t => Math.round((1 - t.unit / CFG.compareAt) * 100)));
 mq('mq1',['❄️ ZIMSKA RASPRODAJA','💥 NAJVEĆI POPUST DO SADA','⌛ PONUDA USKORO ISTIČE','🔥 UŠTEDI DO '+MAXSAVE+'%']);
 mq('mq2',['🔥 Runo koje zadržava toplotu','💧 Upija znoj i vlagu','🫧 Mekan korak','🥾 Za čizme i patike']);
 mq('mq3',['🚚 Isporuka 2–4 radna dana','💵 Plaćanje pouzećem','↩️ 30 dana za povraćaj','📦 Roba u Srbiji']);
 
-/* ---- delivery ETA (3 working days ahead, Serbian weekday) ---- */
 (function(){
   const dn=['u nedelju','u ponedeljak','u utorak','u sredu','u četvrtak','u petak','u subotu'];
   const d=new Date(); let added=0;
@@ -685,7 +644,6 @@ mq('mq3',['🚚 Isporuka 2–4 radna dana','💵 Plaćanje pouzećem','↩️ 30
     d.getDate() + '.' + (d.getMonth()+1) + '.';
 })();
 
-/* ---- countdown: rolling 3h window, persisted so a reload doesn't reset it ---- */
 (function(){
   const K='toplin2_cd';
   let end = +localStorage.getItem(K);
@@ -701,10 +659,6 @@ mq('mq3',['🚚 Isporuka 2–4 radna dana','💵 Plaćanje pouzećem','↩️ 30
   tick(); setInterval(tick, 1000);
 })();
 
-/* ---- sticky ATC: hidden whenever the on-page CTA is in view ----
-   Paired listeners + interval on purpose: IntersectionObserver never fires in
-   the preview pane or under headless --virtual-time-budget, so an IO-only
-   implementation is both fragile and unverifiable. */
 (function(){
   const bar = document.getElementById('satc'), atc = document.getElementById('atc');
   function sync(){
@@ -723,7 +677,6 @@ renderTiers();
 try{fbq('track','ViewContent',{content_type:'product',content_ids:['15653446877449'],
   content_name:document.title,currency:'RSD'});}catch(e){}
 
-/* LP behaviour events — generic version for the hand-written LP B pages. */
 (function(){
   var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
@@ -748,9 +701,6 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156534468774
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) so the dashboard can show numbers PER LP.
-   Meta's stats API breaks down by event NAME only — not by parameter, and its
-   url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;

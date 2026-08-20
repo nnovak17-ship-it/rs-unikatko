@@ -17,7 +17,7 @@ fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
  src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
 <style>
-/* ŠAPICA LP — sr-Latn-RS. Hand-built, self-contained. */
+
 :root{
   --ink:#22201e; --mut:#736c66; --line:#e9e2da;
   --terra:#c2643c; --terra2:#a75335; --terrasoft:#f7e3d6;
@@ -146,20 +146,12 @@ footer .disc{margin-top:12px;font-size:11px;line-height:1.55;text-align:left;col
 
 @media(min-width:768px){ .gal,.thumbs{max-width:560px;margin-left:auto;margin-right:auto} }
 
-/* Top header (hamburger / logo / cart) hidden — owner rule 2026-08-06: the LP B
-   replicas do not need the source's site chrome. Markup is kept so re-enabling is
-   just deleting this rule. Announcement bars/marquees stay: they carry offer copy. */
 body > header{display:none!important}
 
-/* width/height attrs need height:auto or images render as tall columns */
 img{height:auto}
 </style>
 <script>
-/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
-   Returns our slug, or '' when the document was not served from a normal https
-   URL under a slug path. Meta blocked a real event named
-   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
-   it `location.pathname` straight from a `data:` URL. */
+
 window.lpSlug = function(){
   try{
     if (!/^https?:$/.test(location.protocol)) return '';
@@ -320,9 +312,7 @@ function renderOpts(){
     `<s>${fmt(9199)}</s>${fmt(o.total)}${o.ship?' <span style="font-size:14px;font-weight:400">+ 490 RSD dostava</span>':''}`;
 }
 function pickOpt(i){ sel=i; renderOpts(); }
-/* Per-unit line items (variant price = per-unit price, cart quantity = tier qty)
-   so the QUANTITY-gated free-shipping codes actually fire: BUNDLE2_RS_SHIP needs
-   >= 2 items in the cart, BUNDLE3_RS_SHIP >= 3. qty 1 gets no code. */
+
 function kupi(){
   const o = OPTS[sel];
   let url = BASE + '/cart/' + o.variantId + ':' + o.qty;
@@ -350,7 +340,6 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
   });
 })();
 
-/* sticky ATC hides while the on-page ATC is visible */
 (function(){
   const bar=document.getElementById('satc'), main=document.getElementById('atc');
   if(!bar||!main) return;
@@ -366,8 +355,6 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
 
 renderOpts();
 
-/* Pixel: product view with the funnel's Shopify product id, so Meta can match
-   it against catalog + purchase events from the store. */
 try{
   fbq('track','ViewContent',{
     content_type:'product', content_ids:['15645935239433'],
@@ -375,7 +362,6 @@ try{
   });
 }catch(e){}
 
-/* LP behaviour events (generic, LP B). */
 (function(){
   var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
@@ -400,9 +386,6 @@ try{
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) so the dashboard can show numbers PER LP.
-   Meta's stats API breaks down by event NAME only — not by parameter, and its
-   url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;

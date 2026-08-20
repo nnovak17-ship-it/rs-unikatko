@@ -29,11 +29,9 @@ h1,h2,h3{font-family:Sora,system-ui,sans-serif;color:#101010;margin:0;line-heigh
 .wrap{max-width:520px;margin:0 auto;padding:0 20px}
 a{color:inherit}
 
-/* announcement */
 .announce{background:#2a2552;color:#fff;text-align:center;font-weight:700;
   font-size:11px;letter-spacing:.09em;padding:12px 14px;text-transform:uppercase}
 
-/* gallery */
 .gal{background:linear-gradient(#eaf4f7,#fdf3ea)}
 .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
   scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none}
@@ -49,7 +47,6 @@ a{color:inherit}
   border:2px solid transparent;cursor:pointer;flex:0 0 auto}
 .thumbs img.on{border-color:#2a2552}
 
-/* offer block */
 .offer{background:linear-gradient(#fdf3ea,#fdf3ea 70%,#fff);padding:18px 0 26px}
 .stars{display:flex;align-items:center;gap:8px;margin-bottom:10px}
 .stars .s{color:#f5a623;font-size:19px;letter-spacing:1px}
@@ -66,7 +63,6 @@ h1{font-size:30px;font-weight:800;margin-bottom:10px}
   font-family:Sora,sans-serif;font-weight:700;font-size:15px;color:#101010}
 .savepill.zero{background:#f1ece4;color:#6b6b6b;font-weight:600}
 
-/* tier grid */
 .tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .tile{position:relative;border:1px solid #2a2552;border-radius:6px;overflow:hidden;
   display:flex;background:#fff;cursor:pointer;min-height:72px;text-align:left;padding:0;
@@ -91,7 +87,6 @@ h1{font-size:30px;font-weight:800;margin-bottom:10px}
 .refund{text-align:center;font-family:Sora,sans-serif;font-weight:700;font-size:16px;
   margin-top:16px;color:#101010}
 
-/* quote carousel */
 .sec{padding:34px 0}
 h2{font-size:23px;font-weight:700;text-align:center;margin-bottom:18px}
 .rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
@@ -104,7 +99,6 @@ h2{font-size:23px;font-weight:700;text-align:center;margin-bottom:18px}
 .dots i{width:8px;height:8px;border-radius:50%;background:#d5cec4;display:block}
 .dots i.on{background:#2a2552}
 
-/* accordion */
 details{border-bottom:1px solid #e6ded3}
 summary{list-style:none;cursor:pointer;padding:16px 26px 16px 0;position:relative;
   font-family:Sora,sans-serif;font-weight:600;font-size:15px;text-transform:uppercase;
@@ -114,7 +108,6 @@ summary::after{content:"+";position:absolute;right:2px;top:14px;font-size:22px;f
 details[open] summary::after{content:"−"}
 details .ans{padding:0 0 16px;font-size:15px;color:#4a4a55}
 
-/* testimonial card */
 .tcard{background:#fdf3ea;border-radius:14px;padding:18px;position:relative;margin-top:16px}
 .tcard .hd{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .tcard .av{width:46px;height:46px;border-radius:50%;background:#d7ecf3;display:grid;
@@ -125,35 +118,30 @@ details .ans{padding:0 0 16px;font-size:15px;color:#4a4a55}
 .tcard .mark{position:absolute;top:12px;right:16px;font-size:44px;color:#e2d8cb;
   line-height:1;font-family:Sora,sans-serif}
 
-/* badge cards */
 .cards3{display:grid;gap:12px}
 .bcard{background:#fdf3ea;border-radius:14px;padding:18px;text-align:center}
 .bcard .ic{font-size:26px;margin-bottom:6px}
 .bcard h3{font-size:17px;margin-bottom:6px}
 .bcard p{margin:0;font-size:14px;color:#5b5b6b}
 
-/* marquee */
 .mq{background:#2a2552;color:#fff;overflow:hidden;padding:11px 0}
 .mqi{display:flex;gap:26px;width:max-content;animation:mv 26s linear infinite}
 .mqi span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
 @keyframes mv{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.mqi{animation:none}}
 
-/* autopilot */
 .auto{background:#eaf4f7;padding:34px 0}
 .auto q{display:block;font-family:Sora,sans-serif;font-weight:700;font-size:19px;
   text-align:center;margin-bottom:18px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .chips b{background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700}
 
-/* steps */
 .step{background:#fdf3ea;border-radius:14px;padding:18px;margin-bottom:12px}
 .step .n{width:32px;height:32px;border-radius:50%;background:#2a2552;color:#fff;
   display:grid;place-items:center;font-family:Sora,sans-serif;font-weight:700;margin-bottom:10px}
 .step h3{font-size:17px;margin-bottom:6px}
 .step p{margin:0;font-size:15px;color:#4a4a55}
 
-/* compare */
 .cmp{width:100%;border-collapse:collapse;font-size:13px}
 .cmp th,.cmp td{padding:11px 6px;border-bottom:1px solid #ece4d9;text-align:center}
 .cmp th{font-family:Sora,sans-serif;font-size:12px;font-weight:700}
@@ -163,12 +151,10 @@ details .ans{padding:0 0 16px;font-size:15px;color:#4a4a55}
 .yes{color:#3cb54a;font-weight:700;font-size:16px}
 .no{color:#c9c2b8;font-weight:700;font-size:16px}
 
-/* mission */
 .mis{background:#2a2552;color:#fff;padding:34px 0;text-align:center}
 .mis h2{color:#fff}
 .mis p{font-size:15px;color:#d6d2e6;margin:0 auto;max-width:400px}
 
-/* footer */
 footer{background:#f7f2ec;padding:26px 0 34px;font-size:13px;color:#6b6b6b}
 footer .fl{display:flex;flex-wrap:wrap;gap:10px 16px;justify-content:center;margin-bottom:14px}
 footer .fl a{color:#2a2552;font-weight:600;text-decoration:none}
@@ -177,11 +163,7 @@ footer .dis{font-size:11px;line-height:1.6;color:#8a8a8a;margin-top:12px}
   padding:1px 6px;border-radius:4px;letter-spacing:.04em;vertical-align:middle}
 </style>
 <script>
-/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
-   Returns our slug, or '' when the document was not served from a normal https
-   URL under a slug path. Meta blocked a real event named
-   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
-   it `location.pathname` straight from a `data:` URL. */
+
 window.lpSlug = function(){
   try{
     if (!/^https?:$/.test(location.protocol)) return '';
@@ -397,7 +379,7 @@ window.lpSlug = function(){
 </footer>
 
 <script>
-/* ---------------- offer ---------------- */
+
 var BASE='https://rs.unikatko.eu', COMPARE=4990, PRODUCT_ID='15652870816009';
 var TIERS=[
   {qty:4,unit:3190,name:'4 KOMADA',v:'57256841117961',img:'assets/pack4.jpg',badge:'NAJBOLJA PONUDA'},
@@ -407,9 +389,8 @@ var TIERS=[
 ];
 var GIFTS=[{at:1,cap:'PDF vodič: kupatilo bez ribanja'},{at:2,cap:'Besplatna dostava'},
            {at:3,cap:'Rukavice za čišćenje'},{at:4,cap:'Poklon iznenađenja'}];
-/* mirrors the source page's own preselection (?variant=43295203131555 = the 4-pack) */
-var sel=3; /* owner rule 2026-08-14: ALWAYS preselect 1 piece on both LPs.
-              This page lists tiers DESCENDING, so the qty-1 tier is the LAST index. */
+
+var sel=3; 
 
 function fmt(n){return n.toLocaleString('de-DE');}
 
@@ -436,8 +417,6 @@ function pick(i){
     : 'Dostava 490 RSD. Već od 2 komada dostava je besplatna. Plaćaš pouzećem kada ti kurir donese paket.';
 }
 
-/* Free shipping rides the store's discount CODES, which count cart QUANTITY —
-   that is why the cart line carries the real quantity (<variant>:<qty>). */
 function shipCode(q){ return q>=3?'BUNDLE3_RS_SHIP':(q===2?'BUNDLE2_RS_SHIP':''); }
 
 function go(){
@@ -452,7 +431,6 @@ function go(){
   location.href=url;
 }
 
-/* ---------------- gallery ---------------- */
 var slides=document.getElementById('slides');
 function slide(d){slides.scrollBy({left:d*slides.clientWidth,behavior:'smooth'});}
 function jump(i){slides.scrollTo({left:i*slides.clientWidth,behavior:'smooth'});}
@@ -470,7 +448,6 @@ function jump(i){slides.scrollTo({left:i*slides.clientWidth,behavior:'smooth'});
   },{passive:true});
 })();
 
-/* carousel dots */
 [['q1',3],['q2',2]].forEach(function(p){
   var el=document.getElementById(p[0]); if(!el) return;
   var dots=el.parentNode.querySelector('.dots');
@@ -480,7 +457,6 @@ function jump(i){slides.scrollTo({left:i*slides.clientWidth,behavior:'smooth'});
   },{passive:true});
 });
 
-/* marquee (duplicated once so the -50% translate loops seamlessly) */
 (function(){
   var chips=['Plaćanje pouzećem','Bez sipanja hemije u šolju','Bez struje i baterija',
     'Ne rastvara se u vodi','Ne vidi se u kupatilu','30 dana za povraćaj','Isporuka 2–4 dana'];
@@ -490,11 +466,9 @@ function jump(i){slides.scrollTo({left:i*slides.clientWidth,behavior:'smooth'});
 
 renderTiers(); pick(sel);
 
-/* ---------------- pixel ---------------- */
 try{fbq('track','ViewContent',{content_type:'product',content_ids:[PRODUCT_ID],
   content_name:document.title,currency:'RSD'});}catch(e){}
 
-/* LP behaviour events — generic version for the hand-written LP B pages. */
 (function(){
   var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
@@ -518,9 +492,6 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:[PRODUCT_ID],
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) so the dashboard can show numbers PER LP.
-   Meta's stats API breaks down by event NAME only — not by parameter, and its
-   url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;

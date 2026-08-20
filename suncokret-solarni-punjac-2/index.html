@@ -20,7 +20,7 @@ fbq('track','PageView');
 
 <meta name="description" content="Sklopivi solarni punjač sa USB-A i USB-C izlazom. Napuni telefon na suncu — na kampovanju, na putu i kad nestane struje. Plaćanje pouzećem.">
 <style>
-/* SUNCOKRET LP B — sr-Latn-RS. Hand-built 1:1 structural clone of the source funnel. */
+
 :root{
   --ink:#121212; --mut:#6d6d6d; --line:#e4e6ea; --bg:#fcfcfc;
   --blue:#337bc8; --blue2:#2664a7; --blued:#1c3f66;
@@ -35,20 +35,17 @@ img{max-width:100%;display:block}
 h1,h2,h3,h4{margin:0;line-height:1.15;font-weight:700;letter-spacing:-.01em}
 .wrap{max-width:600px;margin:0 auto;padding:0 16px}
 
-/* 1. header (source: sticky, 56px) */
 header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line);
   height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 16px}
 header .ico{font-size:19px;text-decoration:none;color:var(--ink);line-height:1}
 .logo{display:flex;align-items:center;gap:6px;font-weight:800;font-size:19px;letter-spacing:.06em;color:var(--blued)}
 .logo .s{color:var(--amber);font-size:17px}
 
-/* 2. hero slideshow (source: 450px, image + heading overlay) */
 .hero{position:relative;background:#0d1c2b}
 .hero img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;opacity:.9}
 .hero .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;color:#fff;
   background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.72));font-weight:700;font-size:19px;line-height:1.25}
 
-/* 3. ticker (source: horizontal marquee bar) */
 .tick{background:var(--red);color:#fdfbf7;overflow:hidden;white-space:nowrap;height:44px;
   display:flex;align-items:center;font-size:13px;font-weight:700;letter-spacing:.04em}
 .tick .run{display:inline-flex;gap:26px;padding-left:26px;animation:mv 22s linear infinite;will-change:transform}
@@ -56,7 +53,6 @@ header .ico{font-size:19px;text-decoration:none;color:var(--ink);line-height:1}
 @keyframes mv{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.tick .run{animation:none}}
 
-/* 4. gallery */
 .gal{background:#fff;margin-top:14px;border-radius:12px;overflow:hidden;position:relative}
 .gal .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .gal .slides::-webkit-scrollbar{display:none}
@@ -69,25 +65,21 @@ header .ico{font-size:19px;text-decoration:none;color:var(--ink);line-height:1}
   border:2px solid transparent;cursor:pointer;background:#fff}
 .thumbs img.on{border-color:var(--blue)}
 
-/* 5. title + rating */
 h1{font-size:25px;margin:14px 0 8px}
 .rate{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--mut);margin-bottom:12px;flex-wrap:wrap}
 .rate .st{color:var(--amber);font-size:16px;letter-spacing:1px}
 .rate a{color:var(--mut)}
 
-/* 6. price block */
 .prices{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
 .prices .now{font-size:23px;font-weight:800;color:var(--blue)}
 .prices .was{font-size:15px;color:var(--mut);text-decoration:line-through}
 .prices .sv{background:var(--red);color:#fff;font-size:11.5px;font-weight:800;padding:3px 8px;border-radius:5px;letter-spacing:.03em}
 .pnote{font-size:12.5px;color:var(--mut);margin:-4px 0 14px}
 
-/* 7. icon bullets (source: 3 emoji bullets) */
 .blts{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:7px}
 .blts li{display:flex;gap:9px;align-items:flex-start;font-size:14px}
 .blts li .e{flex:none;font-size:16px;line-height:1.35}
 
-/* 8. tier options (source has a quantity stepper; our offer needs a ladder) */
 .opt{border:2px solid var(--line);border-radius:11px;padding:13px 13px 11px;margin-bottom:10px;
   background:#fff;cursor:pointer;position:relative}
 .opt.on{border-color:var(--blue);box-shadow:0 0 0 3px rgba(51,123,200,.12)}
@@ -103,7 +95,7 @@ h1{font-size:25px;margin:14px 0 8px}
   background:#e4f6e9;border-radius:4px;padding:2px 6px}
 .opt .pr{margin-left:auto;text-align:right;min-width:0}
 .opt .pr b{display:block;font-size:15.5px;font-weight:800;white-space:nowrap;line-height:1.25}
-/* the was-price sits on its own line: on one nowrap line it clipped .pr at 375px */
+
 .opt .pr b s{display:block;color:var(--mut);font-weight:600;font-size:12.5px;line-height:1.2}
 .opt .pr span{display:block;font-size:11.5px;color:var(--mut);white-space:nowrap}
 .opt .strip{margin-top:9px;background:var(--ambersoft);border-radius:7px;padding:6px 9px;
@@ -111,7 +103,6 @@ h1{font-size:25px;margin:14px 0 8px}
 .opt .strip + .strip{margin-top:5px}
 .opt .strip .amt{margin-left:auto;color:var(--mut);font-weight:600;text-decoration:line-through}
 
-/* 9. ATC */
 .stock{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#0f7a2e;font-weight:700;margin:2px 0 9px}
 .atc{display:block;width:100%;border:0;border-radius:8px;background:var(--blue);color:#fdfbf7;
   font-size:17px;font-weight:800;text-transform:uppercase;padding:17px 18px;cursor:pointer;
@@ -120,7 +111,6 @@ h1{font-size:25px;margin:14px 0 8px}
 .gtee{text-align:center;font-size:12.5px;color:var(--mut);margin:10px 0 4px}
 .gtee a{color:var(--mut)}
 
-/* 10. delivery timeline (source widget) */
 .tl{display:flex;gap:6px;margin:18px 0 4px;background:#fff;border:1px solid var(--line);
   border-radius:11px;padding:14px 10px}
 .tl .st{flex:1;text-align:center;position:relative}
@@ -129,7 +119,6 @@ h1{font-size:25px;margin:14px 0 8px}
 .tl .st span{display:block;font-size:11px;color:var(--mut)}
 .tl .st:not(:last-child)::after{content:"";position:absolute;top:12px;right:-3px;width:6px;height:2px;background:var(--line)}
 
-/* 11. review quotes (source carousel) */
 .qs{display:flex;gap:10px;overflow-x:auto;padding:16px 0 4px;scrollbar-width:none;scroll-snap-type:x mandatory}
 .qs::-webkit-scrollbar{display:none}
 .qc{flex:none;width:78%;scroll-snap-align:center;background:#fff;border:1px solid var(--line);
@@ -138,19 +127,16 @@ h1{font-size:25px;margin:14px 0 8px}
 .qc p{margin:6px 0 8px;font-size:14px}
 .qc .who{font-size:12.5px;color:var(--mut);font-weight:700}
 
-/* 12. trust strip (replaces the source's press-logo row) */
 .trust{display:flex;gap:8px;margin:18px 0 4px;flex-wrap:wrap;justify-content:center}
 .trust div{background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 13px;
   font-size:12px;font-weight:700;color:var(--blued)}
 
-/* 13. image_with_text blocks (source: 3 of them + emergencies) */
 .iwt{margin:26px 0}
 .iwt img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px}
 .iwt h2{font-size:24px;margin:16px 0 8px}
 .iwt p{margin:0;color:#33383f}
 .divi{height:1px;background:var(--line);margin:26px 0}
 
-/* 14. FAQ */
 .faq h2{font-size:24px;text-align:center;margin-bottom:14px}
 details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:9px;overflow:hidden}
 summary{list-style:none;cursor:pointer;padding:14px 15px;font-weight:700;font-size:14.5px;
@@ -162,7 +148,6 @@ details .bd{padding:0 15px 14px;font-size:14px;color:#33383f}
 details .bd p{margin:0 0 9px}
 details .bd p:last-child{margin:0}
 
-/* 15. final CTA panel (replaces the source's contact form slot) */
 .ask{background:var(--blued);color:#fff;border-radius:12px;padding:22px 18px;margin:26px 0;text-align:center}
 .ask h2{font-size:22px;margin-bottom:8px}
 .ask p{margin:0 0 14px;font-size:14px;color:#d6e4f3}
@@ -170,7 +155,6 @@ details .bd p:last-child{margin:0}
   border-radius:8px;padding:14px 22px;font-size:15px}
 .ask .lnk{display:block;margin-top:12px;color:#bcd6ef;font-size:13px}
 
-/* 16. footer (source: solid blue) */
 footer{background:var(--blue);color:rgba(255,255,255,.92);padding:26px 0;font-size:13.5px;margin-top:26px}
 footer h4{font-size:14px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
 footer a{color:#fff;text-decoration:none;display:block;padding:3px 0}
@@ -185,17 +169,10 @@ footer .disc{margin-top:10px;font-size:11px;line-height:1.6;color:rgba(255,255,2
   .hero img{aspect-ratio:16/9}
 }
 
-/* Top header (hamburger / logo / cart) hidden — owner rule 2026-08-06: the LP B
-   replicas do not need the source's site chrome. Markup is kept so re-enabling is
-   just deleting this rule. Announcement bars/marquees stay: they carry offer copy. */
 body > header{display:none!important}
 </style>
 <script>
-/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
-   Returns our slug, or '' when the document was not served from a normal https
-   URL under a slug path. Meta blocked a real event named
-   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
-   it `location.pathname` straight from a `data:` URL. */
+
 window.lpSlug = function(){
   try{
     if (!/^https?:$/.test(location.protocol)) return '';
@@ -371,11 +348,7 @@ window.lpSlug = function(){
 </footer>
 
 <script>
-/* The source page sells ONE unit at one price and preselects quantity 1,
-   so this ladder is ours and tier 0 is preselected to mirror the source. */
-/* Gift ladder is CUMULATIVE and must match LP A's `gifts` block in page.json
-   (unlock at 1 / 2 / 3) — LP A, LP B and the Shopify variant "(+N poklona)"
-   suffixes all have to count the same gifts. */
+
 const OPTS = [
   { qty:1, title:"1 komad", total:7090, was:11190, per:"7.090 RSD/kom", badge:null, cls:"",
     save:null, off:"UŠTEDA 37%", ship:false, variant:"57244492497161",
@@ -419,7 +392,6 @@ function renderOpts(){
 function pickOpt(i){ sel=i; renderOpts(); }
 function kupi(){ __go(BASE + '/cart/' + OPTS[sel].variant + ':' + OPTS[sel].qty); }
 
-/* gallery */
 const slides = document.getElementById('slides');
 function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'}); }
 (function(){
@@ -445,9 +417,6 @@ function __ic(u){try{fbq('track','InitiateCheckout',{content_type:'product',num_
 function __go(u){u=__dec(u);__ic(u);location.href=u;}
 try{fbq('track','ViewContent',{content_type:'product',content_ids:['15647506792713'],content_name:document.title,currency:'RSD'});}catch(e){}
 
-/* LP behaviour events — generic version for the hand-written LP B pages (the LP A
-   template has its own, keyed to template class names). Scroll depth + dwell work
-   anywhere; clicks are matched on structure rather than template classes. */
 (function(){
   var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
@@ -472,9 +441,6 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156475067927
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) so the dashboard can show numbers PER LP.
-   Meta's stats API breaks down by event NAME only — not by parameter, and its
-   url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;

@@ -18,9 +18,7 @@ fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
  src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
 <style>
-/* VRHUNAC LP C — structural clone of tastydose.com starter-pack funnel (mobile),
-   VRHUNAC product/prices/copy. Serif display headings w/ gold accent word, cream
-   #FEF9F1, ink #39302E, orange CTA #F46600, gold #AA9458. Self-contained. */
+
 :root{
   --ink:#39302E; --mut:#775E4D;
   --cream:#FEF9F1; --cream2:#F5EDDE; --line:#EADFCE;
@@ -41,13 +39,11 @@ h2.sf{font-size:29px}
 .au{color:var(--gold)}
 .center{text-align:center}
 
-/* 1. announcement — brown bar with arrows + underlined link, like the source */
 .annbar{background:var(--dark2);color:#fff;display:flex;align-items:center;justify-content:space-between;
   font-size:12.5px;font-weight:700;padding:11px 12px;gap:8px}
 .annbar .aarr{opacity:.6;flex:none}
 .annbar a{color:#fff;text-decoration:underline;text-underline-offset:3px;text-align:center;flex:1}
 
-/* 2. gallery — INSET rounded slider, dots inside image, thumb strip below */
 .galwrap{padding:14px 16px 0;background:#fff}
 .gal{position:relative;border-radius:12px;overflow:hidden;background:#0d0d0d}
 .gal .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
@@ -59,7 +55,7 @@ h2.sf{font-size:29px}
 .gal .dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:6px;z-index:3}
 .gal .dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer}
 .gal .dots span.on{background:#fff}
-/* slide 1 = CSS collage over the real product photo: headline + GRATIS callouts */
+
 .slide{position:relative}
 .slide>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .s1head{position:absolute;top:14px;left:12px;right:12px;text-align:center;color:#F3E7D2;
@@ -85,7 +81,6 @@ h2.sf{font-size:29px}
   font-style:normal;font-size:12px}
 .eyebrow{font-size:13.5px;font-weight:700;letter-spacing:.02em;margin-top:8px;color:var(--ink)}
 
-/* 4. h1 + chips + bullets + info pills */
 .ph1{font-size:31px;margin:4px 0 4px}
 .subline{font-size:16.5px;font-weight:700;margin:0 0 12px}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
@@ -100,7 +95,6 @@ h2.sf{font-size:29px}
 .suplink{font-size:14.5px;font-weight:700;color:var(--ink)}
 .formlabel{font-size:13px;color:var(--gold);margin:10px 0 18px;font-weight:600}
 
-/* 5. anchor price — plain, dark AHORRA chip */
 .anchor{margin:2px 0 6px}
 .anchor .ttl{font-size:19px}
 .anchor .row1{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:2px}
@@ -110,7 +104,6 @@ h2.sf{font-size:29px}
   padding:5px 10px;border-radius:5px;letter-spacing:.02em}
 .anchor .sub{font-size:13.5px;color:var(--ink);margin-top:6px}
 
-/* 6. tier cards — 3-column grid with pouch imagery + badge header bars */
 .tgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:16px 0 6px;align-items:end}
 .tcard{position:relative;border:1.6px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;
   padding:10px 6px 12px;text-align:center}
@@ -131,7 +124,6 @@ h2.sf{font-size:29px}
 .tcard .pchip.d{background:var(--dark);color:#fff}
 .tcard .tot{font-size:10.5px;color:var(--mut);margin-top:4px}
 
-/* 7. gift block — brown header bar + 4-col dashed gift cards */
 .gblock{margin:16px 0 4px}
 .ghead{background:linear-gradient(90deg,var(--dark2),var(--brown));color:#fff;font-size:14px;font-weight:800;
   padding:10px 14px;border-radius:9px 9px 0 0;text-align:center}
@@ -148,7 +140,6 @@ h2.sf{font-size:29px}
 .gcard .sub{font-size:9px;color:var(--mut);margin-top:2px}
 .gcard s{display:block;font-size:10.5px;color:var(--bad);margin-top:3px}
 
-/* 8. delivery + ATC + guarantee + omnibus + stamps */
 .deliv{display:flex;justify-content:center;gap:8px;font-size:14px;padding:8px 0 12px;align-items:center}
 .atc{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;border:0;border-radius:9px;
   background:var(--orange);color:#fff;font-size:16.5px;font-weight:800;padding:17px 18px;cursor:pointer;text-align:center}
@@ -165,7 +156,6 @@ h2.sf{font-size:29px}
   color:var(--brown);line-height:1.3;padding:10px}
 .stamp::after{content:"";position:absolute;inset:4px;border:1px solid var(--brown);border-radius:50%}
 
-/* 9. accordions — chevron, uppercase, cream full-bleed */
 .accband{background:var(--cream);margin-top:8px}
 .accs details{border-bottom:1px solid var(--line)}
 .accs details:first-child{border-top:1px solid var(--line)}
@@ -177,7 +167,6 @@ h2.sf{font-size:29px}
 .accs .bd{padding:0 2px 16px;font-size:14px;color:#4A3F38}
 .accs .bd p{margin:0 0 8px}
 
-/* 10. upsell (source cross-sell slot) */
 .upsell{padding:30px 0 8px;text-align:center}
 .upsell h2{font-size:27px;margin-bottom:10px}
 .upsell .lead{font-size:14.5px;margin:0 auto 16px;max-width:480px}
@@ -190,7 +179,6 @@ h2.sf{font-size:29px}
 .upmeta .pr{margin-top:2px;font-size:17px;font-weight:800;color:var(--orange2)}
 .upmeta .pr s{color:var(--mut);font-weight:600;font-size:14px;margin-left:8px}
 
-/* 11. testimonials — photo-top scroll cards, green stars */
 .testi{background:var(--cream);padding:28px 0 24px;margin-top:20px}
 .testi h2{font-size:27px;margin-bottom:16px}
 .trow{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
@@ -203,7 +191,6 @@ h2.sf{font-size:29px}
 .tstc p{margin:0 0 10px;font-size:13.5px}
 .tstc .who{font-family:Georgia,serif;font-size:12.5px;letter-spacing:.09em;color:var(--mut)}
 
-/* 12. benefit rows — full-width cream rows with photo sliver */
 .bene{padding:28px 0 10px}
 .bene h2{text-align:center;margin-bottom:10px}
 .bene .lead{text-align:center;font-size:14.5px;margin:0 0 18px}
@@ -213,7 +200,6 @@ h2.sf{font-size:29px}
 .brow h3{font-size:19.5px;margin-bottom:5px}
 .brow p{margin:0;font-size:13.5px;color:#4A3F38}
 
-/* 13. proof: chart + big stats */
 .proof{padding:28px 0 8px}
 .proof h2{font-size:31px;margin-bottom:12px}
 .proof p{font-size:14.5px;margin:0 0 12px}
@@ -232,7 +218,6 @@ h2.sf{font-size:29px}
 .bigstats b{font-family:Georgia,serif;font-size:46px;font-weight:700;color:var(--brown);display:block;line-height:1}
 .bigstats span{font-size:12.5px;color:var(--mut);display:block;margin-top:6px}
 
-/* 14. ingredients — tab pills + tile grid + dark sub-banner */
 .ingsec{background:var(--cream);padding:28px 0 0;margin-top:22px}
 .ingsec h2{font-size:29px;margin-bottom:10px}
 .ingsec .pp{font-size:14.5px;margin:0 0 12px}
@@ -253,7 +238,6 @@ h2.sf{font-size:29px}
 .goldbtn{display:inline-block;background:var(--gold);color:#2B211C;font-weight:800;font-size:14px;
   border-radius:7px;padding:12px 18px;text-decoration:none}
 
-/* 15. vs-them — tab pills + white table with image headers */
 .vs{padding:30px 0 0}
 .vs h2{font-size:30px;margin-bottom:12px}
 .vs .lead{font-size:14.5px;margin:0 0 16px;padding-left:14px}
@@ -272,7 +256,6 @@ h2.sf{font-size:29px}
 .vst .x{color:var(--bad);font-weight:900;font-size:17px}
 .vst td:first-child{text-align:left}
 
-/* 16. how-to — dark 2x2 */
 .howto{background:var(--brown);color:#fff;padding:28px 0;margin-top:26px}
 .howto h2{text-align:center;color:#fff;margin-bottom:16px;font-size:26px}
 .howto .big{border-radius:12px;margin-bottom:16px}
@@ -282,7 +265,6 @@ h2.sf{font-size:29px}
 .hgrid .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;
   background:var(--gold);color:#fff;font-weight:900;font-size:13px;margin-bottom:7px}
 
-/* 17. timeline — vertical line, dots, colored chips */
 .tl{padding:30px 0 10px}
 .tl h2{font-size:30px;margin-bottom:20px}
 .tlrow{position:relative;padding-left:26px;margin-bottom:22px}
@@ -299,13 +281,11 @@ h2.sf{font-size:29px}
 .tlrow.last h3{color:var(--orange)}
 .tlrow .card{background:var(--cream2);border-radius:9px;padding:13px 15px;font-size:13.5px;color:#4A3F38}
 
-/* 18. hero banner — full-bleed dark statement */
 .banner{position:relative;margin-top:24px;min-height:420px;display:grid;place-items:center;overflow:hidden}
 .banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,16,12,.72),rgba(23,16,12,.5))}
 .banner h2{position:relative;z-index:2;color:#F6EEDF;text-align:center;font-size:28px;padding:0 26px;max-width:520px}
 
-/* 19. cost — photo-sliver rows + dark total bar */
 .cost{padding:30px 0 8px}
 .cost h2{font-size:30px;margin-bottom:12px}
 .cost p{font-size:14.5px;margin:0 0 10px}
@@ -321,7 +301,6 @@ h2.sf{font-size:29px}
 .vpunch{text-align:center;font-size:15px;font-weight:700;margin-top:16px}
 .vnote{font-size:11px;color:var(--mut);text-align:center;margin-top:8px}
 
-/* 20. gift recap — image w/ seal + rows */
 .grecap{background:var(--cream);padding:28px 0;margin-top:24px}
 .grecap h2{text-align:center;font-size:28px;margin-bottom:16px}
 .gimg{position:relative;border-radius:12px;overflow:hidden;margin-bottom:14px}
@@ -338,7 +317,6 @@ h2.sf{font-size:29px}
 .grow .pr .fr{display:block;color:var(--tp);font-weight:900;font-size:12.5px}
 .grow .pr s{color:var(--bad)}
 
-/* 21. quality (science slot) */
 .qual{padding:28px 0 8px}
 .qual h2{font-size:29px;margin-bottom:12px}
 .qual p{font-size:14.5px;margin:0 0 10px}
@@ -357,7 +335,6 @@ h2.sf{font-size:29px}
 .rmini p{margin:0 0 8px;font-size:12.5px}
 .rmini .who{font-family:Georgia,serif;font-size:11px;letter-spacing:.08em;color:var(--mut)}
 
-/* 23. FAQ */
 .faq{padding:28px 0 14px}
 .faq h2{text-align:center;font-size:29px;margin-bottom:12px}
 .faq .grp{font-size:13px;font-weight:800;letter-spacing:.08em;color:var(--mut);text-transform:uppercase;margin:20px 0 4px}
@@ -367,11 +344,7 @@ footer a{color:#E8DCC8;margin:0 7px}
 footer .disc{margin-top:14px;font-size:11px;line-height:1.5;text-align:left;color:#9A8B78}
 </style>
 <script>
-/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
-   Returns our slug, or '' when the document was not served from a normal https
-   URL under a slug path. Meta blocked a real event named
-   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
-   it `location.pathname` straight from a `data:` URL. */
+
 window.lpSlug = function(){
   try{
     if (!/^https?:$/.test(location.protocol)) return '';
@@ -689,16 +662,14 @@ window.lpSlug = function(){
 </footer>
 
 <script>
-/* Offer: source's 1x/2x/4x card grid with our per-unit price points. Shopify
-   variants are PER-UNIT priced, so cart quantity N gives the advertised total
-   and the quantity-gated BUNDLE shipping codes fire. */
+
 const TIERS = [
   { qty:1, unit:3999, badge:null,             chip:'plain', variantId:"57237796684041", ship:true  },
   { qty:2, unit:2666, badge:"NAJPOPULARNIJE", chip:'g',     variantId:"57237796716809", ship:false },
   { qty:4, unit:2399, badge:"NAJVEĆA UŠTEDA", chip:'d',     variantId:"57237796749577", ship:false },
 ];
 const COMPARE_AT = 9999;
-/* Gift ladder — order-level cart attribute, obligation once per ORDER. */
+
 const GIFTS = [
   {at:1, cap:"PDF vodič za mušku formu", nm:"PDF vodič za mušku formu", em:"📘", val:"990 RSD",   sub:"uz svaku porudžbinu"},
   {at:2, cap:"Besplatna dostava",        nm:"Besplatna dostava",        em:"🚚", val:"490 RSD",   sub:"od 2 kutije"},
@@ -713,7 +684,7 @@ function giftAttr(qty){
 }
 const BASE = "https://rs.unikatko.eu";
 const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
-let sel = 0; /* ALWAYS preselect the 1-piece tier (owner rule 2026-08-14) */
+let sel = 0; 
 
 function render(){
   const t = TIERS[sel];
@@ -755,7 +726,6 @@ function kupi(){
   __go(BASE + '/cart/' + t.variantId + ':' + t.qty + giftAttr(t.qty));
 }
 
-/* ingredients tabs + tiles */
 const ING = [
   {tab:"Biljke i koreni", items:[
     {em:"🧘", nm:"Ašvaganda KSM-66", dd:"Biljka sa dugom ajurvedskom tradicijom — u standardizovanoj KSM-66 formi, 450mg po dozi."},
@@ -779,7 +749,6 @@ function renderIng(){
 }
 function pickItab(i){ itab = i; renderIng(); }
 
-/* vs-them tabs — switch the competitor column */
 const VS = [
   {em:"💊", nm:"Obične tablete", rows:[
     ["Format","Bombon prijatnog ukusa","Tableta za gutanje"],
@@ -805,7 +774,6 @@ function renderVs(){
 }
 function vsPick(i){ vsi = i; renderVs(); }
 
-/* gallery slider + dots + thumbs */
 const slides = document.getElementById('slides');
 function sl(d){ slides.scrollBy({left: d*slides.clientWidth, behavior:'smooth'}); }
 function jmp(i){ slides.scrollTo({left: i*slides.clientWidth, behavior:'smooth'}); }
@@ -824,7 +792,7 @@ function jmp(i){ slides.scrollTo({left: i*slides.clientWidth, behavior:'smooth'}
 render(); renderIng(); renderVs();
 </script>
 <script>
-/* Shared checkout helpers: BUNDLE shipping codes from REAL cart quantity + pixel events. */
+
 function __cq(u){var m=u.match(/:(\d+)(?=,|\?|$)/g)||[];return m.reduce(function(a,x){return a+parseInt(x.slice(1))},0);}
 function __dec(u){var q=__cq(u);
   if(q>=3)u+=(u.indexOf('?')>-1?'&':'?')+'discount=BUNDLE3_RS_SHIP';
@@ -839,7 +807,6 @@ document.addEventListener('click',function(e){
 },true);
 try{fbq('track','ViewContent',{content_type:'product',content_ids:['15645156507913'],content_name:document.title,currency:'RSD'});}catch(e){}
 
-/* LP behaviour events — generic block for hand-written LPs. */
 (function(){
   var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
@@ -864,7 +831,6 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156451565079
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) — slug lives in the event NAME. */
 (function(){
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;

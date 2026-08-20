@@ -30,8 +30,7 @@ html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden}
 body{background:var(--white);color:var(--ink);
   font:16px/1.6 Raleway,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   -webkit-font-smoothing:antialiased}
-/* height:auto is REQUIRED — every img carries width/height attributes for CLS,
-   and without it a 1024x1024 photo renders 375 wide by 1024 tall. */
+
 img{max-width:100%;height:auto;display:block}
 h1,h2,h3{font-weight:500;line-height:1.2;margin:0 0 12px;letter-spacing:.01em}
 h1{font-size:26px}
@@ -41,7 +40,6 @@ a{color:inherit}
 .wrap{max-width:640px;margin:0 auto;padding:0 18px}
 .hr{height:1px;background:var(--line);margin:0}
 
-/* announcement marquee (the source has one; site header is intentionally absent) */
 .ann{position:sticky;top:0;z-index:60;background:var(--ink);color:#fff;
   font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
   padding:9px 0;overflow:hidden;white-space:nowrap}
@@ -50,7 +48,6 @@ a{color:inherit}
 @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
 @media (prefers-reduced-motion:reduce){.ann div{animation:none;padding-left:0;text-align:center;display:block}}
 
-/* gallery */
 .gal{margin-top:14px}
 .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
   -webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:3px}
@@ -62,7 +59,6 @@ a{color:inherit}
   border-radius:2px;opacity:.55;cursor:pointer;transition:opacity .15s,border-color .15s}
 .thumbs img.on{opacity:1;border-color:var(--ink)}
 
-/* product head */
 .tag{display:inline-block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
   background:var(--sageSoft);color:#3b5240;padding:5px 10px;border-radius:2px;margin-bottom:11px}
 .stars{display:flex;align-items:center;gap:7px;margin:0 0 10px;font-size:13px;color:var(--mut)}
@@ -70,7 +66,6 @@ a{color:inherit}
 .price{font-size:22px;font-weight:500;margin:0 0 16px}
 .price s{color:var(--mut);font-weight:400;font-size:16px;margin-left:9px}
 
-/* tier rows — mirrors the source's three stacked variant rows */
 .tiers{display:flex;flex-direction:column;gap:9px;margin:18px 0 14px}
 .tier{display:flex;align-items:center;gap:12px;border:1px solid var(--line);
   border-radius:3px;padding:14px 13px;cursor:pointer;background:#fff;position:relative;
@@ -93,14 +88,12 @@ a{color:inherit}
 .atc:hover{background:var(--ctaDark)}
 .paynote{text-align:center;font-size:12.5px;color:var(--mut);margin:10px 0 0}
 
-/* benefit tiles (source: 6 emoji tiles) */
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
   border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:26px 0}
 .tile{background:#fff;padding:17px 11px;text-align:center}
 .tile i{font-style:normal;font-size:21px;display:block;margin-bottom:7px}
 .tile span{font-size:12.5px;color:var(--ink2);line-height:1.4;display:block}
 
-/* accordions */
 details{border-bottom:1px solid var(--line)}
 details summary{list-style:none;cursor:pointer;padding:16px 0;font-size:12.5px;
   letter-spacing:.13em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:12px}
@@ -111,7 +104,6 @@ details .body{padding:0 0 16px}
 details .body ul{margin:0;padding-left:19px}
 details .body li{margin-bottom:8px;color:var(--ink2);font-size:14.5px}
 
-/* gift ladder (replaces the source's "PAIR IT WITH" upsell row) */
 .gifts{display:flex;flex-direction:column;gap:9px;margin:14px 0 0}
 .gift{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:3px;padding:11px 12px}
 .gift.on{border-color:var(--sage);background:#f7faf7}
@@ -123,7 +115,6 @@ details .body li{margin-bottom:8px;color:var(--ink2);font-size:14.5px}
 .gift .gv{font-size:12px;color:var(--mut);white-space:nowrap}
 .gift.on .gv{color:var(--green);font-weight:600}
 
-/* reviews */
 .rev{border:1px solid var(--line);border-radius:3px;padding:16px;margin-bottom:11px;background:#fff}
 .rev b{display:block;font-weight:500;margin-bottom:5px;font-size:14.5px}
 .rev q{quotes:'„' '”';color:var(--ink2);font-size:14.5px;display:block;margin-bottom:9px}
@@ -143,11 +134,7 @@ footer small{display:block;color:#8b9793;font-size:11px;line-height:1.6;margin-t
 .ph{font-size:10px;color:#b9c1bd}
 </style>
 <script>
-/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
-   Returns our slug, or '' when the document was not served from a normal https
-   URL under a slug path. Meta blocked a real event named
-   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
-   it `location.pathname` straight from a `data:` URL. */
+
 window.lpSlug = function(){
   try{
     if (!/^https?:$/.test(location.protocol)) return '';
@@ -331,7 +318,7 @@ var GIFTS=[
   {at:2,cap:'Besplatna dostava',  emoji:'🚚',img:null,          value:490},
   {at:3,cap:'Torbica za sušenje', emoji:null,img:'assets/gift.jpg',value:590}
 ];
-/* Source preselects the single glove, so we do too. */
+
 var sel=0;
 
 function fmt(n){return n.toLocaleString('de-DE')+' RSD';}
@@ -368,14 +355,13 @@ function pick(i){sel=i;renderTiers();renderGifts();renderPrice();}
 
 function checkoutUrl(){
   var t=TIERS[sel];
-  /* One cart LINE with a real quantity: the BUNDLE codes gate on cart item
-     quantity, so a 2-pack must count as 2 items, not 1. */
+  
   var url=CHECKOUT+'/cart/'+t.variant+':'+t.qty;
   var gifts=GIFTS.filter(function(g){return t.qty>=g.at;}).map(function(g){return g.cap;});
   var qs=[];
   if(t.qty>=3)      qs.push('discount=BUNDLE3_RS_SHIP');
   else if(t.qty>=2) qs.push('discount=BUNDLE2_RS_SHIP');
-  /* Gifts ride once per ORDER, never once per line — ops must not ship N sets. */
+  
   if(gifts.length) qs.push('attributes[Pokloni]='+encodeURIComponent('1x po porudžbini: '+gifts.join(', ')));
   return url+(qs.length?'?'+qs.join('&'):'');
 }
@@ -387,7 +373,6 @@ function goCheckout(){
   location.href=checkoutUrl();
 }
 
-/* gallery thumbs — real 128px thumbnails, falling back to the full file */
 (function(){
   var slides=document.getElementById('slides'),
       imgs=[].slice.call(slides.querySelectorAll('img')),
@@ -411,7 +396,6 @@ renderTiers();renderGifts();renderPrice();
 try{fbq('track','ViewContent',{content_type:'product',content_ids:['15652865868041'],
   content_name:document.title,currency:'RSD'});}catch(e){}
 
-/* LP behaviour events — generic version for the hand-written LP B pages. */
 (function(){
   var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
@@ -436,9 +420,6 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156528658680
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) so the dashboard can show numbers PER LP.
-   Meta's stats API breaks down by event NAME only — not by parameter, and its
-   url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;

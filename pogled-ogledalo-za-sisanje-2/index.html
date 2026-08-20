@@ -19,7 +19,7 @@ fbq('track','PageView');
  src="https://www.facebook.com/tr?id=1337030437202208&ev=PageView&noscript=1"></noscript>
 
 <style>
-/* POGLED LP B — sr-Latn-RS. Hand-built 1:1 klon strukture izvorne stranice. */
+
 :root{
   --ink:#171B1E; --body:#4A555C; --mut:#8A959B; --line:#E1E4E6;
   --dark:#161C21; --dark2:#28323A; --wash:#F4F5F6;
@@ -36,14 +36,12 @@ img{max-width:100%;display:block}
 h1,h2,h3,h4{margin:0;line-height:1.18;letter-spacing:-.015em}
 .wrap{max-width:620px;margin:0 auto;padding:0 16px}
 
-/* 1. header */
 header{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;
   border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:60}
 header .ico{font-size:18px;text-decoration:none;color:var(--ink)}
 .logo{font-weight:800;font-size:20px;letter-spacing:.10em}
 .logo i{font-style:normal;color:var(--teal)}
 
-/* 2. review badge row */
 .rbadge{display:flex;align-items:center;gap:9px;padding:14px 0 4px}
 .rbadge .av{display:flex}
 .rbadge .av span{width:26px;height:26px;border-radius:50%;border:2px solid #fff;margin-left:-8px;
@@ -52,7 +50,6 @@ header .ico{font-size:18px;text-decoration:none;color:var(--ink)}
 .rbadge .st{color:var(--amber);font-size:14px;letter-spacing:1px}
 .rbadge .tx{font-size:12.5px;color:var(--body);font-weight:600}
 
-/* 3. gallery */
 .gal{position:relative;background:var(--wash)}
 .gal .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .gal .slides::-webkit-scrollbar{display:none}
@@ -65,7 +62,6 @@ header .ico{font-size:18px;text-decoration:none;color:var(--ink)}
   border:2px solid transparent;cursor:pointer}
 .thumbs img.on{border-color:var(--teal)}
 
-/* 4. eyebrow + title */
 .eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;
   text-transform:uppercase;letter-spacing:.05em;color:var(--tealink);background:var(--tealsoft);
   border:1px solid #B8E9EE;padding:4px 10px;border-radius:20px;margin:14px 0 9px}
@@ -74,19 +70,16 @@ header .ico{font-size:18px;text-decoration:none;color:var(--ink)}
 .pdesc .chip{background:#D5F3F6;color:var(--tealink);padding:1px 6px;border-radius:5px;font-weight:700}
 .pdesc em{display:block;margin-top:7px;font-style:normal;color:var(--tealink);font-weight:600}
 
-/* 5. price */
 .parea{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:14px}
 .parea .cur{font-size:26px;font-weight:800}
 .parea .cmp{font-size:15px;color:var(--mut);text-decoration:line-through}
 .parea .sv{background:var(--amber);color:#fff;font-size:11.5px;font-weight:800;
   padding:3px 9px;border-radius:6px;letter-spacing:.02em}
 
-/* 6. checklist */
 .chk{margin:0 0 18px}
 .chk div{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;padding:4px 0;color:var(--ink)}
 .chk .m{color:var(--teal);font-weight:900;flex:none;line-height:1.5}
 
-/* 7. tiers */
 .twrap{position:relative;margin-bottom:11px}
 .tbadge{position:absolute;top:-9px;left:14px;z-index:2;background:var(--dark);color:#fff;
   font-size:10px;font-weight:800;letter-spacing:.06em;padding:3px 10px;border-radius:5px;text-transform:uppercase}
@@ -110,7 +103,6 @@ header .ico{font-size:18px;text-decoration:none;color:var(--ink)}
 .tier .rt .sv{display:inline-block;margin-top:3px;background:var(--tealsoft);color:var(--tealink);
   font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:11px;white-space:nowrap}
 
-/* 8. ATC */
 .atc{display:block;width:100%;border:0;border-radius:10px;background:var(--dark);color:#fff;
   font-size:15.5px;font-weight:700;padding:17px 14px;cursor:pointer;text-align:center;
   letter-spacing:.01em;margin-top:14px}
@@ -122,7 +114,6 @@ header .ico{font-size:18px;text-decoration:none;color:var(--ink)}
   color:var(--body);padding:8px 0 18px}
 .shipline b{color:var(--ink)}
 
-/* 9. mini reviews */
 .mrev{padding:6px 0 22px}
 .mrh{text-align:center;margin-bottom:12px}
 .mrh h2{font-size:20px;font-weight:800}
@@ -135,7 +126,6 @@ header .ico{font-size:18px;text-decoration:none;color:var(--ink)}
 .mcard .st{color:var(--amber);font-size:12px;letter-spacing:1px;margin-bottom:5px}
 .mcard p{margin:0;font-size:12.5px;color:var(--body);line-height:1.55}
 
-/* 10. accordions */
 details{border-top:1px solid var(--line)}
 details:last-of-type{border-bottom:1px solid var(--line)}
 summary{padding:15px 26px 15px 0;font-weight:700;font-size:14.5px;cursor:pointer;list-style:none;position:relative}
@@ -147,7 +137,6 @@ details .bd p{margin:0 0 8px}
 details .bd ul{margin:0;padding-left:18px}
 details .bd li{margin-bottom:5px}
 
-/* 11. tabbed customer reviews */
 .crev{padding:24px 0 6px}
 .crev h2{text-align:center;font-size:21px;font-weight:800}
 .crev .sub{text-align:center;font-size:12.5px;color:var(--mut);margin:5px 0 14px}
@@ -163,7 +152,6 @@ details .bd li{margin-bottom:5px}
 .ccard p{margin:5px 0 0;font-size:13px;color:var(--body)}
 .ccard b{color:var(--ink)}
 
-/* 12. dark hero band */
 .vh{background:var(--dark);color:#EEF2F4;padding:34px 0 30px;margin-top:26px}
 .vh .eb{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:9px}
 .vh h2{font-size:27px;font-weight:800;margin-bottom:10px}
@@ -172,7 +160,6 @@ details .bd li{margin-bottom:5px}
 .vh .vp span{background:var(--dark2);color:#EEF2F4;font-size:11.5px;font-weight:600;
   border-radius:20px;padding:6px 11px}
 
-/* 13. generic light section */
 .sec{padding:30px 0}
 .sec .eb{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal2);margin-bottom:8px}
 .sec h2{font-size:23px;font-weight:800;margin-bottom:12px}
@@ -183,7 +170,6 @@ details .bd li{margin-bottom:5px}
 .emph{background:var(--tealsoft);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;
   padding:13px 14px;font-size:14px;color:var(--tealink)}
 
-/* 14. numbered steps */
 .step{display:flex;gap:13px;margin-bottom:18px}
 .step .n{width:30px;height:30px;flex:none;border-radius:50%;background:var(--dark);color:#fff;
   display:grid;place-items:center;font-weight:800;font-size:14px}
@@ -193,7 +179,6 @@ details .bd li{margin-bottom:5px}
 .featpills span{background:var(--wash);border:1px solid var(--line);border-radius:20px;
   padding:6px 11px;font-size:11.5px;font-weight:600;color:var(--body)}
 
-/* 15. UGC row */
 .ugc{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
 .ugc::-webkit-scrollbar{display:none}
 .ucard{flex:none;width:62%;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff}
@@ -203,7 +188,6 @@ details .bd li{margin-bottom:5px}
 .ucard b{display:block;font-size:12.5px;margin-top:3px}
 .ucard span{font-size:11.5px;color:var(--mut)}
 
-/* 16. comparison */
 .cmpwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .ctab{width:100%;min-width:320px;border-collapse:separate;border-spacing:0;font-size:12px}
 .ctab th,.ctab td{padding:10px 6px;text-align:center;border-bottom:1px solid var(--line)}
@@ -217,13 +201,11 @@ details .bd li{margin-bottom:5px}
 .ctab .x{color:#C4CDD3;font-weight:900;font-size:14px}
 .ctab .vr{font-size:11px;color:var(--mut)}
 
-/* 17. savings callout */
 .save{background:var(--dark);color:#EEF2F4;border-radius:16px;padding:22px 18px;text-align:center;margin:6px 0 4px}
 .save .big{font-size:29px;font-weight:800;color:var(--amber);line-height:1.1}
 .save p{font-size:13px;color:#C4CDD3;margin:9px 0 0}
 .save .fine{font-size:11px;color:#8A959B;margin-top:8px}
 
-/* 18. two questions */
 .q2{border:1px solid var(--line);border-radius:13px;padding:15px;margin-bottom:11px;background:#fff}
 .q2 h3{font-size:15px;font-weight:700;margin-bottom:6px}
 .q2 p{font-size:13.5px;color:var(--body);margin:0}
@@ -231,13 +213,11 @@ details .bd li{margin-bottom:5px}
 .q2row span{background:var(--tealsoft);color:var(--tealink);font-size:11.5px;font-weight:700;
   border-radius:20px;padding:6px 11px}
 
-/* 19. rating summary */
 .sum{text-align:center;padding:4px 0 18px}
 .sum .st{color:var(--amber);font-size:19px;letter-spacing:2px}
 .sum .ln{font-size:13px;color:var(--body);margin-top:6px}
 .sum .ln b{color:var(--ink)}
 
-/* 20. FAQ */
 .faq{background:var(--wash);border-radius:16px;padding:4px 15px 8px;margin:8px 0 26px}
 .faq h2{text-align:center;font-size:21px;font-weight:800;padding:18px 0 3px}
 .faq .sub{text-align:center;font-size:12.5px;color:var(--mut);margin-bottom:6px}
@@ -245,7 +225,6 @@ details .bd li{margin-bottom:5px}
 .faq details:first-of-type{border-top:0}
 .faq details:last-of-type{border-bottom:0}
 
-/* 21. final CTA */
 .fin{background:var(--dark);color:#EEF2F4;padding:34px 0 36px;text-align:center}
 .fin .eb{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:9px}
 .fin h2{font-size:24px;font-weight:800;margin-bottom:11px}
@@ -253,7 +232,6 @@ details .bd li{margin-bottom:5px}
 .fin .atc{background:var(--teal);color:#08262A;margin-top:0}
 .fin .tl{font-size:11.5px;color:#8A959B;margin-top:12px}
 
-/* 22. sticky ATC (izvorna stranica je ima) */
 .satc{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;
   border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.10);
   padding:9px 16px calc(10px + env(safe-area-inset-bottom))}
@@ -269,20 +247,12 @@ footer a{color:#DDE2E4;text-decoration:none;display:inline-block;margin:0 8px 6p
 footer .disc{margin-top:16px;font-size:10.5px;line-height:1.6;color:#6B7880}
 footer .cp{margin-top:14px;font-size:11.5px}
 
-/* Top header (hamburger / logo / cart) hidden — owner rule 2026-08-06: the LP B
-   replicas do not need the source's site chrome. Markup is kept so re-enabling is
-   just deleting this rule. Announcement bars/marquees stay: they carry offer copy. */
 body > header{display:none!important}
 
-/* width/height attrs need height:auto or images render as tall columns */
 img{height:auto}
 </style>
 <script>
-/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
-   Returns our slug, or '' when the document was not served from a normal https
-   URL under a slug path. Meta blocked a real event named
-   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
-   it `location.pathname` straight from a `data:` URL. */
+
 window.lpSlug = function(){
   try{
     if (!/^https?:$/.test(location.protocol)) return '';
@@ -553,7 +523,7 @@ window.lpSlug = function(){
 
 <script>
 const BASE = "https://rs.unikatko.eu";
-const CMP_UNIT = 11190;              /* prekrižena cena po komadu */
+const CMP_UNIT = 11190;              
 const TIERS = [
   { qty:1, label:"Jedno ogledalo (1 kom)", desc:"Tvoja LED stanica za šišanje kod kuće",
     unit:8190, total:8190,  was:11190, save:27, ship:false, va:"+ 🎁 besplatna dostava",
@@ -580,7 +550,7 @@ const REV = {
   ]
 };
 const fmt = n => new Intl.NumberFormat('de-DE').format(n) + ' RSD';
-let sel = 0;   /* izvorna stranica ima unapred izabran 1 komad */
+let sel = 0;   
 
 function renderTiers(){
   document.getElementById('tiers').innerHTML = TIERS.map((t,i)=>`
@@ -615,7 +585,6 @@ function renderTiers(){
 function pick(i){ sel=i; renderTiers(); }
 function kupi(){ __go(BASE + '/cart/' + TIERS[sel].variantId + ':' + TIERS[sel].qty); }
 
-/* tabbed reviews */
 let tab = Object.keys(REV)[0];
 function renderRev(){
   document.getElementById('tabs').innerHTML = Object.keys(REV).map(k=>
@@ -625,7 +594,6 @@ function renderRev(){
 }
 function pickTab(k){ tab=k; renderRev(); }
 
-/* gallery thumbs */
 const slides = document.getElementById('slides');
 function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'}); }
 (function(){
@@ -638,8 +606,6 @@ function jmp(i){ slides.scrollTo({left:i*slides.clientWidth, behavior:'smooth'})
   },{passive:true});
 })();
 
-/* sticky ATC se sakriva dok je glavni ATC u vidnom polju (pravilo vlasnika).
-   Provera pravougaonika + interval — scroll događaji nisu pouzdani u svim webview-ima. */
 (function(){
   const bar=document.getElementById('satc'), main=document.getElementById('atc');
   if(!bar||!main) return;
@@ -666,9 +632,6 @@ function __ic(u){try{fbq('track','InitiateCheckout',{content_type:'product',num_
 function __go(u){u=__dec(u);__ic(u);location.href=u;}
 try{fbq('track','ViewContent',{content_type:'product',content_ids:['15647492833545'],content_name:document.title,currency:'RSD'});}catch(e){}
 
-/* LP behaviour events — generic version for the hand-written LP B pages (the LP A
-   template has its own, keyed to template class names). Scroll depth + dwell work
-   anywhere; clicks are matched on structure rather than template classes. */
 (function(){
   var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
@@ -693,9 +656,6 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156474928335
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) so the dashboard can show numbers PER LP.
-   Meta's stats API breaks down by event NAME only — not by parameter, and its
-   url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;

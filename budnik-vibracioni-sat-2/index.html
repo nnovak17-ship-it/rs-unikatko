@@ -20,7 +20,7 @@ fbq('track','PageView');
 
 <meta name="description" content="Narukvica koja te budi vibracijom na zglobu, ne zvukom. Tri jačine, 14+ dana baterije, bez telefona i aplikacije. Plaćanje pouzećem, 30 dana povraćaj.">
 <style>
-/* BUDNIK LP B — sr-Latn-RS. Ručno građen 1:1 klon strukture izvorne stranice. */
+
 :root{
   --ink:#0F1115; --body:#4A525C; --mut:#8A929B; --line:#E3E6EA;
   --dark:#0F1115; --dark2:#1C2029; --wash:#F6F7F8;
@@ -35,12 +35,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
 img{max-width:100%;display:block}
 .wrap{max-width:620px;margin:0 auto;padding:0 16px}
 
-/* --- traka sa najavom (izvor: crna traka na vrhu) --- */
 .ann{background:var(--dark);color:#FAFAFA;font-size:12px;letter-spacing:.02em;
   padding:9px 16px;text-align:center;font-weight:600}
 .ann b{color:var(--amber)}
 
-/* --- galerija --- */
 .gal{margin-top:14px}
 .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;
   scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -52,7 +50,6 @@ img{max-width:100%;display:block}
   border:2px solid transparent;opacity:.55;cursor:pointer}
 .thumbs img.on{border-color:var(--ink);opacity:1}
 
-/* --- naslovni blok --- */
 .rev{display:inline-flex;align-items:center;gap:7px;margin:16px 0 8px;
   font-size:12.5px;color:var(--body)}
 .rev .st{color:var(--amber);letter-spacing:1px}
@@ -64,7 +61,6 @@ h1{font-size:23px;line-height:1.22;margin:6px 0 10px;letter-spacing:-.015em}
   padding:4px 8px;border-radius:6px;letter-spacing:.02em}
 .pship{font-size:12.5px;color:var(--mut);margin-bottom:14px}
 
-/* --- izbor količine (izvor: Choose Your Quantity) --- */
 .qh{font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin:16px 0 9px}
 .qopts{display:flex;flex-direction:column;gap:9px}
 .qo{position:relative;border:1.5px solid var(--line);border-radius:13px;padding:13px 13px 13px 42px;
@@ -84,7 +80,6 @@ h1{font-size:23px;line-height:1.22;margin:6px 0 10px;letter-spacing:-.015em}
 .qbadge{position:absolute;top:-9px;right:11px;background:var(--amber);color:#20160A;
   font-size:10.5px;font-weight:800;letter-spacing:.03em;padding:3px 8px;border-radius:5px}
 
-/* --- dugme --- */
 .atc{display:block;width:100%;margin:14px 0 0;border:0;border-radius:100px;
   background:var(--dark);color:#FAFAFA;font-size:16px;font-weight:700;
   padding:17px 16px;cursor:pointer;text-align:center;font-family:inherit;
@@ -92,7 +87,6 @@ h1{font-size:23px;line-height:1.22;margin:6px 0 10px;letter-spacing:-.015em}
 .atc:active{background:#000}
 .paylink{display:block;text-align:center;font-size:12.5px;color:var(--mut);margin-top:9px}
 
-/* --- kvačice --- */
 .ticks{margin:18px 0 0;padding:0;list-style:none}
 .ticks li{position:relative;padding-left:26px;margin-bottom:8px;font-size:14px}
 .ticks li:before{content:"";position:absolute;left:0;top:5px;width:16px;height:16px;
@@ -100,7 +94,6 @@ h1{font-size:23px;line-height:1.22;margin:6px 0 10px;letter-spacing:-.015em}
 .ticks li:after{content:"";position:absolute;left:5px;top:9px;width:4px;height:7px;
   border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
 
-/* --- garancija --- */
 .grt{display:flex;gap:11px;align-items:flex-start;background:var(--wash);
   border-radius:12px;padding:13px;margin-top:16px}
 .grt .sh{flex:none;width:34px;height:34px;border-radius:9px;background:var(--dark);
@@ -108,7 +101,6 @@ h1{font-size:23px;line-height:1.22;margin:6px 0 10px;letter-spacing:-.015em}
 .grt b{display:block;font-size:13px;letter-spacing:.02em}
 .grt span{font-size:12.5px;color:var(--body)}
 
-/* --- harmonika --- */
 .acc{margin-top:22px;border-top:1px solid var(--line)}
 .acc details{border-bottom:1px solid var(--line)}
 .acc summary{list-style:none;cursor:pointer;padding:15px 30px 15px 0;position:relative;
@@ -122,7 +114,6 @@ h1{font-size:23px;line-height:1.22;margin:6px 0 10px;letter-spacing:-.015em}
 .acc .ab ul{margin:0;padding-left:19px}
 .acc .ab li{margin-bottom:5px}
 
-/* --- tamni pojas sa prednostima --- */
 .band{background:var(--dark);color:#fff;margin-top:34px;padding:32px 0 30px}
 .band h2{font-size:20px;line-height:1.28;margin:0 0 8px;letter-spacing:-.01em}
 .band p{font-size:14.5px;color:#C6CCD4;margin:0 0 18px}
@@ -131,7 +122,6 @@ h1{font-size:23px;line-height:1.22;margin:6px 0 10px;letter-spacing:-.015em}
 .tile b{display:block;font-size:19px;color:var(--amber);line-height:1.1}
 .tile span{display:block;font-size:11px;color:#AFB7C0;margin-top:5px;line-height:1.3}
 
-/* --- tabela poređenja --- */
 .cmp{margin-top:34px}
 .cmp h2{font-size:19px;margin:0 0 4px;letter-spacing:-.01em}
 .cmp .sub{font-size:14px;color:var(--body);margin:0 0 14px}
@@ -144,7 +134,6 @@ h1{font-size:23px;line-height:1.22;margin:6px 0 10px;letter-spacing:-.015em}
 .ctab .y{color:var(--ok);font-size:16px;font-weight:800}
 .ctab .n{color:var(--bad);font-size:16px;font-weight:800}
 
-/* --- odlike --- */
 .feat{margin-top:34px}
 .feat h2{font-size:19px;margin:0 0 4px;letter-spacing:-.01em}
 .feat .sub{font-size:14px;color:var(--body);margin:0 0 16px}
@@ -159,7 +148,6 @@ h1{font-size:23px;line-height:1.22;margin:6px 0 10px;letter-spacing:-.015em}
 .fst span{display:block;font-size:10.5px;color:var(--mut);letter-spacing:.03em;
   text-transform:uppercase;margin-top:2px;line-height:1.25}
 
-/* --- recenzije --- */
 .tst{margin-top:34px}
 .tst h2{font-size:19px;margin:0 0 4px;letter-spacing:-.01em}
 .tst .sub{font-size:14px;color:var(--body);margin:0 0 14px}
@@ -174,14 +162,12 @@ h1{font-size:23px;line-height:1.22;margin:6px 0 10px;letter-spacing:-.015em}
 .tc .who b{font-weight:700}
 .tc .who span{color:var(--mut)}
 
-/* --- podnožje --- */
 footer{background:var(--wash);margin-top:36px;padding:26px 0 30px;font-size:12.5px;color:var(--body)}
 footer .fl{display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:14px}
 footer a{color:var(--body);text-decoration:underline}
 footer .dis{font-size:11px;color:var(--mut);line-height:1.5;margin-top:10px}
 footer .cp{margin-top:14px;font-size:11.5px;color:var(--mut)}
 
-/* --- lepljivo dugme (izvor ima mobilnu lepljivu traku) --- */
 .satc{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;
   border-top:1px solid var(--line);padding:9px 16px calc(9px + env(safe-area-inset-bottom));
   box-shadow:0 -6px 18px rgba(15,17,21,.09)}
@@ -193,15 +179,10 @@ footer .cp{margin-top:14px;font-size:11.5px;color:var(--mut)}
 
 .ph{font-size:10.5px;color:var(--mut);text-align:center;margin-top:8px}
 
-/* width/height attrs need height:auto or images render as tall columns */
 img{height:auto}
 </style>
 <script>
-/* lpSlug() — the ONLY place a page path may become part of a Meta event name.
-   Returns our slug, or '' when the document was not served from a normal https
-   URL under a slug path. Meta blocked a real event named
-   `LPV_texthtml;charset=utf_8,%3C!doctype%20html…` because an earlier version fed
-   it `location.pathname` straight from a `data:` URL. */
+
 window.lpSlug = function(){
   try{
     if (!/^https?:$/.test(location.protocol)) return '';
@@ -461,16 +442,16 @@ window.lpSlug = function(){
 </div>
 
 <script>
-/* ---- ponuda ---- */
+
 var CHECKOUT = "https://rs.unikatko.eu";
 var COMPARE  = 8490;
-var SHIPFREE = 2;           /* besplatna dostava od 2 komada */
+var SHIPFREE = 2;           
 var TIERS = [
   {qty:1, unit:3990, name:"1 KOMAD",  badge:null,          variant:"57245329228041"},
   {qty:2, unit:3590, name:"2 KOMADA", badge:"UŠTEDA 10%",  variant:"57245329260809"},
   {qty:3, unit:3190, name:"3 KOMADA", badge:"UŠTEDA 20%",  variant:"57245329293577"}
 ];
-var sel = 0;                /* izvor unapred bira 1 komad */
+var sel = 0;                
 
 function fmt(n){ return n.toLocaleString('de-DE') + ' RSD'; }
 
@@ -518,7 +499,6 @@ function kupi(){
   __go(CHECKOUT + '/cart/' + t.variant + ':' + t.qty);
 }
 
-/* ---- galerija: sličice ---- */
 (function(){
   var slides = document.getElementById('slides');
   var imgs   = slides.querySelectorAll('img');
@@ -540,8 +520,6 @@ function goSlide(i){
   slides.scrollTo({left: i * slides.clientWidth, behavior:'smooth'});
 }
 
-/* Lepljivo dugme se sakriva dok je glavni ATC u vidnom polju (pravilo vlasnika).
-   Provera pravougaonika + interval — scroll događaji nisu pouzdani u svim webview-ima. */
 (function(){
   var bar = document.getElementById('satc'), main = document.getElementById('atc');
   if (!bar || !main) return;
@@ -568,9 +546,6 @@ function __ic(u){try{fbq('track','InitiateCheckout',{content_type:'product',num_
 function __go(u){u=__dec(u);__ic(u);location.href=u;}
 try{fbq('track','ViewContent',{content_type:'product',content_ids:['15647896830217'],content_name:document.title,currency:'RSD'});}catch(e){}
 
-/* LP behaviour events — generic version for the hand-written LP B pages (the LP A
-   template has its own, keyed to template class names). Scroll depth + dwell work
-   anywhere; clicks are matched on structure rather than template classes. */
 (function(){
   var SLUG=window.lpSlug(), sent={};
   function ev(n,x){ if(sent[n])return; sent[n]=1;
@@ -595,9 +570,6 @@ try{fbq('track','ViewContent',{content_type:'product',content_ids:['156478968302
   });
 })();
 
-/* Per-product events (LPV_/LPE_/LPC_) so the dashboard can show numbers PER LP.
-   Meta's stats API breaks down by event NAME only — not by parameter, and its
-   url aggregation collapses to the origin — so the slug lives in the name. */
 (function(){
   var SLUG=window.lpSlug(), SK=SLUG.replace(/-/g,'_'), done={};
   function pev(n){ if(done[n])return; done[n]=1;
