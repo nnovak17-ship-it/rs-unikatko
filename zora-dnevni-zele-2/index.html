@@ -69,6 +69,7 @@ section.quiet{border-top:1px solid var(--line)}
   font-size:14px;letter-spacing:.08em;padding:7px 14px;border-radius:999px;font-weight:500}
 
 .hero{padding:34px 0 56px}
+.hero-copy{padding-top:34px}
 .hero .eyebrow{text-align:center;margin-bottom:12px}
 .hero h1{text-align:center}
 .hero .sub{background:var(--tint);text-align:center;color:var(--ink2);padding:16px 18px;margin:22px 0 26px;font-size:17px}
@@ -178,16 +179,27 @@ footer .co{margin-top:18px;color:var(--mut2)}
 
 @media(min-width:700px){
   h1{font-size:44px} h2{font-size:33px}
-  .hero{padding-top:44px}
-  .shot img{aspect-ratio:auto;max-height:640px}
   .ben{grid-template-columns:repeat(4,1fr)}
   .std{grid-template-columns:1fr 1fr}
+}
+
+@media(min-width:900px){
+  .hero-grid{display:grid;grid-template-columns:minmax(0,560px) minmax(0,1fr);gap:56px;align-items:start;
+    max-width:1200px;margin:0 auto;padding:40px 32px 0}
+  .hg{border-radius:12px;overflow:hidden;position:sticky;top:24px}
+  .hero-copy{padding:8px 0 0;max-width:none}
+  .hero .eyebrow,.hero h1,.hero .sub{text-align:left}
+  .shot{max-width:1400px;margin:0 auto}
+  .shot img{aspect-ratio:auto;max-height:760px}
+  .problem figure{max-width:560px}
+  #satc .in{max-width:1136px}
 }
 </style>
 </head>
 <body>
 
 <section class="hero" style="padding-top:0;border-top:0">
+  <div class="hero-grid">
   <div class="hg">
     <div class="hg-track" id="hg">
       <div class="hg-slide"><img src="assets/hero.jpg" width="1024" height="573" fetchpriority="high" decoding="async" alt="ZORA dnevni žele — kesica na kuhinjskom pultu u jutarnjem svetlu"></div>
@@ -199,7 +211,7 @@ footer .co{margin-top:18px;color:var(--mut2)}
     <div class="hg-index" id="hgIndex" aria-hidden="true">01/05</div>
   </div>
 
-  <div class="wrap" style="padding-top:34px">
+  <div class="wrap hero-copy">
     <span class="eyebrow">ZORA — dnevni žele</span>
     <h1>Jedan žele dnevno. Bez mešanja, bez tableta.</h1>
     <p class="sub">Breskva, brusnica i yuzu — tvoja dnevna rutina za 5 sekundi</p>
@@ -216,6 +228,7 @@ footer .co{margin-top:18px;color:var(--mut2)}
       <p class="trust">✓ Plaćanje pouzećem · 30 dana za povraćaj</p>
       <p class="note">Nastavljaš na sigurno plaćanje na rs.unikatko.eu</p>
     </div>
+  </div>
   </div>
 </section>
 
@@ -240,7 +253,7 @@ footer .co{margin-top:18px;color:var(--mut2)}
   </div>
 </section>
 
-<section class="shot"><figure><img src="assets/lifestyle-alt.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="ZORA žele posle ručka na poslu"></figure></section>
+<section class="shot"><figure><picture><source media="(min-width:900px)" srcset="assets/lifestyle-alt-desktop.jpg"><img src="assets/lifestyle-alt.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="ZORA žele u jutarnjoj šetnji — kesica iz torbe"></picture></figure></section>
 
 <section class="quiet">
   <div class="wrap">
@@ -266,7 +279,7 @@ footer .co{margin-top:18px;color:var(--mut2)}
   </div>
 </section>
 
-<section class="shot"><figure><img src="assets/howto.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="Otcepljena kesica ZORA želea — žele se jede direktno iz kesice"></figure></section>
+<section class="shot"><figure><picture><source media="(min-width:900px)" srcset="assets/howto-desktop.jpg"><img src="assets/howto.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="Otcepljena kesica ZORA želea — žele se jede direktno iz kesice"></picture></figure></section>
 
 <section class="quiet">
   <div class="wrap">
@@ -284,7 +297,7 @@ footer .co{margin-top:18px;color:var(--mut2)}
   </div>
 </section>
 
-<section class="shot"><figure><img src="assets/benefits.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="ZORA žele pored dve oljuštene jabuke — otprilike toliko vlakana ima u jednom želeu"></figure></section>
+<section class="shot"><figure><picture><source media="(min-width:900px)" srcset="assets/benefits-desktop.jpg"><img src="assets/benefits.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="ZORA žele pored dve oljuštene jabuke — otprilike toliko vlakana ima u jednom želeu"></picture></figure></section>
 
 <section id="paketi">
   <div class="wrap">
@@ -301,7 +314,7 @@ footer .co{margin-top:18px;color:var(--mut2)}
   </div>
 </section>
 
-<section class="shot"><figure><img src="assets/in-use-2.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="ZORA kesica u torbi, uz ključeve i telefon"></figure></section>
+<section class="shot"><figure><picture><source media="(min-width:900px)" srcset="assets/in-use-2-desktop.jpg"><img src="assets/in-use-2.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="ZORA kesica u torbi, uz ključeve i telefon"></picture></figure></section>
 
 <section class="quiet tst">
   <div class="wrap">
@@ -313,7 +326,7 @@ footer .co{margin-top:18px;color:var(--mut2)}
   </div>
 </section>
 
-<section class="shot"><figure><img src="assets/ingredients.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="Sastojci ZORA želea: rezistentni dekstrin, vitamin C, cink, hrom, breskva, brusnica i yuzu"></figure></section>
+<section class="shot"><figure><picture><source media="(min-width:900px)" srcset="assets/ingredients-desktop.jpg"><img src="assets/ingredients.jpg" width="1024" height="1024" loading="lazy" decoding="async" alt="Sastojci ZORA želea: rezistentni dekstrin, vitamin C, cink, hrom, breskva, brusnica i yuzu"></picture></figure></section>
 
 <section class="quiet faq">
   <div class="wrap">
